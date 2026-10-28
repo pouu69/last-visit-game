@@ -1,0 +1,73 @@
+{
+  "decision_nodes": 21,
+  "choices": 84,
+  "listed_edges_with_conditions": 89,
+  "decisions_per_play": 11,
+  "visited_state_keys": 12480,
+  "checked_transitions": 24868,
+  "reachable_endings": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+  ],
+  "endings_after_mission2_failure": [
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "E5",
+    "E6"
+  ],
+  "unique_mission_answers": {
+    "P11": "A",
+    "P12": "B",
+    "P21": "B"
+  },
+  "tabletop_examples": {
+    "배를 돌려보낸 팀": {
+      "route": "S01.A I01.B P12.B S12.A T21.D D22.A S22.B P21.B R31.D S31.A F31.A → E1",
+      "flags": [
+        "maintenance",
+        "map",
+        "statement"
+      ],
+      "boat": "intact",
+      "record": "intact",
+      "moro": "active"
+    },
+    "규약 변경을 밝혀낸 팀": {
+      "route": "S01.B I02.A P11.C S12.D T22.C D22.D S22.B P21.C R32.B S31.B F32.B → E3",
+      "flags": [
+        "charter",
+        "log",
+        "repair",
+        "statement"
+      ],
+      "boat": "damaged",
+      "record": "intact",
+      "moro": "active"
+    },
+    "모로를 데리고 나온 팀": {
+      "route": "S01.C I03.B P12.C S12.B T21.D D22.D S22.C P21.A R32.C S31.C F33.A → E5",
+      "flags": [
+        "maintenance",
+        "map",
+        "repair"
+      ],
+      "boat": "intact",
+      "record": "intact",
+      "moro": "asleep"
+    }
+  },
+  "ending_examples": {
+    "E1": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.C → S31.A → F31.A → E1",
+    "E2": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.A → S31.A → F31.A → E2",
+    "E3": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.A → S31.B → F32.A → E3",
+    "E4": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.A → S31.B → F32.C → E4",
+    "E5": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.A → S31.A → F31.D → E5",
+    "E6": "S01.A → I01.A → P11.A → S12.A → T21.A → D21.A → S22.A → P21.A → R32.A → S31.D → F34.A → E6"
+  }
+}
