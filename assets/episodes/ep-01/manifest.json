@@ -1,0 +1,2833 @@
+{
+  "schemaVersion": 2,
+  "project": "unbirthday-museum",
+  "revision": "museum-low-poly-2026-10-28",
+  "updatedAt": "2026-10-28",
+  "artDirection": "assets/shared/art-direction.md",
+  "usageGuide": "assets/OBJECT_ASSET_GUIDE.md",
+  "galleryPath": "/asset-gallery.html",
+  "inventoryCounts": {
+    "propModels": 32,
+    "actorAndTerminalModels": 4,
+    "evidenceVariants": 2,
+    "totalCatalogueEntries": 38
+  },
+  "approval": "approved-in-game",
+  "review": {
+    "cameraYawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "cameraPitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ],
+    "requiredContexts": [
+      "isolated-model-gallery",
+      "actual-game-room",
+      "state-variants",
+      "unpaused-actor-motion"
+    ],
+    "evidence": [
+      "assets/episodes/ep-01/review/review.md",
+      "assets/episodes/ep-01/review/verification.json",
+      "assets/episodes/ep-01/review/catalogue-front.jpg",
+      "assets/episodes/ep-01/review/catalogue-rear.jpg",
+      "assets/episodes/ep-01/review/catalogue-side.jpg",
+      "assets/episodes/ep-01/review/catalogue-top.jpg",
+      "assets/episodes/ep-01/review/room-views.jpg",
+      "assets/episodes/ep-01/review/gameplay-gallery.png",
+      "assets/episodes/ep-01/review/gameplay-rotated.png"
+    ],
+    "reviewer": "Codex with independent model and JavaScript review agents",
+    "method": "Automatic WebGL render sweep plus sampled visual contact sheets, model close-ups, native game interactions and geometry/collision regression tests."
+  },
+  "referenceBoard": {
+    "id": "museum-object-style-target",
+    "path": "assets/shared/references/museum-object-style-target.png",
+    "role": "concept-only",
+    "status": "selected-style-target",
+    "source": "OpenAI built-in image_gen",
+    "mode": "new-image-generation",
+    "generatedAt": "2026-10-28",
+    "modelVersion": "not exposed by built-in tool",
+    "promptRecord": "assets/episodes/ep-01/brief.md#생성-기록",
+    "promptRecordType": "normalized-summary-of-original-constraints",
+    "license": "project-license-not-set",
+    "notes": "Fixed-angle visual reference for palette, proportions and low-poly style; runtime geometry is authored separately."
+  },
+  "technicalFrame": {
+    "engine": "Three.js",
+    "rendering": "WebGL; camera-independent procedural 3D meshes",
+    "camera": {
+      "projection": "orthographic",
+      "defaultYawDegrees": 35,
+      "defaultPitchDegrees": 43,
+      "yawRangeDegrees": [
+        0,
+        360
+      ],
+      "pitchRangeDegrees": [
+        25,
+        70
+      ]
+    },
+    "worldScale": "Rooms are 12x10 world units; measured dimensions are local to each constructor.",
+    "texturePolicy": "No external texture dependency; authored labels use CanvasTexture and normalized-UV thin boxes.",
+    "materialPolicy": "Shared muted matte palette; dull brass metalness .28 roughness .6; glass/water transparencies only where authored.",
+    "palette": {
+      "plaster": "#e4dfc8",
+      "edge": "#c3b99c",
+      "paper": "#fff2c7",
+      "fold": "#c6aa78",
+      "wood": "#704f40",
+      "brass": "#b18a54",
+      "green": "#486252",
+      "dark": "#243b37",
+      "tile": "#ddd6bd",
+      "ink": "#46594e",
+      "water": "#548a88",
+      "rust": "#9f5844"
+    },
+    "performance": {
+      "dprMax": 1.5,
+      "targetFps": 30,
+      "postProcessingPasses": 0,
+      "shadowMapLights": 0
+    },
+    "pivotPolicy": "Per-entry pivot classification and measured local bounds are authoritative.",
+    "collisionPolicy": "Explicit local assetColliders transformed to world; mobile actors use separate circles.",
+    "resourcePolicy": "Geometry and material factories register shared resources; dispose on owning scene/gallery teardown, never on removing a shared instance.",
+    "mergePolicy": "Static direct-child meshes merged by material inside each group; keepMesh preserves mutable leaf handles and child pivots remain separate."
+  },
+  "assets": [
+    {
+      "id": "exhibit-case",
+      "baseId": "exhibit-case",
+      "family": "exhibit",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('exhibit-case')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "exhibit-case",
+      "states": [
+        "empty"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.26,
+          0.01,
+          -0.71
+        ],
+        "max": [
+          1.26,
+          2.235,
+          1.24
+        ],
+        "sizeXYZ": [
+          2.52,
+          2.225,
+          1.95
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        2.52,
+        1.95
+      ],
+      "declaredHeight": 2.23,
+      "geometry": {
+        "triangles": 1852,
+        "meshes": 7,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#486252",
+          "#704f40",
+          "#85aaa0",
+          "#9f5844",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.9,
+            "maxX": 0.9,
+            "minY": 0,
+            "maxY": 2.2,
+            "minZ": -0.71,
+            "maxZ": 0.71
+          },
+          {
+            "minX": -1.26,
+            "maxX": 1.26,
+            "minY": 0,
+            "maxY": 0.66,
+            "minZ": 0.92,
+            "maxZ": 1.24
+          }
+        ]
+      },
+      "assetKey": "ep-01/exhibit-case"
+    },
+    {
+      "id": "archive-desk",
+      "baseId": "archive-desk",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('archive-desk')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "archive-desk",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.825,
+          0,
+          -0.43
+        ],
+        "max": [
+          0.825,
+          1.459867,
+          0.4275
+        ],
+        "sizeXYZ": [
+          1.65,
+          1.459867,
+          0.8575
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.65,
+        0.85
+      ],
+      "declaredHeight": 1.5,
+      "geometry": {
+        "triangles": 896,
+        "meshes": 4,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.825,
+            "maxX": 0.825,
+            "minY": 0,
+            "maxY": 0.93,
+            "minZ": -0.425,
+            "maxZ": 0.425
+          }
+        ]
+      },
+      "assetKey": "ep-01/archive-desk"
+    },
+    {
+      "id": "courtyard",
+      "baseId": "courtyard",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('courtyard')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "courtyard",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.63,
+          0.005,
+          -0.79
+        ],
+        "max": [
+          2.925,
+          1.263358,
+          0.805
+        ],
+        "sizeXYZ": [
+          4.555,
+          1.258358,
+          1.595
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        4.56,
+        1.6
+      ],
+      "declaredHeight": 1.3,
+      "geometry": {
+        "triangles": 1008,
+        "meshes": 28,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#46594e",
+          "#486252",
+          "#b18a54",
+          "#c3b99c",
+          "#e4dfc8"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -1.625,
+            "maxX": 1.625,
+            "minY": 0,
+            "maxY": 0.48,
+            "minZ": -0.8,
+            "maxZ": 0.8
+          }
+        ]
+      },
+      "assetKey": "ep-01/courtyard"
+    },
+    {
+      "id": "storage-bays",
+      "baseId": "storage-bays",
+      "family": "storage",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('storage-bays')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "storage-bays",
+      "states": [
+        "water-low",
+        "water-high"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.48,
+          0.01,
+          -1.93
+        ],
+        "max": [
+          1.48,
+          2.38,
+          1.895
+        ],
+        "sizeXYZ": [
+          2.96,
+          2.37,
+          3.825
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        3,
+        3.9
+      ],
+      "declaredHeight": 2.4,
+      "geometry": {
+        "triangles": 828,
+        "meshes": 6,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#548a88",
+          "#704f40",
+          "#85aaa0",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {
+        "water": "water"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -1.475,
+            "maxX": 1.475,
+            "minY": 0,
+            "maxY": 1.4,
+            "minZ": -1.95,
+            "maxZ": 1.95
+          }
+        ]
+      },
+      "assetKey": "ep-01/storage-bays"
+    },
+    {
+      "id": "paper-boat",
+      "baseId": "paper-boat",
+      "family": "evidence",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('paper-boat')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "paper-boat",
+      "states": [
+        "intact",
+        "damaged",
+        "sealed",
+        "recovered",
+        "removed"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.835271,
+          0.011009,
+          -0.348
+        ],
+        "max": [
+          0.835271,
+          0.525519,
+          0.348
+        ],
+        "sizeXYZ": [
+          1.670541,
+          0.51451,
+          0.696
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.68,
+        0.7
+      ],
+      "declaredHeight": 0.54,
+      "geometry": {
+        "triangles": 560,
+        "meshes": 2,
+        "sprites": 0,
+        "materialColors": [
+          "#c6aa78",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/paper-boat"
+    },
+    {
+      "id": "ledger",
+      "baseId": "ledger",
+      "family": "evidence",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('ledger')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "ledger",
+      "states": [
+        "intact",
+        "unreadable",
+        "sealed",
+        "recovered"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4725,
+          0,
+          -0.325
+        ],
+        "max": [
+          0.47,
+          0.147,
+          0.325
+        ],
+        "sizeXYZ": [
+          0.9425,
+          0.147,
+          0.65
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.95,
+        0.66
+      ],
+      "declaredHeight": 0.17,
+      "geometry": {
+        "triangles": 280,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#46594e",
+          "#486252",
+          "#9f5844",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/ledger"
+    },
+    {
+      "id": "sealed-cover",
+      "baseId": "sealed-cover",
+      "family": "storage",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('sealed-cover')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "sealed-cover",
+      "states": [
+        "visible",
+        "hidden"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.85,
+          0,
+          -0.5
+        ],
+        "max": [
+          0.85,
+          0.536,
+          0.5
+        ],
+        "sizeXYZ": [
+          1.7,
+          0.536,
+          1
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.7,
+        1
+      ],
+      "declaredHeight": 0.54,
+      "geometry": {
+        "triangles": 168,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#9f5844",
+          "#b18a54",
+          "#c3b99c",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/sealed-cover"
+    },
+    {
+      "id": "original-guard",
+      "baseId": "original-guard",
+      "family": "storage",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('original-guard')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "original-guard",
+      "states": [
+        "locked",
+        "hidden"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.81,
+          0,
+          -0.47
+        ],
+        "max": [
+          0.81,
+          0.565,
+          0.515
+        ],
+        "sizeXYZ": [
+          1.62,
+          0.565,
+          0.985
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.64,
+        0.97
+      ],
+      "declaredHeight": 0.58,
+      "geometry": {
+        "triangles": 420,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#85aaa0",
+          "#b18a54"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/original-guard"
+    },
+    {
+      "id": "trolley",
+      "baseId": "trolley",
+      "family": "transport",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('trolley')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "trolley",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.52,
+          -0.01,
+          -0.516
+        ],
+        "max": [
+          0.52,
+          0.766,
+          0.375
+        ],
+        "sizeXYZ": [
+          1.04,
+          0.776,
+          0.891
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.1,
+        1
+      ],
+      "declaredHeight": 0.78,
+      "geometry": {
+        "triangles": 556,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#704f40",
+          "#b18a54"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/trolley"
+    },
+    {
+      "id": "notice-board",
+      "baseId": "notice-board",
+      "family": "exhibit",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('notice-board')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "notice-board",
+      "states": [
+        "schedule",
+        "diagram"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.6925,
+          0,
+          -0.15
+        ],
+        "max": [
+          0.6925,
+          2.1425,
+          0.15
+        ],
+        "sizeXYZ": [
+          1.385,
+          2.1425,
+          0.3
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.4,
+        0.3
+      ],
+      "declaredHeight": 2.15,
+      "geometry": {
+        "triangles": 420,
+        "meshes": 6,
+        "sprites": 0,
+        "materialColors": [
+          "#46594e",
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "face": "board-face",
+        "diagram": "board-diagram"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.7,
+            "maxX": 0.7,
+            "minY": 0,
+            "maxY": 2.15,
+            "minZ": -0.15,
+            "maxZ": 0.15
+          }
+        ]
+      },
+      "assetKey": "ep-01/notice-board"
+    },
+    {
+      "id": "valve",
+      "baseId": "valve",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('valve')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "valve",
+      "states": [
+        "unchecked",
+        "maintained"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          0,
+          -0.19
+        ],
+        "max": [
+          0.35,
+          1.095,
+          0.25
+        ],
+        "sizeXYZ": [
+          0.7,
+          1.095,
+          0.44
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.75,
+        0.55
+      ],
+      "declaredHeight": 1.1,
+      "geometry": {
+        "triangles": 720,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#9f5844",
+          "#b18a54"
+        ]
+      },
+      "parts": {
+        "wheel": "valve-wheel"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.325,
+            "maxX": 0.325,
+            "minY": 0,
+            "maxY": 1.1,
+            "minZ": -0.25,
+            "maxZ": 0.25
+          }
+        ]
+      },
+      "assetKey": "ep-01/valve"
+    },
+    {
+      "id": "supplies",
+      "baseId": "supplies",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('supplies')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "supplies",
+      "states": [
+        "battery-stowed",
+        "battery-removed"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.465,
+          0,
+          -0.385
+        ],
+        "max": [
+          0.465,
+          1.108,
+          0.41
+        ],
+        "sizeXYZ": [
+          0.93,
+          1.108,
+          0.795
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.94,
+        0.78
+      ],
+      "declaredHeight": 1.2,
+      "geometry": {
+        "triangles": 552,
+        "meshes": 9,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#486252",
+          "#704f40",
+          "#9f5844",
+          "#b18a54",
+          "#c3b99c",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "battery": "unique-battery"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.47,
+            "maxX": 0.47,
+            "minY": 0,
+            "maxY": 0.9,
+            "minZ": -0.39,
+            "maxZ": 0.39
+          }
+        ]
+      },
+      "assetKey": "ep-01/supplies"
+    },
+    {
+      "id": "battery",
+      "baseId": "battery",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('battery')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "battery",
+      "states": [
+        "stowed",
+        "carried"
+      ],
+      "pivot": "body-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.25,
+          -0.1,
+          -0.15
+        ],
+        "max": [
+          0.25,
+          0.168,
+          0.165
+        ],
+        "sizeXYZ": [
+          0.5,
+          0.268,
+          0.315
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.51,
+        0.33
+      ],
+      "declaredHeight": 0.27,
+      "geometry": {
+        "triangles": 160,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#486252",
+          "#9f5844",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/battery"
+    },
+    {
+      "id": "archive-shelf",
+      "baseId": "archive-shelf",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('archive-shelf')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "archive-shelf",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.455,
+          0,
+          -0.27
+        ],
+        "max": [
+          0.455,
+          1.8,
+          0.27
+        ],
+        "sizeXYZ": [
+          0.91,
+          1.8,
+          0.54
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.9400000000000001,
+        0.54
+      ],
+      "declaredHeight": 1.8,
+      "geometry": {
+        "triangles": 896,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#c6aa78",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.45,
+            "maxX": 0.45,
+            "minY": 0,
+            "maxY": 1.8,
+            "minZ": -0.25,
+            "maxZ": 0.25
+          }
+        ]
+      },
+      "assetKey": "ep-01/archive-shelf"
+    },
+    {
+      "id": "stamp-set",
+      "baseId": "stamp-set",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('stamp-set')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "stamp-set",
+      "states": [
+        "static"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.575,
+          -0.03,
+          -0.325
+        ],
+        "max": [
+          0.575,
+          0.33,
+          0.325
+        ],
+        "sizeXYZ": [
+          1.15,
+          0.36,
+          0.65
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.15,
+        0.65
+      ],
+      "declaredHeight": 0.36,
+      "geometry": {
+        "triangles": 508,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#9f5844",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/stamp-set"
+    },
+    {
+      "id": "key-bundle",
+      "baseId": "key-bundle",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('key-bundle')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "key-bundle",
+      "states": [
+        "static"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.214,
+          0.0125,
+          -0.094
+        ],
+        "max": [
+          0.165,
+          0.0375,
+          0.145
+        ],
+        "sizeXYZ": [
+          0.379,
+          0.025,
+          0.239
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.4,
+        0.25
+      ],
+      "declaredHeight": 0.06,
+      "geometry": {
+        "triangles": 304,
+        "meshes": 1,
+        "sprites": 0,
+        "materialColors": [
+          "#b18a54"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/key-bundle"
+    },
+    {
+      "id": "layered-label",
+      "baseId": "layered-label",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('layered-label')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "layered-label",
+      "states": [
+        "flat",
+        "raised"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.425,
+          -0.0125,
+          -0.275
+        ],
+        "max": [
+          0.425,
+          0.034,
+          0.275
+        ],
+        "sizeXYZ": [
+          0.85,
+          0.0465,
+          0.55
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.85,
+        0.55
+      ],
+      "declaredHeight": 0.055,
+      "geometry": {
+        "triangles": 56,
+        "meshes": 2,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "flap": "label-flap"
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/layered-label"
+    },
+    {
+      "id": "control-panel",
+      "baseId": "control-panel",
+      "family": "lifting",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('control-panel')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "control-panel",
+      "states": [
+        "idle",
+        "stable",
+        "stalled"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.47,
+          0,
+          -0.367834
+        ],
+        "max": [
+          0.47,
+          1.255,
+          0.367834
+        ],
+        "sizeXYZ": [
+          0.94,
+          1.255,
+          0.735668
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.96,
+        0.72
+      ],
+      "declaredHeight": 1.28,
+      "geometry": {
+        "triangles": 612,
+        "meshes": 6,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#486252",
+          "#704f40",
+          "#9f5844",
+          "#b18a54",
+          "#c9dbb0"
+        ]
+      },
+      "parts": {
+        "indicator": "crane-indicator"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.475,
+            "maxX": 0.475,
+            "minY": 0,
+            "maxY": 1.2,
+            "minZ": -0.35,
+            "maxZ": 0.35
+          }
+        ]
+      },
+      "assetKey": "ep-01/control-panel"
+    },
+    {
+      "id": "packing-table",
+      "baseId": "packing-table",
+      "family": "reception",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('packing-table')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "packing-table",
+      "states": [
+        "empty",
+        "tools",
+        "recovered-items"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.025,
+          0,
+          -0.44
+        ],
+        "max": [
+          1.025,
+          0.8125,
+          0.44
+        ],
+        "sizeXYZ": [
+          2.05,
+          0.8125,
+          0.88
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        2.05,
+        0.88
+      ],
+      "declaredHeight": 0.83,
+      "geometry": {
+        "triangles": 420,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -1.025,
+            "maxX": 1.025,
+            "minY": 0,
+            "maxY": 0.8,
+            "minZ": -0.44,
+            "maxZ": 0.44
+          }
+        ]
+      },
+      "assetKey": "ep-01/packing-table"
+    },
+    {
+      "id": "preservation-kit",
+      "baseId": "preservation-kit",
+      "family": "reception",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('preservation-kit')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "preservation-kit",
+      "states": [
+        "visible-in-D21",
+        "hidden"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.75,
+          0,
+          -0.31
+        ],
+        "max": [
+          0.64,
+          0.34,
+          0.34
+        ],
+        "sizeXYZ": [
+          1.39,
+          0.34,
+          0.65
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.5,
+        0.64
+      ],
+      "declaredHeight": 0.36,
+      "geometry": {
+        "triangles": 216,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#c3b99c",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/preservation-kit"
+    },
+    {
+      "id": "exit-door",
+      "baseId": "exit-door",
+      "family": "other",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('exit-door')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "exit-door",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.65,
+          0,
+          -0.135
+        ],
+        "max": [
+          0.65,
+          2.375,
+          0.98
+        ],
+        "sizeXYZ": [
+          1.3,
+          2.375,
+          1.115
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.3,
+        1.2
+      ],
+      "declaredHeight": 2.4,
+      "geometry": {
+        "triangles": 280,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.65,
+            "maxX": -0.45000000000000007,
+            "minY": 0,
+            "maxY": 2.35,
+            "minZ": -0.135,
+            "maxZ": 0.135
+          },
+          {
+            "minX": 0.45000000000000007,
+            "maxX": 0.65,
+            "minY": 0,
+            "maxY": 2.35,
+            "minZ": -0.135,
+            "maxZ": 0.135
+          },
+          {
+            "minX": -0.56,
+            "maxX": -0.44,
+            "minY": 0,
+            "maxY": 2.15,
+            "minZ": -0.020000000000000018,
+            "maxZ": 1
+          }
+        ]
+      },
+      "assetKey": "ep-01/exit-door"
+    },
+    {
+      "id": "office-desk",
+      "baseId": "office-desk",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('office-desk')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "office-desk",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.9,
+          0,
+          -0.5
+        ],
+        "max": [
+          0.9,
+          1.018,
+          0.5
+        ],
+        "sizeXYZ": [
+          1.8,
+          1.018,
+          1
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.8,
+        1
+      ],
+      "declaredHeight": 1.05,
+      "geometry": {
+        "triangles": 756,
+        "meshes": 4,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.9,
+            "maxX": 0.9,
+            "minY": 0,
+            "maxY": 0.95,
+            "minZ": -0.5,
+            "maxZ": 0.5
+          }
+        ]
+      },
+      "assetKey": "ep-01/office-desk"
+    },
+    {
+      "id": "cupboard",
+      "baseId": "cupboard",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('cupboard')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "cupboard",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.3,
+          0,
+          -0.285
+        ],
+        "max": [
+          1.3,
+          2.08,
+          0.3375
+        ],
+        "sizeXYZ": [
+          2.6,
+          2.08,
+          0.6225
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        2.6,
+        0.58
+      ],
+      "declaredHeight": 2.1,
+      "geometry": {
+        "triangles": 252,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -1.3,
+            "maxX": 1.3,
+            "minY": 0,
+            "maxY": 2.1,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "assetKey": "ep-01/cupboard"
+    },
+    {
+      "id": "reception-counter",
+      "baseId": "reception-counter",
+      "family": "reception",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('reception-counter')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "reception-counter",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -2.325,
+          0,
+          -0.475
+        ],
+        "max": [
+          2.325,
+          1.385,
+          0.475
+        ],
+        "sizeXYZ": [
+          4.65,
+          1.385,
+          0.95
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        4.65,
+        0.95
+      ],
+      "declaredHeight": 1.4,
+      "geometry": {
+        "triangles": 252,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -2.325,
+            "maxX": 2.325,
+            "minY": 0,
+            "maxY": 1.4,
+            "minZ": -0.475,
+            "maxZ": 0.475
+          }
+        ]
+      },
+      "assetKey": "ep-01/reception-counter"
+    },
+    {
+      "id": "bench",
+      "baseId": "bench",
+      "family": "exhibit",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('bench')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "bench",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0,
+          -1.25
+        ],
+        "max": [
+          0.7,
+          0.538,
+          1.25
+        ],
+        "sizeXYZ": [
+          1.4,
+          0.538,
+          2.5
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.4,
+        2.5
+      ],
+      "declaredHeight": 0.55,
+      "geometry": {
+        "triangles": 224,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#c6aa78"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.7,
+            "maxX": 0.7,
+            "minY": 0,
+            "maxY": 0.55,
+            "minZ": -1.25,
+            "maxZ": 1.25
+          }
+        ]
+      },
+      "assetKey": "ep-01/bench"
+    },
+    {
+      "id": "map-lectern",
+      "baseId": "map-lectern",
+      "family": "exhibit",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('map-lectern')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "map-lectern",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.94,
+          0,
+          -0.39
+        ],
+        "max": [
+          0.94,
+          1.905,
+          0.39
+        ],
+        "sizeXYZ": [
+          1.88,
+          1.905,
+          0.78
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.9,
+        0.8
+      ],
+      "declaredHeight": 1.95,
+      "geometry": {
+        "triangles": 140,
+        "meshes": 4,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "face": "face"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.95,
+            "maxX": 0.95,
+            "minY": 0,
+            "maxY": 1.9,
+            "minZ": -0.4,
+            "maxZ": 0.4
+          }
+        ]
+      },
+      "assetKey": "ep-01/map-lectern"
+    },
+    {
+      "id": "clock",
+      "baseId": "clock",
+      "family": "exhibit",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('clock')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "clock",
+      "states": [
+        "static"
+      ],
+      "pivot": "wall-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.38,
+          -0.38,
+          -0.04
+        ],
+        "max": [
+          0.38,
+          0.38,
+          0.09
+        ],
+        "sizeXYZ": [
+          0.76,
+          0.76,
+          0.13
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.8,
+        0.15
+      ],
+      "declaredHeight": 0.8,
+      "geometry": {
+        "triangles": 344,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#b18a54",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/clock"
+    },
+    {
+      "id": "tools-rack",
+      "baseId": "tools-rack",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('tools-rack')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "tools-rack",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.875,
+          -0.08,
+          -0.06
+        ],
+        "max": [
+          0.875,
+          0.73,
+          0.145
+        ],
+        "sizeXYZ": [
+          1.75,
+          0.81,
+          0.205
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.8,
+        0.24
+      ],
+      "declaredHeight": 0.85,
+      "geometry": {
+        "triangles": 772,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#486252",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/tools-rack"
+    },
+    {
+      "id": "document-tray",
+      "baseId": "document-tray",
+      "family": "reception",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('document-tray')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "document-tray",
+      "states": [
+        "static"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4,
+          0,
+          -0.275
+        ],
+        "max": [
+          0.4,
+          0.18,
+          0.275
+        ],
+        "sizeXYZ": [
+          0.8,
+          0.18,
+          0.55
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.8,
+        0.55
+      ],
+      "declaredHeight": 0.2,
+      "geometry": {
+        "triangles": 196,
+        "meshes": 2,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/document-tray"
+    },
+    {
+      "id": "invitation",
+      "baseId": "invitation",
+      "family": "archive",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('invitation')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "invitation",
+      "states": [
+        "visible",
+        "hidden"
+      ],
+      "pivot": "panel-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.73,
+          -0.36,
+          -0.0175
+        ],
+        "max": [
+          0.73,
+          0.36,
+          0.054
+        ],
+        "sizeXYZ": [
+          1.46,
+          0.72,
+          0.0715
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.46,
+        0.06
+      ],
+      "declaredHeight": 0.72,
+      "geometry": {
+        "triangles": 104,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#9f5844",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "face": "face"
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/invitation"
+    },
+    {
+      "id": "arch-window",
+      "baseId": "arch-window",
+      "family": "other",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('arch-window')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "arch-window",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.65,
+          -0.04,
+          -0.11
+        ],
+        "max": [
+          0.65,
+          1.86,
+          0.11
+        ],
+        "sizeXYZ": [
+          1.3,
+          1.9,
+          0.22
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.3,
+        0.23
+      ],
+      "declaredHeight": 1.87,
+      "geometry": {
+        "triangles": 404,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#85aaa0",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/arch-window"
+    },
+    {
+      "id": "pipe-fixture",
+      "baseId": "pipe-fixture",
+      "family": "maintenance",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('pipe-fixture')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "pipe-fixture",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.15,
+          0,
+          -0.19
+        ],
+        "max": [
+          0.15,
+          2.68,
+          0.13
+        ],
+        "sizeXYZ": [
+          0.3,
+          2.68,
+          0.32
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.32,
+        0.4
+      ],
+      "declaredHeight": 2.7,
+      "geometry": {
+        "triangles": 380,
+        "meshes": 4,
+        "sprites": 0,
+        "materialColors": [
+          "#704f40",
+          "#b18a54",
+          "#c3b99c",
+          "#c9dbb0"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.15,
+            "maxX": 0.15,
+            "minY": 0,
+            "maxY": 2.6,
+            "minZ": -0.175,
+            "maxZ": 0.175
+          }
+        ]
+      },
+      "assetKey": "ep-01/pipe-fixture"
+    },
+    {
+      "id": "moro",
+      "baseId": "moro",
+      "family": "character",
+      "sourcePath": "public/assets/episodes/ep-01/actors.mjs",
+      "constructor": "createMuseumActors(core).create('moro')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "moro",
+      "states": [
+        "awake",
+        "asleep",
+        "transported"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.46,
+          0,
+          -0.33
+        ],
+        "max": [
+          0.630862,
+          1.162,
+          0.416258
+        ],
+        "sizeXYZ": [
+          1.090862,
+          1.162,
+          0.746258
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.1,
+        0.75
+      ],
+      "declaredHeight": 1.17,
+      "geometry": {
+        "triangles": 1724,
+        "meshes": 12,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#384b3d",
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#c3b99c",
+          "#c9dbb0",
+          "#e4dfc8",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "eyes": "moro-eyes",
+        "antenna": "moro-antenna",
+        "antennaLight": "antennaLight"
+      },
+      "collision": {
+        "mode": "dynamic-actor-circle",
+        "localBoxes": [],
+        "runtimeRadius": 0.46,
+        "transportedRadius": 0.65
+      },
+      "assetKey": "ep-01/moro"
+    },
+    {
+      "id": "curator",
+      "baseId": "curator",
+      "family": "character",
+      "sourcePath": "public/assets/episodes/ep-01/actors.mjs",
+      "constructor": "createMuseumActors(core).create('curator')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "curator",
+      "states": [
+        "idle",
+        "walking",
+        "gesture"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.49159,
+          0.001,
+          -0.32
+        ],
+        "max": [
+          0.49159,
+          2.13,
+          0.31
+        ],
+        "sizeXYZ": [
+          0.983179,
+          2.129,
+          0.63
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1,
+        0.65
+      ],
+      "declaredHeight": 2.15,
+      "geometry": {
+        "triangles": 3808,
+        "meshes": 22,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#2e5555",
+          "#384b3d",
+          "#392f30",
+          "#46594e",
+          "#486252",
+          "#704f40",
+          "#9f5844",
+          "#b18a54",
+          "#d9ad89",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "body": "curator-body",
+        "head": "curator-head",
+        "arms": [
+          "curator-arm--1",
+          "curator-arm-1"
+        ],
+        "legs": [
+          "curator-leg--1",
+          "curator-leg-1"
+        ]
+      },
+      "collision": {
+        "mode": "dynamic-actor-circle",
+        "localBoxes": [],
+        "runtimeRadius": 0.4
+      },
+      "assetKey": "ep-01/curator"
+    },
+    {
+      "id": "player",
+      "baseId": "player",
+      "family": "character",
+      "sourcePath": "public/assets/episodes/ep-01/actors.mjs",
+      "constructor": "createMuseumActors(core).create('player')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "player",
+      "states": [
+        "idle",
+        "walking"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.375089,
+          0,
+          -0.38
+        ],
+        "max": [
+          0.375089,
+          1.39,
+          0.3
+        ],
+        "sizeXYZ": [
+          0.750178,
+          1.39,
+          0.68
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.76,
+        0.68
+      ],
+      "declaredHeight": 1.4,
+      "geometry": {
+        "triangles": 2528,
+        "meshes": 13,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#384b3d",
+          "#392f30",
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#bf704b",
+          "#d9ad89",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "legs": [
+          "visitor-leg--0.13",
+          "visitor-leg-0.13"
+        ]
+      },
+      "collision": {
+        "mode": "dynamic-actor-circle",
+        "localBoxes": [],
+        "runtimeRadius": 0.38
+      },
+      "assetKey": "ep-01/player"
+    },
+    {
+      "id": "terminal",
+      "baseId": "terminal",
+      "family": "reception",
+      "sourcePath": "public/assets/episodes/ep-01/actors.mjs",
+      "constructor": "createMuseumActors(core).create('terminal')",
+      "options": {},
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "terminal",
+      "states": [
+        "idle",
+        "remote-message"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.42,
+          0.005,
+          -0.3
+        ],
+        "max": [
+          0.42,
+          1.9,
+          0.3165
+        ],
+        "sizeXYZ": [
+          0.84,
+          1.895,
+          0.6165
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.62
+      ],
+      "declaredHeight": 1.94,
+      "geometry": {
+        "triangles": 2112,
+        "meshes": 16,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#392f30",
+          "#46594e",
+          "#486252",
+          "#698a7b",
+          "#704f40",
+          "#9f5844",
+          "#b18a54",
+          "#c3b99c",
+          "#d9ad89",
+          "#fff2c7"
+        ]
+      },
+      "parts": {
+        "screen": "remote-screen",
+        "portrait": "remote-portrait",
+        "dots": "message-dots"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0.05,
+            "maxY": 0.82,
+            "minZ": -0.3,
+            "maxZ": 0.3
+          }
+        ]
+      },
+      "assetKey": "ep-01/terminal"
+    },
+    {
+      "id": "paper-boat-damaged",
+      "baseId": "paper-boat",
+      "family": "evidence",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('paper-boat')",
+      "options": {
+        "damaged": true
+      },
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "paper-boat-damaged",
+      "states": [
+        "damaged"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.835271,
+          0.011009,
+          -0.348
+        ],
+        "max": [
+          0.597293,
+          0.525519,
+          0.348
+        ],
+        "sizeXYZ": [
+          1.432564,
+          0.51451,
+          0.696
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        1.68,
+        0.7
+      ],
+      "declaredHeight": 0.54,
+      "geometry": {
+        "triangles": 568,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#9f5844",
+          "#c6aa78",
+          "#fff2c7"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/paper-boat-damaged"
+    },
+    {
+      "id": "ledger-blurred",
+      "baseId": "ledger",
+      "family": "evidence",
+      "sourcePath": "public/assets/episodes/ep-01/props.mjs",
+      "constructor": "createMuseumProps(core).create('ledger')",
+      "options": {
+        "blurred": true
+      },
+      "revision": "museum-low-poly-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "ledger-blurred",
+      "states": [
+        "unreadable"
+      ],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4725,
+          0,
+          -0.325
+        ],
+        "max": [
+          0.47,
+          0.147,
+          0.325
+        ],
+        "sizeXYZ": [
+          0.9425,
+          0.147,
+          0.65
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default pose; before scene transforms, runtime animation or visibility changes."
+      },
+      "declaredFootprintXZ": [
+        0.95,
+        0.66
+      ],
+      "declaredHeight": 0.17,
+      "geometry": {
+        "triangles": 672,
+        "meshes": 5,
+        "sprites": 0,
+        "materialColors": [
+          "#46594e",
+          "#486252",
+          "#9f5844",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/ledger-blurred"
+    }
+  ],
+  "episodeBrief": "assets/episodes/ep-01/brief.md",
+  "episodeId": "ep-01",
+  "styleRevision": "series-art-v1"
+}

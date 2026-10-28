@@ -26,13 +26,15 @@ npm start
 
 ## 플레이 흐름
 
-1. `1팀/2팀/3팀 관람 시작`으로 팀 기록을 만들거나 `저장한 이야기 이어보기`로 돌아온다.
+1. 타이틀 화면의 `Start Game`으로 처음부터 시작하거나, 저장 기록이 있으면 `Continue`로 마지막 이야기를 이어간다.
 2. 현재 목표와 지도를 확인하고 목적지로 걸어가 사물과 인물을 조사한다.
-3. `다음 메시지`로 내레이션·대화·문서를 읽고, 질문과 단서 추궁으로 증언을 대조한다.
+3. `계속`으로 내레이션·대화·문서를 읽고, 질문과 단서 추궁으로 증언을 대조한다.
 4. 선택의 대가를 확인해 A–D 행동을 확정하거나 퍼즐 조작판을 구성한다.
 5. 다음 장소로 이동해 이야기를 이어가고, 엔딩에서 다른 팀의 결말과 비교한다.
 
 새 게임은 로비 안내대의 초대장 확인 → 윤서와 인사 → 북쪽 복도 → 제1 전시실의 빈 진열장 순서로 시작한다. 다음 장면의 대사와 단서는 목적지에 도착한 뒤 공개된다. 프롤로그의 이동·조사도 자동 저장된다.
+
+새 게임을 시작해도 이전 기록은 별도로 보관한다. 타이틀의 `다른 기록`에서 이전 이야기를 선택하거나 기록 파일을 불러올 수 있다. 모션 감소 설정에서는 타이틀 전환 효과를 생략한다.
 
 대화·질문·퍼즐 선택 중에는 보행이 멈춘다. 현장으로 돌아가 다른 사물을 조사할 수 있으며, `대화 기록`에서 현재 장면에 읽은 메시지를 확인할 수 있다. 퍼즐은 제출 전에 수정할 수 있고, 오답도 수동 복구 경로로 이어진다. 인물의 반응과 자원·목적지 변화는 작성된 상태머신과 규칙으로 결정한다.
 
@@ -83,6 +85,8 @@ npm run build
 | `public/app.mjs`, `public/investigation-ui.mjs`              | 게임 화면과 조사 인터페이스               |
 | `public/museum-scene.mjs`, `public/museum-map.mjs`           | 3D 장면, 카메라, 지도와 이동              |
 | `public/museum-collision.mjs`, `public/museum-colliders.mjs` | 공통 충돌 판정과 모델의 충돌 영역         |
+| `public/assets/shared/`, `public/assets/episodes/ep-01/`    | 공통 3D 코어와 1편의 소품·배우 생성기     |
+| `assets/shared/`, `assets/episodes/`, `assets/templates/`   | 공통 스타일·편별 에셋 기록·반복 제작 양식 |
 | `scripts/build.mjs`, `server.mjs`                            | 정적 빌드와 로컬 미리보기                 |
 | `tests/`                                                     | 게임 진행·저장·이동·빌드 회귀 검증        |
 | `.agents/skills/`, `SKILLS.md`                               | 개발용 Three.js 스킬과 출처·라이선스 안내 |
@@ -115,6 +119,8 @@ npm run rehearse
 
 ## 이야기와 제작 자료
 
+- [5편 에셋 제작 절차](assets/SERIES_ASSET_WORKFLOW.md) · [편별 에셋 계획](assets/episodes/README.md) · [3D 구현 가이드](assets/OBJECT_ASSET_GUIDE.md)
+- [5편 연작 《돌아가는 길》 스토리 원고](docs/series/README.md) — 기존 1편과 새 4편, 분기·모의 진행·수정 기록. 현재 게임에는 미연결.
 - [전체 원고](docs/manuscript/README.md) · [스토리 설계](docs/narrative/story-design.md)
 - [루트맵](docs/narrative/route-map.md) · [84개 선택 명세](docs/narrative/scene-routes.md)
 - [상태머신 계약](docs/narrative/runtime-contract.md) · [지도·이동·퍼즐](docs/narrative/map-gameplay.md)

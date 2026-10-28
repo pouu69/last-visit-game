@@ -1,0 +1,970 @@
+{
+  "samples": [
+    {
+      "stage": "invitation-inspected",
+      "sceneId": "O00",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal"
+        ],
+        "assetInstances": 81,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "O00",
+        "phase": "exploring",
+        "calls": 96,
+        "triangles": 11926,
+        "geometries": 111,
+        "textures": 10,
+        "materials": 38,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 97,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "O00-5",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 294,
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 15.999999999999998,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2,
+            "z": 17,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          }
+        ],
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": "invitation",
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": 0.011999044673709018,
+          "antenna": -0.03883034077945546
+        },
+        "avatar": {
+          "x": 0,
+          "z": 15.999999999999998,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 2.7680376094024695,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          5.7169638132463225,
+          9.958015059556939,
+          22.800394135889515
+        ],
+        "cameraTarget": [
+          0,
+          0.6634299530438409,
+          14.63572366138498
+        ],
+        "cameraFrustum": {
+          "top": 7.8,
+          "bottom": -7.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "curator-greeted",
+      "sceneId": "O00",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal"
+        ],
+        "assetInstances": 81,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "O00",
+        "phase": "exploring",
+        "calls": 99,
+        "triangles": 12530,
+        "geometries": 111,
+        "textures": 10,
+        "materials": 38,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 156,
+        "targetFps": 30,
+        "speaking": "윤서",
+        "messageId": "O00-11",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 294,
+          "bodies": [
+            {
+              "id": "player",
+              "x": -0.5019753244917449,
+              "z": 17.09686918267947,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2,
+            "z": 17,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          }
+        ],
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": "yunseo",
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.004755900334040821,
+          "antenna": -0.03983434735531332
+        },
+        "avatar": {
+          "x": -0.5019753244917449,
+          "z": 17.09686918267947,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 2.5948131327999997,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          3.6606004256108484,
+          9.544855954854658,
+          25.077307330270393
+        ],
+        "cameraTarget": [
+          -1.9951183519127391,
+          0.3498424418432461,
+          17.000103831456133
+        ],
+        "cameraFrustum": {
+          "top": 7.8,
+          "bottom": -7.8
+        },
+        "speakerMarker": "윤서",
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "travel-start",
+      "sceneId": "S01",
+      "phase": "travelling",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal"
+        ],
+        "assetInstances": 81,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "travelling",
+        "calls": 127,
+        "triangles": 14666,
+        "geometries": 111,
+        "textures": 10,
+        "materials": 38,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 169,
+        "targetFps": 30,
+        "speaking": null,
+        "messageId": null,
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 294,
+          "bodies": [
+            {
+              "id": "player",
+              "x": -0.5019753244917449,
+              "z": 17.09686918267947,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -1.2999999999999994,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -1.2999999999999994,
+            "z": 17,
+            "visible": true,
+            "moving": false,
+            "waypoints": 46,
+            "waiting": true
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          }
+        ],
+        "objectiveTarget": {
+          "roomId": "gallery"
+        },
+        "objectiveMarker": [
+          0,
+          0.04,
+          11.5
+        ],
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": true,
+        "activeAnchor": null,
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": 0.004392403510651688,
+          "antenna": 0.0034576225863236333
+        },
+        "avatar": {
+          "x": -0.5019753244917449,
+          "z": 17.09686918267947,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": "gallery",
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1.0000803168570644,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          7.015573266347216,
+          13.540008852238643,
+          28.669662231960686
+        ],
+        "cameraTarget": [
+          -1.1155662315799262,
+          0.32048000000000004,
+          17.05719156545396
+        ],
+        "cameraFrustum": {
+          "top": 7.8,
+          "bottom": -7.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "gallery-arrival",
+      "sceneId": "S01",
+      "phase": "reading",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal"
+        ],
+        "assetInstances": 81,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "reading",
+        "calls": 150,
+        "triangles": 18386,
+        "geometries": 118,
+        "textures": 11,
+        "materials": 38,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 318,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "S01-1",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 294,
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 4.763840000000021,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2.5,
+              "z": 1.5274079829885796,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2.5,
+            "z": 1.5274079829885796,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          }
+        ],
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": null,
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.0034186161243655307,
+          "antenna": 0.00144386613071814
+        },
+        "avatar": {
+          "x": 0,
+          "z": 4.763840000000021,
+          "roomId": "gallery",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "gallery",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          9.857950976460994,
+          16.32696146146869,
+          19.203159158545212
+        ],
+        "cameraTarget": [
+          6.041195648160995e-7,
+          0.30000000000000016,
+          5.124546983723114
+        ],
+        "cameraFrustum": {
+          "top": 7.8,
+          "bottom": -7.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "camera-rotated",
+      "sceneId": "S01",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal"
+        ],
+        "assetInstances": 81,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "exploring",
+        "calls": 140,
+        "triangles": 18000,
+        "geometries": 121,
+        "textures": 11,
+        "materials": 38,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 421,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "S01-2",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 294,
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 4.763840000000021,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2.5,
+              "z": 1.5274079829885796,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2.5,
+            "z": 1.5274079829885796,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "waiting": false
+          }
+        ],
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": true,
+        "activeAnchor": null,
+        "hotspots": [
+          {
+            "id": "case",
+            "anchor": "case",
+            "visible": false
+          }
+        ],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.0012699992774304883,
+          "antenna": -0.011718540845214209
+        },
+        "avatar": {
+          "x": 0,
+          "z": 4.763840000000021,
+          "roomId": "gallery",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "gallery",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 51,
+          "yaw": 125
+        },
+        "cameraPosition": [
+          12.177630111145731,
+          18.49168211357698,
+          -3.761501769038553
+        ],
+        "cameraTarget": [
+          7.972619165149678e-23,
+          0.30000000000000004,
+          4.763840000000022
+        ],
+        "cameraFrustum": {
+          "top": 7.8,
+          "bottom": -7.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    }
+  ],
+  "errors": []
+}

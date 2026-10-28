@@ -22,6 +22,10 @@ node_modules/
 /test-results/
 /coverage/
 
+# Per-episode raw QA captures; curated review files remain versioned
+/assets/episodes/*/review/captures/
+/assets/episodes/*/review/gameplay/
+
 # Local caches and process files
 .cache/
 .serena/cache/

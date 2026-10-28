@@ -7,36 +7,59 @@ export function collectStaticColliders(root) {
   root.updateMatrixWorld(true);
   const colliders = [];
 
-  function append(mesh, matrix, id) {
-    const bounds = mesh.geometry.boundingBox.clone().applyMatrix4(matrix);
-    if (bounds.isEmpty() || bounds.max.y < 0.12 || bounds.min.y > 1.65) return;
+  function appendBounds(localBounds, matrix, id) {
+    const bounds = localBounds.clone().applyMatrix4(matrix);
+    if (bounds.isEmpty()) return;
+    appendWorldBounds(bounds.min, bounds.max, id);
+  }
+
+  function appendWorldBounds(min, max, id) {
+    if (max.y < 0.12 || min.y > 1.65) return;
     colliders.push(
       Object.freeze({
         id,
-        minX: bounds.min.x,
-        maxX: bounds.max.x,
-        minZ: bounds.min.z,
-        maxZ: bounds.max.z,
+        minX: min.x,
+        maxX: max.x,
+        minZ: min.z,
+        maxZ: max.z,
       })
     );
   }
 
   function visit(object) {
     if (!object.visible || object.userData.collision === 'none') return;
+    // Authored asset proxies preserve holes and passable clearances after render meshes merge.
+    // An empty proxy list intentionally makes the whole asset visual-only.
+    if (Array.isArray(object.userData.assetColliders)) {
+      for (const [index, proxy] of object.userData.assetColliders.entries()) {
+        const min = object.position.clone().set(Infinity, Infinity, Infinity);
+        const max = object.position.clone().set(-Infinity, -Infinity, -Infinity);
+        const point = object.position.clone();
+        for (const x of [proxy.minX, proxy.maxX])
+          for (const y of [proxy.minY, proxy.maxY])
+            for (const z of [proxy.minZ, proxy.maxZ]) {
+              point.set(x, y, z).applyMatrix4(object.matrixWorld);
+              min.min(point);
+              max.max(point);
+            }
+        appendWorldBounds(min, max, `${object.uuid}:proxy:${index}`);
+      }
+      return;
+    }
     if (object.isMesh) {
       if (!object.geometry.boundingBox) object.geometry.computeBoundingBox();
       if (object.isInstancedMesh) {
         const instance = object.matrixWorld.clone();
         for (let index = 0; index < object.count; index += 1) {
           object.getMatrixAt(index, instance);
-          append(
-            object,
+          appendBounds(
+            object.geometry.boundingBox,
             object.matrixWorld.clone().multiply(instance),
             `${object.uuid}:${index}`
           );
         }
       } else {
-        append(object, object.matrixWorld, object.uuid);
+        appendBounds(object.geometry.boundingBox, object.matrixWorld, object.uuid);
       }
     }
     for (const child of object.children) visit(child);

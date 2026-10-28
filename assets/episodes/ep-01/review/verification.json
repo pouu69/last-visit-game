@@ -1,0 +1,266 @@
+{
+  "revision": "museum-low-poly-2026-10-28",
+  "date": "2026-10-28",
+  "engine": "Three.js 0.186.1",
+  "browser": "Headless Chromium / WebGL",
+  "viewport": {
+    "galleryAndRooms": [
+      1200,
+      900
+    ],
+    "actualGame": [
+      1440,
+      1000
+    ],
+    "dpr": 1
+  },
+  "models": {
+    "propModels": 32,
+    "actorAndTerminalModels": 4,
+    "evidenceVariants": 2,
+    "totalCatalogueEntries": 38
+  },
+  "geometry": {
+    "catalogueTriangles": 26948,
+    "billboardSprites": 0
+  },
+  "camera": {
+    "objectViews": 912,
+    "modelEntries": 38,
+    "yawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "pitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "roomViews": 108,
+    "rooms": 9,
+    "scaleViews": 12,
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ]
+  },
+  "stateChecks": [
+    {
+      "id": "locked",
+      "boat": "locked",
+      "record": "locked",
+      "moro": "active",
+      "rendered": {
+        "boat": true,
+        "damagedBoat": false,
+        "ledger": true,
+        "blurredLedger": false,
+        "sealed": [
+          false,
+          false
+        ],
+        "originalGuard": true,
+        "preservationKit": true,
+        "moroEyes": true,
+        "antennaLight": true,
+        "trolley": false,
+        "waterHeight": 0.26,
+        "indicators": [
+          "9f5844",
+          "9f5844"
+        ]
+      }
+    },
+    {
+      "id": "damaged",
+      "boat": "damaged",
+      "record": "unreadable",
+      "moro": "asleep",
+      "rendered": {
+        "boat": false,
+        "damagedBoat": true,
+        "ledger": false,
+        "blurredLedger": true,
+        "sealed": [
+          false,
+          false
+        ],
+        "originalGuard": false,
+        "preservationKit": false,
+        "moroEyes": false,
+        "antennaLight": false,
+        "trolley": true,
+        "waterHeight": 0.43,
+        "indicators": [
+          "9f5844",
+          "9f5844"
+        ]
+      }
+    },
+    {
+      "id": "sealed",
+      "boat": "sealed",
+      "record": "sealed",
+      "moro": "asleep",
+      "rendered": {
+        "boat": false,
+        "damagedBoat": false,
+        "ledger": false,
+        "blurredLedger": false,
+        "sealed": [
+          true,
+          true
+        ],
+        "originalGuard": false,
+        "preservationKit": false,
+        "moroEyes": false,
+        "antennaLight": false,
+        "trolley": true,
+        "waterHeight": 0.43,
+        "indicators": [
+          "9f5844",
+          "9f5844"
+        ]
+      }
+    },
+    {
+      "id": "recovered",
+      "boat": "intact",
+      "record": "intact",
+      "moro": "active",
+      "rendered": {
+        "boat": true,
+        "damagedBoat": false,
+        "ledger": true,
+        "blurredLedger": false,
+        "sealed": [
+          false,
+          false
+        ],
+        "originalGuard": false,
+        "preservationKit": false,
+        "moroEyes": true,
+        "antennaLight": true,
+        "trolley": false,
+        "waterHeight": 0.26,
+        "indicators": [
+          "9f5844",
+          "9f5844"
+        ]
+      }
+    }
+  ],
+  "motion": {
+    "samples": 7,
+    "distinctMoroTilts": 7,
+    "reducedMotion": {
+      "curatorHead": 0,
+      "curatorArm": 0,
+      "moroTilt": 0,
+      "antenna": 0
+    }
+  },
+  "nativeGame": {
+    "stages": [
+      {
+        "stage": "invitation-inspected",
+        "sceneId": "O00",
+        "phase": "exploring",
+        "observations": [
+          "invitation"
+        ],
+        "camera": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "allBodiesClear": true
+      },
+      {
+        "stage": "curator-greeted",
+        "sceneId": "O00",
+        "phase": "exploring",
+        "observations": [
+          "invitation",
+          "curator"
+        ],
+        "camera": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "allBodiesClear": true
+      },
+      {
+        "stage": "travel-start",
+        "sceneId": "S01",
+        "phase": "travelling",
+        "observations": [
+          "invitation",
+          "curator"
+        ],
+        "camera": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "allBodiesClear": true
+      },
+      {
+        "stage": "gallery-arrival",
+        "sceneId": "S01",
+        "phase": "reading",
+        "observations": [
+          "invitation",
+          "curator"
+        ],
+        "camera": {
+          "zoom": 1,
+          "pitch": 43,
+          "yaw": 35
+        },
+        "allBodiesClear": true
+      },
+      {
+        "stage": "camera-rotated",
+        "sceneId": "S01",
+        "phase": "exploring",
+        "observations": [
+          "invitation",
+          "curator"
+        ],
+        "camera": {
+          "zoom": 1,
+          "pitch": 51,
+          "yaw": 125
+        },
+        "allBodiesClear": true
+      }
+    ]
+  },
+  "metrics": {
+    "maxSampledRoomDrawCalls": 285,
+    "maxSampledRoomTriangles": 33654,
+    "postPasses": 0,
+    "shadowMapLights": 0,
+    "gpuTimeMeasured": false
+  },
+  "browserErrors": [],
+  "tests": {
+    "command": "npm test",
+    "passed": 81,
+    "failed": 0
+  },
+  "visualReview": "Front/rear/side/top contact sheets across all model entries plus representative close-ups and all nine room layouts; 912 rendered views were not each manually reviewed.",
+  "reproduce": {
+    "render": "node scripts/check-asset-visuals.mjs URL OUTPUT_DIR PLAYWRIGHT_NODE_MODULES",
+    "gameplay": "node scripts/check-asset-gameplay.mjs URL OUTPUT_DIR PLAYWRIGHT_NODE_MODULES"
+  }
+}

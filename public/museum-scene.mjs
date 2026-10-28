@@ -9,9 +9,9 @@ import {
 } from './museum-map.mjs';
 import { canOccupy, moveBody } from './museum-collision.mjs';
 import { collectStaticColliders } from './museum-colliders.mjs';
-import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './museum-asset-core.mjs';
-import { createMuseumProps } from './museum-props.mjs';
-import { createMuseumActors } from './museum-actors.mjs';
+import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './assets/shared/core.mjs';
+import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
+import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
 
 function moroIsRevealed({ sceneId, storyVersion, hotspots = [] }) {
   if (sceneId === 'O00') return false;
@@ -609,8 +609,8 @@ export function mountMuseum(
     '#e4dfc8', '#29443f', 28
   );
   const mapDesk = makeAsset('map-lectern', [0, 0.05, 14.2], scene, { faceMaterial: mapFace }).group;
-  makeAsset('clock', [3.6, 1.2, -3.4], rooms.office);
-  makeAsset('tools-rack', [0, 1.35, -3.95], rooms.maintenance);
+  makeAsset('clock', [3.6, 1.2, -4.82], rooms.office);
+  makeAsset('tools-rack', [0, 1.35, -4.82], rooms.maintenance);
   for (const x of [-2.7, -1.4, -0.1])
     makeAsset('document-tray', [x, 1.45, -2.6], rooms.reception);
   const invitation = makeAsset('invitation', [0, 1.42, 0.41], mapDesk, {
