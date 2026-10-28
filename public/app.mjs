@@ -454,6 +454,7 @@ function updateMuseum() {
     mode: view.mode,
     storyVersion: view.storyVersion,
     currentRoomId: view.currentRoomId,
+    visitedRoomIds: view.visitedRoomIds,
     travel: view.travel,
     hotspots: view.exploration?.hotspots ?? [],
     // A dismissed dialogue must release its close-up, which also locks walking.

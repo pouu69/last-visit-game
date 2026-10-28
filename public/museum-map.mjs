@@ -113,6 +113,23 @@ export function spawnForRoom(roomId) {
   return [...room.spawn];
 }
 
+/** Deterministic room route, shared by access control and saved visit history. */
+export function roomRoute(start, goal) {
+  const queue = [[start]], visited = new Set([start]);
+  while (queue.length) {
+    const path = queue.shift();
+    if (path.at(-1) === goal) return path;
+    for (const [a, b] of CONNECTIONS) {
+      const next = a === path.at(-1) ? b : b === path.at(-1) ? a : null;
+      if (next && !visited.has(next)) {
+        visited.add(next);
+        queue.push([...path, next]);
+      }
+    }
+  }
+  return [];
+}
+
 const floorAreas = [...ROOMS, ...CORRIDORS].map((area) => ({
   minX: area.x - area.width / 2,
   maxX: area.x + area.width / 2,

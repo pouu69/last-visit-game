@@ -15,7 +15,7 @@ import {
   investigationFor, evaluatePuzzle, evaluateDeduction, deductionPresentation,
 } from './investigation.mjs';
 import { openingContent } from './content/opening.mjs';
-import { ROOMS, sceneRoomId } from '../public/museum-map.mjs';
+import { ROOMS, sceneRoomId, roomRoute } from '../public/museum-map.mjs';
 
 const STORY_VERSIONS = Object.freeze({
   map: 'museum-map-4',
@@ -1150,6 +1150,16 @@ function transition(state, event) {
 
 /** Only this projection may cross to the browser; unrevealed prose never does. */
 export function publicView(state) {
+  // Saved events already contain every completed arrival; no save-format migration is needed.
+  let lastRoom = state.storyVersion === STORY_VERSION ? 'foyer' : 'gallery';
+  const visitedRooms = new Set([lastRoom, state.currentRoomId]);
+  for (const event of state.events) {
+    const roomId = event.type === 'ARRIVE' ? event.roomId
+      : event.type === 'SKIP_INTRO' ? 'gallery' : null;
+    if (!roomId) continue;
+    for (const id of roomRoute(lastRoom, roomId)) visitedRooms.add(id);
+    lastRoom = roomId;
+  }
   const travelling = state.phase === 'travelling';
   const definition = travelling ? null : state.investigationDefinition;
   const readiness = choiceReadiness(state);
@@ -1245,6 +1255,7 @@ export function publicView(state) {
     mode: state.mode,
     storyVersion: state.storyVersion,
     currentRoomId: state.currentRoomId,
+    visitedRoomIds: [...visitedRooms].filter(Boolean),
     travel,
     canSkipIntro: canSkipIntro(state),
     sceneId: state.sceneId,

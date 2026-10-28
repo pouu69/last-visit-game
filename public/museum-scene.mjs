@@ -6,6 +6,7 @@ import {
   sceneRoomId,
   roomAt,
   spawnForRoom,
+  roomRoute,
 } from './museum-map.mjs';
 import { canOccupy, moveBody } from './museum-collision.mjs';
 import { collectStaticColliders } from './museum-colliders.mjs';
@@ -225,6 +226,13 @@ export function mountMuseum(
     whiteSpace: 'nowrap',
   });
   root.append(speakerMarker);
+  const accessFeedback = document.createElement('div');
+  accessFeedback.className = 'museum-access-feedback';
+  accessFeedback.setAttribute('role', 'status');
+  accessFeedback.setAttribute('aria-live', 'polite');
+  accessFeedback.hidden = true;
+  root.append(accessFeedback);
+  let accessFeedbackUntil = 0, lastAccessDeniedAt = -Infinity;
   const hotspotLayer = document.createElement('div');
   hotspotLayer.setAttribute('aria-label', '박물관에서 조사할 대상');
   Object.assign(hotspotLayer.style, {
@@ -480,15 +488,21 @@ export function mountMuseum(
     const direction = Math.sign(horizontal ? to.x - from.x : to.z - from.z);
     for (const [room, sign] of [[from, direction], [to, -direction]]) {
       const gate = new THREE.Mesh(
-        geometry(new THREE.BoxGeometry(horizontal ? 0.12 : 3.5, 1.85, horizontal ? 3.5 : 0.12)),
-        gateMaterial
+        geometry(new THREE.BoxGeometry(horizontal ? 0.12 : 3.5, 2.3, horizontal ? 3.5 : 0.12)),
+        gateMaterial.clone()
       );
+      materials.add(gate.material);
       gate.position.set(
         horizontal ? room.x + sign * room.width / 2 : room.x,
-        0.94,
+        1.17,
         horizontal ? room.z : room.z + sign * room.depth / 2
       );
-      gate.userData.collision = 'none';
+      gate.name = 'access-gate';
+      gate.userData.collisionCeiling = 2.2;
+      gate.userData.deniedAt = -Infinity;
+      gate.userData.open = false;
+      gate.userData.motionStartedAt = -Infinity;
+      gate.userData.fromY = 1.17;
       gate.userData.accessEdge = [fromId, toId].sort().join(':');
       scene.add(gate);
       accessGates.push(gate);
@@ -1281,23 +1295,7 @@ export function mountMuseum(
     ];
   }
   function canWalk(x, z, body = bodyFor(player), occupants = []) {
-    if (body.id === 'player' && !playerAreaAllowed(x, z)) return false;
     return canOccupy(body, x, z, obstacles, occupants);
-  }
-  function roomRoute(start, goal) {
-    const queue = [[start]], visited = new Set([start]);
-    while (queue.length) {
-      const path = queue.shift();
-      if (path.at(-1) === goal) return path;
-      for (const [a, b] of CONNECTIONS) {
-        const next = a === path.at(-1) ? b : b === path.at(-1) ? a : null;
-        if (next && !visited.has(next)) {
-          visited.add(next);
-          queue.push([...path, next]);
-        }
-      }
-    }
-    return [];
   }
   function updateAccessGates() {
     const travel = current.mode === 'map' && current.phase === 'travelling' ? current.travel : null;
@@ -1307,28 +1305,111 @@ export function mountMuseum(
     const openEdges = new Set(
       route.slice(1).map((room, index) => [route[index], room].sort().join(':'))
     );
-    for (const gate of accessGates) gate.visible = !openEdges.has(gate.userData.accessEdge);
+    const visited = new Set(current.visitedRoomIds ?? [current.currentRoomId]);
+    for (const [a, b] of CONNECTIONS)
+      if (visited.has(a) && visited.has(b)) openEdges.add([a, b].sort().join(':'));
+    for (const gate of accessGates) {
+      const open = openEdges.has(gate.userData.accessEdge);
+      if (gate.userData.open === open) continue;
+      gate.userData.open = open;
+      gate.userData.fromY = gate.position.y;
+      gate.userData.motionStartedAt = performance.now();
+    }
   }
-  function playerAreaAllowed(x, z) {
-    const travel = current.travel;
-    if (current.phase !== 'travelling' || !travel) return roomAt(x, z) === current.currentRoomId;
-
-    const start = travel.fromRoomId ?? current.currentRoomId;
-    const goal = travel.toRoomId;
-    const route = roomRoute(start, goal);
-    const roomId = roomAt(x, z);
-    if (roomId === start || roomId === goal) return true;
-    return CORRIDORS.some(
-      (corridor) =>
-        route.some(
-          (room, index) =>
-            index < route.length - 1 &&
-            ((corridor.from === room && corridor.to === route[index + 1]) ||
-              (corridor.to === room && corridor.from === route[index + 1]))
-        ) &&
-        Math.abs(x - corridor.x) <= corridor.width / 2 &&
-        Math.abs(z - corridor.z) <= corridor.depth / 2
-    );
+  function advanceAccessGates(now) {
+    let changed = false;
+    const solidBefore = new Set(obstacles.map((box) => box.id));
+    for (const gate of accessGates) {
+      const targetY = gate.userData.open ? 2.27 : 1.17;
+      if (gate.position.y === targetY) continue;
+      // Never lower a door onto the player, a companion, or a towed trolley.
+      const horizontal = gate.geometry.parameters.width < gate.geometry.parameters.depth;
+      const occupied = activeBodies().some((body) =>
+        Math.hypot(
+          Math.max(Math.abs(body.x - gate.position.x) - (horizontal ? 0.06 : 1.75), 0),
+          Math.max(Math.abs(body.z - gate.position.z) - (horizontal ? 1.75 : 0.06), 0)
+        ) < body.radius + 0.12
+      );
+      if (!gate.userData.open && occupied) {
+        gate.userData.fromY = gate.position.y;
+        gate.userData.motionStartedAt = now;
+        continue;
+      }
+      const t = Math.min(1, (now - gate.userData.motionStartedAt) / 650);
+      const eased = t * t * (3 - 2 * t);
+      gate.position.y = gate.userData.fromY + (targetY - gate.userData.fromY) * eased;
+      // Roll the panel into the lintel: the top stays at 2.32 while its bottom rises.
+      gate.scale.y = (2.32 - gate.position.y) * 2 / 2.3;
+      changed = true;
+    }
+    if (changed) {
+      obstacles = collectStaticColliders(scene);
+      const passageOpened = accessGates.some((gate) => gate.userData.open &&
+        solidBefore.has(gate.uuid) && !obstacles.some((box) => box.id === gate.uuid));
+      if (passageOpened && current.travel) {
+        const destination = ROOMS.find((room) => room.id === current.travel.toRoomId);
+        for (const actor of actors) {
+          if (!actor.object.visible || !actor.initialized || actor.path.length ||
+              safelyInsideRoom(actor.object, destination.id)) continue;
+          actor.destination = null;
+          stageActor(actor, destination, true, false);
+        }
+      }
+    }
+  }
+  function denyAccess(gate) {
+    const now = performance.now();
+    if (now - lastAccessDeniedAt < 1200) return;
+    lastAccessDeniedAt = now;
+    gate.userData.deniedAt = now;
+    accessFeedback.textContent = gate.userData.open
+      ? '문이 열리고 있습니다. 잠시 기다려 주세요.'
+      : current.travel
+      ? '이 문은 잠겨 있습니다. 안내된 통로로 이동해 주세요.'
+      : '지금은 들어갈 수 없습니다. 먼저 이 방의 조사를 마쳐 주세요.';
+    accessFeedback.hidden = false;
+    accessFeedbackUntil = now + 2600;
+    gameAudio.play('blocked');
+    if (!motionPreference.matches)
+      accessFeedback.animate(
+        [{ marginLeft: '0px' }, { marginLeft: '-6px' }, { marginLeft: '5px' }, { marginLeft: '0px' }],
+        { duration: 240, easing: 'ease-out' }
+      );
+  }
+  function blockingGate(body, x, z) {
+    return accessGates.find((gate) => {
+      const box = obstacles.find((item) => item.id === gate.uuid);
+      if (!box) return false;
+      return Math.hypot(
+        Math.max(box.minX - x, 0, x - box.maxX),
+        Math.max(box.minZ - z, 0, z - box.maxZ)
+      ) < body.radius;
+    });
+  }
+  function gateAlongPath(x, z) {
+    const origin = new THREE.Vector3(player.position.x, 0.94, player.position.z);
+    const direction = new THREE.Vector3(x - origin.x, 0, z - origin.z);
+    const distance = direction.length();
+    if (!distance) return null;
+    const ray = new THREE.Ray(origin, direction.normalize());
+    // Use the ground route rather than the camera ray when a floor tap is beyond a door.
+    let nearest = null, nearestDistance = distance;
+    for (const gate of accessGates.filter((item) => obstacles.some((box) => box.id === item.uuid))) {
+      const box = new THREE.Box3().setFromObject(gate);
+      const hit = ray.intersectBox(box, new THREE.Vector3());
+      if (hit && origin.distanceTo(hit) <= nearestDistance) {
+        nearest = gate;
+        nearestDistance = origin.distanceTo(hit);
+      }
+    }
+    return nearest;
+  }
+  function safelyInsideRoom(object, roomId) {
+    const room = ROOMS.find((item) => item.id === roomId);
+    const margin = bodyFor(object).radius + 0.12;
+    return Boolean(room &&
+      Math.abs(object.position.x - room.x) < room.width / 2 - margin &&
+      Math.abs(object.position.z - room.z) < room.depth / 2 - margin);
   }
   function clearPlacement(object, point, roomId, occupants = activeBodies()) {
     const body = bodyFor(object);
@@ -1742,6 +1823,10 @@ export function mountMuseum(
     for (let index = 0; index < steps; index++) {
       const occupants = activeBodies();
       const next = moveBody(bodyFor(player), dx / steps, dz / steps, obstacles, occupants);
+      if (next.blocked) {
+        const gate = blockingGate(bodyFor(player), player.position.x + dx / steps, player.position.z + dz / steps);
+        if (gate) denyAccess(gate);
+      }
       if (towingMoro) {
         const gapX = next.x - moro.position.x,
           gapZ = next.z - moro.position.z;
@@ -1912,9 +1997,27 @@ export function mountMuseum(
     );
     raycaster.setFromCamera(pointer, camera);
     if (!raycaster.ray.intersectPlane(floorPlane, floorPoint)) return;
+    const gateHit = raycaster.intersectObjects(
+      accessGates.filter((gate) => obstacles.some((box) => box.id === gate.uuid))
+    )[0];
+    if (gateHit && gateHit.distance <= raycaster.ray.origin.distanceTo(floorPoint)) {
+      walkPath = [];
+      pendingInspect = null;
+      denyAccess(gateHit.object);
+      ensureAnimation();
+      return;
+    }
     renderer.domElement.focus({ preventScroll: true });
     pendingInspect = null;
     if (routeTo(floorPoint.x, floorPoint.z)) ensureAnimation();
+    else {
+      const gate = gateAlongPath(floorPoint.x, floorPoint.z);
+      if (gate) {
+        walkPath = [];
+        denyAccess(gate);
+        ensureAnimation();
+      }
+    }
   }
   function cameraInputBlocked() {
     return Boolean(
@@ -2134,8 +2237,11 @@ export function mountMuseum(
     if (destination) {
       if (roomAt(player.position.x, player.position.z) !== destination) lastArrival = null;
       if (
-        roomAt(player.position.x, player.position.z) === destination &&
-        (!towingMoro || roomAt(moro.position.x, moro.position.z) === destination) &&
+        safelyInsideRoom(player, destination) &&
+        (!towingMoro || safelyInsideRoom(moro, destination)) &&
+        actors.filter((actor) => actor.object.visible && actor.initialized &&
+          actor.destination?.startsWith(`${destination}:`))
+          .every((actor) => safelyInsideRoom(actor.object, destination)) &&
         lastArrival !== destination
       ) {
         lastArrival = destination;
@@ -2206,7 +2312,16 @@ export function mountMuseum(
       return;
     }
     lastRenderedAt = now;
+    advanceAccessGates(now);
     advancePlayer(now);
+    accessFeedback.hidden = now >= accessFeedbackUntil;
+    for (const gate of accessGates) {
+      const progress = Math.min(1, (now - gate.userData.deniedAt) / 420);
+      const pulse = 1 - progress;
+      gate.material.emissive.set('#b04819');
+      gate.material.emissiveIntensity = pulse * 0.85;
+      gate.material.opacity = 0.34 + pulse * 0.35;
+    }
     if (!activeAnchor) aimAtScene();
     else aimAtAnchor(activeAnchor);
     if (startTime === null) startTime = now;
@@ -2378,6 +2493,7 @@ export function mountMuseum(
     interactive = false,
     mode = 'map',
     currentRoomId = sceneRoomId(sceneId) ?? 'gallery',
+    visitedRoomIds = [currentRoomId],
     travel = null,
     objectiveTarget = null,
   }) {
@@ -2406,6 +2522,7 @@ export function mountMuseum(
       interactive,
       mode,
       currentRoomId,
+      visitedRoomIds,
       travel,
       objectiveTarget,
     };
@@ -2425,6 +2542,9 @@ export function mountMuseum(
       walkPath = [];
       pendingInspect = null;
       pressed.clear();
+      accessFeedback.hidden = true;
+      accessFeedbackUntil = 0;
+      lastAccessDeniedAt = -Infinity;
     }
     if (!travel) lastArrival = null;
     if (previous.activeHotspot !== activeHotspot || previous.sceneId !== sceneId)
@@ -2608,12 +2728,22 @@ export function mountMuseum(
         curatorVisible: curator.visible,
         collision: {
           staticBoxes: obstacles.length,
+          closedGates: accessGates.filter((gate) => !gate.userData.open).length,
+          gates: accessGates.map((gate) => ({
+            edge: gate.userData.accessEdge,
+            closed: !gate.userData.open,
+            solid: obstacles.some((box) => box.id === gate.uuid),
+            x: gate.position.x,
+            y: gate.position.y,
+            z: gate.position.z,
+          })),
           bodies: activeBodies().map((body) => ({
             ...body,
             clear: canWalk(body.x, body.z, body, activeBodies()),
           })),
           towingMoro,
         },
+        accessFeedback: accessFeedback.hidden ? null : accessFeedback.textContent,
         actors: actors.map((actor) => ({
           id: actor.id,
           x: actor.object.position.x,

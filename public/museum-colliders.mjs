@@ -7,14 +7,14 @@ export function collectStaticColliders(root) {
   root.updateMatrixWorld(true);
   const colliders = [];
 
-  function appendBounds(localBounds, matrix, id) {
+  function appendBounds(localBounds, matrix, id, ceiling) {
     const bounds = localBounds.clone().applyMatrix4(matrix);
     if (bounds.isEmpty()) return;
-    appendWorldBounds(bounds.min, bounds.max, id);
+    appendWorldBounds(bounds.min, bounds.max, id, ceiling);
   }
 
-  function appendWorldBounds(min, max, id) {
-    if (max.y < 0.12 || min.y > 1.65) return;
+  function appendWorldBounds(min, max, id, ceiling = 1.65) {
+    if (max.y < 0.12 || min.y > ceiling) return;
     colliders.push(
       Object.freeze({
         id,
@@ -28,6 +28,7 @@ export function collectStaticColliders(root) {
 
   function visit(object) {
     if (!object.visible || object.userData.collision === 'none') return;
+    const ceiling = object.userData.collisionCeiling ?? 1.65;
     // Authored asset proxies preserve holes and passable clearances after render meshes merge.
     // An empty proxy list intentionally makes the whole asset visual-only.
     if (Array.isArray(object.userData.assetColliders)) {
@@ -42,7 +43,7 @@ export function collectStaticColliders(root) {
               min.min(point);
               max.max(point);
             }
-        appendWorldBounds(min, max, `${object.uuid}:proxy:${index}`);
+        appendWorldBounds(min, max, `${object.uuid}:proxy:${index}`, ceiling);
       }
       return;
     }
@@ -55,11 +56,12 @@ export function collectStaticColliders(root) {
           appendBounds(
             object.geometry.boundingBox,
             object.matrixWorld.clone().multiply(instance),
-            `${object.uuid}:${index}`
+            `${object.uuid}:${index}`,
+            ceiling
           );
         }
       } else {
-        appendBounds(object.geometry.boundingBox, object.matrixWorld, object.uuid);
+        appendBounds(object.geometry.boundingBox, object.matrixWorld, object.uuid, ceiling);
       }
     }
     for (const child of object.children) visit(child);

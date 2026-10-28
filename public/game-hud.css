@@ -1,4 +1,23 @@
 /* The field stays visible. Large navigation and reading surfaces open on request. */
+.museum-access-feedback {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  transform: translate(-50%, -50%);
+  max-width: min(380px, calc(100% - 32px));
+  width: max-content;
+  padding: 12px 18px;
+  border: 1px solid #e1a05f;
+  border-radius: 8px;
+  background: #2e2118f5;
+  color: #ffe7c4;
+  box-shadow: 0 5px 20px #07191188;
+  font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
+  pointer-events: none;
+  z-index: 8;
+}
 #audio-settings {
   display: grid;
   gap: 8px;

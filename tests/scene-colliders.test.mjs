@@ -2,8 +2,37 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as THREE from 'three';
 import { collectStaticColliders } from '../public/museum-colliders.mjs';
+import { moveBody } from '../public/museum-collision.mjs';
 
 const options = { timeout: 5_000 };
+
+test('a retracting gate blocks traversal until it clears the tallest companion', options, (t) => {
+  const geometry = new THREE.BoxGeometry(3.5, 2.3, 0.12);
+  const material = new THREE.MeshBasicMaterial();
+  t.after(() => { geometry.dispose(); material.dispose(); });
+  const scene = new THREE.Scene();
+  const gate = new THREE.Mesh(geometry, material);
+  gate.position.set(0, 1.17, 7);
+  gate.userData.collisionCeiling = 2.2;
+  scene.add(gate);
+  const body = { id: 'player', x: 0, z: 6, radius: 0.38 };
+  for (const y of [1.17, 2.05]) {
+    gate.position.y = y;
+    gate.scale.y = (2.32 - y) * 2 / 2.3;
+    const boxes = collectStaticColliders(scene);
+    assert.equal(boxes.length, 1, `gate at ${y} must still block`);
+    const result = moveBody(body, 0, 5, boxes);
+    assert.equal(result.blocked, true);
+    assert.ok(result.z <= 7 - 0.06 - body.radius + 1e-12, JSON.stringify(result));
+  }
+  gate.position.y = 2.27;
+  gate.scale.y = (2.32 - 2.27) * 2 / 2.3;
+  assert.equal(collectStaticColliders(scene).length, 0);
+  assert.equal(moveBody(body, 0, 5, collectStaticColliders(scene)).blocked, false);
+  gate.position.y = 1.17;
+  gate.scale.y = 1;
+  assert.equal(moveBody(body, 0, 5, collectStaticColliders(scene)).blocked, true);
+});
 
 test(
   'cloned furniture keeps separate world footprints for each transformed instance',

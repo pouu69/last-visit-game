@@ -140,6 +140,10 @@ export const gameAudio = {
     setBus(name);
   },
   play(kind = 'click') {
+    if (kind === 'blocked') {
+      tone({ frequency: 180, endFrequency: 90, duration: 0.16, type: 'triangle', bus: 'sfx', volume: 0.06 });
+      return;
+    }
     if (kind === 'inspect' || kind === 'confirm') {
       tone({ frequency: 660, endFrequency: 880, duration: 0.2, type: 'sine', bus: 'sfx', volume: 0.07 });
       return;

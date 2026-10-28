@@ -324,6 +324,9 @@ test(
     assert.equal(state.phase, 'travelling');
     assert.equal(state.position, 0);
     assert.equal(view.currentRoomId, 'gallery');
+    assert.ok(view.visitedRoomIds.includes('foyer'));
+    assert.ok(view.visitedRoomIds.includes('gallery'));
+    assert.equal(view.visitedRoomIds.includes('maintenance'), false);
     assert.deepEqual(view.travel, {
       fromRoomId: 'gallery',
       toRoomId: 'maintenance',
@@ -355,6 +358,11 @@ test(
     assert.equal(arrived.currentRoomId, 'maintenance');
     assert.equal(arrived.phase, 'reading');
     assert.equal(publicView(arrived).travel, null);
+    assert.deepEqual(new Set(publicView(arrived).visitedRoomIds),
+      new Set(['foyer', 'gallery', 'archive', 'maintenance']));
+    const revisited = restoreGame(JSON.parse(JSON.stringify(saveGame(arrived).record)));
+    assert.equal(revisited.ok, true);
+    assert.deepEqual(publicView(revisited.state).visitedRoomIds, publicView(arrived).visitedRoomIds);
     assert.equal(arrived.messages.length, 1);
     assert.equal(arrived.messages[0].text, state.segment[0].text);
     assert.equal(
