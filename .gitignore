@@ -1,0 +1,42 @@
+# Local credentials and saved games
+.env
+.env.*
+!.env.example
+.npmrc
+/data/
+
+# Dependencies and generated builds
+node_modules/
+.npm/
+/dist/
+/output/
+
+# Generated evidence; these two JSON fixtures are required by the tests
+/artifacts/browser/
+/artifacts/browser-profile/
+/artifacts/*.json
+!/artifacts/narrative-check.json
+!/artifacts/full-play-complete-record.json
+/artifacts/*.zip
+/playwright-report/
+/test-results/
+/coverage/
+
+# Local caches and process files
+.cache/
+.serena/cache/
+__pycache__/
+*.py[cod]
+*.log
+*.pid
+*.pid.lock
+
+# OS and editor temporary files
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+.idea/
+*.swp
+*.swo
+*~
