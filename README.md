@@ -86,8 +86,11 @@ npm run build
 | `scripts/build.mjs`, `server.mjs`                            | 정적 빌드와 로컬 미리보기                 |
 | `tests/`                                                     | 게임 진행·저장·이동·빌드 회귀 검증        |
 | `.agents/skills/`, `SKILLS.md`                               | 개발용 Three.js 스킬과 출처·라이선스 안내 |
+| `.codex/config.toml`                                         | 프로젝트 전용 Three.js Resources MCP 연결 |
 
 `src/engine.js`, `src/story.js`, `docs/design.md`는 보존한 초기 초안이며 현재 게임에서 실행하지 않는다. Three.js는 `0.186.1`로 고정한다. [외부 의존성](docs/dependencies.md)과 [개발 스킬 안내](SKILLS.md)에서 관련 자료를 확인할 수 있다.
+
+Three.js Resources MCP는 [프로젝트 설정](.codex/config.toml)에 등록되어 있다. Codex에서 프로젝트를 신뢰하고 재시작하면 개발 에이전트가 가이드와 코드 예제를 조회할 수 있다. API 키는 필요하지 않으며, 사용 방법은 [MCP 안내](SKILLS.md#프로젝트-mcp)를 참고한다.
 
 ## 검증
 
