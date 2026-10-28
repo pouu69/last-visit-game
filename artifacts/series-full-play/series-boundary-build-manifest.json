@@ -1,0 +1,270 @@
+{
+  "app.mjs": {
+    "bytes": 58812,
+    "sha256": "4595b27f2e0dc6e88236109951ded2589ded6e7c2f5a58599ca3aa770cb53c2a"
+  },
+  "asset-gallery.html": {
+    "bytes": 6636,
+    "sha256": "58b675ca9120de8c46d30d064b3193e62290535027b5b52d1be06fef116d7aa1"
+  },
+  "asset-gallery.mjs": {
+    "bytes": 17947,
+    "sha256": "7ca6cf3a077b1539b7859a54d0b62b1377e0dd768d76aa3c0072b944a483e657"
+  },
+  "assets/episodes/ep-01/actors.mjs": {
+    "bytes": 12002,
+    "sha256": "9e161708ccac5839296020c734b148e8e495684b65639a0b4343f79695e71389"
+  },
+  "assets/episodes/ep-01/environment.mjs": {
+    "bytes": 11113,
+    "sha256": "748cf68711f54d5ae90f165f6786fdff8fc2814b8dc619619756ecf8ed23d21c"
+  },
+  "assets/episodes/ep-01/props.mjs": {
+    "bytes": 22021,
+    "sha256": "fc10a453bab3ae84607afb02ea80f2ffd04c9b03d532e64ad67052743532f21c"
+  },
+  "assets/episodes/ep-02/actors.mjs": {
+    "bytes": 3360,
+    "sha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+  },
+  "assets/episodes/ep-02/model-kit.mjs": {
+    "bytes": 2134,
+    "sha256": "1f4209e0712d451bbc85b52719e55947162a2e58c17c1a909f63fb7d41b79964"
+  },
+  "assets/episodes/ep-02/props.mjs": {
+    "bytes": 5022,
+    "sha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+  },
+  "assets/episodes/ep-03/props.mjs": {
+    "bytes": 4095,
+    "sha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+  },
+  "assets/episodes/ep-04/props.mjs": {
+    "bytes": 4232,
+    "sha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+  },
+  "assets/episodes/ep-05/props.mjs": {
+    "bytes": 2680,
+    "sha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+  },
+  "assets/shared/core.mjs": {
+    "bytes": 6388,
+    "sha256": "e8c36eab76ca27037b5de092a4f00328ace7e872eb04d47508f5891e2d1c8b08"
+  },
+  "audio.mjs": {
+    "bytes": 10890,
+    "sha256": "d0823d97ca1d807f049a311faf76fb825457147dcdf6eb7a4e134c68bd008715"
+  },
+  "dialogue-ui.css": {
+    "bytes": 10804,
+    "sha256": "7dff2ad19058428a9236bb2148d0ddb8126bf06672637dc318be8e47e71a4b91"
+  },
+  "docs/manuscript/chapter-1.md": {
+    "bytes": 32929,
+    "sha256": "f93ec5efe36559f998816342bf68c53e9777b8e5086409aa9d183fa786871678"
+  },
+  "docs/manuscript/chapter-2.md": {
+    "bytes": 38620,
+    "sha256": "08ef13ca3347aa05a9af669374e074aeec06b9fdd605303d120927a212d3696c"
+  },
+  "docs/manuscript/chapter-3.md": {
+    "bytes": 38073,
+    "sha256": "e9d6fce5dfbcbdf762fc5880036cfcea485bf5b60822bbf6ebf091072abfe961"
+  },
+  "docs/manuscript/endings.md": {
+    "bytes": 17009,
+    "sha256": "58c89dbea430043fddce69b5bb00fd6750a65766593cfb22ddc7050ddf00e8d5"
+  },
+  "docs/manuscript/prologue.md": {
+    "bytes": 2206,
+    "sha256": "0d776a70efaeb3485427100dfd2c7430f9259d581b2bcf77ba8987333834c3b1"
+  },
+  "docs/manuscript/reading-routes.md": {
+    "bytes": 4238,
+    "sha256": "bf30696a7acb3defa791ff0cb29aea45e396793dcb8aa3e977817b0d496065ea"
+  },
+  "docs/manuscript/README.md": {
+    "bytes": 2426,
+    "sha256": "588ae48bd40036d5760c7a85e7fac1adf979bc4bf42e46d3e8199e71c009539a"
+  },
+  "docs/series/episode-01-bridge.md": {
+    "bytes": 11449,
+    "sha256": "9667958793ca7c10b205745e8d9d1f5acac874e0ca7467431e4560ab9e086e50"
+  },
+  "docs/series/episode-02-station.md": {
+    "bytes": 19074,
+    "sha256": "d18ee1be1a74195080bed006949c571e1a663bcf6b739a23f094352686529fe3"
+  },
+  "docs/series/episode-03-theatre.md": {
+    "bytes": 19693,
+    "sha256": "22a59bfcc695f3970569bb0353af8af9f1c83c0d21ce0aa7856f59737df376c6"
+  },
+  "docs/series/episode-04-workshop.md": {
+    "bytes": 17600,
+    "sha256": "198a964b88659dd9306b21b91a250d91effba64adadf302ca27e89ba55c13a4d"
+  },
+  "docs/series/episode-05-river.md": {
+    "bytes": 19662,
+    "sha256": "07e8aa9911182edb695c1d8b2995d99cc62aab30bc473902eb63d99f4069bcac"
+  },
+  "field-action.mjs": {
+    "bytes": 4205,
+    "sha256": "ca3b107faa3aa2e6cc3317292a73405a3eceda7e12933fa2d414a62f817b8272"
+  },
+  "field-tools.css": {
+    "bytes": 8587,
+    "sha256": "90b6f49732247cc35454018d1a2c5f720a921308d0e52c9ec09295216f4f733d"
+  },
+  "game-hud.css": {
+    "bytes": 7790,
+    "sha256": "62645228793e91684c8e79b988038831d84763ee9cf731512fbf87459005d7e2"
+  },
+  "images/title/museum-night.png": {
+    "bytes": 2224933,
+    "sha256": "08804dfbc3b122c0fa51d9a7b60f18e01336f56175c7f59cca0fe0c187b63df0"
+  },
+  "index.html": {
+    "bytes": 16555,
+    "sha256": "6bdcaf8017e72e994af7db6f2adbf46506f560d56ba98b52a39f68343e6bb6db"
+  },
+  "investigation-ui.mjs": {
+    "bytes": 25610,
+    "sha256": "23bbc481b7a98f9c9d9ad0bf95ebdbf503b906d177267d6b8f0bf2b8ac522b37"
+  },
+  "invitation-intro.css": {
+    "bytes": 8324,
+    "sha256": "d0a8f08c0ba5879833df5ee242b18963e7d24206b805739603a17b3eadc049a2"
+  },
+  "invitation-intro.mjs": {
+    "bytes": 9338,
+    "sha256": "7f172016eb6cce4e217b9ee7e5ff7263658497e1845195e0985bea0e0a4e0e91"
+  },
+  "museum-colliders.mjs": {
+    "bytes": 2696,
+    "sha256": "9f80d033ee4b6ce14b45a9edea4e165980299c297c441bf1e12ce86492783607"
+  },
+  "museum-collision.mjs": {
+    "bytes": 2532,
+    "sha256": "3e5b63e877971382574834e7aa2b83d9a89e79f91a97b9b9ac7d63619942fa08"
+  },
+  "museum-keyboard.mjs": {
+    "bytes": 294,
+    "sha256": "eedaf2b767b53490a4ad4634659df965d83ad0e35532cc08b87a9ef11387827c"
+  },
+  "museum-map.mjs": {
+    "bytes": 5663,
+    "sha256": "a0ca1108f72824ed0393f9899e860da22afad118e3f6b830df8de2d944733a84"
+  },
+  "museum-scene.mjs": {
+    "bytes": 116795,
+    "sha256": "32b26e70dae54d33e284c6366e25f09c7e0d3c16a57f9b7cc1ef2ea65fcdab38"
+  },
+  "npc-ambient.mjs": {
+    "bytes": 2133,
+    "sha256": "7118e86c9278c82f3c6d2e40e812e8ce939a6c0e80b21b9efb28d22d1e051c16"
+  },
+  "npc-utility.mjs": {
+    "bytes": 1183,
+    "sha256": "aded657209c0dcfa722771e0b42f7823df1fddd083127763995f323be82abf36"
+  },
+  "prologue.mjs": {
+    "bytes": 2194,
+    "sha256": "6120c2f63b2031a696759604ef5b971000f4c7ec52930efd72d139e19cb3e775"
+  },
+  "series-action-plan.mjs": {
+    "bytes": 10064,
+    "sha256": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01"
+  },
+  "series-game.css": {
+    "bytes": 2454,
+    "sha256": "e86203bb7f1831672341fb0db52a123bcea23db06dbf4497b904c4b797d595d3"
+  },
+  "series-game.mjs": {
+    "bytes": 15180,
+    "sha256": "ee35bbafa17ad02bc065ae222c8983a34ad76cb0dea45bd3576df50dcec18925"
+  },
+  "series-transition.mjs": {
+    "bytes": 3818,
+    "sha256": "6ae62bfa69462ec15725cc6c4f329622a3c11a0f27476a9971712a3a3bba357c"
+  },
+  "series-world.mjs": {
+    "bytes": 36931,
+    "sha256": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041"
+  },
+  "src/content/chapter-3.mjs": {
+    "bytes": 17400,
+    "sha256": "0f397ed0abba55404d04678d67eccf700b7b12971069eab4700aea3ef8f152a3"
+  },
+  "src/content/chapters-12.mjs": {
+    "bytes": 14252,
+    "sha256": "a4714024aaf001b317d11759c68704bf0b5a296678d2f6ac8d2966de11c88834"
+  },
+  "src/content/opening.mjs": {
+    "bytes": 2585,
+    "sha256": "d39db9907d7f2920327c4a5f822789a031b338e109dec88deb836859c8b887d5"
+  },
+  "src/content/read-manuscript.mjs": {
+    "bytes": 3367,
+    "sha256": "1a02b7d504721012b698908756bd82860ed4a0ade93d51ae29cf24a5c5074fd7"
+  },
+  "src/game-state.mjs": {
+    "bytes": 19062,
+    "sha256": "515e16e6461ad093fba60b54f89b4817a032fc7cc15d4d02972243d200ad9591"
+  },
+  "src/hash.mjs": {
+    "bytes": 2979,
+    "sha256": "762a05849c5d670ed99be8a605c24d4e488085f7ef5c45a62250181cd94749f9"
+  },
+  "src/investigation.mjs": {
+    "bytes": 43876,
+    "sha256": "84373439d1f2be63be88f76e4688c83336ffcfee347eed89b3c1622c12a90633"
+  },
+  "src/local-sessions.mjs": {
+    "bytes": 6163,
+    "sha256": "1936c90a80cba0ef3813ba99f05fd955658ea859df93f330b97f3a1755425507"
+  },
+  "src/playbook.mjs": {
+    "bytes": 53510,
+    "sha256": "df248de1ddffbc8df007db38a2dddab6a66516c90003d59d5d6415e02343379f"
+  },
+  "src/player-name.mjs": {
+    "bytes": 598,
+    "sha256": "9d5b4c7704fe0329b470857b4c3a9aaa6673c4829a0fb07a26754c1f3c34affd"
+  },
+  "src/route-rules.mjs": {
+    "bytes": 5541,
+    "sha256": "bd97e90491155c8dadeae215270e010efc968dc2a16b565a8a895f8a2d1fb0ee"
+  },
+  "src/series-content.mjs": {
+    "bytes": 17256,
+    "sha256": "8c8777ba8f9ba63b82bf6404336009cdda498ad89e6a5c2f4d30fa3062bbfc0f"
+  },
+  "src/series-state.mjs": {
+    "bytes": 12304,
+    "sha256": "5bcb69a40114250a197779f35492b1c2fba6ed61dba4757361a54cbd7cd7f719"
+  },
+  "src/t22-dialogue.mjs": {
+    "bytes": 8506,
+    "sha256": "0d8af7405981a32db924be59a8d7465e4830da65f1b5604f072e75cd27812dd7"
+  },
+  "style.css": {
+    "bytes": 38584,
+    "sha256": "9f38b2e7ce78abd207283a8dcecfcbed759d370cd1970c9120f856335ec93f54"
+  },
+  "title-screen.css": {
+    "bytes": 5772,
+    "sha256": "17f68800e46ab6216eb21795cf4d457313082da18527ffb7e10e0cac7141ccc5"
+  },
+  "vendor/THREE-LICENSE.txt": {
+    "bytes": 1081,
+    "sha256": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+  },
+  "vendor/three.core.js": {
+    "bytes": 1458113,
+    "sha256": "9edde002b066a9a05676a6127f67735b62baf399bdea529f2f7e31657da769e6"
+  },
+  "vendor/three.module.js": {
+    "bytes": 662772,
+    "sha256": "9052042d676cb0fdc1ddfefe193053f34b7ac0513a616fdac4535d49987812ea"
+  }
+}

@@ -6,7 +6,9 @@ import { startMuseumGame } from './browser-game-entry.mjs';
 // Usage: node scripts/check-asset-visuals.mjs URL OUTPUT_DIR [PLAYWRIGHT_NODE_MODULES]
 const base = process.argv[2] ?? 'http://127.0.0.1:5197';
 const output = resolve(process.argv[3] ?? 'artifacts/asset-visuals');
-const runtime = process.argv[4];
+const runtime = process.argv[4]?.startsWith('--') ? undefined : process.argv[4];
+const episode=Number(process.argv.find(arg=>arg.startsWith('--episode='))?.split('=')[1]??1);
+const galleryOnly=process.argv.includes('--gallery-only');
 const load = createRequire(runtime ? resolve(runtime, 'package.json') : import.meta.url);
 const { chromium } = load('playwright');
 const browser = await chromium.launch({ headless: true });
@@ -17,7 +19,7 @@ await mkdir(resolve(output, 'rooms'), { recursive: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1200, height: 900 }, reducedMotion: 'reduce' });
   page.on('pageerror', (error) => errors.push(error.message));
-  await page.goto(`${base}/asset-gallery.html`);
+  await page.goto(`${base}/asset-gallery.html?episode=${episode}`);
   await page.waitForFunction(() => document.documentElement.dataset.ready === 'true');
   const catalog = await page.evaluate(() => window.assetGallery.catalog);
   for (const entry of process.argv.includes('--rooms-only') ? [] : catalog) {
@@ -44,14 +46,15 @@ try {
     process.stdout.write(`Captured ${entry.id}\n`);
   }
   report.scale=[];
-  for(const id of ['moro','paper-boat','curator','exhibit-case']) for(const zoom of [.6,1,1.8]) {
+  for(const id of (episode===1?['moro','paper-boat','curator','exhibit-case']:catalog.slice(0,3).map(e=>e.id))) for(const zoom of [.6,1,1.8]) {
     await page.evaluate(({id,zoom})=>{window.assetGallery.select(id);window.assetGallery.setCamera({yaw:35,pitch:43,zoom});},{id,zoom});
     const path=`scale-${id}-${zoom}.png`;
     await page.screenshot({path:resolve(output,path)});
     report.scale.push({id,zoom,path,diagnostics:await page.evaluate(()=>window.assetGallery.diagnostics())});
   }
-  await page.evaluate(() => { window.assetGallery.select('moro'); window.assetGallery.setCamera({ yaw: 35, pitch: 43 }); });
+  await page.evaluate((id) => { window.assetGallery.select(id); window.assetGallery.setCamera({ yaw: 35, pitch: 43 }); },episode===1?'moro':catalog[0].id);
   await page.screenshot({ path: resolve(output, 'gallery.png') });
+  if(!galleryOnly) {
   // Mount the production scene with deterministic public snapshots, without mutating saved playthroughs.
   await page.evaluate(async () => {
     window.assetGallery.dispose();
@@ -114,6 +117,9 @@ try {
   await page.waitForFunction(()=>!document.getElementById('game').hidden);
   await page.screenshot({path:resolve(output,'game-introduction.png')});
   report.app = {text:(await page.locator('body').innerText()).slice(0,1800),diagnostics:await page.evaluate(()=>window.museumDiagnostics())};
+  }
+  report.counts={assets:new Set(report.gallery.map(e=>e.id)).size,views:report.gallery.length,expectedViews:process.argv.includes('--rooms-only')?0:catalog.length*24,episode};
+  if(report.counts.views!==report.counts.expectedViews) throw new Error('Incomplete 24-view catalog capture');
   if (errors.length) throw new Error(`Browser errors: ${errors.join('; ')}`);
 } finally {
   await writeFile(resolve(output,'report.json'),`${JSON.stringify(report,null,2)}\n`);

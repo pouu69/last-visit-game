@@ -38,6 +38,23 @@
   border: 1px solid #b18a54;
   border-radius: 6px;
 }
+.npc-ambient-bubble {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(250px, calc(100% - 32px));
+  padding: 9px 12px;
+  border: 1px solid #b6a27b99;
+  border-radius: 12px 12px 12px 3px;
+  background: #18382ff2;
+  color: #f2e6c9;
+  box-shadow: 0 3px 14px #061b1440;
+  font-size: 12px;
+  line-height: 1.65;
+  pointer-events: none;
+}
+
 .museum-access-feedback {
   position: absolute;
   left: 50%;

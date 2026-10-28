@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-28T16:31:56.104Z",
+  "meaning": "Current dist files at spatial QA completion; not per-network response fingerprints",
+  "hashes": {
+    "series-game.mjs": "ee35bbafa17ad02bc065ae222c8983a34ad76cb0dea45bd3576df50dcec18925",
+    "series-world.mjs": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041",
+    "series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+    "audio.mjs": "d0823d97ca1d807f049a311faf76fb825457147dcdf6eb7a4e134c68bd008715",
+    "museum-scene.mjs": "f427e6e244c7d31fb7405ad20e79e8910e30ad9962e18b18f9d784220e888e47"
+  }
+}

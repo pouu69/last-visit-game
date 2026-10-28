@@ -1,0 +1,9260 @@
+{
+  "generatedAt": "2026-10-28T16:09:17.201Z",
+  "base": "http://127.0.0.1:5188",
+  "gallery": [
+    {
+      "id": "guide-lamp",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 5,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 6,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 7,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 8,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 9,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 10,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 11,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/guide-lamp-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 12,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 13,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 14,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 15,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 16,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 17,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 18,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 19,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/guide-lamp-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 20,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 21,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 22,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 23,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 24,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 25,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 26,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 27,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "guide-lamp",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/guide-lamp-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ]
+      },
+      "meshes": 7,
+      "sprites": 0,
+      "frames": 28,
+      "calls": 9,
+      "triangles": 1256,
+      "geometries": 7,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 30,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 31,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 32,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 33,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 34,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 35,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 36,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/fixed-stand-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 37,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 38,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 39,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 40,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 41,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 42,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 43,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 44,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/fixed-stand-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 45,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 46,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 47,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 48,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 49,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 50,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 51,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 52,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "fixed-stand",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/fixed-stand-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 53,
+      "calls": 4,
+      "triangles": 556,
+      "geometries": 9,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/carrying-base-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 55,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/carrying-base-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 56,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/carrying-base-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 57,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/carrying-base-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 58,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/carrying-base-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 59,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/carrying-base-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 60,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/carrying-base-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 61,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/carrying-base-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 62,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/carrying-base-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 63,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/carrying-base-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 64,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/carrying-base-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 65,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/carrying-base-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 66,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/carrying-base-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 67,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/carrying-base-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 68,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/carrying-base-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 69,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/carrying-base-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 70,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/carrying-base-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 71,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/carrying-base-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 72,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/carrying-base-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 73,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/carrying-base-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 74,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/carrying-base-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 75,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/carrying-base-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 76,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/carrying-base-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 77,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "carrying-base",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/carrying-base-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 78,
+      "calls": 5,
+      "triangles": 604,
+      "geometries": 12,
+      "textures": 1,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/hand-signs-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 80,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/hand-signs-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 81,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/hand-signs-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 82,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/hand-signs-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 83,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/hand-signs-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 84,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/hand-signs-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 85,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/hand-signs-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 86,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/hand-signs-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 87,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/hand-signs-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 88,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/hand-signs-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 89,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/hand-signs-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 90,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/hand-signs-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 91,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/hand-signs-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 92,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/hand-signs-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 93,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/hand-signs-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 94,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/hand-signs-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 95,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/hand-signs-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 96,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/hand-signs-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 97,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/hand-signs-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 98,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/hand-signs-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 99,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/hand-signs-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 100,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/hand-signs-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 101,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/hand-signs-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 102,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "hand-signs",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/hand-signs-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ]
+      },
+      "meshes": 4,
+      "sprites": 0,
+      "frames": 103,
+      "calls": 6,
+      "triangles": 376,
+      "geometries": 15,
+      "textures": 3,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 105,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 106,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 107,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 108,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 109,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 110,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 111,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/inspection-documents-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 112,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 113,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 114,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 115,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 116,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 117,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 118,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 119,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/inspection-documents-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 120,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 121,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 122,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 123,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 124,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 125,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 126,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 127,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "inspection-documents",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/inspection-documents-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05400000000000006,
+          0.33999999999999997
+        ]
+      },
+      "meshes": 2,
+      "sprites": 0,
+      "frames": 128,
+      "calls": 4,
+      "triangles": 264,
+      "geometries": 15,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/shade-panel-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 130,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/shade-panel-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 131,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/shade-panel-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 132,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/shade-panel-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 133,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/shade-panel-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 134,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/shade-panel-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 135,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/shade-panel-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 136,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/shade-panel-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 137,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/shade-panel-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 138,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/shade-panel-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 139,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/shade-panel-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 140,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/shade-panel-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 141,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/shade-panel-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 142,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/shade-panel-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 143,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/shade-panel-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 144,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/shade-panel-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 145,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/shade-panel-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 146,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/shade-panel-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 147,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/shade-panel-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 148,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/shade-panel-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 149,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/shade-panel-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 150,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/shade-panel-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 151,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/shade-panel-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 152,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "shade-panel",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/shade-panel-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 153,
+      "calls": 5,
+      "triangles": 412,
+      "geometries": 16,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 155,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 156,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 157,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 158,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 159,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 160,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 161,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/wall-lamp-mount-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 162,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 163,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 164,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 165,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 166,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 167,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 168,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 169,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/wall-lamp-mount-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 170,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 171,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 172,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 173,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 174,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 175,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 176,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 177,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "wall-lamp-mount",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/wall-lamp-mount-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ]
+      },
+      "meshes": 3,
+      "sprites": 0,
+      "frames": 178,
+      "calls": 5,
+      "triangles": 508,
+      "geometries": 18,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/taeo-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 180,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/taeo-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 181,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/taeo-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 182,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/taeo-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 183,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/taeo-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 184,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/taeo-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 185,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/taeo-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 186,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/taeo-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 187,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/taeo-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 188,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/taeo-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 189,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/taeo-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 190,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/taeo-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 191,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/taeo-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 192,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/taeo-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 193,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/taeo-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 194,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/taeo-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 195,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/taeo-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 196,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/taeo-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 197,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/taeo-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 198,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/taeo-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 199,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/taeo-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 200,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/taeo-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 201,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/taeo-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 202,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "taeo",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/taeo-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ]
+      },
+      "meshes": 14,
+      "sprites": 0,
+      "frames": 203,
+      "calls": 16,
+      "triangles": 2112,
+      "geometries": 24,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 0,
+      "pitch": 25,
+      "path": "objects/ideun-y0-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 205,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 45,
+      "pitch": 25,
+      "path": "objects/ideun-y45-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 206,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 90,
+      "pitch": 25,
+      "path": "objects/ideun-y90-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 207,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 135,
+      "pitch": 25,
+      "path": "objects/ideun-y135-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 208,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 180,
+      "pitch": 25,
+      "path": "objects/ideun-y180-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 209,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 225,
+      "pitch": 25,
+      "path": "objects/ideun-y225-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 210,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 270,
+      "pitch": 25,
+      "path": "objects/ideun-y270-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 211,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 315,
+      "pitch": 25,
+      "path": "objects/ideun-y315-p25.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 25,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 212,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 0,
+      "pitch": 43,
+      "path": "objects/ideun-y0-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 213,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 45,
+      "pitch": 43,
+      "path": "objects/ideun-y45-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 214,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 90,
+      "pitch": 43,
+      "path": "objects/ideun-y90-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 215,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 135,
+      "pitch": 43,
+      "path": "objects/ideun-y135-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 216,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 180,
+      "pitch": 43,
+      "path": "objects/ideun-y180-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 217,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 225,
+      "pitch": 43,
+      "path": "objects/ideun-y225-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 218,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 270,
+      "pitch": 43,
+      "path": "objects/ideun-y270-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 219,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 315,
+      "pitch": 43,
+      "path": "objects/ideun-y315-p43.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 43,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 220,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 0,
+      "pitch": 70,
+      "path": "objects/ideun-y0-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 0,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 221,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 45,
+      "pitch": 70,
+      "path": "objects/ideun-y45-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 45,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 222,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 90,
+      "pitch": 70,
+      "path": "objects/ideun-y90-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 90,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 223,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 135,
+      "pitch": 70,
+      "path": "objects/ideun-y135-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 135,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 224,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 180,
+      "pitch": 70,
+      "path": "objects/ideun-y180-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 180,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 225,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 225,
+      "pitch": 70,
+      "path": "objects/ideun-y225-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 225,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 226,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 270,
+      "pitch": 70,
+      "path": "objects/ideun-y270-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 270,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 227,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    },
+    {
+      "id": "ideun",
+      "yaw": 315,
+      "pitch": 70,
+      "path": "objects/ideun-y315-p70.png",
+      "episode": 4,
+      "camera": {
+        "yaw": 315,
+        "pitch": 70,
+        "zoom": 1
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ]
+      },
+      "meshes": 15,
+      "sprites": 0,
+      "frames": 228,
+      "calls": 17,
+      "triangles": 2140,
+      "geometries": 30,
+      "textures": 5,
+      "viewport": {
+        "width": 952,
+        "height": 622,
+        "dpr": 1
+      },
+      "postPasses": 0,
+      "paused": false,
+      "autoturn": false,
+      "wireframe": false,
+      "normals": false
+    }
+  ],
+  "rooms": [],
+  "states": [],
+  "errors": [],
+  "scale": [
+    {
+      "id": "guide-lamp",
+      "zoom": 0.6,
+      "path": "scale-guide-lamp-0.6.png",
+      "diagnostics": {
+        "id": "guide-lamp",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 0.6
+        },
+        "bounds": {
+          "min": [
+            -0.36000001430511475,
+            0.0024999999999999988,
+            -0.36000001430511475
+          ],
+          "max": [
+            0.36000001430511475,
+            1.0350000000000001,
+            0.36000001430511475
+          ]
+        },
+        "meshes": 7,
+        "sprites": 0,
+        "frames": 230,
+        "calls": 9,
+        "triangles": 1256,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "guide-lamp",
+      "zoom": 1,
+      "path": "scale-guide-lamp-1.png",
+      "diagnostics": {
+        "id": "guide-lamp",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1
+        },
+        "bounds": {
+          "min": [
+            -0.36000001430511475,
+            0.0024999999999999988,
+            -0.36000001430511475
+          ],
+          "max": [
+            0.36000001430511475,
+            1.0350000000000001,
+            0.36000001430511475
+          ]
+        },
+        "meshes": 7,
+        "sprites": 0,
+        "frames": 232,
+        "calls": 9,
+        "triangles": 1256,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "guide-lamp",
+      "zoom": 1.8,
+      "path": "scale-guide-lamp-1.8.png",
+      "diagnostics": {
+        "id": "guide-lamp",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1.8
+        },
+        "bounds": {
+          "min": [
+            -0.36000001430511475,
+            0.0024999999999999988,
+            -0.36000001430511475
+          ],
+          "max": [
+            0.36000001430511475,
+            1.0350000000000001,
+            0.36000001430511475
+          ]
+        },
+        "meshes": 7,
+        "sprites": 0,
+        "frames": 234,
+        "calls": 9,
+        "triangles": 1256,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "fixed-stand",
+      "zoom": 0.6,
+      "path": "scale-fixed-stand-0.6.png",
+      "diagnostics": {
+        "id": "fixed-stand",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 0.6
+        },
+        "bounds": {
+          "min": [
+            -0.44999998807907104,
+            0,
+            -0.44999998807907104
+          ],
+          "max": [
+            0.44999998807907104,
+            1.159999966621399,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 2,
+        "sprites": 0,
+        "frames": 236,
+        "calls": 4,
+        "triangles": 556,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "fixed-stand",
+      "zoom": 1,
+      "path": "scale-fixed-stand-1.png",
+      "diagnostics": {
+        "id": "fixed-stand",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1
+        },
+        "bounds": {
+          "min": [
+            -0.44999998807907104,
+            0,
+            -0.44999998807907104
+          ],
+          "max": [
+            0.44999998807907104,
+            1.159999966621399,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 2,
+        "sprites": 0,
+        "frames": 238,
+        "calls": 4,
+        "triangles": 556,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "fixed-stand",
+      "zoom": 1.8,
+      "path": "scale-fixed-stand-1.8.png",
+      "diagnostics": {
+        "id": "fixed-stand",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1.8
+        },
+        "bounds": {
+          "min": [
+            -0.44999998807907104,
+            0,
+            -0.44999998807907104
+          ],
+          "max": [
+            0.44999998807907104,
+            1.159999966621399,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 2,
+        "sprites": 0,
+        "frames": 240,
+        "calls": 4,
+        "triangles": 556,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "carrying-base",
+      "zoom": 0.6,
+      "path": "scale-carrying-base-0.6.png",
+      "diagnostics": {
+        "id": "carrying-base",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 0.6
+        },
+        "bounds": {
+          "min": [
+            -0.5,
+            0,
+            -0.6850000023841858
+          ],
+          "max": [
+            0.5,
+            0.8849999904632568,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 3,
+        "sprites": 0,
+        "frames": 242,
+        "calls": 5,
+        "triangles": 604,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "carrying-base",
+      "zoom": 1,
+      "path": "scale-carrying-base-1.png",
+      "diagnostics": {
+        "id": "carrying-base",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1
+        },
+        "bounds": {
+          "min": [
+            -0.5,
+            0,
+            -0.6850000023841858
+          ],
+          "max": [
+            0.5,
+            0.8849999904632568,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 3,
+        "sprites": 0,
+        "frames": 244,
+        "calls": 5,
+        "triangles": 604,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    },
+    {
+      "id": "carrying-base",
+      "zoom": 1.8,
+      "path": "scale-carrying-base-1.8.png",
+      "diagnostics": {
+        "id": "carrying-base",
+        "episode": 4,
+        "camera": {
+          "yaw": 35,
+          "pitch": 43,
+          "zoom": 1.8
+        },
+        "bounds": {
+          "min": [
+            -0.5,
+            0,
+            -0.6850000023841858
+          ],
+          "max": [
+            0.5,
+            0.8849999904632568,
+            0.44999998807907104
+          ]
+        },
+        "meshes": 3,
+        "sprites": 0,
+        "frames": 246,
+        "calls": 5,
+        "triangles": 604,
+        "geometries": 30,
+        "textures": 5,
+        "viewport": {
+          "width": 952,
+          "height": 622,
+          "dpr": 1
+        },
+        "postPasses": 0,
+        "paused": false,
+        "autoturn": false,
+        "wireframe": false,
+        "normals": false
+      }
+    }
+  ],
+  "counts": {
+    "assets": 9,
+    "views": 216,
+    "expectedViews": 216,
+    "episode": 4
+  }
+}

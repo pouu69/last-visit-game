@@ -1,0 +1,744 @@
+{
+  "schemaVersion": 2,
+  "isTemplate": false,
+  "episodeId": "ep-05",
+  "title": "강변",
+  "approval": "modelled",
+  "storySources": [
+    "docs/series/episode-05-river.md"
+  ],
+  "storyRevision": {
+    "kind": "sha256",
+    "sources": {
+      "docs/series/episode-05-river.md": "07e8aa9911182edb695c1d8b2995d99cc62aab30bc473902eb63d99f4069bcac"
+    }
+  },
+  "artDirection": "assets/shared/art-direction.md",
+  "styleRevision": "series-art-v1",
+  "episodeBrief": "assets/episodes/ep-05/brief.md",
+  "runtime": {
+    "catalogueModule": "public/assets/episodes/ep-05/props.mjs",
+    "actorsModule": "public/assets/episodes/ep-02/actors.mjs",
+    "gameEntryPoint": "public/app.mjs → public/series-game.mjs#mountSeriesGame",
+    "sceneModule": "public/series-world.mjs",
+    "galleryEntryPoint": "public/asset-gallery.html?episode=5",
+    "saveNamespace": "return-path-series-v2:<museum sessionId>",
+    "actionPlanModule": "public/series-action-plan.mjs",
+    "sourceSha256": {
+      "docs/series/episode-05-river.md": "07e8aa9911182edb695c1d8b2995d99cc62aab30bc473902eb63d99f4069bcac",
+      "public/assets/episodes/ep-02/actors.mjs": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de",
+      "public/assets/episodes/ep-05/props.mjs": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381",
+      "public/series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+      "public/series-game.mjs": "53e78fc2c3adff9965e6eed86441eb151aed1fa684c1373d02318debc1c55381",
+      "public/series-world.mjs": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041",
+      "src/series-content.mjs": "b64c5f2bb993176b5a78f022218b021c1a8550251bcf1ad70a19fb0185f2326b",
+      "src/series-state.mjs": "bc4a700ada5895aa40694ed8dceec422a274af87fd7a960f8c521e7167986c9c"
+    }
+  },
+  "review": {
+    "targetModelRevision": "series-2026-10-29",
+    "cameraYawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "cameraPitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ],
+    "actualCatalogueEntries": 6,
+    "actualRoomCount": null,
+    "renderedViews": 312,
+    "manuallyReviewedViews": 52,
+    "visualScript": null,
+    "gameplayScript": null,
+    "commands": [],
+    "evidence": [
+      "artifacts/game-progress.md",
+      "artifacts/series-requirements-audit.md",
+      "artifacts/series-assets/ep-05/report.json",
+      "artifacts/series-assets/ep-05/contact.png",
+      "assets/episodes/ep-05/review/review.md",
+      "artifacts/series-integration-qa/resumed-complete.json",
+      "artifacts/series-integration-qa/resumed-complete.png",
+      "artifacts/series-resume-qa/REPORT.md",
+      "artifacts/series-resume-qa/report.json",
+      "artifacts/series-full-play/report.json",
+      "artifacts/series-full-play/canonical-journey.json",
+      "artifacts/series-resume-qa/story-link-report.json",
+      "artifacts/series-resume-qa/spatial-report.json",
+      "artifacts/series-full-play/series-motion-contact.png",
+      "artifacts/series-full-play/series-motion-active-pairs.png",
+      "artifacts/series-full-play/series-transition-contact.png",
+      "artifacts/series-full-play/series-motion-review.json"
+    ],
+    "result": "modelled-gallery-rendered-partially-inspected-gameplay-pending",
+    "unverified": [
+      "전체 카탈로그의 모든 상태·모션·시점에 대한 개별 모델 게임 승인은 별도 관리 단계이며 이번 대표 게임 경로 완료와 구분"
+    ],
+    "failures": [],
+    "galleryCatalogueEntries": 13,
+    "galleryCatalogueIds": [
+      "ideun",
+      "jeongyeon",
+      "munjeong",
+      "narae",
+      "neighbor",
+      "paper-stack",
+      "river-path-fork",
+      "role-board",
+      "shelter",
+      "shelter-bench",
+      "sohui",
+      "taeo",
+      "water-basin"
+    ],
+    "renderedScaleViews": 9,
+    "manuallyReviewedViewScope": {
+      "reviewer": "root",
+      "yawDegrees": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "pitchDegrees": [
+        43
+      ],
+      "method": "contact-sheet",
+      "full24ViewsInspected": false
+    },
+    "renderReportGeneratedAt": "2026-10-28T16:09:48.315Z",
+    "renderErrors": [],
+    "reviewedScaleImages": [
+      "artifacts/series-assets/ep-05/scale-shelter-0.6.png"
+    ],
+    "gameplayEvidenceScope": "fixture 없는 동일 실제 기록: 1편 E1 terminal/revision296·11선택 → 2~5편 complete/revision39·모든 필수행동. canonical-journey 공식 복원 및 browser errors[] 확인. 전체 카탈로그 개별 게임 승인은 아님.",
+    "representativeGameplayVisualReview": {
+      "result": "passed-within-inspected-scope",
+      "reviewer": "root",
+      "sourceVideo": "artifacts/series-full-play/motion/page@d4198f32630b6b0480d304b2169fca2a.webm",
+      "durationSeconds": 360.72,
+      "overviewFrames": 9,
+      "motionTriplets": 4,
+      "tripletOffsetsSeconds": [
+        0,
+        0.2,
+        0.4
+      ],
+      "transitionWindowSeconds": [
+        69,
+        74.6
+      ],
+      "exhaustiveVideoReview": false
+    }
+  },
+  "assets": [
+    {
+      "assetKey": "ep-05/water-basin",
+      "id": "water-basin",
+      "displayName": "종이배 물대야",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "종이배 물대야",
+      "storyReferences": [
+        "R50",
+        "R51-B",
+        "R54-A"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "empty",
+        "filled"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "water": ""
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.699999988079071,
+          0,
+          -0.699999988079071
+        ],
+        "max": [
+          0.699999988079071,
+          0.3400000035762787,
+          0.699999988079071
+        ],
+        "sizeXYZ": [
+          1.399999976158142,
+          0.3400000035762787,
+          1.399999976158142
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.4,
+        1.4
+      ],
+      "declaredHeight": 0.34,
+      "geometry": {
+        "triangles": 192,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.7,
+            "maxX": 0.7,
+            "minY": 0,
+            "maxY": 0.34,
+            "minZ": -0.7,
+            "maxZ": 0.7
+          }
+        ]
+      },
+      "galleryId": "water-basin",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    },
+    {
+      "assetKey": "ep-05/paper-stack",
+      "id": "paper-stack",
+      "displayName": "새 종이 묶음",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "새 종이 묶음",
+      "storyReferences": [
+        "R50",
+        "R54"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0010000000474974513,
+          -0.27875596284866333
+        ],
+        "max": [
+          0.427215039730072,
+          0.11599999964237218,
+          0.27875593304634094
+        ],
+        "sizeXYZ": [
+          0.7872150540351868,
+          0.11499999959487472,
+          0.5575118958950043
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.78,
+        0.56
+      ],
+      "declaredHeight": 0.12,
+      "geometry": {
+        "triangles": 224,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "paper-stack",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    },
+    {
+      "assetKey": "ep-05/shelter",
+      "id": "shelter",
+      "displayName": "위쪽 그늘 쉼터",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "위쪽 그늘 쉼터",
+      "storyReferences": [
+        "R50",
+        "R53"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -2.7,
+          0,
+          -1.9
+        ],
+        "max": [
+          2.7,
+          3.2,
+          1.899999886751175
+        ],
+        "sizeXYZ": [
+          5.4,
+          3.2,
+          3.799999886751175
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        5.4,
+        3.8
+      ],
+      "declaredHeight": 3.2,
+      "geometry": {
+        "triangles": 444,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -2.4899999999999998,
+            "maxX": -2.31,
+            "minY": 0,
+            "maxY": 3,
+            "minZ": -1.6900000000000002,
+            "maxZ": -1.51
+          },
+          {
+            "minX": -2.4899999999999998,
+            "maxX": -2.31,
+            "minY": 0,
+            "maxY": 3,
+            "minZ": 1.51,
+            "maxZ": 1.6900000000000002
+          },
+          {
+            "minX": 2.31,
+            "maxX": 2.4899999999999998,
+            "minY": 0,
+            "maxY": 3,
+            "minZ": -1.6900000000000002,
+            "maxZ": -1.51
+          },
+          {
+            "minX": 2.31,
+            "maxX": 2.4899999999999998,
+            "minY": 0,
+            "maxY": 3,
+            "minZ": 1.51,
+            "maxZ": 1.6900000000000002
+          }
+        ]
+      },
+      "galleryId": "shelter",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    },
+    {
+      "assetKey": "ep-05/role-board",
+      "id": "role-board",
+      "displayName": "귀환 역할 기록판",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "귀환 역할 기록판",
+      "storyReferences": [
+        "R50",
+        "R51-D",
+        "R53"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "face": "label-귀환-·-역-뒤뜰-표지-문정-/-신호-소희-/-조명-이든"
+      },
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.52,
+          0.010000000000000002,
+          -0.37
+        ],
+        "max": [
+          0.52,
+          0.08999999940395363,
+          0.3699999779462814
+        ],
+        "sizeXYZ": [
+          1.04,
+          0.07999999940395364,
+          0.7399999779462814
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.04,
+        0.74
+      ],
+      "declaredHeight": 0.1,
+      "geometry": {
+        "triangles": 56,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "role-board",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    },
+    {
+      "assetKey": "ep-05/river-path-fork",
+      "id": "river-path-fork",
+      "displayName": "역 뒤뜰·쉼터 보행로 갈림점",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "역 뒤뜰·쉼터 보행로 갈림점",
+      "storyReferences": [
+        "R50",
+        "R51-A"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "cue": "label-위쪽-쉼터"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -2.5109424591064453,
+          0,
+          -0.75
+        ],
+        "max": [
+          2.6557745933532715,
+          0.6399999856948853,
+          2.005040168762207
+        ],
+        "sizeXYZ": [
+          5.166717052459717,
+          0.6399999856948853,
+          2.755040168762207
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        5.4,
+        2.5
+      ],
+      "declaredHeight": 0.64,
+      "geometry": {
+        "triangles": 168,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -2.17,
+            "maxX": -2.0300000000000002,
+            "minY": 0,
+            "maxY": 0.64,
+            "minZ": -0.07,
+            "maxZ": 0.07
+          },
+          {
+            "minX": 2.0300000000000002,
+            "maxX": 2.17,
+            "minY": 0,
+            "maxY": 0.64,
+            "minZ": -0.07,
+            "maxZ": 0.07
+          }
+        ]
+      },
+      "galleryId": "river-path-fork",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    },
+    {
+      "assetKey": "ep-05/shelter-bench",
+      "id": "shelter-bench",
+      "displayName": "밝은 쉼터 벤치",
+      "episodeId": "ep-05",
+      "family": "prop",
+      "role": "밝은 쉼터 벤치",
+      "storyReferences": [
+        "R50",
+        "R53"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-05/props.mjs",
+      "revision": "series-ep-05-2026-10-29",
+      "constructor": "createEpisode05Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.8500000238418579,
+          0,
+          -0.25
+        ],
+        "max": [
+          0.8500000238418579,
+          0.550000011920929,
+          0.2499999850988388
+        ],
+        "sizeXYZ": [
+          1.7000000476837158,
+          0.550000011920929,
+          0.4999999850988388
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.7,
+        0.5
+      ],
+      "declaredHeight": 0.62,
+      "geometry": {
+        "triangles": 140,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.85,
+            "maxX": 0.85,
+            "minY": 0,
+            "maxY": 0.62,
+            "minZ": -0.25,
+            "maxZ": 0.25
+          }
+        ]
+      },
+      "galleryId": "shelter-bench",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-05-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-05-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "12178e00933499ec179fb07f5ca97f32fb71733588581edf831781218dfb5381"
+    }
+  ]
+}

@@ -17,9 +17,14 @@ node_modules/
 /artifacts/*.json
 !/artifacts/narrative-check.json
 !/artifacts/full-play-complete-record.json
+!/artifacts/series-final-check.json
 /artifacts/*.zip
 /artifacts/asset-gameplay/
 /artifacts/asset-visuals/
+/artifacts/series-assets/*/objects/
+/artifacts/series-assets/*/rooms/
+/artifacts/series-full-play/browser-profile/
+/artifacts/series-full-play/motion/*.webm
 /playwright-report/
 /test-results/
 /coverage/

@@ -1,0 +1,32 @@
+{
+  "verifiedAt": "2026-10-28T17:01:46.781Z",
+  "tests": {
+    "pass": 136,
+    "fail": 0,
+    "scope": "npm test with local server port permission"
+  },
+  "build": {
+    "files": 67,
+    "scope": "npm run build sequentially after tests"
+  },
+  "officialRestore": {
+    "museumRevision": 296,
+    "seriesRevision": 39,
+    "visited": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "stage": "complete",
+    "allRequiredActions": true,
+    "flagsHistoryAndEpisodesMatch": true
+  },
+  "runtimeHttpStatus": 200,
+  "sourceChanges": false,
+  "verificationRunNotes": [
+    "Initial simultaneous test/build conflicted over shared dist output; reran sequentially successfully.",
+    "Initial sandbox server test could not bind local port (EPERM); permitted rerun passed."
+  ]
+}

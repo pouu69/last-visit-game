@@ -1,0 +1,43 @@
+{
+  "source": "artifacts/series-full-play/motion/page@4a9f22335d04a9192be2e87c7407e970.webm",
+  "duration": 770.2,
+  "frames": [
+    {
+      "time": 45,
+      "path": "artifacts/series-full-play/motion-sample-45.png"
+    },
+    {
+      "time": 90,
+      "path": "artifacts/series-full-play/motion-sample-90.png"
+    },
+    {
+      "time": 180,
+      "path": "artifacts/series-full-play/motion-sample-180.png"
+    },
+    {
+      "time": 270,
+      "path": "artifacts/series-full-play/motion-sample-270.png"
+    },
+    {
+      "time": 360,
+      "path": "artifacts/series-full-play/motion-sample-360.png"
+    },
+    {
+      "time": 450,
+      "path": "artifacts/series-full-play/motion-sample-450.png"
+    },
+    {
+      "time": 540,
+      "path": "artifacts/series-full-play/motion-sample-540.png"
+    },
+    {
+      "time": 630,
+      "path": "artifacts/series-full-play/motion-sample-630.png"
+    },
+    {
+      "time": 720,
+      "path": "artifacts/series-full-play/motion-sample-720.png"
+    }
+  ],
+  "scope": "representative frames only; movement pairs reviewed separately"
+}

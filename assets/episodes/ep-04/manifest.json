@@ -1,0 +1,826 @@
+{
+  "schemaVersion": 2,
+  "isTemplate": false,
+  "episodeId": "ep-04",
+  "title": "수리소",
+  "approval": "modelled",
+  "storySources": [
+    "docs/series/episode-04-workshop.md"
+  ],
+  "storyRevision": {
+    "kind": "sha256",
+    "sources": {
+      "docs/series/episode-04-workshop.md": "198a964b88659dd9306b21b91a250d91effba64adadf302ca27e89ba55c13a4d"
+    }
+  },
+  "artDirection": "assets/shared/art-direction.md",
+  "styleRevision": "series-art-v1",
+  "episodeBrief": "assets/episodes/ep-04/brief.md",
+  "runtime": {
+    "catalogueModule": "public/assets/episodes/ep-04/props.mjs",
+    "actorsModule": "public/assets/episodes/ep-02/actors.mjs",
+    "gameEntryPoint": "public/app.mjs → public/series-game.mjs#mountSeriesGame",
+    "sceneModule": "public/series-world.mjs",
+    "galleryEntryPoint": "public/asset-gallery.html?episode=4",
+    "saveNamespace": "return-path-series-v2:<museum sessionId>",
+    "actionPlanModule": "public/series-action-plan.mjs",
+    "sourceSha256": {
+      "docs/series/episode-04-workshop.md": "198a964b88659dd9306b21b91a250d91effba64adadf302ca27e89ba55c13a4d",
+      "public/assets/episodes/ep-02/actors.mjs": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de",
+      "public/assets/episodes/ep-04/props.mjs": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600",
+      "public/series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+      "public/series-game.mjs": "53e78fc2c3adff9965e6eed86441eb151aed1fa684c1373d02318debc1c55381",
+      "public/series-world.mjs": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041",
+      "src/series-content.mjs": "b64c5f2bb993176b5a78f022218b021c1a8550251bcf1ad70a19fb0185f2326b",
+      "src/series-state.mjs": "bc4a700ada5895aa40694ed8dceec422a274af87fd7a960f8c521e7167986c9c"
+    }
+  },
+  "review": {
+    "targetModelRevision": "series-2026-10-29",
+    "cameraYawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "cameraPitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ],
+    "actualCatalogueEntries": 7,
+    "actualRoomCount": null,
+    "renderedViews": 216,
+    "manuallyReviewedViews": 36,
+    "visualScript": null,
+    "gameplayScript": null,
+    "commands": [],
+    "evidence": [
+      "artifacts/game-progress.md",
+      "artifacts/series-requirements-audit.md",
+      "artifacts/series-assets/ep-04/report.json",
+      "artifacts/series-assets/ep-04/contact.png",
+      "assets/episodes/ep-04/review/review.md",
+      "artifacts/series-integration-qa/resumed-complete.json",
+      "artifacts/series-integration-qa/resumed-complete.png",
+      "artifacts/series-resume-qa/REPORT.md",
+      "artifacts/series-resume-qa/report.json",
+      "artifacts/series-full-play/report.json",
+      "artifacts/series-full-play/canonical-journey.json",
+      "artifacts/series-resume-qa/story-link-report.json",
+      "artifacts/series-resume-qa/spatial-report.json",
+      "artifacts/series-full-play/series-motion-contact.png",
+      "artifacts/series-full-play/series-motion-active-pairs.png",
+      "artifacts/series-full-play/series-transition-contact.png",
+      "artifacts/series-full-play/series-motion-review.json"
+    ],
+    "result": "modelled-gallery-rendered-partially-inspected-gameplay-pending",
+    "unverified": [
+      "전체 카탈로그의 모든 상태·모션·시점에 대한 개별 모델 게임 승인은 별도 관리 단계이며 이번 대표 게임 경로 완료와 구분"
+    ],
+    "failures": [],
+    "galleryCatalogueEntries": 9,
+    "galleryCatalogueIds": [
+      "carrying-base",
+      "fixed-stand",
+      "guide-lamp",
+      "hand-signs",
+      "ideun",
+      "inspection-documents",
+      "shade-panel",
+      "taeo",
+      "wall-lamp-mount"
+    ],
+    "renderedScaleViews": 9,
+    "manuallyReviewedViewScope": {
+      "reviewer": "root",
+      "yawDegrees": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "pitchDegrees": [
+        43
+      ],
+      "method": "contact-sheet",
+      "full24ViewsInspected": false
+    },
+    "renderReportGeneratedAt": "2026-10-28T16:09:17.201Z",
+    "renderErrors": [],
+    "reviewedScaleImages": [
+      "artifacts/series-assets/ep-04/scale-guide-lamp-1.8.png"
+    ],
+    "gameplayEvidenceScope": "fixture 없는 동일 실제 기록: 1편 E1 terminal/revision296·11선택 → 2~5편 complete/revision39·모든 필수행동. canonical-journey 공식 복원 및 browser errors[] 확인. 전체 카탈로그 개별 게임 승인은 아님.",
+    "representativeGameplayVisualReview": {
+      "result": "passed-within-inspected-scope",
+      "reviewer": "root",
+      "sourceVideo": "artifacts/series-full-play/motion/page@d4198f32630b6b0480d304b2169fca2a.webm",
+      "durationSeconds": 360.72,
+      "overviewFrames": 9,
+      "motionTriplets": 4,
+      "tripletOffsetsSeconds": [
+        0,
+        0.2,
+        0.4
+      ],
+      "transitionWindowSeconds": [
+        69,
+        74.6
+      ],
+      "exhaustiveVideoReview": false
+    }
+  },
+  "assets": [
+    {
+      "assetKey": "ep-04/guide-lamp",
+      "id": "guide-lamp",
+      "displayName": "유리 안내등",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "유리 안내등",
+      "storyReferences": [
+        "W40",
+        "W42"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "lit",
+        "unlit",
+        "shade-adjusted",
+        "base-open"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "bulb": "",
+        "shade": "adjustable-shade",
+        "base": "inspection-base",
+        "latch": ""
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.36000001430511475,
+          0.0024999999999999988,
+          -0.36000001430511475
+        ],
+        "max": [
+          0.36000001430511475,
+          1.0350000000000001,
+          0.36000001430511475
+        ],
+        "sizeXYZ": [
+          0.7200000286102295,
+          1.0325000000000002,
+          0.7200000286102295
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.7,
+        0.72
+      ],
+      "declaredHeight": 1.05,
+      "geometry": {
+        "triangles": 1016,
+        "meshes": 7,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.35,
+            "maxX": 0.35,
+            "minY": 0,
+            "maxY": 0.8,
+            "minZ": -0.36,
+            "maxZ": 0.36
+          }
+        ]
+      },
+      "galleryId": "guide-lamp",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/fixed-stand",
+      "id": "fixed-stand",
+      "displayName": "고정 받침",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "고정 받침",
+      "storyReferences": [
+        "W44",
+        "W45-A"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.44999998807907104,
+          0,
+          -0.44999998807907104
+        ],
+        "max": [
+          0.44999998807907104,
+          1.159999966621399,
+          0.44999998807907104
+        ],
+        "sizeXYZ": [
+          0.8999999761581421,
+          1.159999966621399,
+          0.8999999761581421
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.9,
+        0.9
+      ],
+      "declaredHeight": 1.16,
+      "geometry": {
+        "triangles": 316,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.45,
+            "maxX": 0.45,
+            "minY": 0,
+            "maxY": 1.16,
+            "minZ": -0.45,
+            "maxZ": 0.45
+          }
+        ]
+      },
+      "galleryId": "fixed-stand",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/carrying-base",
+      "id": "carrying-base",
+      "displayName": "낮은 운반대",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "낮은 운반대",
+      "storyReferences": [
+        "W44",
+        "W45-B"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          0,
+          -0.6850000023841858
+        ],
+        "max": [
+          0.5,
+          0.8849999904632568,
+          0.44999998807907104
+        ],
+        "sizeXYZ": [
+          1,
+          0.8849999904632568,
+          1.1349999904632568
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1,
+        1.15
+      ],
+      "declaredHeight": 0.9,
+      "geometry": {
+        "triangles": 364,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.5,
+            "maxX": 0.5,
+            "minY": 0,
+            "maxY": 0.9,
+            "minZ": -0.575,
+            "maxZ": 0.575
+          }
+        ]
+      },
+      "galleryId": "carrying-base",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/hand-signs",
+      "id": "hand-signs",
+      "displayName": "주간 손표지 두 개",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "주간 손표지 두 개",
+      "storyReferences": [
+        "W45-C"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "departure",
+        "wait"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "signs": [
+          "hand-sign-0",
+          "hand-sign-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.8,
+          1.16,
+          0.19999998807907104
+        ],
+        "sizeXYZ": [
+          1.6,
+          1.16,
+          0.3999999910593033
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.6,
+        0.4
+      ],
+      "declaredHeight": 1.18,
+      "geometry": {
+        "triangles": 168,
+        "meshes": 4,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.8,
+            "maxX": 0.8,
+            "minY": 0,
+            "maxY": 1.18,
+            "minZ": -0.2,
+            "maxZ": 0.2
+          }
+        ]
+      },
+      "galleryId": "hand-signs",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/inspection-documents",
+      "id": "inspection-documents",
+      "displayName": "주문서·점검 문서·조립 도면",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "주문서·점검 문서·조립 도면",
+      "storyReferences": [
+        "W40",
+        "W41-D",
+        "W42",
+        "W44"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0.020999999999999935,
+          -0.3
+        ],
+        "max": [
+          0.75,
+          0.05399999946355826,
+          0.33999999999999997
+        ],
+        "sizeXYZ": [
+          1.45,
+          0.032999999463558326,
+          0.6399999999999999
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.5,
+        0.65
+      ],
+      "declaredHeight": 0.06,
+      "geometry": {
+        "triangles": 56,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "inspection-documents",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/shade-panel",
+      "id": "shade-panel",
+      "displayName": "차광판과 연결축",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "차광판과 연결축",
+      "storyReferences": [
+        "W42",
+        "W44"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "adjustable-angle"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "hinge": "shade-hinge",
+        "pin": ""
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.42500001192092896,
+          0.4836267411708832,
+          -0.5388922095298767
+        ],
+        "max": [
+          0.42500001192092896,
+          1.1163732588291169,
+          0.040000000000000015
+        ],
+        "sizeXYZ": [
+          0.8500000238418579,
+          0.6327465176582336,
+          0.5788922095298767
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.9,
+        0.65
+      ],
+      "declaredHeight": 1.15,
+      "geometry": {
+        "triangles": 172,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.45,
+            "maxX": 0.45,
+            "minY": 0,
+            "maxY": 0.15,
+            "minZ": -0.325,
+            "maxZ": 0.325
+          }
+        ]
+      },
+      "galleryId": "shade-panel",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    },
+    {
+      "assetKey": "ep-04/wall-lamp-mount",
+      "id": "wall-lamp-mount",
+      "displayName": "벽 고정 등받침",
+      "episodeId": "ep-04",
+      "family": "prop",
+      "role": "벽 고정 등받침",
+      "storyReferences": [
+        "W44"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-04/props.mjs",
+      "revision": "series-ep-04-2026-10-29",
+      "constructor": "createEpisode04Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "cradle": "lamp-cradle"
+      },
+      "hotspotIds": [],
+      "pivot": "wall-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.35,
+          -0.45,
+          -0.16
+        ],
+        "max": [
+          0.35,
+          0.699999988079071,
+          0.5299999713897705
+        ],
+        "sizeXYZ": [
+          0.7,
+          1.149999988079071,
+          0.6899999713897705
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.7,
+        0.5
+      ],
+      "declaredHeight": 0.9,
+      "geometry": {
+        "triangles": 268,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.35,
+            "maxX": 0.35,
+            "minY": 0,
+            "maxY": 0.9,
+            "minZ": -0.1,
+            "maxZ": 0.1
+          }
+        ]
+      },
+      "galleryId": "wall-lamp-mount",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-04-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-04-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "86693b6f14ae3e7f64dfb7b3e8effdc03b97b741723eae70be4863b96b34f600"
+    }
+  ]
+}

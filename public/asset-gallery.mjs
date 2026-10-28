@@ -3,6 +3,11 @@ import { createAssetCore, MUSEUM_PALETTE } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
 import { createMuseumEnvironment } from './assets/episodes/ep-01/environment.mjs';
+import { createEpisode02Props } from './assets/episodes/ep-02/props.mjs';
+import { createEpisode03Props } from './assets/episodes/ep-03/props.mjs';
+import { createEpisode04Props } from './assets/episodes/ep-04/props.mjs';
+import { createEpisode05Props } from './assets/episodes/ep-05/props.mjs';
+import { createSeriesActors } from './assets/episodes/ep-02/actors.mjs';
 
 const labels = {
   'room-shell': ['박물관 방 구조', '공간'], 'corridor-segment': ['연결 복도', '공간'],
@@ -27,6 +32,7 @@ const labels = {
   'pipe-fixture': ['황동 배관', '정비'], moro: ['안내 로봇 모로', '인물'],
   curator: ['관장 윤서', '인물'], player: ['관람객', '인물'], terminal: ['원격 메시지 단말', '접수'],
 };
+Object.assign(labels,{"route-sign":["옛 푸른 이동 표지","소품"],"double-sign":["새 이중 표지","소품"],"sign-stand":["행사 표지 받침","소품"],"return-crate":["반송 화물 상자","소품"],"folded-map":["출발·귀환 접이 약도","소품"],"station-clock":["11:17 종착역 시계","소품"],"folding-support":["접이식 표지 받침","소품"],"platform-bench":["역 승강장 벤치","소품"],"stroller":["이웃의 유모차","소품"],"munjeong":["문정","소품"],"neighbor":["이웃 연우","소품"],"sohui":["소희","소품"],"jeongyeon":["정연","소품"],"taeo":["태오","소품"],"ideun":["이든","소품"],"narae":["나래","소품"],"chair":["이동 의자","소품"],"microphone":["마이크와 스탠드","소품"],"track-console":["녹음 트랙 대조 화면","소품"],"signal-cards":["숫자·멈춤 카드","소품"],"score-notes":["악보와 편집 메모","소품"],"personal-player":["개인 재생 기기","소품"],"timing-board":["녹음·영상 시계 대조판","소품"],"open-circle":["통로가 열린 객석 의자 배치","소품"],"guide-lamp":["유리 안내등","소품"],"fixed-stand":["고정 받침","소품"],"carrying-base":["낮은 운반대","소품"],"hand-signs":["주간 손표지 두 개","소품"],"inspection-documents":["주문서·점검 문서·조립 도면","소품"],"shade-panel":["차광판과 연결축","소품"],"wall-lamp-mount":["벽 고정 등받침","소품"],"water-basin":["종이배 물대야","소품"],"paper-stack":["새 종이 묶음","소품"],"shelter":["위쪽 그늘 쉼터","소품"],"role-board":["귀환 역할 기록판","소품"],"river-path-fork":["역 뒤뜰·쉼터 보행로 갈림점","소품"],"shelter-bench":["밝은 쉼터 벤치","소품"]});
 const $ = (id) => document.getElementById(id);
 const geometries = new Set(), materials = new Set(), textures = new Set();
 const geometry = (value) => (geometries.add(value), value);
@@ -45,10 +51,17 @@ const core = createAssetCore(THREE, {
   waterPaint: material(MUSEUM_PALETTE.water, { transparent: true, opacity: 0.78, roughness: 0.3 }),
   contact: material('#384b3d', { transparent: true, opacity: 0.17, depthWrite: false }),
 });
-const props = createMuseumProps(core), actors = createMuseumActors(core), environment = createMuseumEnvironment(core);
-const catalog = [...props.ids, ...actors.ids, ...environment.ids].map((id) => ({ id, label: labels[id]?.[0] ?? id, family: labels[id]?.[1] ?? '기타' }));
-catalog.push({ id: 'paper-boat-damaged', label: '종이배 · 손상', family: '증거물', source: 'paper-boat', options: { damaged: true } });
-catalog.push({ id: 'ledger-blurred', label: '원본 장부 · 번짐', family: '증거물', source: 'ledger', options: { blurred: true } });
+const requestedEpisode=Number(new URLSearchParams(location.search).get('episode')??1);
+const episode=[1,2,3,4,5].includes(requestedEpisode)?requestedEpisode:1;
+const factories={1:createMuseumProps,2:createEpisode02Props,3:createEpisode03Props,4:createEpisode04Props,5:createEpisode05Props};
+const props=factories[episode](core), actors=episode===1?createMuseumActors(core):createSeriesActors(core);
+const environment=episode===1?createMuseumEnvironment(core):{ids:[]};
+const cast={2:['munjeong','neighbor'],3:['sohui','jeongyeon'],4:['taeo','ideun'],5:['narae','neighbor','munjeong','sohui','jeongyeon','taeo','ideun']};
+const catalog = [...props.ids, ...(cast[episode]??actors.ids), ...environment.ids].map((id) => ({ id, episode, label: labels[id]?.[0] ?? id, family: actors.ids.includes(id)?'인물':labels[id]?.[1] ?? '소품' }));
+if(episode===1) {
+  catalog.push({ id: 'paper-boat-damaged', episode, label: '종이배 · 손상', family: '증거물', source: 'paper-boat', options: { damaged: true } });
+  catalog.push({ id: 'ledger-blurred', episode, label: '원본 장부 · 번짐', family: '증거물', source: 'ledger', options: { blurred: true } });
+}
 const lookup = new Map(catalog.map((entry) => [entry.id, entry]));
 const scene = new THREE.Scene();
 scene.background = new THREE.Color('#e4dfc8');
@@ -168,7 +181,7 @@ function render() {
 function diagnostics() {
   let meshes = 0, sprites = 0;
   active?.group.traverse((object) => { if (object.isMesh) meshes++; if (object.isSprite) sprites++; });
-  return { id: activeId, camera: { ...settings }, bounds: bounds.toArray?.() ?? { min: bounds.min.toArray(), max: bounds.max.toArray() }, meshes, sprites, frames, calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, viewport: { width, height, dpr: renderer.getPixelRatio() }, postPasses: 0, paused, autoturn, wireframe, normals };
+  return { id: activeId, episode, camera: { ...settings }, bounds: bounds.toArray?.() ?? { min: bounds.min.toArray(), max: bounds.max.toArray() }, meshes, sprites, frames, calls: renderer.info.render.calls, triangles: renderer.info.render.triangles, geometries: renderer.info.memory.geometries, textures: renderer.info.memory.textures, viewport: { width, height, dpr: renderer.getPixelRatio() }, postPasses: 0, paused, autoturn, wireframe, normals };
 }
 function resize() {
   const rect = $('stage').getBoundingClientRect();
@@ -179,6 +192,8 @@ function resize() {
 }
 function listen(node, event, handler, options = {}) { node.addEventListener(event, handler, { ...options, signal: abort.signal }); }
 function toggle(id, get, set) { listen($(id), 'click', () => { set(!get()); $(id).setAttribute('aria-pressed', String(get())); render(); }); }
+$('episode-select').value=String(episode);
+listen($('episode-select'),'change',()=>{const url=new URL(location.href);url.searchParams.set('episode',$('episode-select').value);location.assign(url);});
 for (const entry of catalog) {
   const option = document.createElement('option'); option.value = entry.id; option.textContent = `${entry.family} · ${entry.label}`; $('asset-select').append(option);
 }
@@ -229,5 +244,5 @@ function dispose() {
 }
 listen(window, 'pagehide', dispose);
 window.assetGallery = { select, setCamera, diagnostics, catalog, dispose };
-try { resize(); select('moro'); setCamera(defaults); document.documentElement.dataset.ready = 'true'; frame = requestAnimationFrame(tick); }
+try { resize(); select(episode===1?'moro':catalog[0].id); setCamera(defaults); document.documentElement.dataset.ready = 'true'; frame = requestAnimationFrame(tick); }
 catch (error) { $('error').textContent = `오브젝트를 표시하지 못했습니다: ${error.message}`; throw error; }

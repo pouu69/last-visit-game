@@ -1,0 +1,980 @@
+{
+  "buildHash": "34d314bc72dc1c8d5f95cf21b9c97bada9a46c0093a4a480a8118e4deb34e085",
+  "samples": [
+    {
+      "stage": "museum-P21",
+      "view": {
+        "teamId": 1,
+        "playerName": "여울",
+        "mode": "map",
+        "storyVersion": "museum-map-4",
+        "currentRoomId": "return",
+        "visitedRoomIds": [
+          "foyer",
+          "return",
+          "gallery",
+          "archive",
+          "maintenance",
+          "garden",
+          "control"
+        ],
+        "travel": null,
+        "canSkipIntro": false,
+        "sceneId": "R31",
+        "revision": 205,
+        "phase": "reading",
+        "title": "둘 중 하나, 또는 준비한 방법",
+        "nextScene": null,
+        "chapter": 3,
+        "messages": [
+          {
+            "id": "R31-1",
+            "speaker": "서술",
+            "text": "초록색 승인등이 켜진다. 인양 장치는 아직 움직이지 않는다. 화면에는 두 보관함과, 어느 쪽에도 닿지 않은 고리 하나가 떠 있다."
+          }
+        ],
+        "choices": [],
+        "hints": [],
+        "hintCount": 0,
+        "topics": [],
+        "npc": null,
+        "flags": {
+          "charter": false,
+          "log": false,
+          "statement": true,
+          "request": false,
+          "battery": true,
+          "map": true,
+          "maintenance": true,
+          "repair": false,
+          "boat": "locked",
+          "record": "locked",
+          "moro": "active",
+          "crane": "stable",
+          "lead": "robot",
+          "stance": "listen",
+          "intent": null,
+          "method": null
+        },
+        "knownFacts": [
+          "request_received",
+          "return_clause_removed",
+          "return_delayed"
+        ],
+        "observations": [
+          {
+            "sceneId": "O00",
+            "sceneTitle": "마지막 야간 관람",
+            "id": "invitation",
+            "label": "초대장 확인하기",
+            "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+          },
+          {
+            "sceneId": "O00",
+            "sceneTitle": "마지막 야간 관람",
+            "id": "curator",
+            "label": "윤서와 인사하기",
+            "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "case",
+            "label": "제1호 진열장 살펴보기",
+            "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "trail",
+            "label": "모로와 젖은 흔적",
+            "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "schedule",
+            "label": "벽의 일정표 펼치기",
+            "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+          },
+          {
+            "sceneId": "I01",
+            "sceneTitle": "모로의 정비 통로",
+            "id": "receipt",
+            "label": "모로의 집게와 화면",
+            "text": "조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다."
+          },
+          {
+            "sceneId": "P12",
+            "sceneTitle": "마르지 않은 통로",
+            "id": "map",
+            "label": "시설 운반로 지도",
+            "text": "침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다."
+          },
+          {
+            "sceneId": "S12",
+            "sceneTitle": "“제가 옮겼습니다”",
+            "id": "admission",
+            "label": "모로의 첫 설명 듣기",
+            "text": "모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다."
+          },
+          {
+            "sceneId": "T21",
+            "sceneTitle": "명령을 지킨 안내원",
+            "id": "order",
+            "label": "모로의 작업 명령 확인",
+            "text": "반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다."
+          },
+          {
+            "sceneId": "T21",
+            "sceneTitle": "명령을 지킨 안내원",
+            "id": "fault",
+            "label": "고장 시각과 접수표",
+            "text": "이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다."
+          },
+          {
+            "sceneId": "D22",
+            "sceneTitle": "멈춘 배수선",
+            "id": "valve",
+            "label": "번호가 남은 밸브",
+            "text": "유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다."
+          },
+          {
+            "sceneId": "D22",
+            "sceneTitle": "멈춘 배수선",
+            "id": "rail",
+            "label": "배수선과 레일 점검구",
+            "text": "외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "story",
+            "label": "사진 뒷면의 원래 기록",
+            "text": "나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "request",
+            "label": "반환 요청과 윤서의 인정",
+            "text": "나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "rescue",
+            "label": "격벽과 배수·레일 조작반",
+            "text": "배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다."
+          },
+          {
+            "sceneId": "P21",
+            "sceneTitle": "마지막 인양",
+            "id": "sequence",
+            "label": "제어기 안전 순서",
+            "text": "유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다."
+          },
+          {
+            "sceneId": "P21",
+            "sceneTitle": "마지막 인양",
+            "id": "interlock",
+            "label": "안전 장치와 수동 복구",
+            "text": "검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다."
+          }
+        ],
+        "exploration": {
+          "objective": "두 함의 위험과 쓸 수 있는 전원을 확인한 뒤 구조하세요.",
+          "reason": null,
+          "recommendedHotspotId": "crates",
+          "primaryAction": {
+            "kind": "inspect",
+            "label": "종이배와 장부의 두 함",
+            "hotspotId": "crates"
+          },
+          "hotspots": [
+            {
+              "id": "crates",
+              "label": "종이배와 장부의 두 함",
+              "anchor": "boat",
+              "kind": "inspect",
+              "visited": false
+            },
+            {
+              "id": "power",
+              "label": "모로 전원과 외부 장비",
+              "anchor": "battery",
+              "kind": "inspect",
+              "visited": false
+            }
+          ],
+          "activeHotspot": null,
+          "observations": [],
+          "canChoose": false,
+          "canPlanInvestigation": false,
+          "blockedReason": "종이배와 장부의 두 함, 모로 전원과 외부 장비의 관찰을 끝까지 확인해 주세요.",
+          "deduction": null,
+          "deductionSolved": false,
+          "feedback": null,
+          "puzzle": null
+        },
+        "history": [
+          {
+            "sceneId": "S01",
+            "choiceId": "A",
+            "nextSceneId": "I01",
+            "label": "모로의 바퀴 자국을 따라간다"
+          },
+          {
+            "sceneId": "I01",
+            "choiceId": "B",
+            "nextSceneId": "P12",
+            "label": "정비함의 비상 배터리를 챙긴다"
+          },
+          {
+            "sceneId": "P12",
+            "choiceId": "B",
+            "nextSceneId": "S12",
+            "label": "침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실"
+          },
+          {
+            "sceneId": "S12",
+            "choiceId": "A",
+            "nextSceneId": "T21",
+            "label": "모로가 설명을 끝내도록 기다린다"
+          },
+          {
+            "sceneId": "T21",
+            "choiceId": "D",
+            "nextSceneId": "D22",
+            "label": "모로가 사용한 정비 통로를 확인한다"
+          },
+          {
+            "sceneId": "D22",
+            "choiceId": "A",
+            "nextSceneId": "S22",
+            "label": "수동 배수선과 보조 레일을 점검한다"
+          },
+          {
+            "sceneId": "S22",
+            "choiceId": "B",
+            "nextSceneId": "P21",
+            "label": "윤서에게 변경 사실을 서명으로 확정하게 한다"
+          },
+          {
+            "sceneId": "P21",
+            "choiceId": "B",
+            "nextSceneId": "R31",
+            "label": "인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제"
+          }
+        ],
+        "canNext": true,
+        "readingProgress": {
+          "read": 1,
+          "total": 2
+        },
+        "canContinue": false,
+        "canHint": false
+      },
+      "museum": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.43,
+          "indicators": [
+            "c9dbb0",
+            "c9dbb0"
+          ]
+        },
+        "sceneId": "R31",
+        "phase": "reading",
+        "calls": 136,
+        "triangles": 21104,
+        "geometries": 181,
+        "textures": 7,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": false,
+        "renderedFrames": 283,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "R31-1",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 242,
+          "closedGates": 8,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": false,
+              "solid": false,
+              "x": 8,
+              "y": 2.27,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": false,
+              "solid": false,
+              "x": 8,
+              "y": 2.27,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": false,
+              "solid": false,
+              "x": -8,
+              "y": 2.27,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": false,
+              "solid": false,
+              "x": -16,
+              "y": 2.27,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": false,
+              "solid": false,
+              "x": -16,
+              "y": 2.27,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": false,
+              "solid": false,
+              "x": -16,
+              "y": 2.27,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": false,
+              "solid": false,
+              "x": -16,
+              "y": 2.27,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": 7.499999999999999,
+              "z": -15.999999999999998,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2,
+              "z": -14.997160866325414,
+              "radius": 0.4,
+              "clear": true
+            },
+            {
+              "id": "moro",
+              "x": 0.45073415793715405,
+              "z": -14.65439224320224,
+              "radius": 0.46,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2,
+            "z": -14.997160866325414,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 0.45073415793715405,
+            "z": -14.65439224320224,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": null,
+        "hotspots": [],
+        "interactionTargets": [
+          {
+            "id": "crates",
+            "label": "종이배와 장부의 두 함",
+            "anchor": "boat",
+            "kind": "inspect",
+            "visited": false,
+            "x": 2.53,
+            "z": -15.25
+          },
+          {
+            "id": "power",
+            "label": "모로 전원과 외부 장비",
+            "anchor": "battery",
+            "kind": "inspect",
+            "visited": false,
+            "x": 4.6,
+            "z": -14.8
+          }
+        ],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": 0.0025925073090846524,
+          "antenna": -0.03740600286099085
+        },
+        "avatar": {
+          "x": 7.499999999999999,
+          "z": -15.999999999999998,
+          "roomId": "return",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "return",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 38,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          17.4716387354241,
+          14.818044670152966,
+          -0.8307354361521606
+        ],
+        "cameraTarget": [
+          6.850005338713024,
+          0.34999999999999987,
+          -16.00000000001056
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      },
+      "series": null
+    }
+  ],
+  "errors": [
+    "page.evaluate: Error: Could not reach crates: {\"view\":{\"teamId\":1,\"playerName\":\"여울\",\"mode\":\"map\",\"storyVersion\":\"museum-map-4\",\"currentRoomId\":\"return\",\"visitedRoomIds\":[\"foyer\",\"return\",\"gallery\",\"archive\",\"maintenance\",\"garden\",\"control\"],\"travel\":null,\"canSkipIntro\":false,\"sceneId\":\"R31\",\"revision\":207,\"phase\":\"exploring\",\"title\":\"둘 중 하나, 또는 준비한 방법\",\"nextScene\":null,\"chapter\":3,\"messages\":[{\"id\":\"R31-1\",\"speaker\":\"서술\",\"text\":\"초록색 승인등이 켜진다. 인양 장치는 아직 움직이지 않는다. 화면에는 두 보관함과, 어느 쪽에도 닿지 않은 고리 하나가 떠 있다.\"},{\"id\":\"R31-2\",\"speaker\":\"모로\",\"text\":\"순서 검증이 끝났습니다. 이제 무엇을 꺼낼지 정해야 합니다.\"}],\"choices\":[],\"hints\":[],\"hintCount\":0,\"topics\":[],\"npc\":null,\"flags\":{\"charter\":false,\"log\":false,\"statement\":true,\"request\":false,\"battery\":true,\"map\":true,\"maintenance\":true,\"repair\":false,\"boat\":\"locked\",\"record\":\"locked\",\"moro\":\"active\",\"crane\":\"stable\",\"lead\":\"robot\",\"stance\":\"listen\",\"intent\":null,\"method\":null},\"knownFacts\":[\"request_received\",\"return_clause_removed\",\"return_delayed\"],\"observations\":[{\"sceneId\":\"O00\",\"sceneTitle\":\"마지막 야간 관람\",\"id\":\"invitation\",\"label\":\"초대장 확인하기\",\"text\":\"폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다.\"},{\"sceneId\":\"O00\",\"sceneTitle\":\"마지막 야간 관람\",\"id\":\"curator\",\"label\":\"윤서와 인사하기\",\"text\":\"관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"case\",\"label\":\"제1호 진열장 살펴보기\",\"text\":\"제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"trail\",\"label\":\"모로와 젖은 흔적\",\"text\":\"모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"schedule\",\"label\":\"벽의 일정표 펼치기\",\"text\":\"내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다.\"},{\"sceneId\":\"I01\",\"sceneTitle\":\"모로의 정비 통로\",\"id\":\"receipt\",\"label\":\"모로의 집게와 화면\",\"text\":\"조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다.\"},{\"sceneId\":\"P12\",\"sceneTitle\":\"마르지 않은 통로\",\"id\":\"map\",\"label\":\"시설 운반로 지도\",\"text\":\"침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다.\"},{\"sceneId\":\"S12\",\"sceneTitle\":\"“제가 옮겼습니다”\",\"id\":\"admission\",\"label\":\"모로의 첫 설명 듣기\",\"text\":\"모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다.\"},{\"sceneId\":\"T21\",\"sceneTitle\":\"명령을 지킨 안내원\",\"id\":\"order\",\"label\":\"모로의 작업 명령 확인\",\"text\":\"반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다.\"},{\"sceneId\":\"T21\",\"sceneTitle\":\"명령을 지킨 안내원\",\"id\":\"fault\",\"label\":\"고장 시각과 접수표\",\"text\":\"이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다.\"},{\"sceneId\":\"D22\",\"sceneTitle\":\"멈춘 배수선\",\"id\":\"valve\",\"label\":\"번호가 남은 밸브\",\"text\":\"유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다.\"},{\"sceneId\":\"D22\",\"sceneTitle\":\"멈춘 배수선\",\"id\":\"rail\",\"label\":\"배수선과 레일 점검구\",\"text\":\"외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"story\",\"label\":\"사진 뒷면의 원래 기록\",\"text\":\"나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"request\",\"label\":\"반환 요청과 윤서의 인정\",\"text\":\"나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"rescue\",\"label\":\"격벽과 배수·레일 조작반\",\"text\":\"배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다.\"},{\"sceneId\":\"P21\",\"sceneTitle\":\"마지막 인양\",\"id\":\"sequence\",\"label\":\"제어기 안전 순서\",\"text\":\"유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다.\"},{\"sceneId\":\"P21\",\"sceneTitle\":\"마지막 인양\",\"id\":\"interlock\",\"label\":\"안전 장치와 수동 복구\",\"text\":\"검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다.\"}],\"exploration\":{\"objective\":\"두 함의 위험과 쓸 수 있는 전원을 확인한 뒤 구조하세요.\",\"reason\":null,\"recommendedHotspotId\":\"crates\",\"primaryAction\":{\"kind\":\"inspect\",\"label\":\"종이배와 장부의 두 함\",\"hotspotId\":\"crates\"},\"hotspots\":[{\"id\":\"crates\",\"label\":\"종이배와 장부의 두 함\",\"anchor\":\"boat\",\"kind\":\"inspect\",\"visited\":false},{\"id\":\"power\",\"label\":\"모로 전원과 외부 장비\",\"anchor\":\"battery\",\"kind\":\"inspect\",\"visited\":false}],\"activeHotspot\":null,\"observations\":[],\"canChoose\":false,\"canPlanInvestigation\":false,\"blockedReason\":\"종이배와 장부의 두 함, 모로 전원과 외부 장비의 관찰을 끝까지 확인해 주세요.\",\"deduction\":null,\"deductionSolved\":false,\"feedback\":null,\"puzzle\":null},\"history\":[{\"sceneId\":\"S01\",\"choiceId\":\"A\",\"nextSceneId\":\"I01\",\"label\":\"모로의 바퀴 자국을 따라간다\"},{\"sceneId\":\"I01\",\"choiceId\":\"B\",\"nextSceneId\":\"P12\",\"label\":\"정비함의 비상 배터리를 챙긴다\"},{\"sceneId\":\"P12\",\"choiceId\":\"B\",\"nextSceneId\":\"S12\",\"label\":\"침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실\"},{\"sceneId\":\"S12\",\"choiceId\":\"A\",\"nextSceneId\":\"T21\",\"label\":\"모로가 설명을 끝내도록 기다린다\"},{\"sceneId\":\"T21\",\"choiceId\":\"D\",\"nextSceneId\":\"D22\",\"label\":\"모로가 사용한 정비 통로를 확인한다\"},{\"sceneId\":\"D22\",\"choiceId\":\"A\",\"nextSceneId\":\"S22\",\"label\":\"수동 배수선과 보조 레일을 점검한다\"},{\"sceneId\":\"S22\",\"choiceId\":\"B\",\"nextSceneId\":\"P21\",\"label\":\"윤서에게 변경 사실을 서명으로 확정하게 한다\"},{\"sceneId\":\"P21\",\"choiceId\":\"B\",\"nextSceneId\":\"R31\",\"label\":\"인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제\"}],\"canNext\":false,\"readingProgress\":{\"read\":2,\"total\":2},\"canContinue\":false,\"canHint\":false},\"world\":{\"mode\":\"webgl\",\"assetRevision\":\"museum-low-poly-2026-10-28\",\"assetCatalog\":[\"exhibit-case\",\"archive-desk\",\"courtyard\",\"storage-bays\",\"paper-boat\",\"ledger\",\"sealed-cover\",\"original-guard\",\"trolley\",\"notice-board\",\"valve\",\"supplies\",\"battery\",\"archive-shelf\",\"stamp-set\",\"key-bundle\",\"layered-label\",\"control-panel\",\"packing-table\",\"preservation-kit\",\"exit-door\",\"office-desk\",\"cupboard\",\"reception-counter\",\"bench\",\"map-lectern\",\"clock\",\"tools-rack\",\"document-tray\",\"invitation\",\"arch-window\",\"pipe-fixture\",\"moro\",\"curator\",\"player\",\"terminal\",\"room-shell\",\"corridor-segment\",\"courtyard-path\",\"water-channel\",\"floor-rug\",\"service-strip\",\"wheel-trail\"],\"environmentRevision\":\"museum-environment-2026-10-28\",\"environmentCatalog\":[\"room-shell\",\"corridor-segment\",\"courtyard-path\",\"water-channel\",\"floor-rug\",\"service-strip\",\"wheel-trail\"],\"assetInstances\":108,\"assetState\":{\"boat\":true,\"damagedBoat\":false,\"ledger\":true,\"blurredLedger\":false,\"sealed\":[false,false],\"originalGuard\":true,\"preservationKit\":false,\"moroEyes\":true,\"antennaLight\":true,\"trolley\":false,\"waterHeight\":0.43,\"indicators\":[\"c9dbb0\",\"c9dbb0\"]},\"sceneId\":\"R31\",\"phase\":\"exploring\",\"calls\":159,\"triangles\":26288,\"geometries\":201,\"textures\":7,\"materials\":62,\"dpr\":1,\"width\":1440,\"height\":1000,\"shadowLights\":0,\"postPasses\":0,\"moving\":false,\"renderedFrames\":2335,\"targetFps\":30,\"speaking\":\"모로\",\"messageId\":\"R31-2\",\"curatorVisible\":true,\"collision\":{\"staticBoxes\":242,\"closedGates\":8,\"gates\":[{\"edge\":\"maintenance:return\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":-16},{\"edge\":\"maintenance:return\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":-16},{\"edge\":\"control:return\",\"closed\":false,\"solid\":false,\"x\":8,\"y\":2.27,\"z\":-16},{\"edge\":\"control:return\",\"closed\":false,\"solid\":false,\"x\":8,\"y\":2.27,\"z\":-16},{\"edge\":\"archive:gallery\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":0},{\"edge\":\"archive:gallery\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":0},{\"edge\":\"gallery:office\",\"closed\":true,\"solid\":true,\"x\":8,\"y\":1.17,\"z\":0},{\"edge\":\"gallery:office\",\"closed\":true,\"solid\":true,\"x\":8,\"y\":1.17,\"z\":0},{\"edge\":\"foyer:garden\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":16},{\"edge\":\"foyer:garden\",\"closed\":false,\"solid\":false,\"x\":-8,\"y\":2.27,\"z\":16},{\"edge\":\"foyer:reception\",\"closed\":true,\"solid\":true,\"x\":8,\"y\":1.17,\"z\":16},{\"edge\":\"foyer:reception\",\"closed\":true,\"solid\":true,\"x\":8,\"y\":1.17,\"z\":16},{\"edge\":\"archive:maintenance\",\"closed\":false,\"solid\":false,\"x\":-16,\"y\":2.27,\"z\":-9},{\"edge\":\"archive:maintenance\",\"closed\":false,\"solid\":false,\"x\":-16,\"y\":2.27,\"z\":-7},{\"edge\":\"archive:garden\",\"closed\":false,\"solid\":false,\"x\":-16,\"y\":2.27,\"z\":7},{\"edge\":\"archive:garden\",\"closed\":false,\"solid\":false,\"x\":-16,\"y\":2.27,\"z\":9},{\"edge\":\"gallery:return\",\"closed\":false,\"solid\":false,\"x\":0,\"y\":2.27,\"z\":-9},{\"edge\":\"gallery:return\",\"closed\":false,\"solid\":false,\"x\":0,\"y\":2.27,\"z\":-7},{\"edge\":\"foyer:gallery\",\"closed\":false,\"solid\":false,\"x\":0,\"y\":2.27,\"z\":7},{\"edge\":\"foyer:gallery\",\"closed\":false,\"solid\":false,\"x\":0,\"y\":2.27,\"z\":9},{\"edge\":\"control:office\",\"closed\":true,\"solid\":true,\"x\":16,\"y\":1.17,\"z\":-9},{\"edge\":\"control:office\",\"closed\":true,\"solid\":true,\"x\":16,\"y\":1.17,\"z\":-7},{\"edge\":\"office:reception\",\"closed\":true,\"solid\":true,\"x\":16,\"y\":1.17,\"z\":7},{\"edge\":\"office:reception\",\"closed\":true,\"solid\":true,\"x\":16,\"y\":1.17,\"z\":9}],\"bodies\":[{\"id\":\"player\",\"x\":-0.004788021442642787,\"z\":-17.68057467906968,\"radius\":0.38,\"clear\":true},{\"id\":\"yunseo\",\"x\":-0.9412615170234375,\"z\":-17.5,\"radius\":0.4,\"clear\":true},{\"id\":\"moro\",\"x\":-1.5985141584667775,\"z\":-16.94351711892203,\"radius\":0.46,\"clear\":true}],\"towingMoro\":false},\"accessFeedback\":null,\"actors\":[{\"id\":\"yunseo\",\"x\":-0.9412615170234375,\"z\":-17.5,\"visible\":true,\"moving\":false,\"waypoints\":0,\"activity\":\"roam\",\"ambientPath\":true,\"waiting\":false},{\"id\":\"moro\",\"x\":-1.5985141584667775,\"z\":-16.94351711892203,\"visible\":true,\"moving\":false,\"waypoints\":0,\"activity\":\"rest\",\"ambientPath\":true,\"waiting\":false}],\"ambientSpeech\":null,\"objectiveTarget\":null,\"objectiveMarker\":null,\"remoteNaraVisible\":false,\"worldHotspots\":true,\"interactive\":true,\"activeAnchor\":null,\"hotspots\":[{\"id\":\"crates\",\"anchor\":\"boat\",\"visible\":false},{\"id\":\"power\",\"anchor\":\"battery\",\"visible\":false}],\"interactionTargets\":[{\"id\":\"crates\",\"label\":\"종이배와 장부의 두 함\",\"anchor\":\"boat\",\"kind\":\"inspect\",\"visited\":false,\"x\":2.53,\"z\":-15.25},{\"id\":\"power\",\"label\":\"모로 전원과 외부 장비\",\"anchor\":\"battery\",\"kind\":\"inspect\",\"visited\":false,\"x\":4.6,\"z\":-14.8}],\"poses\":{\"curatorHead\":0,\"curatorArm\":0,\"moroTilt\":0.0039763650755662,\"antenna\":-0.018559739195212685},\"avatar\":{\"x\":-0.004788021442642787,\"z\":-17.68057467906968,\"roomId\":\"return\",\"moving\":false,\"waypoints\":0},\"currentRoomId\":\"return\",\"targetRoomId\":null,\"nearbyLabel\":null,\"roomCount\":9,\"cameraZoom\":1,\"cameraSettings\":{\"zoom\":1,\"pitch\":38,\"yaw\":35},\"cameraPosition\":[10.60741763857139,14.818044670152966,-2.845204437801999],\"cameraTarget\":[-0.01421575813968484,0.34999999999999987,-18.014469001660398],\"cameraFrustum\":{\"top\":4.8,\"bottom\":-4.8},\"speakerMarker\":\"모로\",\"reducedMotion\":false,\"hidden\":false,\"disposed\":false,\"boat\":\"locked\",\"moro\":\"active\"}}\n    at approach (file:///Users/kwanung/development/experiments/last-visit-game/scripts/check-series-full-play.mjs:76:9)\n    at async BindingCall.call (/Users/kwanung/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:61638:27)\n    at async _Page._onBinding (/Users/kwanung/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright-core/lib/coreBundle.js:61056:11)\n    at /Users/kwanung/development/experiments/last-visit-game/scripts/check-series-full-play.mjs:157:16"
+  ],
+  "final": {
+    "view": {
+      "teamId": 1,
+      "playerName": "여울",
+      "mode": "map",
+      "storyVersion": "museum-map-4",
+      "currentRoomId": "return",
+      "visitedRoomIds": [
+        "foyer",
+        "return",
+        "gallery",
+        "archive",
+        "maintenance",
+        "garden",
+        "control"
+      ],
+      "travel": null,
+      "canSkipIntro": false,
+      "sceneId": "R31",
+      "revision": 207,
+      "phase": "exploring",
+      "title": "둘 중 하나, 또는 준비한 방법",
+      "nextScene": null,
+      "chapter": 3,
+      "messages": [
+        {
+          "id": "R31-1",
+          "speaker": "서술",
+          "text": "초록색 승인등이 켜진다. 인양 장치는 아직 움직이지 않는다. 화면에는 두 보관함과, 어느 쪽에도 닿지 않은 고리 하나가 떠 있다."
+        },
+        {
+          "id": "R31-2",
+          "speaker": "모로",
+          "text": "순서 검증이 끝났습니다. 이제 무엇을 꺼낼지 정해야 합니다."
+        }
+      ],
+      "choices": [],
+      "hints": [],
+      "hintCount": 0,
+      "topics": [],
+      "npc": null,
+      "flags": {
+        "charter": false,
+        "log": false,
+        "statement": true,
+        "request": false,
+        "battery": true,
+        "map": true,
+        "maintenance": true,
+        "repair": false,
+        "boat": "locked",
+        "record": "locked",
+        "moro": "active",
+        "crane": "stable",
+        "lead": "robot",
+        "stance": "listen",
+        "intent": null,
+        "method": null
+      },
+      "knownFacts": [
+        "request_received",
+        "return_clause_removed",
+        "return_delayed"
+      ],
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "case",
+          "label": "제1호 진열장 살펴보기",
+          "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "trail",
+          "label": "모로와 젖은 흔적",
+          "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "schedule",
+          "label": "벽의 일정표 펼치기",
+          "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+        },
+        {
+          "sceneId": "I01",
+          "sceneTitle": "모로의 정비 통로",
+          "id": "receipt",
+          "label": "모로의 집게와 화면",
+          "text": "조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다."
+        },
+        {
+          "sceneId": "P12",
+          "sceneTitle": "마르지 않은 통로",
+          "id": "map",
+          "label": "시설 운반로 지도",
+          "text": "침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다."
+        },
+        {
+          "sceneId": "S12",
+          "sceneTitle": "“제가 옮겼습니다”",
+          "id": "admission",
+          "label": "모로의 첫 설명 듣기",
+          "text": "모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다."
+        },
+        {
+          "sceneId": "T21",
+          "sceneTitle": "명령을 지킨 안내원",
+          "id": "order",
+          "label": "모로의 작업 명령 확인",
+          "text": "반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다."
+        },
+        {
+          "sceneId": "T21",
+          "sceneTitle": "명령을 지킨 안내원",
+          "id": "fault",
+          "label": "고장 시각과 접수표",
+          "text": "이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다."
+        },
+        {
+          "sceneId": "D22",
+          "sceneTitle": "멈춘 배수선",
+          "id": "valve",
+          "label": "번호가 남은 밸브",
+          "text": "유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다."
+        },
+        {
+          "sceneId": "D22",
+          "sceneTitle": "멈춘 배수선",
+          "id": "rail",
+          "label": "배수선과 레일 점검구",
+          "text": "외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다."
+        },
+        {
+          "sceneId": "S22",
+          "sceneTitle": "배가 기다린 날",
+          "id": "story",
+          "label": "사진 뒷면의 원래 기록",
+          "text": "나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다."
+        },
+        {
+          "sceneId": "S22",
+          "sceneTitle": "배가 기다린 날",
+          "id": "request",
+          "label": "반환 요청과 윤서의 인정",
+          "text": "나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다."
+        },
+        {
+          "sceneId": "S22",
+          "sceneTitle": "배가 기다린 날",
+          "id": "rescue",
+          "label": "격벽과 배수·레일 조작반",
+          "text": "배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다."
+        },
+        {
+          "sceneId": "P21",
+          "sceneTitle": "마지막 인양",
+          "id": "sequence",
+          "label": "제어기 안전 순서",
+          "text": "유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다."
+        },
+        {
+          "sceneId": "P21",
+          "sceneTitle": "마지막 인양",
+          "id": "interlock",
+          "label": "안전 장치와 수동 복구",
+          "text": "검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다."
+        }
+      ],
+      "exploration": {
+        "objective": "두 함의 위험과 쓸 수 있는 전원을 확인한 뒤 구조하세요.",
+        "reason": null,
+        "recommendedHotspotId": "crates",
+        "primaryAction": {
+          "kind": "inspect",
+          "label": "종이배와 장부의 두 함",
+          "hotspotId": "crates"
+        },
+        "hotspots": [
+          {
+            "id": "crates",
+            "label": "종이배와 장부의 두 함",
+            "anchor": "boat",
+            "kind": "inspect",
+            "visited": false
+          },
+          {
+            "id": "power",
+            "label": "모로 전원과 외부 장비",
+            "anchor": "battery",
+            "kind": "inspect",
+            "visited": false
+          }
+        ],
+        "activeHotspot": null,
+        "observations": [],
+        "canChoose": false,
+        "canPlanInvestigation": false,
+        "blockedReason": "종이배와 장부의 두 함, 모로 전원과 외부 장비의 관찰을 끝까지 확인해 주세요.",
+        "deduction": null,
+        "deductionSolved": false,
+        "feedback": null,
+        "puzzle": null
+      },
+      "history": [
+        {
+          "sceneId": "S01",
+          "choiceId": "A",
+          "nextSceneId": "I01",
+          "label": "모로의 바퀴 자국을 따라간다"
+        },
+        {
+          "sceneId": "I01",
+          "choiceId": "B",
+          "nextSceneId": "P12",
+          "label": "정비함의 비상 배터리를 챙긴다"
+        },
+        {
+          "sceneId": "P12",
+          "choiceId": "B",
+          "nextSceneId": "S12",
+          "label": "침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실"
+        },
+        {
+          "sceneId": "S12",
+          "choiceId": "A",
+          "nextSceneId": "T21",
+          "label": "모로가 설명을 끝내도록 기다린다"
+        },
+        {
+          "sceneId": "T21",
+          "choiceId": "D",
+          "nextSceneId": "D22",
+          "label": "모로가 사용한 정비 통로를 확인한다"
+        },
+        {
+          "sceneId": "D22",
+          "choiceId": "A",
+          "nextSceneId": "S22",
+          "label": "수동 배수선과 보조 레일을 점검한다"
+        },
+        {
+          "sceneId": "S22",
+          "choiceId": "B",
+          "nextSceneId": "P21",
+          "label": "윤서에게 변경 사실을 서명으로 확정하게 한다"
+        },
+        {
+          "sceneId": "P21",
+          "choiceId": "B",
+          "nextSceneId": "R31",
+          "label": "인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제"
+        }
+      ],
+      "canNext": false,
+      "readingProgress": {
+        "read": 2,
+        "total": 2
+      },
+      "canContinue": false,
+      "canHint": false
+    },
+    "series": null
+  }
+}

@@ -15,11 +15,11 @@ export function seededWanderPoints(seed, origin, radius = 2.4, count = 8) {
   });
 }
 
-// Keep a visible, approachable distance while avoiding tiny back-and-forth route changes.
-export function scoreWanderPoint(point, actor, player) {
-  const fromPlayer = Math.hypot(point[0] - player.x, point[1] - player.z);
+// Follow the NPC's current interest; interaction requests interrupt movement separately.
+export function scoreWanderPoint(point, actor, interest) {
+  const fromInterest = Math.hypot(point[0] - interest.x, point[1] - interest.z);
   const fromActor = Math.hypot(point[0] - actor.x, point[1] - actor.z);
-  const approachable = Math.max(0, 1 - Math.abs(fromPlayer - 1.25) / 2.5);
-  const purposefulMotion = Math.min(1, fromActor / 2.4);
-  return approachable * 0.72 + purposefulMotion * 0.28;
+  const interested = Math.max(0, 1 - Math.abs(fromInterest - 1.6) / 5);
+  const purposefulMotion = Math.max(0, 1 - Math.abs(fromActor - 3) / 5);
+  return interested * 0.65 + purposefulMotion * 0.35;
 }

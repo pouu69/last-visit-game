@@ -46,7 +46,14 @@
     });
   }
   async function click(action, changesState = false) {
+    if(window.qaCheckpoint)await window.qaCheckpoint(action);
     const node = [...document.querySelectorAll(`[data-action="${action}"]`)].find(visible);
+    if ((!node || !visible(node)) && window.qaWorldAction &&
+        (action.startsWith('inspect-') || ['field-primary','field-choices','open-puzzle','continue'].includes(action))) {
+      await field();
+      await window.qaWorldAction(action.startsWith('inspect-') ? action.slice(8) : action === 'field-primary' && window.qaView.exploration?.primaryAction?.kind === 'inspect' ? window.qaView.exploration.primaryAction.hotspotId : 'field-action');
+      return window.qaView;
+    }
     if (!node || node.disabled || node.getAttribute('aria-disabled') === 'true')
       throw new Error(
         `Action ${action} is unavailable in ${window.qaView?.sceneId}/${window.qaView?.phase}`
@@ -66,6 +73,7 @@
     if (window.qaView?.canNext) throw new Error('Message segment exceeded 80 steps');
   }
   async function field() {
+    if (window.qaView?.phase === 'travelling' && window.qaTravel) await window.qaTravel();
     await read();
     if (visible(document.querySelector('[data-action="explore"]')))
       await click('explore', true);
@@ -120,6 +128,7 @@
     await field();
     for (let i = 0; i < 12; i++) {
       const hotspot = window.qaView.exploration.hotspots.find((item) => !item.visited);
+      if (window.qaWorldAction && window.qaView.exploration.primaryAction?.kind !== 'inspect') break;
       if (!hotspot) break;
       if (window.qaView.exploration.primaryAction?.hotspotId === hotspot.id) {
         const active = window.qaView.exploration.hotspots.find(
@@ -155,8 +164,8 @@
       await read();
     }
     await field();
-    if (answers[window.qaView.sceneId] && !window.qaView.exploration.deductionSolved) {
-      await click('open-notes');
+    if (answers[window.qaView.sceneId] && window.qaView.exploration.deduction && !window.qaView.exploration.deductionSolved) {
+      await click('field-primary');
       await click(`deduce-${answers[window.qaView.sceneId]}`);
       await click('deduce-submit', true);
       await click('close-panel');
@@ -174,7 +183,7 @@
       await click('puzzle-review');
       await click('puzzle-submit', true);
     } else {
-      await click(
+      if (window.qaView.phase !== 'choosing') await click(
         before.exploration.primaryAction?.kind === 'choices'
           ? 'field-primary'
           : 'field-choices',
@@ -193,6 +202,7 @@
       flags: result.flags,
     });
     await click('continue', true);
+    if (window.qaView?.phase === 'travelling' && window.qaTravel) await window.qaTravel();
     return { sceneId: window.qaView.sceneId, decisions: window.qaView.history.length };
   }
   async function play(route) {
@@ -217,5 +227,5 @@
     play,
     rows,
   };
-  return 'UI driver installed; all actions use rendered buttons';
+  return 'UI driver installed; rendered controls and optional real floor/E navigation';
 };

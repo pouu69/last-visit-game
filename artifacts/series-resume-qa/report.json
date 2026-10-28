@@ -1,0 +1,873 @@
+{
+  "explicitFixtures": true,
+  "checks": [
+    {
+      "check": "reload-in-progress",
+      "status": "passed",
+      "revision": 31,
+      "choices": {
+        "inspection": "A",
+        "plan": "A",
+        "repair": "A",
+        "execution": "A"
+      }
+    },
+    {
+      "check": "hide-cancel-native-caption-retry-once",
+      "status": "passed",
+      "revision": 32
+    },
+    {
+      "check": "reload-action-boundary",
+      "status": "passed",
+      "revision": 32
+    },
+    {
+      "check": "audio-state",
+      "diagnostics": {
+        "state": "locked",
+        "sceneId": 5,
+        "scene": "river",
+        "dialogue": false,
+        "transitionCover": 0,
+        "activeScene": null,
+        "retiringScene": null,
+        "oneShots": 0,
+        "cachedScenes": [],
+        "schedulerTimers": 0,
+        "settings": {
+          "master": 80,
+          "music": 44,
+          "ambience": 40,
+          "sfx": 62,
+          "ui": 48
+        }
+      }
+    },
+    {
+      "check": "ready-mobile-C-selection",
+      "status": "passed",
+      "labels": [
+        "세 접점에서 같은 인사와 신호로 맞는다",
+        "접점마다 다른 사람이 한 일을 맡는다",
+        "현장을 더 살펴보기"
+      ],
+      "outcome": "C",
+      "facts": {
+        "routeSurvey": true,
+        "escort": true,
+        "signal": true,
+        "jungyeonAttends": false,
+        "fixedLight": true,
+        "mobileLight": true,
+        "handover": true
+      },
+      "readiness": {
+        "route": true,
+        "signal": true,
+        "equipment": true,
+        "handover": true,
+        "publicReady": true,
+        "mobileReady": true,
+        "equipmentKind": "B",
+        "routeKind": "B",
+        "signalKind": "C",
+        "jungyeonAttends": false
+      }
+    },
+    {
+      "check": "deficient-C-fallback-selection",
+      "status": "passed",
+      "labels": [
+        "담당자와 작은 시험으로 바꾼다",
+        "한자리 모임으로 바꾼다",
+        "현장을 더 살펴보기"
+      ],
+      "outcome": "D",
+      "facts": {
+        "routeSurvey": false,
+        "escort": true,
+        "signal": true,
+        "jungyeonAttends": false,
+        "fixedLight": false,
+        "mobileLight": false,
+        "handover": true
+      },
+      "readiness": {
+        "route": false,
+        "signal": true,
+        "equipment": false,
+        "handover": true,
+        "publicReady": false,
+        "mobileReady": false,
+        "equipmentKind": "B",
+        "routeKind": "B",
+        "signalKind": "B",
+        "jungyeonAttends": false
+      }
+    },
+    {
+      "check": "canonical-walk-reload-position",
+      "status": "passed",
+      "revision": 35,
+      "player": {
+        "x": 0,
+        "z": -4
+      }
+    }
+  ],
+  "errors": [],
+  "final": {
+    "view": {
+      "version": "return-path-v2",
+      "museum": {
+        "sceneId": "E1",
+        "flags": {}
+      },
+      "moroAccompanies": false,
+      "episodeId": 5,
+      "stage": "perform",
+      "revision": 35,
+      "visited": [
+        1,
+        2,
+        4,
+        3
+      ],
+      "episodes": {
+        "2": {
+          "choices": {
+            "inspection": "D",
+            "deduction": "C",
+            "time": "A",
+            "execution": "B"
+          },
+          "explored": [
+            "D"
+          ],
+          "requiredActions": [
+            "assemble-signs",
+            "place-outward-sign",
+            "check-return-sign"
+          ],
+          "completedActions": [
+            "assemble-signs",
+            "place-outward-sign",
+            "check-return-sign"
+          ],
+          "ending": "두 겹의 표지",
+          "outcome": "B"
+        },
+        "3": {
+          "choices": {
+            "inspection": "B",
+            "deduction": "A",
+            "time": "B",
+            "execution": "C"
+          },
+          "explored": [
+            "B"
+          ],
+          "requiredActions": [
+            "prepare-number-cards",
+            "show-stop-card",
+            "rehearse-signal"
+          ],
+          "completedActions": [
+            "prepare-number-cards",
+            "show-stop-card",
+            "rehearse-signal"
+          ],
+          "ending": "눈으로 세는 시작",
+          "outcome": "C"
+        },
+        "4": {
+          "choices": {
+            "inspection": "B",
+            "deduction": "B",
+            "time": "A",
+            "execution": "B"
+          },
+          "explored": [
+            "B"
+          ],
+          "requiredActions": [
+            "match-carrier-supports",
+            "lower-carry-height",
+            "handoff-equipment"
+          ],
+          "completedActions": [
+            "match-carrier-supports",
+            "lower-carry-height",
+            "handoff-equipment"
+          ],
+          "ending": "들고 가는 불빛",
+          "outcome": "B"
+        },
+        "5": {
+          "choices": {
+            "inspection": "A",
+            "plan": "B",
+            "repair": "D",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "meet-yeonwoo",
+            "outward-walk",
+            "stop-relay",
+            "return-walk",
+            "confirm-every-person",
+            "collect-equipment",
+            "return-station",
+            "close-gathering"
+          ],
+          "completedActions": [
+            "meet-yeonwoo",
+            "outward-walk",
+            "stop-relay"
+          ],
+          "ending": "왕복길의 첫날",
+          "outcome": "B"
+        }
+      },
+      "facts": {
+        "routeSurvey": true,
+        "escort": true,
+        "signal": true,
+        "jungyeonAttends": false,
+        "fixedLight": true,
+        "mobileLight": true,
+        "handover": true
+      },
+      "followup": {
+        "boat": "already-launched",
+        "originalNight": {},
+        "moroCharged": true,
+        "sealPreserved": true,
+        "originalBoatAvailable": false
+      },
+      "lastResult": {
+        "episodeId": 5,
+        "stage": "execution",
+        "sceneId": "R54",
+        "choice": "A"
+      },
+      "ending": null,
+      "events": [
+        {
+          "type": "explore",
+          "target": "D"
+        },
+        {
+          "type": "choose",
+          "choice": "D"
+        },
+        {
+          "type": "choose",
+          "choice": "C"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "perform",
+          "action": "assemble-signs"
+        },
+        {
+          "type": "perform",
+          "action": "place-outward-sign"
+        },
+        {
+          "type": "perform",
+          "action": "check-return-sign"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "perform",
+          "action": "match-carrier-supports"
+        },
+        {
+          "type": "perform",
+          "action": "lower-carry-height"
+        },
+        {
+          "type": "perform",
+          "action": "handoff-equipment"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "C"
+        },
+        {
+          "type": "perform",
+          "action": "prepare-number-cards"
+        },
+        {
+          "type": "perform",
+          "action": "show-stop-card"
+        },
+        {
+          "type": "perform",
+          "action": "rehearse-signal"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "D"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "meet-yeonwoo"
+        },
+        {
+          "type": "perform",
+          "action": "outward-walk"
+        },
+        {
+          "type": "perform",
+          "action": "stop-relay"
+        }
+      ],
+      "title": "지도 다음의 길",
+      "sceneId": "R54",
+      "introSceneId": "R50",
+      "resultBranch": "A",
+      "options": [],
+      "choices": {
+        "inspection": "A",
+        "plan": "B",
+        "repair": "D",
+        "execution": "A"
+      },
+      "explored": [
+        "A"
+      ],
+      "requiredActions": [
+        "meet-yeonwoo",
+        "outward-walk",
+        "stop-relay",
+        "return-walk",
+        "confirm-every-person",
+        "collect-equipment",
+        "return-station",
+        "close-gathering"
+      ],
+      "completedActions": [
+        "meet-yeonwoo",
+        "outward-walk",
+        "stop-relay"
+      ],
+      "nextAction": "return-walk",
+      "episodeEnding": "왕복길의 첫날",
+      "readiness": {
+        "route": true,
+        "signal": true,
+        "equipment": true,
+        "handover": true,
+        "publicReady": true,
+        "mobileReady": true,
+        "equipmentKind": "B",
+        "routeKind": "B",
+        "signalKind": "C",
+        "jungyeonAttends": false
+      },
+      "objective": "선택한 방법을 현장에서 실행하세요."
+    },
+    "world": {
+      "episodeId": 5,
+      "activeIds": [
+        "return-walk"
+      ],
+      "nextAction": {
+        "id": "return-walk",
+        "target": "return-walk",
+        "label": "쉼터에서 역 뒤뜰로 돌아오기",
+        "x": 0,
+        "z": -4,
+        "effects": {},
+        "motion": "walk",
+        "path": [
+          [
+            0,
+            -4
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            6
+          ]
+        ]
+      },
+      "action": null,
+      "actionProgress": null,
+      "projection": {
+        "shelter": {
+          "x": -3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        },
+        "paper": {
+          "x": -3,
+          "y": 0.95,
+          "z": -5,
+          "rotation": 0,
+          "visible": true
+        },
+        "basin": {
+          "x": -5,
+          "y": 0,
+          "z": -5,
+          "rotation": 0,
+          "visible": true
+        },
+        "new-boat": {
+          "x": -5,
+          "y": 0.27,
+          "z": -5,
+          "rotation": 0,
+          "visible": false
+        },
+        "fork": {
+          "x": 3,
+          "y": 0,
+          "z": 0,
+          "rotation": 0,
+          "visible": true
+        },
+        "roles": {
+          "x": 3,
+          "y": 0.95,
+          "z": 6,
+          "rotation": 0,
+          "visible": true
+        },
+        "cards": {
+          "x": 5,
+          "y": 0.95,
+          "z": 0,
+          "rotation": 0,
+          "visible": true,
+          "cardRaised": true
+        },
+        "lamp": {
+          "x": -5,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        },
+        "hands": {
+          "x": -6,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        }
+      },
+      "participants": {
+        "escort": true,
+        "signal": true,
+        "jungyeon": false,
+        "handover": true
+      },
+      "objects": [
+        {
+          "id": "shelter",
+          "visible": true,
+          "x": -3,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "paper",
+          "visible": true,
+          "x": -3,
+          "y": 0.95,
+          "z": -5
+        },
+        {
+          "id": "basin",
+          "visible": true,
+          "x": -5,
+          "y": 0,
+          "z": -5
+        },
+        {
+          "id": "new-boat",
+          "visible": false,
+          "x": -5,
+          "y": 0.27,
+          "z": -5
+        },
+        {
+          "id": "fork",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "id": "roles",
+          "visible": true,
+          "x": 3,
+          "y": 0.95,
+          "z": 6
+        },
+        {
+          "id": "cards",
+          "visible": true,
+          "x": 5,
+          "y": 0.95,
+          "z": 0
+        },
+        {
+          "id": "lamp",
+          "visible": true,
+          "x": -5,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "hands",
+          "visible": false,
+          "x": -6,
+          "y": 0,
+          "z": -6
+        }
+      ],
+      "actors": [
+        {
+          "id": "narae",
+          "x": 5.030776858714956,
+          "z": 3
+        },
+        {
+          "id": "narae",
+          "x": 6.906666666666666,
+          "z": 4
+        },
+        {
+          "id": "neighbor",
+          "x": -1.2,
+          "z": -4
+        },
+        {
+          "id": "munjeong",
+          "x": -2.05,
+          "z": -4
+        },
+        {
+          "id": "sohui",
+          "x": 5,
+          "z": 1
+        },
+        {
+          "id": "taeo",
+          "x": -6,
+          "z": -3
+        },
+        {
+          "id": "ideun",
+          "x": -7,
+          "z": -3
+        },
+        {
+          "id": "jeongyeon",
+          "x": -2,
+          "z": -5
+        }
+      ],
+      "player": {
+        "x": 0,
+        "z": -4
+      },
+      "locked": false,
+      "nearest": "return-walk",
+      "hotspots": [
+        {
+          "id": "A",
+          "x": -5,
+          "z": -3
+        },
+        {
+          "id": "B",
+          "x": 5,
+          "z": -3
+        },
+        {
+          "id": "C",
+          "x": -5,
+          "z": 3
+        },
+        {
+          "id": "D",
+          "x": 5.030776858714956,
+          "z": 3
+        },
+        {
+          "id": "consult",
+          "x": 6.906666666666666,
+          "z": 4
+        },
+        {
+          "id": "__exit",
+          "x": 0,
+          "z": 9
+        },
+        {
+          "id": "meet-yeonwoo",
+          "x": 0,
+          "z": 6
+        },
+        {
+          "id": "outward-walk",
+          "x": 0,
+          "z": 6
+        },
+        {
+          "id": "stop-relay",
+          "x": 3,
+          "z": 1
+        },
+        {
+          "id": "return-walk",
+          "x": 0,
+          "z": -4
+        },
+        {
+          "id": "confirm-every-person",
+          "x": 0,
+          "z": -4
+        },
+        {
+          "id": "collect-equipment",
+          "x": -3,
+          "z": -4
+        },
+        {
+          "id": "return-station",
+          "x": 0,
+          "z": -4
+        },
+        {
+          "id": "close-gathering",
+          "x": 3,
+          "z": 5
+        }
+      ],
+      "boxes": [
+        {
+          "minX": -9.16,
+          "maxX": -8.84,
+          "minZ": -8.16,
+          "maxZ": -7.84
+        },
+        {
+          "minX": -9.16,
+          "maxX": -8.84,
+          "minZ": 6.84,
+          "maxZ": 7.16
+        },
+        {
+          "minX": 8.84,
+          "maxX": 9.16,
+          "minZ": -8.16,
+          "maxZ": -7.84
+        },
+        {
+          "minX": 8.84,
+          "maxX": 9.16,
+          "minZ": 6.84,
+          "maxZ": 7.16
+        },
+        {
+          "minX": -5.7,
+          "maxX": -4.3,
+          "minZ": -3.495,
+          "maxZ": -2.505
+        },
+        {
+          "id": "706b970d-95c7-4c79-b720-62c4f3644a00:proxy:0",
+          "minX": 4.69,
+          "maxX": 5.31,
+          "minZ": -3.31,
+          "maxZ": -2.69
+        },
+        {
+          "minX": -5.8,
+          "maxX": -4.2,
+          "minZ": 2.575,
+          "maxZ": 3.425
+        },
+        {
+          "minX": -3.75,
+          "maxX": -2.25,
+          "minZ": -5.45,
+          "maxZ": -4.55
+        },
+        {
+          "minX": 2.25,
+          "maxX": 3.75,
+          "minZ": 5.55,
+          "maxZ": 6.45
+        },
+        {
+          "minX": 4.25,
+          "maxX": 5.75,
+          "minZ": -0.45,
+          "maxZ": 0.45
+        },
+        {
+          "id": "52d45ad2-56a8-40d1-b6a6-c62a3019a883:proxy:0",
+          "minX": -5.49,
+          "maxX": -5.3100000000000005,
+          "minZ": -7.69,
+          "maxZ": -7.51
+        },
+        {
+          "id": "52d45ad2-56a8-40d1-b6a6-c62a3019a883:proxy:1",
+          "minX": -5.49,
+          "maxX": -5.3100000000000005,
+          "minZ": -4.49,
+          "maxZ": -4.31
+        },
+        {
+          "id": "52d45ad2-56a8-40d1-b6a6-c62a3019a883:proxy:2",
+          "minX": -0.69,
+          "maxX": -0.5100000000000002,
+          "minZ": -7.69,
+          "maxZ": -7.51
+        },
+        {
+          "id": "52d45ad2-56a8-40d1-b6a6-c62a3019a883:proxy:3",
+          "minX": -0.69,
+          "maxX": -0.5100000000000002,
+          "minZ": -4.49,
+          "maxZ": -4.31
+        },
+        {
+          "id": "0f1ba1ea-009b-4abd-95bb-eeba54974b7c:proxy:0",
+          "minX": -5.7,
+          "maxX": -4.3,
+          "minZ": -5.7,
+          "maxZ": -4.3
+        },
+        {
+          "id": "dc890de6-41d5-4d47-967a-f872062966cc:proxy:0",
+          "minX": 0.8300000000000001,
+          "maxX": 0.9699999999999998,
+          "minZ": -0.07,
+          "maxZ": 0.07
+        },
+        {
+          "id": "dc890de6-41d5-4d47-967a-f872062966cc:proxy:1",
+          "minX": 5.03,
+          "maxX": 5.17,
+          "minZ": -0.07,
+          "maxZ": 0.07
+        },
+        {
+          "id": "5c37b279-ef5f-4a05-a08d-86f9319228ec:proxy:0",
+          "minX": -5.35,
+          "maxX": -4.65,
+          "minZ": -6.36,
+          "maxZ": -5.64
+        }
+      ],
+      "camera": {
+        "yaw": 0.55,
+        "pitch": 0.85,
+        "distance": 20
+      },
+      "renderer": {
+        "calls": 282,
+        "triangles": 36484
+      },
+      "title": "지도 다음의 길"
+    },
+    "transition": "idle",
+    "performing": false,
+    "importing": false,
+    "presentation": {
+      "seen": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "cursor": 0
+    }
+  }
+}

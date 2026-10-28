@@ -1,0 +1,12 @@
+.series-game{position:fixed;inset:0;z-index:100;background:#d5d8c7;color:#f4edda;font-family:system-ui,sans-serif}
+.series-stage{position:absolute;inset:0}.series-hud{position:absolute;left:24px;top:18px;max-width:min(640px,65vw);pointer-events:none;text-shadow:0 2px 5px #132b26}
+.series-hud h1{font-size:23px;margin:0 0 10px}.series-hud p{font-size:16px;line-height:1.7;background:#163c35df;padding:10px 14px;border-left:3px solid #c5b77e}
+.series-menu{position:absolute;right:18px;top:18px;display:flex;gap:8px}.series-game button{background:#183c35;color:#f4edda;border:1px solid #a3a982;padding:12px 17px;min-height:44px;cursor:pointer;border-radius:4px;font:inherit}
+.series-game button:focus-visible{outline:3px solid #e5c97d;outline-offset:2px}.series-game button:disabled{opacity:.45;cursor:default}
+.series-panel{position:absolute;bottom:78px;left:50%;transform:translateX(-50%);width:min(780px,calc(100% - 32px));max-height:65vh;overflow:auto;background:#102e29f5;border:1px solid #a3a982;padding:24px;box-sizing:border-box;box-shadow:0 12px 50px #071b194a}
+.series-panel p{font-size:18px;line-height:1.8;white-space:pre-line}.series-panel button{display:block;width:100%;text-align:left;margin-top:10px}.series-panel strong{color:#d5c48a}.series-cover{position:absolute;inset:0;background:#14372e;display:grid;place-items:center;pointer-events:auto;font-size:24px}.series-cover[data-style=dawn]{background:#d6ddc8;color:#1c4237}.series-cover[data-style=curtain]{background:#462e2c}.series-cover[data-style=door]{background:#4b4638}
+.series-game [hidden]{display:none!important}@media(max-width:640px){.series-hud{left:12px;top:74px;max-width:calc(100% - 24px)}.series-hud h1{font-size:18px}.series-menu{left:12px;right:12px;justify-content:flex-end}.series-panel{bottom:66px;max-height:58vh;padding:16px}.series-panel p{font-size:16px}}
+.series-controls{position:absolute;left:24px;bottom:18px;color:#f4edda;background:#102e29d9;padding:8px 12px;font-size:13px;pointer-events:none}
+.series-panel{z-index:2}.series-cover{z-index:3}.series-menu{z-index:4}.series-hud{max-width:min(620px,calc(100vw - 500px))}
+.series-panel button:hover:not(:disabled),.series-menu button:hover:not(:disabled){background:#2a5247}
+@media(max-width:900px){.series-hud{top:80px;max-width:calc(100% - 48px)}.series-menu{flex-wrap:wrap}.series-controls{left:12px;bottom:12px;font-size:12px}.series-hud p{font-size:14px;line-height:1.5}.series-panel{max-height:52vh}}

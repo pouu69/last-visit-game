@@ -1,0 +1,258 @@
+{
+  "buildHash": "9ab98f269fa930c1f4a1a41edd8266ffd43d5f5402b1b00e1c10e7b95a5ae4be",
+  "samples": [],
+  "errors": [
+    "page.evaluate: Error: Action deduce-trace is unavailable in S01/choosing\n    at click (eval at evaluate (:311:30), <anonymous>:58:13)\n    at async investigate (eval at evaluate (:311:30), <anonymous>:169:7)\n    at async Object.scene (eval at evaluate (:311:30), <anonymous>:175:5)\n    at async <anonymous>:337:30\n    at /Users/kwanung/development/experiments/last-visit-game/scripts/check-series-full-play.mjs:132:16"
+  ],
+  "final": {
+    "view": {
+      "teamId": 1,
+      "playerName": "여울",
+      "mode": "map",
+      "storyVersion": "museum-map-4",
+      "currentRoomId": "gallery",
+      "visitedRoomIds": [
+        "foyer",
+        "gallery"
+      ],
+      "travel": null,
+      "canSkipIntro": false,
+      "sceneId": "S01",
+      "revision": 37,
+      "phase": "choosing",
+      "title": "빈 진열장",
+      "nextScene": null,
+      "chapter": 1,
+      "messages": [
+        {
+          "id": "S01-1",
+          "speaker": "서술",
+          "text": "문을 닫기 직전의 박물관은 낮보다 넓어 보인다. 사람 대신 빈 의자가 벽을 따라 놓여 있고, 진열장마다 작은 조명 하나씩만 남아 있다."
+        },
+        {
+          "id": "S01-2",
+          "speaker": "서술",
+          "text": "여러분은 마지막 야간 관람에 초대받았다. 입구에서 받은 안내지에는 전시품 이름보다 빈칸이 많다. ‘이 물건이 돌아갈 곳’이라는 제목 아래의 빈칸들이다."
+        },
+        {
+          "id": "S01-3",
+          "speaker": "윤서",
+          "text": "먼저 보여 드릴 건 제1호 전시품이에요. 이 박물관에 가장 먼저 들어온 물건이죠."
+        },
+        {
+          "id": "S01-4",
+          "speaker": "서술",
+          "text": "윤서가 진열장 앞에서 멈춘다. 유리 안에는 손바닥만 한 받침대와 명패가 있다. 받침대 위만 비어 있다."
+        },
+        {
+          "id": "S01-5",
+          "speaker": "팀",
+          "text": "원래 무엇이 있었나요?"
+        },
+        {
+          "id": "S01-6",
+          "speaker": "윤서",
+          "text": "종이배요. 조금 전까지 분명히……."
+        },
+        {
+          "id": "S01-7",
+          "speaker": "서술",
+          "text": "명패에는 ‘제1호 — 아직 오지 않은 날’이라고 적혀 있다. 유리문에는 깨진 곳이 없다. 잠금쇠도 제자리에 붙어 있다."
+        },
+        {
+          "id": "S01-8",
+          "speaker": "팀",
+          "text": "전시를 정리하느라 옮긴 건 아닌가요?"
+        },
+        {
+          "id": "S01-9",
+          "speaker": "윤서",
+          "text": "제1호는 마지막까지 두기로 했어요. 적어도 제가 정리한 건 아니에요."
+        },
+        {
+          "id": "S01-10",
+          "speaker": "서술",
+          "text": "복도 끝에서 작은 바퀴가 멈춘다. 안내 로봇 모로의 집게에 젖은 종이 조각이 붙어 있다. 바닥에는 얇고 끊어진 물자국 두 줄이 남는다."
+        },
+        {
+          "id": "S01-11",
+          "speaker": "모로",
+          "text": "안내를 중단합니다. 확인해야 할 일이 있습니다."
+        },
+        {
+          "id": "S01-12",
+          "speaker": "윤서",
+          "text": "모로, 잠깐만. 여러분은 배부터 찾아 주세요. 다른 기록은 건드리지 마시고요."
+        },
+        {
+          "id": "S01-13",
+          "speaker": "서술",
+          "text": "윤서가 손을 주머니에 넣는다. 열쇠들이 짧게 부딪힌다. 모로는 복도 안쪽을 향한 채 여러분을 돌아본다."
+        },
+        {
+          "id": "S01-14",
+          "speaker": "서술",
+          "text": "벽의 일정표에는 ‘내일 아침 9시 — 이웃들과 배 띄우는 날’이라고 적혀 있다. 그 아래 폐관 인계 안내에는 ‘밀봉 물품 개봉: 사흘 뒤, 전문 담당자 입회’라는 문장이 붙어 있다."
+        },
+        {
+          "id": "S01-15",
+          "speaker": "팀",
+          "text": "내일 필요한 배라면, 사흘 뒤에 찾는 건 너무 늦겠네요."
+        },
+        {
+          "id": "S01-16",
+          "speaker": "서술",
+          "text": "현관문은 열려 있다. 누군가 갇힌 것은 아니다. 여러분은 다시 빈 받침대를 본다. 먼저 확인할 곳을 정해야 한다."
+        }
+      ],
+      "choices": [
+        {
+          "id": "A",
+          "label": "모로의 바퀴 자국을 따라간다",
+          "detail": "먼저 조사할 장소를 정합니다. 다른 장소의 자료가 함께 생기지는 않습니다."
+        },
+        {
+          "id": "B",
+          "label": "제1호의 기증 기록을 찾는다",
+          "detail": "먼저 조사할 장소를 정합니다. 다른 장소의 자료가 함께 생기지는 않습니다."
+        },
+        {
+          "id": "C",
+          "label": "전시실 뒤의 빗물 자국을 조사한다",
+          "detail": "먼저 조사할 장소를 정합니다. 다른 장소의 자료가 함께 생기지는 않습니다."
+        },
+        {
+          "id": "D",
+          "label": "윤서에게 반환실 열쇠를 보여 달라고 한다",
+          "detail": "먼저 조사할 장소를 정합니다. 다른 장소의 자료가 함께 생기지는 않습니다."
+        }
+      ],
+      "hints": [],
+      "hintCount": 0,
+      "topics": [],
+      "npc": null,
+      "flags": {
+        "charter": false,
+        "log": false,
+        "statement": false,
+        "request": false,
+        "battery": false,
+        "map": false,
+        "maintenance": false,
+        "repair": false,
+        "boat": "locked",
+        "record": "locked",
+        "moro": "active",
+        "crane": null,
+        "lead": null,
+        "stance": null,
+        "intent": null,
+        "method": null
+      },
+      "knownFacts": [],
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "case",
+          "label": "제1호 진열장 살펴보기",
+          "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "trail",
+          "label": "모로와 젖은 흔적",
+          "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+        },
+        {
+          "sceneId": "S01",
+          "sceneTitle": "빈 진열장",
+          "id": "schedule",
+          "label": "벽의 일정표 펼치기",
+          "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+        }
+      ],
+      "exploration": {
+        "objective": "흔적을 대조하고 배를 찾을 첫 조사 장소를 정하세요.",
+        "reason": "내일 아침 9시에 이웃들과 배를 띄울 약속이 있습니다. 어디서부터 조사할지 함께 정해야 합니다.",
+        "recommendedHotspotId": null,
+        "primaryAction": {
+          "kind": "choices",
+          "label": "조사 방향 정하기"
+        },
+        "hotspots": [
+          {
+            "id": "case",
+            "label": "제1호 진열장 살펴보기",
+            "anchor": "case",
+            "kind": "inspect",
+            "visited": true
+          },
+          {
+            "id": "trail",
+            "label": "모로와 젖은 흔적",
+            "anchor": "moro",
+            "kind": "talk",
+            "visited": true
+          },
+          {
+            "id": "schedule",
+            "label": "벽의 일정표 펼치기",
+            "anchor": "board",
+            "kind": "inspect",
+            "visited": true
+          }
+        ],
+        "activeHotspot": null,
+        "observations": [
+          {
+            "id": "case",
+            "label": "제1호 진열장 살펴보기",
+            "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+          },
+          {
+            "id": "trail",
+            "label": "모로와 젖은 흔적",
+            "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+          },
+          {
+            "id": "schedule",
+            "label": "벽의 일정표 펼치기",
+            "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+          }
+        ],
+        "canChoose": true,
+        "canPlanInvestigation": false,
+        "blockedReason": null,
+        "deduction": null,
+        "deductionSolved": true,
+        "feedback": null,
+        "puzzle": null
+      },
+      "history": [],
+      "canNext": false,
+      "readingProgress": {
+        "read": 3,
+        "total": 3
+      },
+      "canContinue": false,
+      "canHint": false
+    },
+    "series": null
+  }
+}

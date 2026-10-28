@@ -1,0 +1,2058 @@
+{
+  "errors": [],
+  "log": [
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "inspection",
+        "revision": 0,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": false,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": null,
+        "ending": null,
+        "events": [],
+        "title": "종착역의 반대편",
+        "sceneId": "N21",
+        "introSceneId": "N20",
+        "resultBranch": null,
+        "options": [
+          {
+            "id": "A",
+            "available": false
+          },
+          {
+            "id": "B",
+            "available": false
+          },
+          {
+            "id": "C",
+            "available": false
+          },
+          {
+            "id": "D",
+            "available": false
+          }
+        ],
+        "choices": {},
+        "explored": [],
+        "requiredActions": [],
+        "completedActions": [],
+        "nextAction": null,
+        "episodeEnding": null,
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": null,
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "현장의 단서를 살펴보고 조사 방향을 정하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": 0,
+          "z": 6
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 5.023333333333333,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.02333333333333333,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "deduction",
+        "revision": 2,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": false,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "inspection",
+          "sceneId": "N21",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N23",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [
+          {
+            "id": "A",
+            "available": true
+          },
+          {
+            "id": "B",
+            "available": true
+          },
+          {
+            "id": "C",
+            "available": true
+          },
+          {
+            "id": "D",
+            "available": true
+          }
+        ],
+        "choices": {
+          "inspection": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [],
+        "completedActions": [],
+        "nextAction": null,
+        "episodeEnding": null,
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": null,
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "확인한 근거와 남은 준비를 보고 결정하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": -4.295989655957212,
+          "z": -1.7374650961574356
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.669028749080227,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.49418876102528975,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "time",
+        "revision": 3,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": false,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "deduction",
+          "sceneId": "N23",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N24",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [
+          {
+            "id": "A",
+            "available": true
+          },
+          {
+            "id": "B",
+            "available": true
+          }
+        ],
+        "choices": {
+          "inspection": "A",
+          "deduction": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [],
+        "completedActions": [],
+        "nextAction": null,
+        "episodeEnding": null,
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": null,
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "확인한 근거와 남은 준비를 보고 결정하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": -2.018139065123539,
+          "z": -2.2382461042251944
+        },
+        "locked": false,
+        "nearest": "consult",
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.589429504810494,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.48413157155643083,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "execution",
+        "revision": 4,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A",
+              "time": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": true,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "time",
+          "sceneId": "N24",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N25",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [
+          {
+            "id": "A",
+            "available": true
+          },
+          {
+            "id": "B",
+            "available": true
+          },
+          {
+            "id": "C",
+            "available": true
+          },
+          {
+            "id": "D",
+            "available": true
+          }
+        ],
+        "choices": {
+          "inspection": "A",
+          "deduction": "A",
+          "time": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [],
+        "completedActions": [],
+        "nextAction": null,
+        "episodeEnding": null,
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": null,
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "확인한 근거와 남은 준비를 보고 결정하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": -2.018139065123539,
+          "z": -2.2382461042251944
+        },
+        "locked": false,
+        "nearest": "consult",
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.583804742721007,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.48413157155643083,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "perform",
+        "revision": 5,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A",
+              "time": "A",
+              "execution": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "completedActions": [],
+            "ending": "철거한 화살표",
+            "outcome": "A"
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": true,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "execution",
+          "sceneId": "N25",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N25",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [],
+        "choices": {
+          "inspection": "A",
+          "deduction": "A",
+          "time": "A",
+          "execution": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [
+          "store-sign",
+          "guide-demonstration"
+        ],
+        "completedActions": [],
+        "nextAction": "store-sign",
+        "episodeEnding": "철거한 화살표",
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": "A",
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "선택한 방법을 현장에서 실행하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": -2.018139065123539,
+          "z": -2.2382461042251944
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.583804742721007,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.48413157155643083,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "perform",
+        "revision": 6,
+        "visited": [
+          1
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A",
+              "time": "A",
+              "execution": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "completedActions": [
+              "store-sign"
+            ],
+            "ending": "철거한 화살표",
+            "outcome": "A"
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": true,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "execution",
+          "sceneId": "N25",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "perform",
+            "action": "store-sign"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N25",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [],
+        "choices": {
+          "inspection": "A",
+          "deduction": "A",
+          "time": "A",
+          "execution": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [
+          "store-sign",
+          "guide-demonstration"
+        ],
+        "completedActions": [
+          "store-sign"
+        ],
+        "nextAction": "guide-demonstration",
+        "episodeEnding": "철거한 화살표",
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": "A",
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "선택한 방법을 현장에서 실행하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": -3.5081326308982463,
+          "z": -2.6392428555381895
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.551395700479499,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.47829823822309747,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 2,
+        "stage": "departure",
+        "revision": 7,
+        "visited": [
+          1,
+          2
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A",
+              "time": "A",
+              "execution": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "completedActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "ending": "철거한 화살표",
+            "outcome": "A"
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": true,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "execution",
+          "sceneId": "N25",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "perform",
+            "action": "store-sign"
+          },
+          {
+            "type": "perform",
+            "action": "guide-demonstration"
+          }
+        ],
+        "title": "종착역의 반대편",
+        "sceneId": "N25",
+        "introSceneId": "N20",
+        "resultBranch": "A",
+        "options": [],
+        "choices": {
+          "inspection": "A",
+          "deduction": "A",
+          "time": "A",
+          "execution": "A"
+        },
+        "explored": [
+          "A"
+        ],
+        "requiredActions": [
+          "store-sign",
+          "guide-demonstration"
+        ],
+        "completedActions": [
+          "store-sign",
+          "guide-demonstration"
+        ],
+        "nextAction": null,
+        "episodeEnding": "철거한 화살표",
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": "A",
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "인계를 마쳤습니다. 다음 장소로 이동하세요."
+      },
+      "world": {
+        "episodeId": 2,
+        "player": {
+          "x": 3.75403001826308,
+          "z": -2.2936000335374924
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 4.513466088525119,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.22746490488976323,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -12,
+            "maxX": -8.75,
+            "minZ": -10,
+            "maxZ": 10
+          },
+          {
+            "minX": 6.8,
+            "maxX": 9.2,
+            "minZ": -8.7,
+            "maxZ": -7.3
+          },
+          {
+            "id": "47c536a1-311a-4b85-8e75-fa47a02a89b9:proxy:0",
+            "minX": -5.4,
+            "maxX": -4.6,
+            "minZ": -3.56,
+            "maxZ": -2.44
+          },
+          {
+            "id": "562b2d62-e076-4a6b-997d-717d598816a3:proxy:0",
+            "minX": 4.09,
+            "maxX": 5.91,
+            "minZ": -3.4,
+            "maxZ": -2.6
+          },
+          {
+            "id": "8bf5613e-4f83-4792-a86a-e01479a7e729:proxy:0",
+            "minX": -6,
+            "maxX": -4,
+            "minZ": 2.57,
+            "maxZ": 3.43
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 170,
+          "triangles": 31048
+        },
+        "title": "종착역의 반대편"
+      },
+      "transition": "idle"
+    },
+    {
+      "view": {
+        "version": "return-path-v2",
+        "museum": {
+          "sceneId": "E1",
+          "phase": "terminal",
+          "flags": {
+            "boat": "intact",
+            "record": "intact",
+            "moro": "active"
+          }
+        },
+        "moroAccompanies": true,
+        "episodeId": 3,
+        "stage": "inspection",
+        "revision": 8,
+        "visited": [
+          1,
+          2
+        ],
+        "episodes": {
+          "2": {
+            "choices": {
+              "inspection": "A",
+              "deduction": "A",
+              "time": "A",
+              "execution": "A"
+            },
+            "explored": [
+              "A"
+            ],
+            "requiredActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "completedActions": [
+              "store-sign",
+              "guide-demonstration"
+            ],
+            "ending": "철거한 화살표",
+            "outcome": "A"
+          },
+          "3": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "4": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          },
+          "5": {
+            "choices": {},
+            "explored": [],
+            "requiredActions": [],
+            "completedActions": [],
+            "ending": null
+          }
+        },
+        "facts": {
+          "routeSurvey": true,
+          "escort": false,
+          "signal": false,
+          "jungyeonAttends": false,
+          "fixedLight": false,
+          "mobileLight": false,
+          "handover": false
+        },
+        "followup": null,
+        "lastResult": {
+          "episodeId": 2,
+          "stage": "execution",
+          "sceneId": "N25",
+          "choice": "A"
+        },
+        "ending": null,
+        "events": [
+          {
+            "type": "explore",
+            "target": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "choose",
+            "choice": "A"
+          },
+          {
+            "type": "perform",
+            "action": "store-sign"
+          },
+          {
+            "type": "perform",
+            "action": "guide-demonstration"
+          },
+          {
+            "type": "depart"
+          }
+        ],
+        "title": "마지막 곡의 빈자리",
+        "sceneId": "V31",
+        "introSceneId": "V30",
+        "resultBranch": "A",
+        "options": [
+          {
+            "id": "A",
+            "available": false
+          },
+          {
+            "id": "B",
+            "available": false
+          },
+          {
+            "id": "C",
+            "available": false
+          },
+          {
+            "id": "D",
+            "available": false
+          }
+        ],
+        "choices": {},
+        "explored": [],
+        "requiredActions": [],
+        "completedActions": [],
+        "nextAction": null,
+        "episodeEnding": null,
+        "readiness": {
+          "route": false,
+          "signal": false,
+          "equipment": false,
+          "handover": false,
+          "publicReady": false,
+          "mobileReady": false,
+          "equipmentKind": null,
+          "routeKind": "A",
+          "signalKind": null,
+          "jungyeonAttends": false
+        },
+        "objective": "현장의 단서를 살펴보고 조사 방향을 정하세요."
+      },
+      "world": {
+        "episodeId": 3,
+        "player": {
+          "x": 0,
+          "z": 6
+        },
+        "locked": false,
+        "nearest": null,
+        "hotspots": [
+          {
+            "id": "A",
+            "x": -5,
+            "z": -3
+          },
+          {
+            "id": "B",
+            "x": 5,
+            "z": -3
+          },
+          {
+            "id": "C",
+            "x": -5,
+            "z": 3
+          },
+          {
+            "id": "D",
+            "x": 5.029166666666667,
+            "z": 3
+          },
+          {
+            "id": "consult",
+            "x": -0.029166666666666664,
+            "z": -3
+          },
+          {
+            "id": "__exit",
+            "x": 0,
+            "z": 9
+          }
+        ],
+        "boxes": [
+          {
+            "minX": -9.5,
+            "maxX": 9.5,
+            "minZ": -10,
+            "maxZ": -6.1
+          },
+          {
+            "minX": -9.1,
+            "maxX": -7.9,
+            "minZ": -3.5,
+            "maxZ": -2.44
+          },
+          {
+            "minX": -9.1,
+            "maxX": -7.9,
+            "minZ": -0.5,
+            "maxZ": 0.56
+          },
+          {
+            "minX": -9.1,
+            "maxX": -7.9,
+            "minZ": 2.5,
+            "maxZ": 3.56
+          },
+          {
+            "minX": 7.9,
+            "maxX": 9.1,
+            "minZ": -3.5,
+            "maxZ": -2.44
+          },
+          {
+            "minX": 7.9,
+            "maxX": 9.1,
+            "minZ": -0.5,
+            "maxZ": 0.56
+          },
+          {
+            "minX": 7.9,
+            "maxX": 9.1,
+            "minZ": 2.5,
+            "maxZ": 3.56
+          },
+          {
+            "id": "fda5a9b4-2e29-4e1a-b637-6865310ddcf1:proxy:0",
+            "minX": -5.8,
+            "maxX": -4.2,
+            "minZ": -3.36,
+            "maxZ": -2.64
+          }
+        ],
+        "camera": {
+          "yaw": 0.55,
+          "pitch": 0.85,
+          "distance": 20
+        },
+        "renderer": {
+          "calls": 156,
+          "triangles": 28592
+        },
+        "title": "마지막 곡의 빈자리"
+      },
+      "transition": "idle"
+    }
+  ],
+  "final": {
+    "view": {
+      "version": "return-path-v2",
+      "museum": {
+        "sceneId": "E1",
+        "phase": "terminal",
+        "flags": {
+          "boat": "intact",
+          "record": "intact",
+          "moro": "active"
+        }
+      },
+      "moroAccompanies": true,
+      "episodeId": 3,
+      "stage": "inspection",
+      "revision": 8,
+      "visited": [
+        1,
+        2
+      ],
+      "episodes": {
+        "2": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "A",
+            "time": "A",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "store-sign",
+            "guide-demonstration"
+          ],
+          "completedActions": [
+            "store-sign",
+            "guide-demonstration"
+          ],
+          "ending": "철거한 화살표",
+          "outcome": "A"
+        },
+        "3": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "4": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "5": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        }
+      },
+      "facts": {
+        "routeSurvey": true,
+        "escort": false,
+        "signal": false,
+        "jungyeonAttends": false,
+        "fixedLight": false,
+        "mobileLight": false,
+        "handover": false
+      },
+      "followup": null,
+      "lastResult": {
+        "episodeId": 2,
+        "stage": "execution",
+        "sceneId": "N25",
+        "choice": "A"
+      },
+      "ending": null,
+      "events": [
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "store-sign"
+        },
+        {
+          "type": "perform",
+          "action": "guide-demonstration"
+        },
+        {
+          "type": "depart"
+        }
+      ],
+      "title": "마지막 곡의 빈자리",
+      "sceneId": "V31",
+      "introSceneId": "V30",
+      "resultBranch": "A",
+      "options": [
+        {
+          "id": "A",
+          "available": false
+        },
+        {
+          "id": "B",
+          "available": false
+        },
+        {
+          "id": "C",
+          "available": false
+        },
+        {
+          "id": "D",
+          "available": false
+        }
+      ],
+      "choices": {},
+      "explored": [],
+      "requiredActions": [],
+      "completedActions": [],
+      "nextAction": null,
+      "episodeEnding": null,
+      "readiness": {
+        "route": false,
+        "signal": false,
+        "equipment": false,
+        "handover": false,
+        "publicReady": false,
+        "mobileReady": false,
+        "equipmentKind": null,
+        "routeKind": "A",
+        "signalKind": null,
+        "jungyeonAttends": false
+      },
+      "objective": "현장의 단서를 살펴보고 조사 방향을 정하세요."
+    },
+    "world": {
+      "episodeId": 3,
+      "player": {
+        "x": 0,
+        "z": 6
+      },
+      "locked": false,
+      "nearest": null,
+      "hotspots": [
+        {
+          "id": "A",
+          "x": -5,
+          "z": -3
+        },
+        {
+          "id": "B",
+          "x": 5,
+          "z": -3
+        },
+        {
+          "id": "C",
+          "x": -5,
+          "z": 3
+        },
+        {
+          "id": "D",
+          "x": 5.046666666666667,
+          "z": 3
+        },
+        {
+          "id": "consult",
+          "x": -0.04666666666666666,
+          "z": -3
+        },
+        {
+          "id": "__exit",
+          "x": 0,
+          "z": 9
+        }
+      ],
+      "boxes": [
+        {
+          "minX": -9.5,
+          "maxX": 9.5,
+          "minZ": -10,
+          "maxZ": -6.1
+        },
+        {
+          "minX": -9.1,
+          "maxX": -7.9,
+          "minZ": -3.5,
+          "maxZ": -2.44
+        },
+        {
+          "minX": -9.1,
+          "maxX": -7.9,
+          "minZ": -0.5,
+          "maxZ": 0.56
+        },
+        {
+          "minX": -9.1,
+          "maxX": -7.9,
+          "minZ": 2.5,
+          "maxZ": 3.56
+        },
+        {
+          "minX": 7.9,
+          "maxX": 9.1,
+          "minZ": -3.5,
+          "maxZ": -2.44
+        },
+        {
+          "minX": 7.9,
+          "maxX": 9.1,
+          "minZ": -0.5,
+          "maxZ": 0.56
+        },
+        {
+          "minX": 7.9,
+          "maxX": 9.1,
+          "minZ": 2.5,
+          "maxZ": 3.56
+        },
+        {
+          "id": "fda5a9b4-2e29-4e1a-b637-6865310ddcf1:proxy:0",
+          "minX": -5.8,
+          "maxX": -4.2,
+          "minZ": -3.36,
+          "maxZ": -2.64
+        }
+      ],
+      "camera": {
+        "yaw": 0.55,
+        "pitch": 0.85,
+        "distance": 20
+      },
+      "renderer": {
+        "calls": 156,
+        "triangles": 28592
+      },
+      "title": "마지막 곡의 빈자리"
+    },
+    "transition": "idle"
+  }
+}

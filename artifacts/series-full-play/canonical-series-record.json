@@ -1,0 +1,533 @@
+{
+  "version": "return-path-v2",
+  "museum": {
+    "teamId": 1,
+    "playerName": "여울",
+    "mode": "map",
+    "storyVersion": "museum-map-4",
+    "currentRoomId": "reception",
+    "visitedRoomIds": [
+      "foyer",
+      "reception",
+      "gallery",
+      "archive",
+      "maintenance",
+      "return",
+      "garden",
+      "control",
+      "office"
+    ],
+    "travel": null,
+    "canSkipIntro": false,
+    "sceneId": "E1",
+    "revision": 296,
+    "phase": "terminal",
+    "title": "강으로 돌아간 약속",
+    "nextScene": null,
+    "chapter": 3,
+    "messages": [
+      {
+        "id": "E1-1",
+        "speaker": "서술",
+        "text": "반환 접수가 끝난 자리에는 종이배 대신 발송 기록이 남는다. 윤서는 받침대 위를 한 번 쓸고, 새 물건을 올려 빈자리를 가리지 않는다."
+      },
+      {
+        "id": "E1-2",
+        "speaker": "윤서",
+        "text": "제1호 전시품은 반환됐습니다. 마지막 기록에는 이렇게 적을게요."
+      },
+      {
+        "id": "E1-3",
+        "speaker": "서술",
+        "text": "다음 날 아침, 나래에게서 사진 한 장 대신 먼저 짧은 메시지가 온다."
+      },
+      {
+        "id": "E1-4",
+        "speaker": "나래",
+        "text": "배를 받았어요. 접힌 모양도 남아 있어요. 약속한 시간에 가져갈게요."
+      },
+      {
+        "id": "E1-5",
+        "speaker": "서술",
+        "text": "아홉 시가 되었을 때 나래의 배 곁에는 다른 크기의 배들이 모인다. 반듯한 배도, 물에 뜰지 확신하기 어려운 배도 있다."
+      },
+      {
+        "id": "E1-6",
+        "speaker": "아이",
+        "text": "이 배가 제일 오래된 거예요?"
+      },
+      {
+        "id": "E1-7",
+        "speaker": "나래",
+        "text": "응. 제일 오래 기다린 배야. 오늘은 같이 가면 되겠다."
+      },
+      {
+        "id": "E1-8",
+        "speaker": "서술",
+        "text": "나래가 먼저 손을 놓는다. 오래된 배가 물살에 방향을 틀고, 새 배들이 그 옆으로 흩어진다."
+      },
+      {
+        "id": "E1-9",
+        "speaker": "나래",
+        "text": "약속은 시작했어요. 어젯밤에 무엇을 남겨 줬는지도 기억할게요."
+      },
+      {
+        "id": "E1-10",
+        "speaker": "서술",
+        "text": "원본 장부는 온전하게 보존됐다. 처음의 반환 조항을 읽을 수 있고, 별도로 모은 실행·요청 자료와 대조할 수 있다."
+      },
+      {
+        "id": "E1-11",
+        "speaker": "서술",
+        "text": "그날 밤 마지막 확인 당시 모로는 작동하고 있었다. 보관 위치와 이동 담당자를 인계 기록에 남겼다."
+      },
+      {
+        "id": "E1-12",
+        "speaker": "서술",
+        "text": "처음 따라갔던 바퀴 자국을 떠올린다. 그 길은 배를 훔쳐 달아나는 길이 아니었다. 무엇을 요청받고 어디까지 실행했는지 확인하는 일이 여러분의 첫 조사였다."
+      }
+    ],
+    "choices": [],
+    "hints": [],
+    "hintCount": 0,
+    "topics": [],
+    "npc": null,
+    "flags": {
+      "charter": false,
+      "log": false,
+      "statement": true,
+      "request": false,
+      "battery": false,
+      "map": true,
+      "maintenance": true,
+      "repair": false,
+      "boat": "intact",
+      "record": "intact",
+      "moro": "active",
+      "crane": "stable",
+      "lead": "robot",
+      "stance": "listen",
+      "intent": "return",
+      "method": null
+    },
+    "knownFacts": [
+      "request_received",
+      "return_clause_removed",
+      "return_delayed"
+    ],
+    "observations": [
+      {
+        "sceneId": "O00",
+        "sceneTitle": "마지막 야간 관람",
+        "id": "invitation",
+        "label": "초대장 확인하기",
+        "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+      },
+      {
+        "sceneId": "O00",
+        "sceneTitle": "마지막 야간 관람",
+        "id": "curator",
+        "label": "윤서와 인사하기",
+        "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "case",
+        "label": "제1호 진열장 살펴보기",
+        "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "trail",
+        "label": "모로와 젖은 흔적",
+        "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "schedule",
+        "label": "벽의 일정표 펼치기",
+        "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+      },
+      {
+        "sceneId": "I01",
+        "sceneTitle": "모로의 정비 통로",
+        "id": "receipt",
+        "label": "모로의 집게와 화면",
+        "text": "조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다."
+      },
+      {
+        "sceneId": "P12",
+        "sceneTitle": "마르지 않은 통로",
+        "id": "map",
+        "label": "시설 운반로 지도",
+        "text": "침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다."
+      },
+      {
+        "sceneId": "S12",
+        "sceneTitle": "“제가 옮겼습니다”",
+        "id": "admission",
+        "label": "모로의 첫 설명 듣기",
+        "text": "모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다."
+      },
+      {
+        "sceneId": "T21",
+        "sceneTitle": "명령을 지킨 안내원",
+        "id": "order",
+        "label": "모로의 작업 명령 확인",
+        "text": "반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다."
+      },
+      {
+        "sceneId": "T21",
+        "sceneTitle": "명령을 지킨 안내원",
+        "id": "fault",
+        "label": "고장 시각과 접수표",
+        "text": "이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다."
+      },
+      {
+        "sceneId": "D22",
+        "sceneTitle": "멈춘 배수선",
+        "id": "valve",
+        "label": "번호가 남은 밸브",
+        "text": "유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다."
+      },
+      {
+        "sceneId": "D22",
+        "sceneTitle": "멈춘 배수선",
+        "id": "rail",
+        "label": "배수선과 레일 점검구",
+        "text": "외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "story",
+        "label": "사진 뒷면의 원래 기록",
+        "text": "나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "request",
+        "label": "반환 요청과 윤서의 인정",
+        "text": "나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "rescue",
+        "label": "격벽과 배수·레일 조작반",
+        "text": "배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다."
+      },
+      {
+        "sceneId": "P21",
+        "sceneTitle": "마지막 인양",
+        "id": "sequence",
+        "label": "제어기 안전 순서",
+        "text": "유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다."
+      },
+      {
+        "sceneId": "P21",
+        "sceneTitle": "마지막 인양",
+        "id": "interlock",
+        "label": "안전 장치와 수동 복구",
+        "text": "검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다."
+      },
+      {
+        "sceneId": "R31",
+        "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+        "id": "power",
+        "label": "모로 전원과 외부 장비",
+        "text": "모로 전력으로 두 함을 구하면 모로는 잠든다. 외부 인양에는 점검 완료와 배터리가 모두 필요하다."
+      },
+      {
+        "sceneId": "R31",
+        "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+        "id": "crates",
+        "label": "종이배와 장부의 두 함",
+        "text": "한 번의 인양으로 먼저 구하지 못한 쪽은 물에 노출된다. 격벽을 열고 들어갈 수는 없다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "report",
+        "label": "나래에게 구조 결과 전하기",
+        "text": "배와 원본의 실제 상태를 나눠 전달했다. 구조하지 않은 물건을 보냈다고 말하지 않는다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "promise",
+        "label": "나래의 내일과 수령지",
+        "text": "나래의 약속과 수령인·주소를 확인했다. 준비되면 돌려받기로 한 배다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "consent",
+        "label": "공개 범위와 모로 인계",
+        "text": "이름과 이웃들과 배를 띄우려 했다는 뜻은 공개할 수 있다. 사진과 주소는 공개하지 않는다. 모로의 이동 책임도 남겨야 한다."
+      },
+      {
+        "sceneId": "F31",
+        "sceneTitle": "배를 보내기 전에",
+        "id": "handoff",
+        "label": "반환 접수와 편지",
+        "text": "사흘 뒤 개봉할 배를 지금 보냈다고 기록할 수 없다. 편지와 책임 있는 인계도 남길 수 있다."
+      },
+      {
+        "sceneId": "F31",
+        "sceneTitle": "배를 보내기 전에",
+        "id": "condition",
+        "label": "배의 포장·수리 상태 확인",
+        "text": "온전한 배, 손상된 배, 밀봉된 배는 같은 발송으로 처리할 수 없다. 보수 도구도 확인해야 한다."
+      }
+    ],
+    "exploration": null,
+    "history": [
+      {
+        "sceneId": "S01",
+        "choiceId": "A",
+        "nextSceneId": "I01",
+        "label": "모로의 바퀴 자국을 따라간다"
+      },
+      {
+        "sceneId": "I01",
+        "choiceId": "B",
+        "nextSceneId": "P12",
+        "label": "정비함의 비상 배터리를 챙긴다"
+      },
+      {
+        "sceneId": "P12",
+        "choiceId": "B",
+        "nextSceneId": "S12",
+        "label": "침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실"
+      },
+      {
+        "sceneId": "S12",
+        "choiceId": "A",
+        "nextSceneId": "T21",
+        "label": "모로가 설명을 끝내도록 기다린다"
+      },
+      {
+        "sceneId": "T21",
+        "choiceId": "D",
+        "nextSceneId": "D22",
+        "label": "모로가 사용한 정비 통로를 확인한다"
+      },
+      {
+        "sceneId": "D22",
+        "choiceId": "A",
+        "nextSceneId": "S22",
+        "label": "수동 배수선과 보조 레일을 점검한다"
+      },
+      {
+        "sceneId": "S22",
+        "choiceId": "B",
+        "nextSceneId": "P21",
+        "label": "윤서에게 변경 사실을 서명으로 확정하게 한다"
+      },
+      {
+        "sceneId": "P21",
+        "choiceId": "B",
+        "nextSceneId": "R31",
+        "label": "인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제"
+      },
+      {
+        "sceneId": "R31",
+        "choiceId": "D",
+        "nextSceneId": "S31",
+        "label": "점검한 배수선과 배터리로 두 함을 꺼낸다"
+      },
+      {
+        "sceneId": "S31",
+        "choiceId": "A",
+        "nextSceneId": "F31",
+        "label": "배의 반환부터 실제로 진행한다"
+      },
+      {
+        "sceneId": "F31",
+        "choiceId": "A",
+        "nextSceneId": "E1",
+        "label": "현재 상태대로 정식 반환 절차를 진행한다"
+      }
+    ],
+    "canNext": false,
+    "readingProgress": {
+      "read": 12,
+      "total": 12
+    },
+    "canContinue": false,
+    "canHint": false
+  },
+  "options": {
+    "moroAccompanies": true
+  },
+  "events": [
+    {
+      "type": "explore",
+      "target": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "perform",
+      "action": "store-sign"
+    },
+    {
+      "type": "perform",
+      "action": "guide-demonstration"
+    },
+    {
+      "type": "depart"
+    },
+    {
+      "type": "explore",
+      "target": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "perform",
+      "action": "isolate-accompaniment"
+    },
+    {
+      "type": "perform",
+      "action": "place-last-chair"
+    },
+    {
+      "type": "perform",
+      "action": "rehearse-signal"
+    },
+    {
+      "type": "depart"
+    },
+    {
+      "type": "explore",
+      "target": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "perform",
+      "action": "match-fixed-supports"
+    },
+    {
+      "type": "perform",
+      "action": "position-shade"
+    },
+    {
+      "type": "perform",
+      "action": "handoff-equipment"
+    },
+    {
+      "type": "depart"
+    },
+    {
+      "type": "explore",
+      "target": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "choose",
+      "choice": "A"
+    },
+    {
+      "type": "perform",
+      "action": "meet-yeonwoo"
+    },
+    {
+      "type": "perform",
+      "action": "welcome-arrival"
+    },
+    {
+      "type": "perform",
+      "action": "fold-boats"
+    },
+    {
+      "type": "perform",
+      "action": "welcome-again"
+    },
+    {
+      "type": "perform",
+      "action": "confirm-every-person"
+    },
+    {
+      "type": "perform",
+      "action": "collect-equipment"
+    },
+    {
+      "type": "perform",
+      "action": "return-station"
+    },
+    {
+      "type": "perform",
+      "action": "close-gathering"
+    }
+  ],
+  "checksum": "d8d7156a2edb50166b9a66888f12c2aa749eff0aa3e5dd1a3889a86e433c3fca",
+  "presentation": {
+    "seen": [
+      2,
+      3,
+      4,
+      5
+    ],
+    "cursor": 0
+  }
+}

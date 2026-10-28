@@ -1,0 +1,416 @@
+{
+  "checks": [
+    {
+      "check": "ep2-final-real-caption-story-bridge",
+      "status": "passed",
+      "explicitFixture": true,
+      "messages": [
+        "서술\n\n여러분은 한 장에 두 개의 굵은 선을 그린다. 첫 면에는 역에서 강으로, 접힌 안쪽에는 강에서 역으로 가는 길을 그린다. 계단과 철도 구간에는 통과선을 긋지 않는다.\n\n계속",
+        "서술\n\n갈 때와 올 때를 나눈 독립 안내용 약도를 접어 전달한다.\n\n계속",
+        "서술\n\n약도를 접자 ‘돌아오는 면을 펴세요’라는 글이 겉에 남는다. 문정은 첫 장을 자기 주머니에 넣는다. 이제 설명하러 나갈 때 빈손으로 기억에만 기대지 않아도 된다.\n\n계속",
+        "문정\n\n어두우면 종이가 잘 안 보이겠죠. 수리소에서 준비한 장비와 운영 시간을 맞춰 주세요.\n\n계속",
+        "서술\n\n다음 목적지는 수리소이다. 표지와 안내에 필요한 현장 장비를 정할 차례다.\n\n현장으로"
+      ],
+      "objective": "수리소로 이동 · 출구에서 E",
+      "nextEpisodeId": 4,
+      "revision": 8,
+      "unchangedPreviousEvents": true
+    }
+  ],
+  "errors": [],
+  "loadedModuleHashes": {
+    "/series-game.mjs": "9b48c1795f39fbd8a87d2cffb57b6b09c619f3cfb4e2cd55246e468246837f1b",
+    "/src/series-state.mjs": "bc4a700ada5895aa40694ed8dceec422a274af87fd7a960f8c521e7167986c9c",
+    "/src/series-content.mjs": "b64c5f2bb993176b5a78f022218b021c1a8550251bcf1ad70a19fb0185f2326b"
+  },
+  "final": {
+    "view": {
+      "version": "return-path-v2",
+      "museum": {
+        "sceneId": "E1",
+        "flags": {}
+      },
+      "moroAccompanies": false,
+      "episodeId": 2,
+      "stage": "departure",
+      "revision": 8,
+      "visited": [
+        1,
+        2
+      ],
+      "episodes": {
+        "2": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "C",
+            "time": "A",
+            "execution": "C"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "draw-outward-map",
+            "fold-return-map",
+            "handoff-map"
+          ],
+          "completedActions": [
+            "draw-outward-map",
+            "fold-return-map",
+            "handoff-map"
+          ],
+          "ending": "주머니 속 약도",
+          "outcome": "C"
+        },
+        "3": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "4": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "5": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        }
+      },
+      "facts": {
+        "routeSurvey": true,
+        "escort": false,
+        "signal": false,
+        "jungyeonAttends": false,
+        "fixedLight": false,
+        "mobileLight": false,
+        "handover": false
+      },
+      "followup": null,
+      "lastResult": {
+        "episodeId": 2,
+        "stage": "execution",
+        "sceneId": "N25",
+        "choice": "C"
+      },
+      "ending": null,
+      "events": [
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "C"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "C"
+        },
+        {
+          "type": "perform",
+          "action": "draw-outward-map"
+        },
+        {
+          "type": "perform",
+          "action": "fold-return-map"
+        },
+        {
+          "type": "perform",
+          "action": "handoff-map"
+        }
+      ],
+      "title": "종착역의 반대편",
+      "sceneId": "N25",
+      "introSceneId": "N20",
+      "resultBranch": "C",
+      "options": [],
+      "choices": {
+        "inspection": "A",
+        "deduction": "C",
+        "time": "A",
+        "execution": "C"
+      },
+      "explored": [
+        "A"
+      ],
+      "requiredActions": [
+        "draw-outward-map",
+        "fold-return-map",
+        "handoff-map"
+      ],
+      "completedActions": [
+        "draw-outward-map",
+        "fold-return-map",
+        "handoff-map"
+      ],
+      "nextAction": null,
+      "episodeEnding": "주머니 속 약도",
+      "readiness": {
+        "route": true,
+        "signal": false,
+        "equipment": false,
+        "handover": false,
+        "publicReady": false,
+        "mobileReady": false,
+        "equipmentKind": null,
+        "routeKind": "C",
+        "signalKind": null,
+        "jungyeonAttends": false
+      },
+      "nextEpisodeId": 4,
+      "objective": "인계를 마쳤습니다. 다음 장소로 이동하세요."
+    },
+    "world": {
+      "episodeId": 2,
+      "lastSound": null,
+      "soundCount": 0,
+      "activeIds": [
+        "__exit"
+      ],
+      "nextAction": null,
+      "action": null,
+      "actionProgress": null,
+      "projection": {
+        "old-sign": {
+          "x": 3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        },
+        "out-sign": {
+          "x": 6,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        },
+        "back-sign": {
+          "x": 7,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        },
+        "map": {
+          "x": 4,
+          "y": 1,
+          "z": 3,
+          "rotation": 0,
+          "visible": true,
+          "part": "right",
+          "axis": "z",
+          "angle": 3.141592653589793
+        },
+        "support": {
+          "x": 3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        }
+      },
+      "participants": {
+        "escort": false,
+        "signal": false,
+        "jungyeon": false,
+        "handover": false
+      },
+      "objects": [
+        {
+          "id": "old-sign",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "out-sign",
+          "visible": false,
+          "x": 6,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "back-sign",
+          "visible": false,
+          "x": 7,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "map",
+          "visible": true,
+          "x": 4,
+          "y": 1,
+          "z": 3
+        },
+        {
+          "id": "support",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": -6
+        }
+      ],
+      "actors": [
+        {
+          "id": "munjeong",
+          "x": 4.810642563085501,
+          "z": 3
+        },
+        {
+          "id": "munjeong",
+          "x": -0.4917065937736553,
+          "z": -3
+        }
+      ],
+      "player": {
+        "x": 3.5275179700117727,
+        "z": 5.735427167191599
+      },
+      "locked": false,
+      "nearest": null,
+      "hotspots": [
+        {
+          "id": "A",
+          "x": -5,
+          "z": -3
+        },
+        {
+          "id": "B",
+          "x": 5,
+          "z": -3
+        },
+        {
+          "id": "C",
+          "x": -5,
+          "z": 3
+        },
+        {
+          "id": "D",
+          "x": 4.810642563085501,
+          "z": 3
+        },
+        {
+          "id": "consult",
+          "x": -0.4917065937736553,
+          "z": -3
+        },
+        {
+          "id": "__exit",
+          "x": 0,
+          "z": 9
+        },
+        {
+          "id": "draw-outward-map",
+          "x": -3,
+          "z": -5
+        },
+        {
+          "id": "fold-return-map",
+          "x": -3,
+          "z": -5
+        },
+        {
+          "id": "handoff-map",
+          "x": 4,
+          "z": 4
+        }
+      ],
+      "boxes": [
+        {
+          "minX": -12,
+          "maxX": -8.75,
+          "minZ": -10,
+          "maxZ": 10
+        },
+        {
+          "minX": 6.8,
+          "maxX": 9.2,
+          "minZ": -8.7,
+          "maxZ": -7.3
+        },
+        {
+          "id": "51ab9023-0ae9-4619-b974-768d159df2ee:proxy:0",
+          "minX": -5.4,
+          "maxX": -4.6,
+          "minZ": -3.56,
+          "maxZ": -2.44
+        },
+        {
+          "id": "f3431801-be17-45fa-894d-82f31e6e63d9:proxy:0",
+          "minX": 4.09,
+          "maxX": 5.91,
+          "minZ": -3.4,
+          "maxZ": -2.6
+        },
+        {
+          "id": "1399a234-d05f-4ee3-b13e-d4e05e1dba16:proxy:0",
+          "minX": -6,
+          "maxX": -4,
+          "minZ": 2.57,
+          "maxZ": 3.43
+        },
+        {
+          "minX": -3.75,
+          "maxX": -2.25,
+          "minZ": -6.45,
+          "maxZ": -5.55
+        },
+        {
+          "id": "57f67d09-a1bc-4e80-821c-934a60b420dc:proxy:0",
+          "minX": 2.09,
+          "maxX": 3.91,
+          "minZ": -6.4,
+          "maxZ": -5.6
+        },
+        {
+          "id": "2d42495c-ee5e-4274-9371-58ef5db6d701:proxy:0",
+          "minX": 2.45,
+          "maxX": 3.55,
+          "minZ": -6.36,
+          "maxZ": -5.64
+        }
+      ],
+      "camera": {
+        "yaw": 0.55,
+        "pitch": 0.85,
+        "distance": 20
+      },
+      "renderer": {
+        "calls": 159,
+        "triangles": 28268
+      },
+      "title": "종착역의 반대편"
+    },
+    "transition": "idle",
+    "performing": false,
+    "importing": false,
+    "presentation": {
+      "seen": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "cursor": 0
+    }
+  }
+}

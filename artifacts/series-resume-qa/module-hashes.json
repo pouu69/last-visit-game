@@ -1,0 +1,11 @@
+{
+  "capturedAt": "2026-10-28T16:27:24.175Z",
+  "meaning": "Dist files read after completed QA; not network-response provenance",
+  "hashes": {
+    "series-game.mjs": "2e7940e25071f657f2b2e0f10181825cf3a88dfe59c17cb58ef2a45461909eb4",
+    "series-world.mjs": "9911f8534d505b477d9a6efd24a83ee0c0307f82a4ff03d78d5745b83fb7b2d6",
+    "series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+    "series-transition.mjs": "6ae62bfa69462ec15725cc6c4f329622a3c11a0f27476a9971712a3a3bba357c",
+    "audio.mjs": "b42e6dc31e852f1ec58bad63975bc0acc7f5d678e5184149292b73c153eb35a8"
+  }
+}

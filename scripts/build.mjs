@@ -11,7 +11,7 @@ const files = [
   ['node_modules/three/build/three.core.js', 'vendor/three.core.js'],
   ['node_modules/three/LICENSE', 'vendor/THREE-LICENSE.txt'],
 ];
-for (const folder of ['src', 'public', 'docs/manuscript']) {
+for (const folder of ['src', 'public', 'docs/manuscript', 'docs/series']) {
   for (const entry of await readdir(resolve(root, folder), {
     recursive: true,
     withFileTypes: true,
@@ -21,6 +21,7 @@ for (const folder of ['src', 'public', 'docs/manuscript']) {
     if (source.split('/').some((part) => part.startsWith('.'))) continue;
     if (folder === 'src' && !source.endsWith('.mjs')) continue;
     if (folder === 'docs/manuscript' && !source.endsWith('.md')) continue;
+    if (folder === 'docs/series' && (!/^episode-0[1-5]-[a-z]+\.md$/.test(entry.name) || source.includes('/archive/'))) continue;
     files.push([source, folder === 'public' ? source.slice('public/'.length) : source]);
   }
 }
@@ -35,7 +36,8 @@ for (const [source, destination] of files.sort((a, b) => a[1].localeCompare(b[1]
     let text = bytes.toString('utf8');
     if (source.startsWith('src/'))
       text = text.replace(/(['"])\.\.\/public\/museum-map\.mjs\1/g, '$1../museum-map.mjs$1');
-    if (source === 'public/app.mjs') text = text.replace(/(['"])\.\.\/src\//g, '$1./src/');
+    if (source.startsWith('public/') && !source.slice(7).includes('/'))
+      text = text.replace(/(['"])\.\.\/src\//g, '$1./src/');
     if (source === 'public/museum-scene.mjs')
       text = text.replace(/(['"])\/vendor\//g, '$1./vendor/');
     if (source.endsWith('.html'))

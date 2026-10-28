@@ -1,3 +1,112 @@
+# 5편 연작 최종 증거
+
+2026-10-29 최종 갱신. **실제 1~5편 동일 기록의 구현·조작·저장·시각·모션 검증과 최종 수락을 완료했다.** 로컬 `http://127.0.0.1:5188` 결과이며 외부 배포 완료를 뜻하지 않는다.
+
+## 현재 확인 결과
+
+- [최종 순차 재검사](series-final-check.json): 현재 코드로 136/136 회귀 검사, 67파일 빌드, 실제 완주 원본의 공식 복원과 최종 상태 일치, 로컬 HTTP 200을 다시 확인했다. 첫 재검사의 빌드/테스트 동시 실행 충돌과 샌드박스 포트 제한은 원인과 재실행 결과를 함께 기록했다.
+- [실제 최종 실행 보고서](series-full-play/report.json): `errors=[]`, 박물관 E1 terminal/revision296·11선택 이후 연작 5편 complete/revision39, 방문 1~5, 결말 `강가의 빈자리`.
+- [동일 기록 공식 검증](series-full-play/canonical-journey.json): `fixture=false`, 정상 Continue와 실제 렌더된 UI·바닥 클릭·WASD·E로 진행했다. 박물관 원본 296이벤트와 연작 39이벤트를 공식 `restoreGame`/`restoreSeries`로 복원했고 최종 브라우저의 flags/history/episodes와 일치하며 모든 필수 행동 완료를 확인했다. [박물관 원본](series-full-play/canonical-museum-record.json), [연작 원본](series-full-play/canonical-series-record.json). 이 계보 이외의 이전 프로필이나 E1 fixture를 여정에 합산하지 않았다.
+- [1편 엔딩](series-full-play/museum-ending.png), [5편 엔딩](series-full-play/series-ending.png)을 root가 실제 검토했다. 1편 영상은 대표9프레임·4동작구간을 검토해 보행·몸체·카메라 전환·NPC 몸짓을 확인했다. [프레임](series-full-play/motion-contact.png), [동작 비교](series-full-play/motion-active-pairs.png). 영상 전체를 전수 검토한 것은 아니다. 후속편의 대표 영상과 전환도 아래 범위에서 최종 통과했다.
+- 최신 스토리 연결 수정 후 전체 `npm test` **136/136**, `npm run build` **67파일** — 리드 실행 결과. [최신 스토리 연결 UI 검사](series-resume-qa/story-link-report.json)는 `errors=[]`이며 로드한 모듈 지문과 실제 콘텐츠·상태·view를 확인했다. 관련 집중 검사15개도 통과했다. 앞선 전편 실행에는 당시 캐시된 텍스트가 포함됐으므로 전 과정이 단일 최종 빌드였다고 주장하지 않는다. 후속 텍스트 변경을 별도 최신 검사로 검증했다.
+- [공간 음향 QA](series-resume-qa/spatial-report.json) `errors=[]`: 종이·목재·금속 이벤트, 박자, 거리 변화·카메라 회전 pan 반전, 숨김·대화 중 환경음 억제 확인. [음향 검토](series-audio-review.md). 실제 노드·이벤트 검증이며 스피커/헤드폰 청취·합산 음량 측정은 아니다.
+- [저장·재개 경계 QA](series-resume-qa/REPORT.md), [원자료](series-resume-qa/report.json) `errors=[]`: 행동 중 새로고침·숨김 취소·캡션 재시도 1회 커밋·완료경계/왕복 좌표 복원, 준비충족 C와 부족 C의 제한규모 UI 확인. fixture 검사는 실제 전편 기록과 분리했다.
+- 모델: 후속편43카탈로그 항목(공용 배우 중복), 24방향1,032뷰·대표 배율36장, 전 항목4방향172뷰 contact 및 추가 배율2장 실제 검토. 1,032뷰 전부 개별 육안 검토·43개 고유 신규 모델·전체 카탈로그 게임 승인으로 확대하지 않는다. 편별 `review/review.md`와 manifest의 승인 `modelled`를 유지한다.
+- 최종 원고·runtime·자산 SHA-256은 `assets/episodes/ep-02..05/manifest.json`에 현재 파일로 갱신했다. 소스 지문과 실제 실행의 로드 시점은 구분한다.
+
+## 최종 대표 화면·모션·전환 판정
+
+root는 후속편 실제 영상 `artifacts/series-full-play/motion/page@d4198f32630b6b0480d304b2169fca2a.webm`(360.72초)의 네 공간을 포함한 대표9시점과 4개 동작 구간(각0/0.2/0.4초)을 실제 검토했다. [장면 표본](series-full-play/series-motion-contact.png), [동작 비교](series-full-play/series-motion-active-pairs.png), [추출 기록](series-full-play/series-motion-review.json). 검토한 범위에서 보행·왼쪽 동행 대형·NPC 몸짓·소품과 UI 순서를 확인했고 뚜렷한 관통을 발견하지 않았다.
+
+[전환 표본](series-full-play/series-transition-contact.png)의69~74.6초 구간에서 출발 카메라→전체 가림→새 장면 공개→도입 순서를 확인했고 빈 화면이나 오류 프레임을 발견하지 않았다. 1편 대표9프레임·4개 동작 구간 및 1·5편 엔딩 화면 검토와 함께 원래 목표의 시각·모션 수락 근거로 사용한다. 영상 전체 전수 검토나 실제 하드웨어 성능 측정으로 확대하지 않는다. 최종 감사도 추가 필수 구현 작업이 없다는 데 동의했다.
+
+## 완료 상태
+
+원래 요청의 필수 구현·검증 작업을 마쳤다. 편별 자산 카탈로그의 관리 승인 `modelled`는 개별 모델 전체 상태·모션의 별도 승인 단계이며 완료한 게임 대표 경로의 수락을 보류하는 항목이 아니다. 외부 배포는 수행하지 않았다.
+
+## 과거 기록 해석
+
+아래의 ‘진행 중·초안·최초 report 실패·133/134검사·미판정 NPC·갤러리 미완료’는 작성 당시 스냅샷이며 현재 상태는 위 최종 갱신을 따른다. 현재 `series-full-play/report.json`은 성공 보고서로 교체됐고 최초 도구 실패 이력은 `driver-failure-before-resume.json`, `museum-complete-boundary-driver.json` 등으로 구분한다. P21/R31 미독 대상 가림·NPC 리셋 겹침·초기 수입 복구 등 확인된 제품 결함은 수정 후 실제 진행 또는 집중 회귀를 검증했다. 비동기 `null.view` 대기 오류는 검사 도구 오류로 수정했다. 역사 기록의 실패를 삭제하거나 최신 성공과 합산하지 않는다.
+
+---
+
+# 이전 단계 기록 — 아래 시점의 상태를 보존
+
+# 5편 연작 최종 증거 — 초안
+
+2026-10-29. **완료 판정 전 초안**이다. 실제 1편 E1 완료 이후 동일 기록의 5편 완료 보고서와 마지막 공간 음향 검토·최종 검사·화면 판정이 도착하면 확정한다. 아래 과거 1편/AI 버전 검증 이력과 이번 연작 결과는 합산하지 않는다.
+
+## 구현 기준과 소스
+
+- 기존 박물관 전체 3장을 1편으로 보존: `src/playbook.mjs`, `docs/manuscript/`, `public/app.mjs`.
+- 후속 4편의 원고·준비·선택·규모 제한: `docs/series/`, `src/series-content.mjs`, `src/series-state.mjs`.
+- 실제 이동·조사·행동·소품·NPC·충돌·카메라: `public/series-game.mjs`, `public/series-world.mjs`, `public/series-action-plan.mjs`.
+- 장소별 전환: `public/series-transition.mjs`의 dawn/walk/curtain/door와 단일 커밋·입력 잠금·취소·실패 복구. 음향은 `public/audio.mjs` 및 월드 onSound 연결.
+- 현재 소스 지문: `assets/episodes/ep-02..05/manifest.json`의 `storyRevision.sources`, `runtime.sourceSha256`, 자산별 `sourceSha256`. 해시는 기록 시점 파일이며 진행 중 실제 브라우저가 모든 최종 모듈을 로드했다는 증명은 아니다.
+- 기준별 상세: [요구사항 감사](series-requirements-audit.md), [최종 수락 감사](series-final-audit.md).
+
+## 실행 명령과 결과
+
+| 명령·검사 | 확인된 결과 | 범위 제한 |
+| --- | --- | --- |
+| `npm test` | 마지막 전체 실행 134/134 통과 — 리드 보고 | 최신 공간 음향 수정 이전 결과. 최종 전체 재검사 결과 대기 |
+| `npm run build` | 최신 공간 음향 수정 반영 67파일 — 리드 보고 | 빌드는 실제 플레이·화면 승인을 대신하지 않음 |
+| `node --test tests/series-action-plan.test.mjs` | 최신 관련 집중 검사 4건 통과 — 리드 보고 | 전체 회귀 실행으로 표기하지 않음 |
+| `tests/series-state.test.mjs` | 여섯 방문 순서·384조합·보완/규모·재생 검사 | 상태 검사와 실제 입력 증거를 구분 |
+| `scripts/check-series-full-play.mjs` | 실제 UI와 저장 기록 reader를 이용하는 동일 세션 검사 진행 중 | 성공 보고서가 아직 없으므로 1~5편 완주로 표기하지 않음 |
+
+이 문서 작업에서는 코드·테스트·빌드·브라우저를 실행하지 않았다. 실행 담당자의 결과와 저장된 보고서를 구분해 인용했다.
+
+## 실제 입력·전환·저장 증거
+
+- 후속편 실제 입력: 리드가 E1 fixture에서 2→3→4편의 조사·선택·현장 행동을 실행했다. 4편 출발 저장 `departure/revision25`를 복원한 뒤 5편 8개 현장 행동과 귀환을 마쳤다. [최종 상태](series-integration-qa/resumed-complete.json)는 `episodeId=5`, `stage=complete`, `revision=39`, `강가의 빈자리`, `errors=[]`다. [완료 화면](series-integration-qa/resumed-complete.png).
+- 저장 경계: [QA 보고서](series-resume-qa/REPORT.md), [원자료](series-resume-qa/report.json), [화면](series-resume-qa/boundary.png). 실제 행동 도중 새로고침·숨김 취소·실제 캡션 재시도 후 1회 커밋·완료 경계 복원·왕복 완료 좌표 복원 통과, `errors=[]`.
+- 조건별 UI: 준비 충족 C는 세 접점 C를 유지하고 준비 부족 C는 제한 규모 D/A를 안내했다. 이 두 조건과 왕복 지점은 엔진 생성 fixture이며 실제 1편부터의 완주 경로로 계산하지 않는다.
+- 실제 1편 검사: 초대장부터 이어온 동일 브라우저 세션이 E1 terminal에 도달했다. 최신 증거는 아래 갱신의 박물관 완료 원자료다. [진행 표본](series-full-play/progress.json)과 [최초 실패 보고서](series-full-play/report.json)는 과거 시점이며 최초 S01 도구 오류를 최신 성공 보고서로 취급하지 않는다. 동일 기록의 최종 5편 완료 보고서는 아직 대기다.
+- 모듈 반영 시점: full-play 시작 buildHash는 세 모듈만 해시한다. 중간 재빌드·나중 로드한 world/action-plan/audio를 포괄하는 최종 런타임 지문이라고 쓰지 않는다. [경계 QA 모듈 지문](series-resume-qa/module-hashes.json)도 파일 측정 시점의 dist 지문이다.
+
+## 모델·캡처·시각 판정
+
+후속편은 43카탈로그 항목(공용 배우 중복 포함), 24방향 1,032뷰, 대표 3모델씩 3배율 총 36장을 렌더했다. report 오류는 모두 빈 배열이고 각 이미지 파일 존재를 대조했다.
+
+| 편 | 자동 렌더 | 실제 검토 | 증거 |
+| --- | --- | --- | --- |
+| 2 | 11항목·264뷰·배율9장 | 전 항목 4방향 44뷰 contact | [report](series-assets/ep-02/report.json), [contact](series-assets/ep-02/contact.png), [review](../assets/episodes/ep-02/review/review.md) |
+| 3 | 10항목·240뷰·배율9장 | 전 항목 4방향 40뷰 contact | [report](series-assets/ep-03/report.json), [contact](series-assets/ep-03/contact.png), [review](../assets/episodes/ep-03/review/review.md) |
+| 4 | 9항목·216뷰·배율9장 | 전 항목 4방향 36뷰 + 안내등1.8배 | [report](series-assets/ep-04/report.json), [contact](series-assets/ep-04/contact.png), [review](../assets/episodes/ep-04/review/review.md) |
+| 5 | 13항목·312뷰·배율9장 | 전 항목 4방향 52뷰 + 쉼터0.6배 | [report](series-assets/ep-05/report.json), [contact](series-assets/ep-05/contact.png), [review](../assets/episodes/ep-05/review/review.md) |
+
+root가 실제 검토한 범위에서 형상 구멍·받침 누락·스타일 불일치를 발견하지 않았다. 안내등 1.8배는 의도한 확대 크롭이다. 1,032뷰 전체 개별 육안 승인이나 43개 고유 신규 모델이라는 뜻은 아니다. 1편은 [환경 확장 검수](../assets/episodes/ep-01/review/environment-upgrade/review.md)의 기존 이력을 보존한다. 게임의 장면 배치·NPC·소품 모션·전환·카메라 최종 판정은 실제 플레이 증거와 함께 남겨야 하므로 후속편 manifest 승인은 `modelled`다.
+
+## 확인된 결함과 해결 근거
+
+- 초기 파일 수입 실패 후 시작 선택 소실: 수정 후 잘못된 JSON 및 지연 수입/숨김 취소에서 시작 선택 복구를 격리 Chromium으로 검증했다. [검토 기록](series-audio-review.md).
+- 5편 정연 참석 및 미검증 이동등의 완료 시험 모순: 콘텐츠·월드 조건·투영을 수정하고 분기 검사 및 직접 투영 비교를 수행했다. [진행 기록](game-progress.md), [검토 기록](series-audio-review.md).
+- 4편 NPC 원위치 재배치로 플레이어와 겹쳐 이동 동결: 제품 결함으로 확인해 수정했다. 리드는 독립 수치 5사례 검토 후 출발 저장을 복원해 5편까지 완료했다. 이전의 ‘자동 경로 문제일 수 있음’ 판정은 대체됐다.
+- 강변 고정 동행 오프셋의 정적 충돌 및 짧은 귀환 경로 교차: 오프셋·경로 수정과 정적 clearance 수치 검토 이력, 이후 실제 5편 완료 증거가 있다. 전 조합의 참가자 동작을 모두 개별 승인한 것은 아니다. 세부 발견·수정 시점은 [검토 기록](series-audio-review.md)을 따른다.
+- 경계 QA의 mount 대기식 `undefined !== null`: 검사 도구 오류였으며 `Boolean(view)`로 수정 후 통과했다. 게임 결함으로 계산하지 않는다.
+
+## 실제 1편 완료와 동일 기록 후속편 진행 갱신
+
+실제 초대장부터 진행한 동일 `4e553` 브라우저 기록이 박물관 E1에 도달했다. [박물관 완료 경계 원자료](series-full-play/museum-complete-boundary-driver.json)의 최종 `view`는 `sceneId=E1`, `phase=terminal`, `revision=296`, 주요 선택 이력 11건이다. [박물관 엔딩 화면](series-full-play/museum-ending.png). 이는 E1 fixture 주입과 구분되는 실제 1편 완료 증거다.
+
+위 원자료의 `errors`에는 후속 연작 마운트 전 `null.view`를 읽은 검사 도구 오류가 남아 있다. 따라서 이 파일 전체를 errors=[] 성공 보고서라고 표기하지 않는다. 리드는 비동기 경계 대기식을 수정한 뒤 같은 브라우저·동일 기록의 정상 Continue와 dawn 전환으로 2편에 진입했고, 이번 문서 갱신 시점에는 `perform/revision5`까지 진행했다고 보고했다. 저장/상태 주입 없이 박물관 296개 이벤트 계보를 유지한 경로이며, 5편까지의 새 성공 보고서는 아직 대기다.
+
+리드는 실제 1편 영상에서 대표 9프레임 및 4개 동작 구간을 검토했다. [대표 프레임](series-full-play/motion-contact.png), [활성 동작 비교](series-full-play/motion-active-pairs.png). 검토 범위에서 다리·몸체 이동, 문 주변 카메라 전환, NPC 몸짓을 확인했고 뚜렷한 화면 관통을 발견하지 않았다. 770.2초·약86MB 원본 영상 전체를 빠짐없이 검토했다는 뜻은 아니다. 같은 기록의 후속편 포함 최종 영상은 완료 후 별도로 확정한다.
+
+최신 실제 R31에서 미독 대사를 우선 읽도록 조사 선택을 수정했고, 관련 8사례 소스 검토 결과는 리드가 확인했다. 최종 전체 `npm test` 결과는 아직 대기다. 편별 manifest 런타임 소스 SHA-256은 이번 문서 갱신 시점에 다시 일치시켰다.
+
+## 남은 최종 판정
+
+1. 실제 1편 E1 완료·11선택 계보를 바탕으로 동일 기록의 5편 complete 성공 보고서와 최종 오류 목록 확정.
+2. 최신 공간 음향 수정의 독립 검토·런타임 연결, 최종 전체 검사 결과 반영. WebAudio 노드 확인과 물리 출력 청취는 구분.
+3. 실제 영상·화면에서 이동/NPC/소품/카메라/전환/행동의 최종 시각 판정과 발견 이슈 해결 기록.
+4. 위 결과에 맞춰 이 초안·진행 기록·manifest를 확정. 단순 파일 생성이나 검사 개수로 완료 처리하지 않음.
+
+---
+
+# 이전 검증 이력 — 이번 연작 완료 증거와 구분
+
 # 최신 검증: AI 제거·정적 배포
 
 2026-10-28. 게임 진행·저장을 브라우저로 옮기고 AI와 게임 서버를 제거했다. 정적 빌드 28파일+목록, 전체 검사67/67, 변경 코드 정적 검사와 핵심 브라우저 검증을 통과했다. [전환 내용·검증 범위·저장 호환성](static-migration.md). 로컬 5188은 이제 정적 미리보기다. 아래는 이전 AI 사용 버전의 검증 이력이다.

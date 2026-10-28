@@ -1,0 +1,20 @@
+{
+  "capturedAt": "2026-10-28T16:45:08.600Z",
+  "beforeBoundary": {
+    "scene": "F31",
+    "revision": 273,
+    "sessionId": "4e5535e6ab0d512ef71a010b7e46bfdac6c8a92024a3932c"
+  },
+  "manifestSha256": "1cdcd37e5264b3ce205075648247c7d5c83fbef70232836ca910c9d5a4f847a1",
+  "scope": "Complete static build manifest captured before series entry; earlier museum video segments used their recorded startup hashes.",
+  "verifiedAt": "2026-10-28T16:48:10.226Z",
+  "manifestStillMatches": true,
+  "boundaryProof": {
+    "museumScene": "E1",
+    "museumRevision": 296,
+    "museumDecisions": 11,
+    "seriesEnteredEpisode": 2,
+    "fixture": false,
+    "normalSessionResume": true
+  }
+}

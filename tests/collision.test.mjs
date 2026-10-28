@@ -1,19 +1,54 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import * as THREE from 'three';
+import { createAssetCore, MUSEUM_PALETTE } from '../public/assets/shared/core.mjs';
+import { createMuseumEnvironment } from '../public/assets/episodes/ep-01/environment.mjs';
+import { collectStaticColliders } from '../public/museum-colliders.mjs';
 import { canOccupy, moveBody } from '../public/museum-collision.mjs';
 import { CONNECTIONS, ROOMS, walkableAt } from '../public/museum-map.mjs';
 
 const options = { timeout: 5_000 };
 
+function galleryWalls(t) {
+  const geometries = new Set(), materials = new Set();
+  const material = (color, options = {}) => {
+    const value = new THREE.MeshStandardMaterial({ color, ...options });
+    materials.add(value);
+    return value;
+  };
+  const paint = Object.fromEntries(Object.entries(MUSEUM_PALETTE).map(([id, color]) => [id, material(color)]));
+  const core = createAssetCore(THREE, {
+    geometry: (value) => (geometries.add(value), value), material, paint,
+    glass: material('#85aaa0'), signal: material('#c9dbb0'),
+    waterPaint: material('#548a88'), contact: material('#384b3d'),
+  });
+  t.after(() => {
+    for (const geometry of geometries) geometry.dispose();
+    for (const value of materials) value.dispose();
+  });
+  const room = ROOMS.find((room) => room.id === 'gallery');
+  const asset = createMuseumEnvironment(core).create('room-shell', {
+    width: room.width, depth: room.depth, roomType: room.id,
+    doors: ['north', 'south', 'east', 'west'],
+  });
+  asset.group.position.set(room.x, 0, room.z);
+  return collectStaticColliders(asset.group);
+}
+
 test(
   'fast movement stops at a wall instead of entering the next room through it',
   options,
-  () => {
+  (t) => {
     const body = Object.freeze({ id: 'player', x: 0, z: 3, radius: 0.38 });
-    const result = moveBody(body, 16, 0, []);
+    // Shared room floors now touch; their rendered wall proxies own interior collision.
+    const boxes = galleryWalls(t);
+    const wall = boxes.filter((box) => box.minX > body.x && box.minZ < body.z && box.maxZ > body.z)
+      .sort((a, b) => a.minX - b.minX)[0];
+    assert.ok(wall, 'the actual room model must provide an east wall');
+    const result = moveBody(body, 16, 0, boxes);
     assert.equal(result.blocked, true);
     assert.ok(
-      result.x <= 6 - body.radius && result.x > 6 - body.radius - 0.06,
+      result.x <= wall.minX - body.radius && result.x > wall.minX - body.radius - 0.06,
       JSON.stringify(result)
     );
     assert.equal(result.z, 3);
@@ -25,17 +60,18 @@ test(
   'a circular footprint cannot clip diagonal doorway corners between its cardinal samples',
   options,
   () => {
+    const edgeZ = ROOMS.find((room) => room.id === 'gallery').depth / 2;
     for (const signX of [-1, 1]) {
       for (const signZ of [-1, 1]) {
-        assert.equal(walkableAt(signX * 1.62, signZ * 4.82, 0.26), false);
-        assert.equal(walkableAt(signX * 1.6, signZ * 4.8, 0.26), true);
+        assert.equal(walkableAt(signX * 1.62, signZ * (edgeZ - 0.18), 0.26), false);
+        assert.equal(walkableAt(signX * 1.6, signZ * (edgeZ - 0.2), 0.26), true);
       }
     }
-    const body = { id: 'player', x: 1.2, z: 4.4, radius: 0.26 };
+    const body = { id: 'player', x: 1.2, z: edgeZ - 0.6, radius: 0.26 };
     const result = moveBody(body, 0.6, 0.6, []);
     assert.equal(result.blocked, true);
     assert.ok(
-      Math.hypot(result.x - 1.8, result.z - 5) >= body.radius - 1e-12,
+      Math.hypot(result.x - 1.8, result.z - edgeZ) >= body.radius - 1e-12,
       JSON.stringify(result)
     );
     assert.ok(canOccupy(body, result.x, result.z, []));

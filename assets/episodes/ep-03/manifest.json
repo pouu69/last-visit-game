@@ -1,0 +1,948 @@
+{
+  "schemaVersion": 2,
+  "isTemplate": false,
+  "episodeId": "ep-03",
+  "title": "극장",
+  "approval": "modelled",
+  "storySources": [
+    "docs/series/episode-03-theatre.md"
+  ],
+  "storyRevision": {
+    "kind": "sha256",
+    "sources": {
+      "docs/series/episode-03-theatre.md": "22a59bfcc695f3970569bb0353af8af9f1c83c0d21ce0aa7856f59737df376c6"
+    }
+  },
+  "artDirection": "assets/shared/art-direction.md",
+  "styleRevision": "series-art-v1",
+  "episodeBrief": "assets/episodes/ep-03/brief.md",
+  "runtime": {
+    "catalogueModule": "public/assets/episodes/ep-03/props.mjs",
+    "actorsModule": "public/assets/episodes/ep-02/actors.mjs",
+    "gameEntryPoint": "public/app.mjs → public/series-game.mjs#mountSeriesGame",
+    "sceneModule": "public/series-world.mjs",
+    "galleryEntryPoint": "public/asset-gallery.html?episode=3",
+    "saveNamespace": "return-path-series-v2:<museum sessionId>",
+    "actionPlanModule": "public/series-action-plan.mjs",
+    "sourceSha256": {
+      "docs/series/episode-03-theatre.md": "22a59bfcc695f3970569bb0353af8af9f1c83c0d21ce0aa7856f59737df376c6",
+      "public/assets/episodes/ep-02/actors.mjs": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de",
+      "public/assets/episodes/ep-03/props.mjs": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e",
+      "public/series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+      "public/series-game.mjs": "53e78fc2c3adff9965e6eed86441eb151aed1fa684c1373d02318debc1c55381",
+      "public/series-world.mjs": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041",
+      "src/series-content.mjs": "b64c5f2bb993176b5a78f022218b021c1a8550251bcf1ad70a19fb0185f2326b",
+      "src/series-state.mjs": "bc4a700ada5895aa40694ed8dceec422a274af87fd7a960f8c521e7167986c9c"
+    }
+  },
+  "review": {
+    "targetModelRevision": "series-2026-10-29",
+    "cameraYawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "cameraPitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ],
+    "actualCatalogueEntries": 8,
+    "actualRoomCount": null,
+    "renderedViews": 240,
+    "manuallyReviewedViews": 40,
+    "visualScript": null,
+    "gameplayScript": null,
+    "commands": [],
+    "evidence": [
+      "artifacts/game-progress.md",
+      "artifacts/series-requirements-audit.md",
+      "artifacts/series-assets/ep-03/report.json",
+      "artifacts/series-assets/ep-03/contact.png",
+      "assets/episodes/ep-03/review/review.md",
+      "artifacts/series-integration-qa/resumed-complete.json",
+      "artifacts/series-integration-qa/resumed-complete.png",
+      "artifacts/series-resume-qa/REPORT.md",
+      "artifacts/series-resume-qa/report.json",
+      "artifacts/series-full-play/report.json",
+      "artifacts/series-full-play/canonical-journey.json",
+      "artifacts/series-resume-qa/story-link-report.json",
+      "artifacts/series-resume-qa/spatial-report.json",
+      "artifacts/series-full-play/series-motion-contact.png",
+      "artifacts/series-full-play/series-motion-active-pairs.png",
+      "artifacts/series-full-play/series-transition-contact.png",
+      "artifacts/series-full-play/series-motion-review.json"
+    ],
+    "result": "modelled-gallery-rendered-partially-inspected-gameplay-pending",
+    "unverified": [
+      "전체 카탈로그의 모든 상태·모션·시점에 대한 개별 모델 게임 승인은 별도 관리 단계이며 이번 대표 게임 경로 완료와 구분"
+    ],
+    "failures": [],
+    "galleryCatalogueEntries": 10,
+    "galleryCatalogueIds": [
+      "chair",
+      "jeongyeon",
+      "microphone",
+      "open-circle",
+      "personal-player",
+      "score-notes",
+      "signal-cards",
+      "sohui",
+      "timing-board",
+      "track-console"
+    ],
+    "renderedScaleViews": 9,
+    "manuallyReviewedViewScope": {
+      "reviewer": "root",
+      "yawDegrees": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "pitchDegrees": [
+        43
+      ],
+      "method": "contact-sheet",
+      "full24ViewsInspected": false
+    },
+    "renderReportGeneratedAt": "2026-10-28T16:08:48.896Z",
+    "renderErrors": [],
+    "reviewedScaleImages": [],
+    "gameplayEvidenceScope": "fixture 없는 동일 실제 기록: 1편 E1 terminal/revision296·11선택 → 2~5편 complete/revision39·모든 필수행동. canonical-journey 공식 복원 및 browser errors[] 확인. 전체 카탈로그 개별 게임 승인은 아님.",
+    "representativeGameplayVisualReview": {
+      "result": "passed-within-inspected-scope",
+      "reviewer": "root",
+      "sourceVideo": "artifacts/series-full-play/motion/page@d4198f32630b6b0480d304b2169fca2a.webm",
+      "durationSeconds": 360.72,
+      "overviewFrames": 9,
+      "motionTriplets": 4,
+      "tripletOffsetsSeconds": [
+        0,
+        0.2,
+        0.4
+      ],
+      "transitionWindowSeconds": [
+        69,
+        74.6
+      ],
+      "exhaustiveVideoReview": false
+    }
+  },
+  "assets": [
+    {
+      "assetKey": "ep-03/chair",
+      "id": "chair",
+      "displayName": "이동 의자",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "이동 의자",
+      "storyReferences": [
+        "V30",
+        "V32",
+        "V34"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "movable",
+        "placed"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.3100000023841858,
+          0,
+          -0.3100000023841858
+        ],
+        "max": [
+          0.3100000023841858,
+          1.1399999856948853,
+          0.3099999725818634
+        ],
+        "sizeXYZ": [
+          0.6200000047683716,
+          1.1399999856948853,
+          0.6199999749660492
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.62,
+        0.62
+      ],
+      "declaredHeight": 1.14,
+      "geometry": {
+        "triangles": 224,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.31,
+            "maxX": 0.31,
+            "minY": 0,
+            "maxY": 1.14,
+            "minZ": -0.31,
+            "maxZ": 0.31
+          }
+        ]
+      },
+      "galleryId": "chair",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/microphone",
+      "id": "microphone",
+      "displayName": "마이크와 스탠드",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "마이크와 스탠드",
+      "storyReferences": [
+        "V30",
+        "V32"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "head": ""
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.33000001311302185,
+          0.004999999888241291,
+          -0.33000001311302185
+        ],
+        "max": [
+          0.535,
+          1.57,
+          0.33000001311302185
+        ],
+        "sizeXYZ": [
+          0.8650000131130219,
+          1.5650000001117588,
+          0.6600000262260437
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.88,
+        0.66
+      ],
+      "declaredHeight": 1.58,
+      "geometry": {
+        "triangles": 1008,
+        "meshes": 4,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.33,
+            "maxX": 0.33,
+            "minY": 0,
+            "maxY": 0.1,
+            "minZ": -0.33,
+            "maxZ": 0.33
+          }
+        ]
+      },
+      "galleryId": "microphone",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/track-console",
+      "id": "track-console",
+      "displayName": "녹음 트랙 대조 화면",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "녹음 트랙 대조 화면",
+      "storyReferences": [
+        "V31-A",
+        "V32"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "screen": "label-原本-00:00-━━━━━-独唱-02:00-━-━━-다음-모임용-편집"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.8,
+          0,
+          -0.36
+        ],
+        "max": [
+          0.8,
+          1.5899999999999999,
+          0.35999997854232785
+        ],
+        "sizeXYZ": [
+          1.6,
+          1.5899999999999999,
+          0.7199999785423279
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.6,
+        0.72
+      ],
+      "declaredHeight": 1.6,
+      "geometry": {
+        "triangles": 324,
+        "meshes": 5,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.8,
+            "maxX": 0.8,
+            "minY": 0,
+            "maxY": 0.9,
+            "minZ": -0.36,
+            "maxZ": 0.36
+          }
+        ]
+      },
+      "galleryId": "track-console",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/signal-cards",
+      "id": "signal-cards",
+      "displayName": "숫자·멈춤 카드",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "숫자·멈춤 카드",
+      "storyReferences": [
+        "V35-C"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "selected-signal"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "cards": [
+          "signal-card-1",
+          "signal-card-2",
+          "signal-card-3",
+          "signal-card-4",
+          "signal-card-5"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.6758799824886013,
+          0.020999999999999942,
+          -0.282763817311372
+        ],
+        "max": [
+          0.6758799824886013,
+          0.11099999946355825,
+          0.282763817311372
+        ],
+        "sizeXYZ": [
+          1.3517599649772025,
+          0.0899999994635583,
+          0.565527634622744
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.35,
+        0.6
+      ],
+      "declaredHeight": 0.14,
+      "geometry": {
+        "triangles": 140,
+        "meshes": 5,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "signal-cards",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/score-notes",
+      "id": "score-notes",
+      "displayName": "악보와 편집 메모",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "악보와 편집 메모",
+      "storyReferences": [
+        "V31-B",
+        "V33"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.675,
+          0.015999999999999938,
+          -0.29
+        ],
+        "max": [
+          0.719019185383079,
+          0.04899999946355825,
+          0.32317483476640657
+        ],
+        "sizeXYZ": [
+          1.394019185383079,
+          0.03299999946355831,
+          0.6131748347664066
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.45,
+        0.66
+      ],
+      "declaredHeight": 0.06,
+      "geometry": {
+        "triangles": 56,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "score-notes",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/personal-player",
+      "id": "personal-player",
+      "displayName": "개인 재생 기기",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "개인 재생 기기",
+      "storyReferences": [
+        "V35-D"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "screen": "label-개인-청취"
+      },
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.11999999731779099,
+          0,
+          -0.20000000298023224
+        ],
+        "max": [
+          0.35199999809265137,
+          0.13199999964237216,
+          0.19999998807907104
+        ],
+        "sizeXYZ": [
+          0.47199999541044235,
+          0.13199999964237216,
+          0.3999999910593033
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.6,
+        0.4
+      ],
+      "declaredHeight": 0.14,
+      "geometry": {
+        "triangles": 296,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "personal-player",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/timing-board",
+      "id": "timing-board",
+      "displayName": "녹음·영상 시계 대조판",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "녹음·영상 시계 대조판",
+      "storyReferences": [
+        "V31-B",
+        "V33"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "clap": "label-시작-박수-·-녹음-02:00",
+        "video": "label-같은-박수-·-영상-00:00"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.7,
+          0,
+          -0.08
+        ],
+        "max": [
+          0.7,
+          1,
+          0.09999999940395354
+        ],
+        "sizeXYZ": [
+          1.4,
+          1,
+          0.17999999940395356
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.4,
+        0.16
+      ],
+      "declaredHeight": 1,
+      "geometry": {
+        "triangles": 84,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.7,
+            "maxX": 0.7,
+            "minY": 0,
+            "maxY": 1,
+            "minZ": -0.08,
+            "maxZ": 0.08
+          }
+        ]
+      },
+      "galleryId": "timing-board",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    },
+    {
+      "assetKey": "ep-03/open-circle",
+      "id": "open-circle",
+      "displayName": "통로가 열린 객석 의자 배치",
+      "episodeId": "ep-03",
+      "family": "prop",
+      "role": "통로가 열린 객석 의자 배치",
+      "storyReferences": [
+        "V30",
+        "V32",
+        "V34"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-03/props.mjs",
+      "revision": "series-ep-03-2026-10-29",
+      "constructor": "createEpisode03Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "chairs": [
+          "chair-0",
+          "chair-1",
+          "chair-2",
+          "chair-3",
+          "chair-4",
+          "chair-5"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.7399999916553497,
+          0,
+          -1.4354267540075738
+        ],
+        "max": [
+          1.7399999916553497,
+          1.0399999618530273,
+          1.4354267540075738
+        ],
+        "sizeXYZ": [
+          3.4799999833106994,
+          1.0399999618530273,
+          2.8708535080151476
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        3.65,
+        3.15
+      ],
+      "declaredHeight": 1.05,
+      "geometry": {
+        "triangles": 1008,
+        "meshes": 6,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -1.4353048327204938,
+            "maxX": -0.615304832720494,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": -1.4353048327204938,
+            "maxZ": -0.615304832720494
+          },
+          {
+            "minX": -1.8599999999999999,
+            "maxX": -1.04,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": -0.40999999999999986,
+            "maxZ": 0.4100000000000001
+          },
+          {
+            "minX": -1.4353048327204938,
+            "maxX": -0.615304832720494,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": 0.615304832720494,
+            "maxZ": 1.4353048327204938
+          },
+          {
+            "minX": 0.615304832720494,
+            "maxX": 1.4353048327204938,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": 0.615304832720494,
+            "maxZ": 1.4353048327204938
+          },
+          {
+            "minX": 1.04,
+            "maxX": 1.8599999999999999,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": -0.40999999999999986,
+            "maxZ": 0.4100000000000001
+          },
+          {
+            "minX": 0.615304832720494,
+            "maxX": 1.4353048327204938,
+            "minY": 0,
+            "maxY": 1.05,
+            "minZ": -1.4353048327204938,
+            "maxZ": -0.615304832720494
+          }
+        ]
+      },
+      "galleryId": "open-circle",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-03-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-03-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "246644a9122b9f2cf5b1bc78317766bc66b7e57dbb98667550a51ebe2afa799e"
+    }
+  ]
+}

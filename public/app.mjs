@@ -106,6 +106,8 @@ let cameraExpanded = false;
 let cameraSettings = null;
 let storageWarning = '';
 let registryWarning = '';
+let seriesGame = null;
+window.seriesDiagnostics = () => seriesGame?.diagnostics() ?? null;
 let browserStorage = null;
 
 try {
@@ -1206,6 +1208,22 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
   renderChoices();
   investigation.update(view, { sessionId, busy, visible: fieldVisible });
   $('ending-actions').hidden = view.phase !== 'terminal';
+  if (view.phase === 'terminal' && !$('series-start')) {
+    const control = button('돌아가는 길 · 다음 이야기로', async () => {
+      if (seriesGame || busy) return;
+      setBusy(true);
+      try {
+        const { mountSeriesGame } = await import('./series-game.mjs');
+        $('museum-stage').inert = true;
+        museum.setSuspended(true);
+        seriesGame = await mountSeriesGame({ museumView:view, sessionId, storage:browserStorage,
+          onClose:()=>{seriesGame=null;museum.setSuspended(false);$('museum-stage').inert=false;render();} });
+      } catch(error) { museum.setSuspended(false);notice(`다음 이야기를 열지 못했습니다: ${error.message}`); $('museum-stage').inert=false; }
+      finally { setBusy(false); }
+    }, 'primary');
+    control.id = 'series-start';
+    $('ending-actions').prepend(control);
+  }
   updateMuseum();
   renderNavigation();
   if (sceneChanged) {

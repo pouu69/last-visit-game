@@ -1,0 +1,2062 @@
+{
+  "samples": [
+    {
+      "stage": "invitation-inspected",
+      "sceneId": "O00",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "O00",
+        "phase": "exploring",
+        "calls": 78,
+        "triangles": 12804,
+        "geometries": 159,
+        "textures": 8,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 125,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "O00-5",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 258,
+          "closedGates": 24,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 16.000000000000004,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2,
+            "z": 17,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "attention",
+            "ambientPath": false,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": "invitation",
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": 0.011807310674474375,
+          "antenna": 0.035465891969259186
+        },
+        "avatar": {
+          "x": 0,
+          "z": 16.000000000000004,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 2.8,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 38,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          6.0791901781176145,
+          8.950646843130103,
+          23.291983335484915
+        ],
+        "cameraTarget": [
+          0,
+          0.6699999999999999,
+          14.61
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "curator-greeted",
+      "sceneId": "O00",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "O00",
+        "phase": "exploring",
+        "calls": 94,
+        "triangles": 15108,
+        "geometries": 159,
+        "textures": 8,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 181,
+        "targetFps": 30,
+        "speaking": "윤서",
+        "messageId": "O00-11",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 258,
+          "closedGates": 24,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": -0.49999999999999994,
+              "z": 17.000000000000004,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -2,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -2,
+            "z": 17,
+            "visible": true,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "attention",
+            "ambientPath": false,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": {
+          "hotspotId": "field-action"
+        },
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": "yunseo",
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": 0.006691720761315751,
+          "antenna": 0.01922382814413384
+        },
+        "avatar": {
+          "x": -0.49999999999999994,
+          "z": 17.000000000000004,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 2.6,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 38,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          4.0791901781176145,
+          8.630646843130103,
+          25.681983335484915
+        ],
+        "cameraTarget": [
+          -2,
+          0.3500000000000001,
+          17
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": "윤서",
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "travel-start",
+      "sceneId": "S01",
+      "phase": "travelling",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "travelling",
+        "calls": 138,
+        "triangles": 23212,
+        "geometries": 159,
+        "textures": 8,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 199,
+        "targetFps": 30,
+        "speaking": null,
+        "messageId": null,
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 256,
+          "closedGates": 22,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": -0.49999999999999994,
+              "z": 17.000000000000004,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -1.733119999999995,
+              "z": 17,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -1.733119999999995,
+            "z": 17,
+            "visible": true,
+            "moving": true,
+            "waypoints": 47,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": {
+          "roomId": "gallery"
+        },
+        "objectiveMarker": [
+          0,
+          0.04,
+          9.5
+        ],
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": true,
+        "activeAnchor": null,
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.011993649364584767,
+          "antenna": 0.030080743226550553
+        },
+        "avatar": {
+          "x": -0.49999999999999994,
+          "z": 17.000000000000004,
+          "roomId": "foyer",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "foyer",
+        "targetRoomId": "gallery",
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 38,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          9.310630396342455,
+          13.987586191577824,
+          31.86131489328906
+        ],
+        "cameraTarget": [
+          -0.701326592,
+          0.3500000000000001,
+          17.5627584768
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "gallery-arrival",
+      "sceneId": "S01",
+      "phase": "reading",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "reading",
+        "calls": 150,
+        "triangles": 26354,
+        "geometries": 165,
+        "textures": 8,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 344,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "S01-1",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 256,
+          "closedGates": 22,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 4.000000000000002,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -1,
+              "z": 5.3172840718848,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -1,
+            "z": 5.3172840718848,
+            "visible": true,
+            "moving": true,
+            "waypoints": 12,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": false,
+        "activeAnchor": null,
+        "hotspots": [],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.010527877787775461,
+          "antenna": -0.007261101797890051
+        },
+        "avatar": {
+          "x": 0,
+          "z": 4.000000000000002,
+          "roomId": "gallery",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "gallery",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 38,
+          "yaw": 35
+        },
+        "cameraPosition": [
+          10.621633354604086,
+          14.818044670152952,
+          18.890863672327228
+        ],
+        "cameraTarget": [
+          -4.210697679374686e-8,
+          0.3500000000000001,
+          3.7215991084688502
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    },
+    {
+      "stage": "camera-rotated",
+      "sceneId": "S01",
+      "phase": "exploring",
+      "observations": [
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "invitation",
+          "label": "초대장 확인하기",
+          "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+        },
+        {
+          "sceneId": "O00",
+          "sceneTitle": "마지막 야간 관람",
+          "id": "curator",
+          "label": "윤서와 인사하기",
+          "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+        }
+      ],
+      "diagnostics": {
+        "mode": "webgl",
+        "assetRevision": "museum-low-poly-2026-10-28",
+        "assetCatalog": [
+          "exhibit-case",
+          "archive-desk",
+          "courtyard",
+          "storage-bays",
+          "paper-boat",
+          "ledger",
+          "sealed-cover",
+          "original-guard",
+          "trolley",
+          "notice-board",
+          "valve",
+          "supplies",
+          "battery",
+          "archive-shelf",
+          "stamp-set",
+          "key-bundle",
+          "layered-label",
+          "control-panel",
+          "packing-table",
+          "preservation-kit",
+          "exit-door",
+          "office-desk",
+          "cupboard",
+          "reception-counter",
+          "bench",
+          "map-lectern",
+          "clock",
+          "tools-rack",
+          "document-tray",
+          "invitation",
+          "arch-window",
+          "pipe-fixture",
+          "moro",
+          "curator",
+          "player",
+          "terminal",
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "environmentRevision": "museum-environment-2026-10-28",
+        "environmentCatalog": [
+          "room-shell",
+          "corridor-segment",
+          "courtyard-path",
+          "water-channel",
+          "floor-rug",
+          "service-strip",
+          "wheel-trail"
+        ],
+        "assetInstances": 108,
+        "assetState": {
+          "boat": true,
+          "damagedBoat": false,
+          "ledger": true,
+          "blurredLedger": false,
+          "sealed": [
+            false,
+            false
+          ],
+          "originalGuard": true,
+          "preservationKit": false,
+          "moroEyes": true,
+          "antennaLight": true,
+          "trolley": false,
+          "waterHeight": 0.26,
+          "indicators": [
+            "b18a54",
+            "b18a54"
+          ]
+        },
+        "sceneId": "S01",
+        "phase": "exploring",
+        "calls": 131,
+        "triangles": 24938,
+        "geometries": 174,
+        "textures": 8,
+        "materials": 62,
+        "dpr": 1,
+        "width": 1440,
+        "height": 1000,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "moving": true,
+        "renderedFrames": 445,
+        "targetFps": 30,
+        "speaking": "서술",
+        "messageId": "S01-2",
+        "curatorVisible": true,
+        "collision": {
+          "staticBoxes": 256,
+          "closedGates": 22,
+          "gates": [
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "maintenance:return",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "control:return",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": -16
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "archive:gallery",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "gallery:office",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 0
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:garden",
+              "closed": true,
+              "solid": true,
+              "x": -8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "foyer:reception",
+              "closed": true,
+              "solid": true,
+              "x": 8,
+              "y": 1.17,
+              "z": 16
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "archive:maintenance",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "archive:garden",
+              "closed": true,
+              "solid": true,
+              "x": -16,
+              "y": 1.17,
+              "z": 9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "gallery:return",
+              "closed": true,
+              "solid": true,
+              "x": 0,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 7
+            },
+            {
+              "edge": "foyer:gallery",
+              "closed": false,
+              "solid": false,
+              "x": 0,
+              "y": 2.27,
+              "z": 9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -9
+            },
+            {
+              "edge": "control:office",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": -7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 7
+            },
+            {
+              "edge": "office:reception",
+              "closed": true,
+              "solid": true,
+              "x": 16,
+              "y": 1.17,
+              "z": 9
+            }
+          ],
+          "bodies": [
+            {
+              "id": "player",
+              "x": 0,
+              "z": 4.000000000000002,
+              "radius": 0.38,
+              "clear": true
+            },
+            {
+              "id": "yunseo",
+              "x": -1.3212953771157228,
+              "z": 2,
+              "radius": 0.4,
+              "clear": true
+            }
+          ],
+          "towingMoro": false
+        },
+        "accessFeedback": null,
+        "actors": [
+          {
+            "id": "yunseo",
+            "x": -1.3212953771157228,
+            "z": 2,
+            "visible": true,
+            "moving": true,
+            "waypoints": 5,
+            "activity": "roam",
+            "ambientPath": true,
+            "waiting": false
+          },
+          {
+            "id": "moro",
+            "x": 1.1,
+            "z": 1.2,
+            "visible": false,
+            "moving": false,
+            "waypoints": 0,
+            "activity": "rest",
+            "ambientPath": false,
+            "waiting": false
+          }
+        ],
+        "ambientSpeech": null,
+        "objectiveTarget": null,
+        "objectiveMarker": null,
+        "remoteNaraVisible": false,
+        "worldHotspots": true,
+        "interactive": true,
+        "activeAnchor": null,
+        "hotspots": [
+          {
+            "id": "case",
+            "anchor": "case",
+            "visible": false
+          }
+        ],
+        "poses": {
+          "curatorHead": 0,
+          "curatorArm": 0,
+          "moroTilt": -0.0012040292463925681,
+          "antenna": 0.03451996417370978
+        },
+        "avatar": {
+          "x": 0,
+          "z": 4.000000000000002,
+          "roomId": "gallery",
+          "moving": false,
+          "waypoints": 0
+        },
+        "currentRoomId": "gallery",
+        "targetRoomId": null,
+        "nearbyLabel": null,
+        "roomCount": 9,
+        "cameraZoom": 1,
+        "cameraSettings": {
+          "zoom": 1,
+          "pitch": 46,
+          "yaw": 125
+        },
+        "cameraPosition": [
+          13.583008992305638,
+          16.971787384916848,
+          -6.154935670861984
+        ],
+        "cameraTarget": [
+          7.960202575699165e-17,
+          0.35000000000000003,
+          3.3500000000000023
+        ],
+        "cameraFrustum": {
+          "top": 4.8,
+          "bottom": -4.8
+        },
+        "speakerMarker": null,
+        "reducedMotion": false,
+        "hidden": false,
+        "disposed": false,
+        "boat": "locked",
+        "moro": "active"
+      }
+    }
+  ],
+  "errors": []
+}

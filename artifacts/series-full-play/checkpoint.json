@@ -1,0 +1,1510 @@
+{
+  "buildHash": "b8da8ceb3ffd4fb064a1888697f5d9af05e4bd0300c9081ef8a3ba7e30fd1427",
+  "action": "series:close-gathering",
+  "at": "2026-10-28T16:52:40.428Z",
+  "view": {
+    "teamId": 1,
+    "playerName": "여울",
+    "mode": "map",
+    "storyVersion": "museum-map-4",
+    "currentRoomId": "reception",
+    "visitedRoomIds": [
+      "foyer",
+      "reception",
+      "gallery",
+      "archive",
+      "maintenance",
+      "return",
+      "garden",
+      "control",
+      "office"
+    ],
+    "travel": null,
+    "canSkipIntro": false,
+    "sceneId": "E1",
+    "revision": 296,
+    "phase": "terminal",
+    "title": "강으로 돌아간 약속",
+    "nextScene": null,
+    "chapter": 3,
+    "messages": [
+      {
+        "id": "E1-1",
+        "speaker": "서술",
+        "text": "반환 접수가 끝난 자리에는 종이배 대신 발송 기록이 남는다. 윤서는 받침대 위를 한 번 쓸고, 새 물건을 올려 빈자리를 가리지 않는다."
+      },
+      {
+        "id": "E1-2",
+        "speaker": "윤서",
+        "text": "제1호 전시품은 반환됐습니다. 마지막 기록에는 이렇게 적을게요."
+      },
+      {
+        "id": "E1-3",
+        "speaker": "서술",
+        "text": "다음 날 아침, 나래에게서 사진 한 장 대신 먼저 짧은 메시지가 온다."
+      },
+      {
+        "id": "E1-4",
+        "speaker": "나래",
+        "text": "배를 받았어요. 접힌 모양도 남아 있어요. 약속한 시간에 가져갈게요."
+      },
+      {
+        "id": "E1-5",
+        "speaker": "서술",
+        "text": "아홉 시가 되었을 때 나래의 배 곁에는 다른 크기의 배들이 모인다. 반듯한 배도, 물에 뜰지 확신하기 어려운 배도 있다."
+      },
+      {
+        "id": "E1-6",
+        "speaker": "아이",
+        "text": "이 배가 제일 오래된 거예요?"
+      },
+      {
+        "id": "E1-7",
+        "speaker": "나래",
+        "text": "응. 제일 오래 기다린 배야. 오늘은 같이 가면 되겠다."
+      },
+      {
+        "id": "E1-8",
+        "speaker": "서술",
+        "text": "나래가 먼저 손을 놓는다. 오래된 배가 물살에 방향을 틀고, 새 배들이 그 옆으로 흩어진다."
+      },
+      {
+        "id": "E1-9",
+        "speaker": "나래",
+        "text": "약속은 시작했어요. 어젯밤에 무엇을 남겨 줬는지도 기억할게요."
+      },
+      {
+        "id": "E1-10",
+        "speaker": "서술",
+        "text": "원본 장부는 온전하게 보존됐다. 처음의 반환 조항을 읽을 수 있고, 별도로 모은 실행·요청 자료와 대조할 수 있다."
+      },
+      {
+        "id": "E1-11",
+        "speaker": "서술",
+        "text": "그날 밤 마지막 확인 당시 모로는 작동하고 있었다. 보관 위치와 이동 담당자를 인계 기록에 남겼다."
+      },
+      {
+        "id": "E1-12",
+        "speaker": "서술",
+        "text": "처음 따라갔던 바퀴 자국을 떠올린다. 그 길은 배를 훔쳐 달아나는 길이 아니었다. 무엇을 요청받고 어디까지 실행했는지 확인하는 일이 여러분의 첫 조사였다."
+      }
+    ],
+    "choices": [],
+    "hints": [],
+    "hintCount": 0,
+    "topics": [],
+    "npc": null,
+    "flags": {
+      "charter": false,
+      "log": false,
+      "statement": true,
+      "request": false,
+      "battery": false,
+      "map": true,
+      "maintenance": true,
+      "repair": false,
+      "boat": "intact",
+      "record": "intact",
+      "moro": "active",
+      "crane": "stable",
+      "lead": "robot",
+      "stance": "listen",
+      "intent": "return",
+      "method": null
+    },
+    "knownFacts": [
+      "request_received",
+      "return_clause_removed",
+      "return_delayed"
+    ],
+    "observations": [
+      {
+        "sceneId": "O00",
+        "sceneTitle": "마지막 야간 관람",
+        "id": "invitation",
+        "label": "초대장 확인하기",
+        "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+      },
+      {
+        "sceneId": "O00",
+        "sceneTitle": "마지막 야간 관람",
+        "id": "curator",
+        "label": "윤서와 인사하기",
+        "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "case",
+        "label": "제1호 진열장 살펴보기",
+        "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "trail",
+        "label": "모로와 젖은 흔적",
+        "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+      },
+      {
+        "sceneId": "S01",
+        "sceneTitle": "빈 진열장",
+        "id": "schedule",
+        "label": "벽의 일정표 펼치기",
+        "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+      },
+      {
+        "sceneId": "I01",
+        "sceneTitle": "모로의 정비 통로",
+        "id": "receipt",
+        "label": "모로의 집게와 화면",
+        "text": "조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다."
+      },
+      {
+        "sceneId": "P12",
+        "sceneTitle": "마르지 않은 통로",
+        "id": "map",
+        "label": "시설 운반로 지도",
+        "text": "침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다."
+      },
+      {
+        "sceneId": "S12",
+        "sceneTitle": "“제가 옮겼습니다”",
+        "id": "admission",
+        "label": "모로의 첫 설명 듣기",
+        "text": "모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다."
+      },
+      {
+        "sceneId": "T21",
+        "sceneTitle": "명령을 지킨 안내원",
+        "id": "order",
+        "label": "모로의 작업 명령 확인",
+        "text": "반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다."
+      },
+      {
+        "sceneId": "T21",
+        "sceneTitle": "명령을 지킨 안내원",
+        "id": "fault",
+        "label": "고장 시각과 접수표",
+        "text": "이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다."
+      },
+      {
+        "sceneId": "D22",
+        "sceneTitle": "멈춘 배수선",
+        "id": "valve",
+        "label": "번호가 남은 밸브",
+        "text": "유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다."
+      },
+      {
+        "sceneId": "D22",
+        "sceneTitle": "멈춘 배수선",
+        "id": "rail",
+        "label": "배수선과 레일 점검구",
+        "text": "외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "story",
+        "label": "사진 뒷면의 원래 기록",
+        "text": "나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "request",
+        "label": "반환 요청과 윤서의 인정",
+        "text": "나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다."
+      },
+      {
+        "sceneId": "S22",
+        "sceneTitle": "배가 기다린 날",
+        "id": "rescue",
+        "label": "격벽과 배수·레일 조작반",
+        "text": "배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다."
+      },
+      {
+        "sceneId": "P21",
+        "sceneTitle": "마지막 인양",
+        "id": "sequence",
+        "label": "제어기 안전 순서",
+        "text": "유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다."
+      },
+      {
+        "sceneId": "P21",
+        "sceneTitle": "마지막 인양",
+        "id": "interlock",
+        "label": "안전 장치와 수동 복구",
+        "text": "검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다."
+      },
+      {
+        "sceneId": "R31",
+        "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+        "id": "power",
+        "label": "모로 전원과 외부 장비",
+        "text": "모로 전력으로 두 함을 구하면 모로는 잠든다. 외부 인양에는 점검 완료와 배터리가 모두 필요하다."
+      },
+      {
+        "sceneId": "R31",
+        "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+        "id": "crates",
+        "label": "종이배와 장부의 두 함",
+        "text": "한 번의 인양으로 먼저 구하지 못한 쪽은 물에 노출된다. 격벽을 열고 들어갈 수는 없다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "report",
+        "label": "나래에게 구조 결과 전하기",
+        "text": "배와 원본의 실제 상태를 나눠 전달했다. 구조하지 않은 물건을 보냈다고 말하지 않는다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "promise",
+        "label": "나래의 내일과 수령지",
+        "text": "나래의 약속과 수령인·주소를 확인했다. 준비되면 돌려받기로 한 배다."
+      },
+      {
+        "sceneId": "S31",
+        "sceneTitle": "연락 너머의 당사자",
+        "id": "consent",
+        "label": "공개 범위와 모로 인계",
+        "text": "이름과 이웃들과 배를 띄우려 했다는 뜻은 공개할 수 있다. 사진과 주소는 공개하지 않는다. 모로의 이동 책임도 남겨야 한다."
+      },
+      {
+        "sceneId": "F31",
+        "sceneTitle": "배를 보내기 전에",
+        "id": "handoff",
+        "label": "반환 접수와 편지",
+        "text": "사흘 뒤 개봉할 배를 지금 보냈다고 기록할 수 없다. 편지와 책임 있는 인계도 남길 수 있다."
+      },
+      {
+        "sceneId": "F31",
+        "sceneTitle": "배를 보내기 전에",
+        "id": "condition",
+        "label": "배의 포장·수리 상태 확인",
+        "text": "온전한 배, 손상된 배, 밀봉된 배는 같은 발송으로 처리할 수 없다. 보수 도구도 확인해야 한다."
+      }
+    ],
+    "exploration": null,
+    "history": [
+      {
+        "sceneId": "S01",
+        "choiceId": "A",
+        "nextSceneId": "I01",
+        "label": "모로의 바퀴 자국을 따라간다"
+      },
+      {
+        "sceneId": "I01",
+        "choiceId": "B",
+        "nextSceneId": "P12",
+        "label": "정비함의 비상 배터리를 챙긴다"
+      },
+      {
+        "sceneId": "P12",
+        "choiceId": "B",
+        "nextSceneId": "S12",
+        "label": "침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실"
+      },
+      {
+        "sceneId": "S12",
+        "choiceId": "A",
+        "nextSceneId": "T21",
+        "label": "모로가 설명을 끝내도록 기다린다"
+      },
+      {
+        "sceneId": "T21",
+        "choiceId": "D",
+        "nextSceneId": "D22",
+        "label": "모로가 사용한 정비 통로를 확인한다"
+      },
+      {
+        "sceneId": "D22",
+        "choiceId": "A",
+        "nextSceneId": "S22",
+        "label": "수동 배수선과 보조 레일을 점검한다"
+      },
+      {
+        "sceneId": "S22",
+        "choiceId": "B",
+        "nextSceneId": "P21",
+        "label": "윤서에게 변경 사실을 서명으로 확정하게 한다"
+      },
+      {
+        "sceneId": "P21",
+        "choiceId": "B",
+        "nextSceneId": "R31",
+        "label": "인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제"
+      },
+      {
+        "sceneId": "R31",
+        "choiceId": "D",
+        "nextSceneId": "S31",
+        "label": "점검한 배수선과 배터리로 두 함을 꺼낸다"
+      },
+      {
+        "sceneId": "S31",
+        "choiceId": "A",
+        "nextSceneId": "F31",
+        "label": "배의 반환부터 실제로 진행한다"
+      },
+      {
+        "sceneId": "F31",
+        "choiceId": "A",
+        "nextSceneId": "E1",
+        "label": "현재 상태대로 정식 반환 절차를 진행한다"
+      }
+    ],
+    "canNext": false,
+    "readingProgress": {
+      "read": 12,
+      "total": 12
+    },
+    "canContinue": false,
+    "canHint": false
+  },
+  "storage": {
+    "museum-local-record-v1:a57f5ed6cfd72cddc8f5bcecc59f263e32dd859e8331bd8d": "{\"version\":1,\"storyVersion\":\"museum-map-4\",\"teamId\":1,\"events\":[{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":0,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":1,\"hotspotId\":\"invitation\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":2},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":3},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":4},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":5,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":6,\"hotspotId\":\"curator\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":7},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":8},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":9},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":10},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":11},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":12,\"preserveReading\":true},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":13},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":14,\"roomId\":\"gallery\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":15},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":16,\"preserveReading\":true}],\"playerName\":\"온유\",\"checksum\":\"abdfd7ac3fa0a8ca17c07dc83c069f8069d9f26da5f0ec4044cc31ee9fdbff81\"}",
+    "museum-local-sessions-v1": "{\"1\":\"4e5535e6ab0d512ef71a010b7e46bfdac6c8a92024a3932c\"}",
+    "museum-local-record-v1:4e5535e6ab0d512ef71a010b7e46bfdac6c8a92024a3932c": "{\"version\":1,\"storyVersion\":\"museum-map-4\",\"teamId\":1,\"events\":[{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":0,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":1,\"hotspotId\":\"invitation\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":2},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":3},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":4},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":5,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":6,\"hotspotId\":\"curator\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":7},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":8},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":9},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":10},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":11},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":12,\"preserveReading\":true},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":13},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":14,\"roomId\":\"gallery\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":15},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":16,\"preserveReading\":true},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":17,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":18,\"hotspotId\":\"case\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":19},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":20},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":21},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":22},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":23},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":24},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":25,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":26,\"hotspotId\":\"trail\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":27},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":28},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":29},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":30,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":31,\"hotspotId\":\"schedule\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":32},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":33},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":34,\"preserveReading\":true},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":35,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":36,\"fromObservations\":true},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":37,\"choiceId\":\"A\"},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"S01\",\"revision\":38},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":39,\"roomId\":\"maintenance\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":40},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":41},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":42},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":43},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":44,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":45,\"hotspotId\":\"receipt\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":46},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":47},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":48},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":49},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":50},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":51},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":52},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":53},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":54},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":55,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":56},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":57,\"choiceId\":\"B\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":58},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":59},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"I01\",\"revision\":60},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":61,\"roomId\":\"foyer\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":62},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":63,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":64,\"hotspotId\":\"map\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":65},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":66},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":67},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":68},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":69},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":70},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":71,\"preserveReading\":true},{\"type\":\"SOLVE\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":72,\"answer\":[\"entrance\",\"pump\",\"return\"]},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":73},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"P12\",\"revision\":74},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":75,\"roomId\":\"return\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":76},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":77,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":78,\"hotspotId\":\"admission\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":79},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":80},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":81},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":82},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":83},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":84},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":85,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":86},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":87,\"choiceId\":\"A\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":88},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":89},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"S12\",\"revision\":90},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":91},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":92,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":93,\"hotspotId\":\"order\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":94},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":95},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":96},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":97},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":98},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":99},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":100},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":101},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":102},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":103},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":104},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":105},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":106,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":107,\"hotspotId\":\"fault\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":108},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":109},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":110},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":111},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":112},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":113},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":114},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":115,\"preserveReading\":true},{\"type\":\"DEDUCE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":116,\"answerId\":\"after\"},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":117},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":118,\"choiceId\":\"D\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":119},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":120},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"T21\",\"revision\":121},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":122,\"roomId\":\"garden\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":123},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":124,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":125,\"hotspotId\":\"valve\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":126},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":127},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":128},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":129},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":130},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":131,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":132,\"hotspotId\":\"rail\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":133},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":134},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":135},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":136,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":137},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":138,\"choiceId\":\"A\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":139},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":140},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"D22\",\"revision\":141},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":142,\"roomId\":\"return\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":143},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":144,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":145,\"hotspotId\":\"story\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":146},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":147},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":148},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":149},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":150},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":151},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":152},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":153,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":154,\"hotspotId\":\"request\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":155},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":156},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":157},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":158},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":159},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":160},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":161,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":162,\"hotspotId\":\"rescue\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":163},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":164},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":165},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":166},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":167},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":168},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":169},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":170},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":171},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":172},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":173},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":174},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":175,\"preserveReading\":true},{\"type\":\"DEDUCE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":176,\"answerId\":\"tomorrow\"},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":177},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":178,\"choiceId\":\"B\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":179},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":180},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"S22\",\"revision\":181},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":182,\"roomId\":\"control\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":183},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":184,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":185,\"hotspotId\":\"sequence\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":186},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":187},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":188},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":189},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":190},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":191},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":192},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":193},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":194,\"preserveReading\":true},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":195,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":196,\"hotspotId\":\"interlock\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":197},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":198},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":199},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":200,\"preserveReading\":true},{\"type\":\"SOLVE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":201,\"answer\":[\"shut\",\"brace\",\"lift\",\"power\"]},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":202},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"P21\",\"revision\":203},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":204,\"roomId\":\"return\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":205},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":206,\"preserveReading\":true},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":207,\"preserveReading\":true},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":208,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":209,\"hotspotId\":\"power\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":210},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":211},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":212},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":213},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":214},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":215},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":216,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":217,\"hotspotId\":\"crates\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":218},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":219},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":220},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":221},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":222},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":223},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":224,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":225},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":226,\"choiceId\":\"D\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":227},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":228},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"R31\",\"revision\":229},{\"type\":\"ARRIVE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":230,\"roomId\":\"reception\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":231},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":232,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":233,\"hotspotId\":\"report\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":234},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":235},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":236},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":237},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":238},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":239},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":240},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":241,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":242,\"hotspotId\":\"promise\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":243},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":244},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":245},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":246},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":247},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":248},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":249},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":250},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":251},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":252,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":253,\"hotspotId\":\"consent\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":254},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":255},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":256},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":257},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":258},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":259},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":260},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":261,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":262},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":263,\"choiceId\":\"A\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":264},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":265},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"S31\",\"revision\":266},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":267},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":268,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":269,\"hotspotId\":\"handoff\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":270},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":271},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":272},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":273,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":274,\"hotspotId\":\"condition\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":275},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":276},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":277},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":278},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":279,\"preserveReading\":true},{\"type\":\"OPEN_CHOICES\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":280},{\"type\":\"CHOOSE\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":281,\"choiceId\":\"A\"},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":282},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":283},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"F31\",\"revision\":284},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":285},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":286},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":287},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":288},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":289},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":290},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":291},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":292},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":293},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":294},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"E1\",\"revision\":295}],\"playerName\":\"여울\",\"checksum\":\"9aa7f28725b1bcf1df68ee1d0264780f93c8b28e9af305a4b7313f61855fc932\"}",
+    "museum-local-record-v1:b2503a9a18f2feabb53b84763ce03b55a1a9e222f6fb7012": "{\"version\":1,\"storyVersion\":\"museum-map-4\",\"teamId\":1,\"events\":[{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":0,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":1,\"hotspotId\":\"invitation\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":2},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":3},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":4},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":5,\"preserveReading\":true},{\"type\":\"INSPECT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":6,\"hotspotId\":\"curator\",\"resume\":true},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":7},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":8},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":9},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":10},{\"type\":\"NEXT\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":11},{\"type\":\"EXPLORE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":12,\"preserveReading\":true},{\"type\":\"CONTINUE\",\"teamId\":1,\"sceneId\":\"O00\",\"revision\":13}],\"playerName\":\"한결\",\"checksum\":\"28b79c5272d4c7a5256e994ae62ebb4a943566babbb7d1312aed46d01ad786bd\"}",
+    "return-path-series-v2:4e5535e6ab0d512ef71a010b7e46bfdac6c8a92024a3932c": "{\"version\":\"return-path-v2\",\"museum\":{\"teamId\":1,\"playerName\":\"여울\",\"mode\":\"map\",\"storyVersion\":\"museum-map-4\",\"currentRoomId\":\"reception\",\"visitedRoomIds\":[\"foyer\",\"reception\",\"gallery\",\"archive\",\"maintenance\",\"return\",\"garden\",\"control\",\"office\"],\"travel\":null,\"canSkipIntro\":false,\"sceneId\":\"E1\",\"revision\":296,\"phase\":\"terminal\",\"title\":\"강으로 돌아간 약속\",\"nextScene\":null,\"chapter\":3,\"messages\":[{\"id\":\"E1-1\",\"speaker\":\"서술\",\"text\":\"반환 접수가 끝난 자리에는 종이배 대신 발송 기록이 남는다. 윤서는 받침대 위를 한 번 쓸고, 새 물건을 올려 빈자리를 가리지 않는다.\"},{\"id\":\"E1-2\",\"speaker\":\"윤서\",\"text\":\"제1호 전시품은 반환됐습니다. 마지막 기록에는 이렇게 적을게요.\"},{\"id\":\"E1-3\",\"speaker\":\"서술\",\"text\":\"다음 날 아침, 나래에게서 사진 한 장 대신 먼저 짧은 메시지가 온다.\"},{\"id\":\"E1-4\",\"speaker\":\"나래\",\"text\":\"배를 받았어요. 접힌 모양도 남아 있어요. 약속한 시간에 가져갈게요.\"},{\"id\":\"E1-5\",\"speaker\":\"서술\",\"text\":\"아홉 시가 되었을 때 나래의 배 곁에는 다른 크기의 배들이 모인다. 반듯한 배도, 물에 뜰지 확신하기 어려운 배도 있다.\"},{\"id\":\"E1-6\",\"speaker\":\"아이\",\"text\":\"이 배가 제일 오래된 거예요?\"},{\"id\":\"E1-7\",\"speaker\":\"나래\",\"text\":\"응. 제일 오래 기다린 배야. 오늘은 같이 가면 되겠다.\"},{\"id\":\"E1-8\",\"speaker\":\"서술\",\"text\":\"나래가 먼저 손을 놓는다. 오래된 배가 물살에 방향을 틀고, 새 배들이 그 옆으로 흩어진다.\"},{\"id\":\"E1-9\",\"speaker\":\"나래\",\"text\":\"약속은 시작했어요. 어젯밤에 무엇을 남겨 줬는지도 기억할게요.\"},{\"id\":\"E1-10\",\"speaker\":\"서술\",\"text\":\"원본 장부는 온전하게 보존됐다. 처음의 반환 조항을 읽을 수 있고, 별도로 모은 실행·요청 자료와 대조할 수 있다.\"},{\"id\":\"E1-11\",\"speaker\":\"서술\",\"text\":\"그날 밤 마지막 확인 당시 모로는 작동하고 있었다. 보관 위치와 이동 담당자를 인계 기록에 남겼다.\"},{\"id\":\"E1-12\",\"speaker\":\"서술\",\"text\":\"처음 따라갔던 바퀴 자국을 떠올린다. 그 길은 배를 훔쳐 달아나는 길이 아니었다. 무엇을 요청받고 어디까지 실행했는지 확인하는 일이 여러분의 첫 조사였다.\"}],\"choices\":[],\"hints\":[],\"hintCount\":0,\"topics\":[],\"npc\":null,\"flags\":{\"charter\":false,\"log\":false,\"statement\":true,\"request\":false,\"battery\":false,\"map\":true,\"maintenance\":true,\"repair\":false,\"boat\":\"intact\",\"record\":\"intact\",\"moro\":\"active\",\"crane\":\"stable\",\"lead\":\"robot\",\"stance\":\"listen\",\"intent\":\"return\",\"method\":null},\"knownFacts\":[\"request_received\",\"return_clause_removed\",\"return_delayed\"],\"observations\":[{\"sceneId\":\"O00\",\"sceneTitle\":\"마지막 야간 관람\",\"id\":\"invitation\",\"label\":\"초대장 확인하기\",\"text\":\"폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다.\"},{\"sceneId\":\"O00\",\"sceneTitle\":\"마지막 야간 관람\",\"id\":\"curator\",\"label\":\"윤서와 인사하기\",\"text\":\"관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"case\",\"label\":\"제1호 진열장 살펴보기\",\"text\":\"제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"trail\",\"label\":\"모로와 젖은 흔적\",\"text\":\"모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다.\"},{\"sceneId\":\"S01\",\"sceneTitle\":\"빈 진열장\",\"id\":\"schedule\",\"label\":\"벽의 일정표 펼치기\",\"text\":\"내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다.\"},{\"sceneId\":\"I01\",\"sceneTitle\":\"모로의 정비 통로\",\"id\":\"receipt\",\"label\":\"모로의 집게와 화면\",\"text\":\"조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다.\"},{\"sceneId\":\"P12\",\"sceneTitle\":\"마르지 않은 통로\",\"id\":\"map\",\"label\":\"시설 운반로 지도\",\"text\":\"침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다.\"},{\"sceneId\":\"S12\",\"sceneTitle\":\"“제가 옮겼습니다”\",\"id\":\"admission\",\"label\":\"모로의 첫 설명 듣기\",\"text\":\"모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다.\"},{\"sceneId\":\"T21\",\"sceneTitle\":\"명령을 지킨 안내원\",\"id\":\"order\",\"label\":\"모로의 작업 명령 확인\",\"text\":\"반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다.\"},{\"sceneId\":\"T21\",\"sceneTitle\":\"명령을 지킨 안내원\",\"id\":\"fault\",\"label\":\"고장 시각과 접수표\",\"text\":\"이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다.\"},{\"sceneId\":\"D22\",\"sceneTitle\":\"멈춘 배수선\",\"id\":\"valve\",\"label\":\"번호가 남은 밸브\",\"text\":\"유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다.\"},{\"sceneId\":\"D22\",\"sceneTitle\":\"멈춘 배수선\",\"id\":\"rail\",\"label\":\"배수선과 레일 점검구\",\"text\":\"외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"story\",\"label\":\"사진 뒷면의 원래 기록\",\"text\":\"나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"request\",\"label\":\"반환 요청과 윤서의 인정\",\"text\":\"나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다.\"},{\"sceneId\":\"S22\",\"sceneTitle\":\"배가 기다린 날\",\"id\":\"rescue\",\"label\":\"격벽과 배수·레일 조작반\",\"text\":\"배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다.\"},{\"sceneId\":\"P21\",\"sceneTitle\":\"마지막 인양\",\"id\":\"sequence\",\"label\":\"제어기 안전 순서\",\"text\":\"유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다.\"},{\"sceneId\":\"P21\",\"sceneTitle\":\"마지막 인양\",\"id\":\"interlock\",\"label\":\"안전 장치와 수동 복구\",\"text\":\"검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다.\"},{\"sceneId\":\"R31\",\"sceneTitle\":\"둘 중 하나, 또는 준비한 방법\",\"id\":\"power\",\"label\":\"모로 전원과 외부 장비\",\"text\":\"모로 전력으로 두 함을 구하면 모로는 잠든다. 외부 인양에는 점검 완료와 배터리가 모두 필요하다.\"},{\"sceneId\":\"R31\",\"sceneTitle\":\"둘 중 하나, 또는 준비한 방법\",\"id\":\"crates\",\"label\":\"종이배와 장부의 두 함\",\"text\":\"한 번의 인양으로 먼저 구하지 못한 쪽은 물에 노출된다. 격벽을 열고 들어갈 수는 없다.\"},{\"sceneId\":\"S31\",\"sceneTitle\":\"연락 너머의 당사자\",\"id\":\"report\",\"label\":\"나래에게 구조 결과 전하기\",\"text\":\"배와 원본의 실제 상태를 나눠 전달했다. 구조하지 않은 물건을 보냈다고 말하지 않는다.\"},{\"sceneId\":\"S31\",\"sceneTitle\":\"연락 너머의 당사자\",\"id\":\"promise\",\"label\":\"나래의 내일과 수령지\",\"text\":\"나래의 약속과 수령인·주소를 확인했다. 준비되면 돌려받기로 한 배다.\"},{\"sceneId\":\"S31\",\"sceneTitle\":\"연락 너머의 당사자\",\"id\":\"consent\",\"label\":\"공개 범위와 모로 인계\",\"text\":\"이름과 이웃들과 배를 띄우려 했다는 뜻은 공개할 수 있다. 사진과 주소는 공개하지 않는다. 모로의 이동 책임도 남겨야 한다.\"},{\"sceneId\":\"F31\",\"sceneTitle\":\"배를 보내기 전에\",\"id\":\"handoff\",\"label\":\"반환 접수와 편지\",\"text\":\"사흘 뒤 개봉할 배를 지금 보냈다고 기록할 수 없다. 편지와 책임 있는 인계도 남길 수 있다.\"},{\"sceneId\":\"F31\",\"sceneTitle\":\"배를 보내기 전에\",\"id\":\"condition\",\"label\":\"배의 포장·수리 상태 확인\",\"text\":\"온전한 배, 손상된 배, 밀봉된 배는 같은 발송으로 처리할 수 없다. 보수 도구도 확인해야 한다.\"}],\"exploration\":null,\"history\":[{\"sceneId\":\"S01\",\"choiceId\":\"A\",\"nextSceneId\":\"I01\",\"label\":\"모로의 바퀴 자국을 따라간다\"},{\"sceneId\":\"I01\",\"choiceId\":\"B\",\"nextSceneId\":\"P12\",\"label\":\"정비함의 비상 배터리를 챙긴다\"},{\"sceneId\":\"P12\",\"choiceId\":\"B\",\"nextSceneId\":\"S12\",\"label\":\"침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실\"},{\"sceneId\":\"S12\",\"choiceId\":\"A\",\"nextSceneId\":\"T21\",\"label\":\"모로가 설명을 끝내도록 기다린다\"},{\"sceneId\":\"T21\",\"choiceId\":\"D\",\"nextSceneId\":\"D22\",\"label\":\"모로가 사용한 정비 통로를 확인한다\"},{\"sceneId\":\"D22\",\"choiceId\":\"A\",\"nextSceneId\":\"S22\",\"label\":\"수동 배수선과 보조 레일을 점검한다\"},{\"sceneId\":\"S22\",\"choiceId\":\"B\",\"nextSceneId\":\"P21\",\"label\":\"윤서에게 변경 사실을 서명으로 확정하게 한다\"},{\"sceneId\":\"P21\",\"choiceId\":\"B\",\"nextSceneId\":\"R31\",\"label\":\"인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제\"},{\"sceneId\":\"R31\",\"choiceId\":\"D\",\"nextSceneId\":\"S31\",\"label\":\"점검한 배수선과 배터리로 두 함을 꺼낸다\"},{\"sceneId\":\"S31\",\"choiceId\":\"A\",\"nextSceneId\":\"F31\",\"label\":\"배의 반환부터 실제로 진행한다\"},{\"sceneId\":\"F31\",\"choiceId\":\"A\",\"nextSceneId\":\"E1\",\"label\":\"현재 상태대로 정식 반환 절차를 진행한다\"}],\"canNext\":false,\"readingProgress\":{\"read\":12,\"total\":12},\"canContinue\":false,\"canHint\":false},\"options\":{\"moroAccompanies\":true},\"events\":[{\"type\":\"explore\",\"target\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"perform\",\"action\":\"store-sign\"},{\"type\":\"perform\",\"action\":\"guide-demonstration\"},{\"type\":\"depart\"},{\"type\":\"explore\",\"target\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"perform\",\"action\":\"isolate-accompaniment\"},{\"type\":\"perform\",\"action\":\"place-last-chair\"},{\"type\":\"perform\",\"action\":\"rehearse-signal\"},{\"type\":\"depart\"},{\"type\":\"explore\",\"target\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"perform\",\"action\":\"match-fixed-supports\"},{\"type\":\"perform\",\"action\":\"position-shade\"},{\"type\":\"perform\",\"action\":\"handoff-equipment\"},{\"type\":\"depart\"},{\"type\":\"explore\",\"target\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"choose\",\"choice\":\"A\"},{\"type\":\"perform\",\"action\":\"meet-yeonwoo\"},{\"type\":\"perform\",\"action\":\"welcome-arrival\"},{\"type\":\"perform\",\"action\":\"fold-boats\"},{\"type\":\"perform\",\"action\":\"welcome-again\"},{\"type\":\"perform\",\"action\":\"confirm-every-person\"},{\"type\":\"perform\",\"action\":\"collect-equipment\"},{\"type\":\"perform\",\"action\":\"return-station\"}],\"checksum\":\"73ad925aa64094e5588bc6ecc719d6083ad950304716d51a4f9b9c30880655e9\",\"presentation\":{\"seen\":[2,3,4,5],\"cursor\":0}}",
+    "museum-local-session-archive-v1": "[{\"teamId\":1,\"sessionId\":\"b2503a9a18f2feabb53b84763ce03b55a1a9e222f6fb7012\"},{\"teamId\":1,\"sessionId\":\"a57f5ed6cfd72cddc8f5bcecc59f263e32dd859e8331bd8d\"}]",
+    "museum-last-session-v1": "{\"teamId\":1,\"sessionId\":\"4e5535e6ab0d512ef71a010b7e46bfdac6c8a92024a3932c\"}"
+  },
+  "series": {
+    "view": {
+      "version": "return-path-v2",
+      "museum": {
+        "teamId": 1,
+        "playerName": "여울",
+        "mode": "map",
+        "storyVersion": "museum-map-4",
+        "currentRoomId": "reception",
+        "visitedRoomIds": [
+          "foyer",
+          "reception",
+          "gallery",
+          "archive",
+          "maintenance",
+          "return",
+          "garden",
+          "control",
+          "office"
+        ],
+        "travel": null,
+        "canSkipIntro": false,
+        "sceneId": "E1",
+        "revision": 296,
+        "phase": "terminal",
+        "title": "강으로 돌아간 약속",
+        "nextScene": null,
+        "chapter": 3,
+        "messages": [
+          {
+            "id": "E1-1",
+            "speaker": "서술",
+            "text": "반환 접수가 끝난 자리에는 종이배 대신 발송 기록이 남는다. 윤서는 받침대 위를 한 번 쓸고, 새 물건을 올려 빈자리를 가리지 않는다."
+          },
+          {
+            "id": "E1-2",
+            "speaker": "윤서",
+            "text": "제1호 전시품은 반환됐습니다. 마지막 기록에는 이렇게 적을게요."
+          },
+          {
+            "id": "E1-3",
+            "speaker": "서술",
+            "text": "다음 날 아침, 나래에게서 사진 한 장 대신 먼저 짧은 메시지가 온다."
+          },
+          {
+            "id": "E1-4",
+            "speaker": "나래",
+            "text": "배를 받았어요. 접힌 모양도 남아 있어요. 약속한 시간에 가져갈게요."
+          },
+          {
+            "id": "E1-5",
+            "speaker": "서술",
+            "text": "아홉 시가 되었을 때 나래의 배 곁에는 다른 크기의 배들이 모인다. 반듯한 배도, 물에 뜰지 확신하기 어려운 배도 있다."
+          },
+          {
+            "id": "E1-6",
+            "speaker": "아이",
+            "text": "이 배가 제일 오래된 거예요?"
+          },
+          {
+            "id": "E1-7",
+            "speaker": "나래",
+            "text": "응. 제일 오래 기다린 배야. 오늘은 같이 가면 되겠다."
+          },
+          {
+            "id": "E1-8",
+            "speaker": "서술",
+            "text": "나래가 먼저 손을 놓는다. 오래된 배가 물살에 방향을 틀고, 새 배들이 그 옆으로 흩어진다."
+          },
+          {
+            "id": "E1-9",
+            "speaker": "나래",
+            "text": "약속은 시작했어요. 어젯밤에 무엇을 남겨 줬는지도 기억할게요."
+          },
+          {
+            "id": "E1-10",
+            "speaker": "서술",
+            "text": "원본 장부는 온전하게 보존됐다. 처음의 반환 조항을 읽을 수 있고, 별도로 모은 실행·요청 자료와 대조할 수 있다."
+          },
+          {
+            "id": "E1-11",
+            "speaker": "서술",
+            "text": "그날 밤 마지막 확인 당시 모로는 작동하고 있었다. 보관 위치와 이동 담당자를 인계 기록에 남겼다."
+          },
+          {
+            "id": "E1-12",
+            "speaker": "서술",
+            "text": "처음 따라갔던 바퀴 자국을 떠올린다. 그 길은 배를 훔쳐 달아나는 길이 아니었다. 무엇을 요청받고 어디까지 실행했는지 확인하는 일이 여러분의 첫 조사였다."
+          }
+        ],
+        "choices": [],
+        "hints": [],
+        "hintCount": 0,
+        "topics": [],
+        "npc": null,
+        "flags": {
+          "charter": false,
+          "log": false,
+          "statement": true,
+          "request": false,
+          "battery": false,
+          "map": true,
+          "maintenance": true,
+          "repair": false,
+          "boat": "intact",
+          "record": "intact",
+          "moro": "active",
+          "crane": "stable",
+          "lead": "robot",
+          "stance": "listen",
+          "intent": "return",
+          "method": null
+        },
+        "knownFacts": [
+          "request_received",
+          "return_clause_removed",
+          "return_delayed"
+        ],
+        "observations": [
+          {
+            "sceneId": "O00",
+            "sceneTitle": "마지막 야간 관람",
+            "id": "invitation",
+            "label": "초대장 확인하기",
+            "text": "폐관일의 마지막 야간 관람에 초대받았다. 오늘은 방문객으로 전시를 둘러본다."
+          },
+          {
+            "sceneId": "O00",
+            "sceneTitle": "마지막 야간 관람",
+            "id": "curator",
+            "label": "윤서와 인사하기",
+            "text": "관장 윤서의 안내를 받았다. 제1 전시실에서 첫 전시품을 함께 살펴보기로 했다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "case",
+            "label": "제1호 진열장 살펴보기",
+            "text": "제1호 종이배의 받침만 비어 있다. 유리와 잠금쇠에는 깨진 흔적이 없다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "trail",
+            "label": "모로와 젖은 흔적",
+            "text": "모로의 집게에 젖은 종이 조각이 붙어 있고, 바닥에는 두 줄의 물자국이 있다. 조각의 정체는 아직 모른다."
+          },
+          {
+            "sceneId": "S01",
+            "sceneTitle": "빈 진열장",
+            "id": "schedule",
+            "label": "벽의 일정표 펼치기",
+            "text": "내일 아침 9시에 배를 띄운다. 밀봉 물품은 사흘 뒤 개봉하므로 두 일정은 맞지 않는다."
+          },
+          {
+            "sceneId": "I01",
+            "sceneTitle": "모로의 정비 통로",
+            "id": "receipt",
+            "label": "모로의 집게와 화면",
+            "text": "조각은 종이배가 아니라 고장 신고용 접수표다. 이송 완료와 수령 대기는 서로 다른 상태다."
+          },
+          {
+            "sceneId": "P12",
+            "sceneTitle": "마르지 않은 통로",
+            "id": "map",
+            "label": "시설 운반로 지도",
+            "text": "침수 구역의 운반로를 검증한다. 기록실에서 반환실로 향하는 운반 구간은 막혔으며, 우리가 걷는 관람 복도와는 다른 도면이다."
+          },
+          {
+            "sceneId": "S12",
+            "sceneTitle": "“제가 옮겼습니다”",
+            "id": "admission",
+            "label": "모로의 첫 설명 듣기",
+            "text": "모로는 배를 반환실 수령 대기 위치로 옮겼다고 말했다. 윤서는 설명을 중단시켰다."
+          },
+          {
+            "sceneId": "T21",
+            "sceneTitle": "명령을 지킨 안내원",
+            "id": "order",
+            "label": "모로의 작업 명령 확인",
+            "text": "반환 요청과 기존 규약에 따라 20시 35분에 배를 옮겼다. 이송은 완료됐지만 반환은 끝나지 않았다."
+          },
+          {
+            "sceneId": "T21",
+            "sceneTitle": "명령을 지킨 안내원",
+            "id": "fault",
+            "label": "고장 시각과 접수표",
+            "text": "이송 당시 통로는 말라 있었다. 20시 38분 레일이 멈춘 뒤 고장을 알리러 나오며 물을 밟았다."
+          },
+          {
+            "sceneId": "D22",
+            "sceneTitle": "멈춘 배수선",
+            "id": "valve",
+            "label": "번호가 남은 밸브",
+            "text": "유입 차단, 배수, 인양 준비는 다른 작업이다. 손잡이 번호를 도면과 대조해야 한다."
+          },
+          {
+            "sceneId": "D22",
+            "sceneTitle": "멈춘 배수선",
+            "id": "rail",
+            "label": "배수선과 레일 점검구",
+            "text": "외부 구조에는 점검된 배수선·보조 레일과 비상 전원이 함께 필요하다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "story",
+            "label": "사진 뒷면의 원래 기록",
+            "text": "나래가 맡긴 약속은 이웃들과 함께 배를 띄우는 날이다. 윤서는 이를 다른 전시 설명으로 바꿨다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "request",
+            "label": "반환 요청과 윤서의 인정",
+            "text": "나래는 내일 아침 이웃들과 만나려 한다. 윤서는 반환 조항을 빼고 요청 처리를 미뤘음을 인정했다."
+          },
+          {
+            "sceneId": "S22",
+            "sceneTitle": "배가 기다린 날",
+            "id": "rescue",
+            "label": "격벽과 배수·레일 조작반",
+            "text": "배·원본·모로 전력은 따로 지켜야 한다. 외부 장비 준비 여부가 두 함 구조에 영향을 주며 밀봉은 사흘 뒤 개봉한다. 안뜰과 같은 배수선·보조 레일을 반환실 측 공용 조작반에서도 점검할 수 있다."
+          },
+          {
+            "sceneId": "P21",
+            "sceneTitle": "마지막 인양",
+            "id": "sequence",
+            "label": "제어기 안전 순서",
+            "text": "유입 차단 뒤 레일 고정, 고정 뒤 인양, 인양 뒤 전원 해제. 작업은 각각 한 번 수행한다."
+          },
+          {
+            "sceneId": "P21",
+            "sceneTitle": "마지막 인양",
+            "id": "interlock",
+            "label": "안전 장치와 수동 복구",
+            "text": "검증에 실패해도 위험한 순서는 실행되지 않는다. 자동 모드 대신 수동 복구로 진행한다."
+          },
+          {
+            "sceneId": "R31",
+            "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+            "id": "power",
+            "label": "모로 전원과 외부 장비",
+            "text": "모로 전력으로 두 함을 구하면 모로는 잠든다. 외부 인양에는 점검 완료와 배터리가 모두 필요하다."
+          },
+          {
+            "sceneId": "R31",
+            "sceneTitle": "둘 중 하나, 또는 준비한 방법",
+            "id": "crates",
+            "label": "종이배와 장부의 두 함",
+            "text": "한 번의 인양으로 먼저 구하지 못한 쪽은 물에 노출된다. 격벽을 열고 들어갈 수는 없다."
+          },
+          {
+            "sceneId": "S31",
+            "sceneTitle": "연락 너머의 당사자",
+            "id": "report",
+            "label": "나래에게 구조 결과 전하기",
+            "text": "배와 원본의 실제 상태를 나눠 전달했다. 구조하지 않은 물건을 보냈다고 말하지 않는다."
+          },
+          {
+            "sceneId": "S31",
+            "sceneTitle": "연락 너머의 당사자",
+            "id": "promise",
+            "label": "나래의 내일과 수령지",
+            "text": "나래의 약속과 수령인·주소를 확인했다. 준비되면 돌려받기로 한 배다."
+          },
+          {
+            "sceneId": "S31",
+            "sceneTitle": "연락 너머의 당사자",
+            "id": "consent",
+            "label": "공개 범위와 모로 인계",
+            "text": "이름과 이웃들과 배를 띄우려 했다는 뜻은 공개할 수 있다. 사진과 주소는 공개하지 않는다. 모로의 이동 책임도 남겨야 한다."
+          },
+          {
+            "sceneId": "F31",
+            "sceneTitle": "배를 보내기 전에",
+            "id": "handoff",
+            "label": "반환 접수와 편지",
+            "text": "사흘 뒤 개봉할 배를 지금 보냈다고 기록할 수 없다. 편지와 책임 있는 인계도 남길 수 있다."
+          },
+          {
+            "sceneId": "F31",
+            "sceneTitle": "배를 보내기 전에",
+            "id": "condition",
+            "label": "배의 포장·수리 상태 확인",
+            "text": "온전한 배, 손상된 배, 밀봉된 배는 같은 발송으로 처리할 수 없다. 보수 도구도 확인해야 한다."
+          }
+        ],
+        "exploration": null,
+        "history": [
+          {
+            "sceneId": "S01",
+            "choiceId": "A",
+            "nextSceneId": "I01",
+            "label": "모로의 바퀴 자국을 따라간다"
+          },
+          {
+            "sceneId": "I01",
+            "choiceId": "B",
+            "nextSceneId": "P12",
+            "label": "정비함의 비상 배터리를 챙긴다"
+          },
+          {
+            "sceneId": "P12",
+            "choiceId": "B",
+            "nextSceneId": "S12",
+            "label": "침수 구역의 운반 경로 제출 · 입구 → 펌프실 → 반환실"
+          },
+          {
+            "sceneId": "S12",
+            "choiceId": "A",
+            "nextSceneId": "T21",
+            "label": "모로가 설명을 끝내도록 기다린다"
+          },
+          {
+            "sceneId": "T21",
+            "choiceId": "D",
+            "nextSceneId": "D22",
+            "label": "모로가 사용한 정비 통로를 확인한다"
+          },
+          {
+            "sceneId": "D22",
+            "choiceId": "A",
+            "nextSceneId": "S22",
+            "label": "수동 배수선과 보조 레일을 점검한다"
+          },
+          {
+            "sceneId": "S22",
+            "choiceId": "B",
+            "nextSceneId": "P21",
+            "label": "윤서에게 변경 사실을 서명으로 확정하게 한다"
+          },
+          {
+            "sceneId": "P21",
+            "choiceId": "B",
+            "nextSceneId": "R31",
+            "label": "인양 순서 예약 제출 · 유입 차단 → 레일 고정 → 함 인양 → 전원 해제"
+          },
+          {
+            "sceneId": "R31",
+            "choiceId": "D",
+            "nextSceneId": "S31",
+            "label": "점검한 배수선과 배터리로 두 함을 꺼낸다"
+          },
+          {
+            "sceneId": "S31",
+            "choiceId": "A",
+            "nextSceneId": "F31",
+            "label": "배의 반환부터 실제로 진행한다"
+          },
+          {
+            "sceneId": "F31",
+            "choiceId": "A",
+            "nextSceneId": "E1",
+            "label": "현재 상태대로 정식 반환 절차를 진행한다"
+          }
+        ],
+        "canNext": false,
+        "readingProgress": {
+          "read": 12,
+          "total": 12
+        },
+        "canContinue": false,
+        "canHint": false
+      },
+      "moroAccompanies": true,
+      "episodeId": 5,
+      "stage": "perform",
+      "revision": 38,
+      "visited": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "episodes": {
+        "2": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "A",
+            "time": "A",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "store-sign",
+            "guide-demonstration"
+          ],
+          "completedActions": [
+            "store-sign",
+            "guide-demonstration"
+          ],
+          "ending": "철거한 화살표",
+          "outcome": "A"
+        },
+        "3": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "A",
+            "time": "A",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "isolate-accompaniment",
+            "place-last-chair",
+            "rehearse-signal"
+          ],
+          "completedActions": [
+            "isolate-accompaniment",
+            "place-last-chair",
+            "rehearse-signal"
+          ],
+          "ending": "비워 둔 독창",
+          "outcome": "A"
+        },
+        "4": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "A",
+            "time": "A",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "match-fixed-supports",
+            "position-shade",
+            "handoff-equipment"
+          ],
+          "completedActions": [
+            "match-fixed-supports",
+            "position-shade",
+            "handoff-equipment"
+          ],
+          "ending": "낮은 곳의 빛",
+          "outcome": "A"
+        },
+        "5": {
+          "choices": {
+            "inspection": "A",
+            "plan": "A",
+            "repair": "A",
+            "execution": "A"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "meet-yeonwoo",
+            "welcome-arrival",
+            "fold-boats",
+            "welcome-again",
+            "confirm-every-person",
+            "collect-equipment",
+            "return-station",
+            "close-gathering"
+          ],
+          "completedActions": [
+            "meet-yeonwoo",
+            "welcome-arrival",
+            "fold-boats",
+            "welcome-again",
+            "confirm-every-person",
+            "collect-equipment",
+            "return-station"
+          ],
+          "ending": "강가의 빈자리",
+          "outcome": "A"
+        }
+      },
+      "facts": {
+        "routeSurvey": true,
+        "escort": true,
+        "signal": false,
+        "jungyeonAttends": true,
+        "fixedLight": true,
+        "mobileLight": true,
+        "handover": false
+      },
+      "followup": {
+        "boat": "already-launched",
+        "record": "intact",
+        "originalNight": {
+          "boat": "intact",
+          "record": "intact",
+          "moro": "active"
+        },
+        "moroCharged": true,
+        "sealPreserved": true,
+        "originalBoatAvailable": false
+      },
+      "lastResult": {
+        "episodeId": 5,
+        "stage": "execution",
+        "sceneId": "R54",
+        "choice": "A"
+      },
+      "ending": null,
+      "events": [
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "store-sign"
+        },
+        {
+          "type": "perform",
+          "action": "guide-demonstration"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "isolate-accompaniment"
+        },
+        {
+          "type": "perform",
+          "action": "place-last-chair"
+        },
+        {
+          "type": "perform",
+          "action": "rehearse-signal"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "match-fixed-supports"
+        },
+        {
+          "type": "perform",
+          "action": "position-shade"
+        },
+        {
+          "type": "perform",
+          "action": "handoff-equipment"
+        },
+        {
+          "type": "depart"
+        },
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "perform",
+          "action": "meet-yeonwoo"
+        },
+        {
+          "type": "perform",
+          "action": "welcome-arrival"
+        },
+        {
+          "type": "perform",
+          "action": "fold-boats"
+        },
+        {
+          "type": "perform",
+          "action": "welcome-again"
+        },
+        {
+          "type": "perform",
+          "action": "confirm-every-person"
+        },
+        {
+          "type": "perform",
+          "action": "collect-equipment"
+        },
+        {
+          "type": "perform",
+          "action": "return-station"
+        }
+      ],
+      "title": "지도 다음의 길",
+      "sceneId": "R54",
+      "introSceneId": "R50",
+      "resultBranch": "A",
+      "options": [],
+      "choices": {
+        "inspection": "A",
+        "plan": "A",
+        "repair": "A",
+        "execution": "A"
+      },
+      "explored": [
+        "A"
+      ],
+      "requiredActions": [
+        "meet-yeonwoo",
+        "welcome-arrival",
+        "fold-boats",
+        "welcome-again",
+        "confirm-every-person",
+        "collect-equipment",
+        "return-station",
+        "close-gathering"
+      ],
+      "completedActions": [
+        "meet-yeonwoo",
+        "welcome-arrival",
+        "fold-boats",
+        "welcome-again",
+        "confirm-every-person",
+        "collect-equipment",
+        "return-station"
+      ],
+      "nextAction": "close-gathering",
+      "episodeEnding": "강가의 빈자리",
+      "readiness": {
+        "route": true,
+        "signal": false,
+        "equipment": true,
+        "handover": false,
+        "publicReady": false,
+        "mobileReady": false,
+        "equipmentKind": "A",
+        "routeKind": "A",
+        "signalKind": "A",
+        "jungyeonAttends": true
+      },
+      "objective": "선택한 방법을 현장에서 실행하세요."
+    },
+    "world": {
+      "episodeId": 5,
+      "lastSound": {
+        "kind": "step",
+        "distance": 0,
+        "pan": 0,
+        "source": {
+          "x": 0,
+          "z": 5.074750000000041
+        },
+        "episodeId": 5
+      },
+      "soundCount": 29,
+      "activeIds": [
+        "close-gathering"
+      ],
+      "nextAction": {
+        "id": "close-gathering",
+        "target": "close-gathering",
+        "label": "역 뒤뜰에서 귀환 명단을 닫기",
+        "x": 3,
+        "z": 5,
+        "effects": {
+          "roles": {
+            "rotation": 0
+          }
+        },
+        "motion": "write",
+        "path": null
+      },
+      "action": null,
+      "actionProgress": null,
+      "projection": {
+        "shelter": {
+          "x": -3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        },
+        "paper": {
+          "x": 3,
+          "y": 0.95,
+          "z": 6,
+          "rotation": 0,
+          "visible": false,
+          "folded": true
+        },
+        "basin": {
+          "x": -5,
+          "y": 0,
+          "z": -5,
+          "rotation": 0,
+          "visible": true
+        },
+        "new-boat": {
+          "x": -5,
+          "y": 0.27,
+          "z": -5,
+          "rotation": 0,
+          "visible": true
+        },
+        "fork": {
+          "x": 3,
+          "y": 0,
+          "z": 0,
+          "rotation": 0,
+          "visible": true
+        },
+        "roles": {
+          "x": 3,
+          "y": 0.95,
+          "z": 6,
+          "rotation": 0,
+          "visible": true
+        },
+        "cards": {
+          "x": 3,
+          "y": 0.95,
+          "z": 6,
+          "rotation": 0,
+          "visible": false
+        },
+        "lamp": {
+          "x": 3,
+          "y": 0,
+          "z": 6,
+          "rotation": 0,
+          "visible": false
+        },
+        "hands": {
+          "x": 3,
+          "y": 0,
+          "z": 6,
+          "rotation": 0,
+          "visible": false
+        }
+      },
+      "participants": {
+        "escort": true,
+        "signal": false,
+        "jungyeon": true,
+        "handover": false
+      },
+      "objects": [
+        {
+          "id": "shelter",
+          "visible": true,
+          "x": -3,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "paper",
+          "visible": false,
+          "x": 3,
+          "y": 0.95,
+          "z": 6
+        },
+        {
+          "id": "basin",
+          "visible": true,
+          "x": -5,
+          "y": 0,
+          "z": -5
+        },
+        {
+          "id": "new-boat",
+          "visible": true,
+          "x": -5,
+          "y": 0.27,
+          "z": -5
+        },
+        {
+          "id": "fork",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": 0
+        },
+        {
+          "id": "roles",
+          "visible": true,
+          "x": 3,
+          "y": 0.95,
+          "z": 6
+        },
+        {
+          "id": "cards",
+          "visible": false,
+          "x": 3,
+          "y": 0.95,
+          "z": 6
+        },
+        {
+          "id": "lamp",
+          "visible": false,
+          "x": 3,
+          "y": 0,
+          "z": 6
+        },
+        {
+          "id": "hands",
+          "visible": false,
+          "x": 3,
+          "y": 0,
+          "z": 6
+        }
+      ],
+      "actors": [
+        {
+          "id": "narae",
+          "x": 4.893543223447468,
+          "z": 3
+        },
+        {
+          "id": "narae",
+          "x": 7.353569623646894,
+          "z": 4
+        },
+        {
+          "id": "moro",
+          "x": -0.9160724350026812,
+          "z": -1.3157274083520623
+        },
+        {
+          "id": "neighbor",
+          "x": -1.2,
+          "z": 6
+        },
+        {
+          "id": "munjeong",
+          "x": -2.05,
+          "z": 6
+        },
+        {
+          "id": "sohui",
+          "x": 5,
+          "z": 1
+        },
+        {
+          "id": "taeo",
+          "x": -6,
+          "z": -3
+        },
+        {
+          "id": "ideun",
+          "x": -7,
+          "z": -3
+        },
+        {
+          "id": "jeongyeon",
+          "x": -2,
+          "z": -5
+        }
+      ],
+      "player": {
+        "x": 0,
+        "z": 6
+      },
+      "locked": false,
+      "nearest": null,
+      "hotspots": [
+        {
+          "id": "A",
+          "x": -5,
+          "z": -3
+        },
+        {
+          "id": "B",
+          "x": 5,
+          "z": -3
+        },
+        {
+          "id": "C",
+          "x": -5,
+          "z": 3
+        },
+        {
+          "id": "D",
+          "x": 4.893543223447468,
+          "z": 3
+        },
+        {
+          "id": "consult",
+          "x": 7.353569623646894,
+          "z": 4
+        },
+        {
+          "id": "__exit",
+          "x": 0,
+          "z": 9
+        },
+        {
+          "id": "meet-yeonwoo",
+          "x": 0,
+          "z": 6
+        },
+        {
+          "id": "welcome-arrival",
+          "x": 0,
+          "z": -3
+        },
+        {
+          "id": "fold-boats",
+          "x": -3,
+          "z": -4
+        },
+        {
+          "id": "welcome-again",
+          "x": 0,
+          "z": -3
+        },
+        {
+          "id": "confirm-every-person",
+          "x": 0,
+          "z": -4
+        },
+        {
+          "id": "collect-equipment",
+          "x": -3,
+          "z": -4
+        },
+        {
+          "id": "return-station",
+          "x": 0,
+          "z": -4
+        },
+        {
+          "id": "close-gathering",
+          "x": 3,
+          "z": 5
+        }
+      ],
+      "boxes": [
+        {
+          "minX": -9.16,
+          "maxX": -8.84,
+          "minZ": -8.16,
+          "maxZ": -7.84
+        },
+        {
+          "minX": -9.16,
+          "maxX": -8.84,
+          "minZ": 6.84,
+          "maxZ": 7.16
+        },
+        {
+          "minX": 8.84,
+          "maxX": 9.16,
+          "minZ": -8.16,
+          "maxZ": -7.84
+        },
+        {
+          "minX": 8.84,
+          "maxX": 9.16,
+          "minZ": 6.84,
+          "maxZ": 7.16
+        },
+        {
+          "minX": -5.7,
+          "maxX": -4.3,
+          "minZ": -3.495,
+          "maxZ": -2.505
+        },
+        {
+          "id": "e99d0eae-7205-4334-836f-fc6f75ea9581:proxy:0",
+          "minX": 4.69,
+          "maxX": 5.31,
+          "minZ": -3.31,
+          "maxZ": -2.69
+        },
+        {
+          "minX": -5.8,
+          "maxX": -4.2,
+          "minZ": 2.575,
+          "maxZ": 3.425
+        },
+        {
+          "minX": -3.75,
+          "maxX": -2.25,
+          "minZ": -5.45,
+          "maxZ": -4.55
+        },
+        {
+          "minX": 2.25,
+          "maxX": 3.75,
+          "minZ": 5.55,
+          "maxZ": 6.45
+        },
+        {
+          "minX": 4.25,
+          "maxX": 5.75,
+          "minZ": -0.45,
+          "maxZ": 0.45
+        },
+        {
+          "id": "e2a94f5d-542d-4e63-822b-47fb4bb5a1e2:proxy:0",
+          "minX": -5.49,
+          "maxX": -5.3100000000000005,
+          "minZ": -7.69,
+          "maxZ": -7.51
+        },
+        {
+          "id": "e2a94f5d-542d-4e63-822b-47fb4bb5a1e2:proxy:1",
+          "minX": -5.49,
+          "maxX": -5.3100000000000005,
+          "minZ": -4.49,
+          "maxZ": -4.31
+        },
+        {
+          "id": "e2a94f5d-542d-4e63-822b-47fb4bb5a1e2:proxy:2",
+          "minX": -0.69,
+          "maxX": -0.5100000000000002,
+          "minZ": -7.69,
+          "maxZ": -7.51
+        },
+        {
+          "id": "e2a94f5d-542d-4e63-822b-47fb4bb5a1e2:proxy:3",
+          "minX": -0.69,
+          "maxX": -0.5100000000000002,
+          "minZ": -4.49,
+          "maxZ": -4.31
+        },
+        {
+          "id": "60a52964-7b17-4568-81d3-e7d440c65226:proxy:0",
+          "minX": -5.7,
+          "maxX": -4.3,
+          "minZ": -5.7,
+          "maxZ": -4.3
+        },
+        {
+          "id": "8547518c-a420-499c-9093-d755dc3dbf4f:proxy:0",
+          "minX": 0.8300000000000001,
+          "maxX": 0.9699999999999998,
+          "minZ": -0.07,
+          "maxZ": 0.07
+        },
+        {
+          "id": "8547518c-a420-499c-9093-d755dc3dbf4f:proxy:1",
+          "minX": 5.03,
+          "maxX": 5.17,
+          "minZ": -0.07,
+          "maxZ": 0.07
+        }
+      ],
+      "camera": {
+        "yaw": 0.55,
+        "pitch": 0.85,
+        "distance": 20
+      },
+      "renderer": {
+        "calls": 320,
+        "triangles": 42896
+      },
+      "title": "지도 다음의 길"
+    },
+    "transition": "idle",
+    "performing": false,
+    "importing": false,
+    "presentation": {
+      "seen": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "cursor": 0
+    }
+  }
+}

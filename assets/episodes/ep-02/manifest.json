@@ -1,0 +1,1731 @@
+{
+  "schemaVersion": 2,
+  "isTemplate": false,
+  "episodeId": "ep-02",
+  "title": "역 뒤뜰",
+  "approval": "modelled",
+  "storySources": [
+    "docs/series/episode-02-station.md"
+  ],
+  "storyRevision": {
+    "kind": "sha256",
+    "sources": {
+      "docs/series/episode-02-station.md": "d18ee1be1a74195080bed006949c571e1a663bcf6b739a23f094352686529fe3"
+    }
+  },
+  "artDirection": "assets/shared/art-direction.md",
+  "styleRevision": "series-art-v1",
+  "episodeBrief": "assets/episodes/ep-02/brief.md",
+  "runtime": {
+    "catalogueModule": "public/assets/episodes/ep-02/props.mjs",
+    "actorsModule": "public/assets/episodes/ep-02/actors.mjs",
+    "gameEntryPoint": "public/app.mjs → public/series-game.mjs#mountSeriesGame",
+    "sceneModule": "public/series-world.mjs",
+    "galleryEntryPoint": "public/asset-gallery.html?episode=2",
+    "saveNamespace": "return-path-series-v2:<museum sessionId>",
+    "actionPlanModule": "public/series-action-plan.mjs",
+    "sourceSha256": {
+      "docs/series/episode-02-station.md": "d18ee1be1a74195080bed006949c571e1a663bcf6b739a23f094352686529fe3",
+      "public/assets/episodes/ep-02/actors.mjs": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de",
+      "public/assets/episodes/ep-02/props.mjs": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91",
+      "public/series-action-plan.mjs": "e9edec173c2cbfd5da93f8ac027464bc71eb4f81d6aaec142843eec998077a01",
+      "public/series-game.mjs": "53e78fc2c3adff9965e6eed86441eb151aed1fa684c1373d02318debc1c55381",
+      "public/series-world.mjs": "ac67772182f217ff0a96a58254775dbf0183d15da6cdaf4d824dc0e101459041",
+      "src/series-content.mjs": "b64c5f2bb993176b5a78f022218b021c1a8550251bcf1ad70a19fb0185f2326b",
+      "src/series-state.mjs": "bc4a700ada5895aa40694ed8dceec422a274af87fd7a960f8c521e7167986c9c"
+    }
+  },
+  "review": {
+    "targetModelRevision": "series-2026-10-29",
+    "cameraYawDegrees": [
+      0,
+      45,
+      90,
+      135,
+      180,
+      225,
+      270,
+      315
+    ],
+    "cameraPitchDegrees": [
+      25,
+      43,
+      70
+    ],
+    "zoomFactors": [
+      0.6,
+      1,
+      1.8
+    ],
+    "actualCatalogueEntries": 16,
+    "actualRoomCount": null,
+    "renderedViews": 264,
+    "manuallyReviewedViews": 44,
+    "visualScript": null,
+    "gameplayScript": null,
+    "commands": [],
+    "evidence": [
+      "artifacts/game-progress.md",
+      "artifacts/series-requirements-audit.md",
+      "artifacts/series-assets/ep-02/report.json",
+      "artifacts/series-assets/ep-02/contact.png",
+      "assets/episodes/ep-02/review/review.md",
+      "artifacts/series-integration-qa/resumed-complete.json",
+      "artifacts/series-integration-qa/resumed-complete.png",
+      "artifacts/series-resume-qa/REPORT.md",
+      "artifacts/series-resume-qa/report.json",
+      "artifacts/series-full-play/report.json",
+      "artifacts/series-full-play/canonical-journey.json",
+      "artifacts/series-resume-qa/story-link-report.json",
+      "artifacts/series-resume-qa/spatial-report.json",
+      "artifacts/series-full-play/series-motion-contact.png",
+      "artifacts/series-full-play/series-motion-active-pairs.png",
+      "artifacts/series-full-play/series-transition-contact.png",
+      "artifacts/series-full-play/series-motion-review.json"
+    ],
+    "result": "modelled-gallery-rendered-partially-inspected-gameplay-pending",
+    "unverified": [
+      "전체 카탈로그의 모든 상태·모션·시점에 대한 개별 모델 게임 승인은 별도 관리 단계이며 이번 대표 게임 경로 완료와 구분"
+    ],
+    "failures": [],
+    "galleryCatalogueEntries": 11,
+    "galleryCatalogueIds": [
+      "double-sign",
+      "folded-map",
+      "folding-support",
+      "munjeong",
+      "neighbor",
+      "platform-bench",
+      "return-crate",
+      "route-sign",
+      "sign-stand",
+      "station-clock",
+      "stroller"
+    ],
+    "renderedScaleViews": 9,
+    "manuallyReviewedViewScope": {
+      "reviewer": "root",
+      "yawDegrees": [
+        0,
+        90,
+        180,
+        270
+      ],
+      "pitchDegrees": [
+        43
+      ],
+      "method": "contact-sheet",
+      "full24ViewsInspected": false
+    },
+    "renderReportGeneratedAt": "2026-10-28T16:08:13.368Z",
+    "renderErrors": [],
+    "reviewedScaleImages": [],
+    "gameplayEvidenceScope": "fixture 없는 동일 실제 기록: 1편 E1 terminal/revision296·11선택 → 2~5편 complete/revision39·모든 필수행동. canonical-journey 공식 복원 및 browser errors[] 확인. 전체 카탈로그 개별 게임 승인은 아님.",
+    "representativeGameplayVisualReview": {
+      "result": "passed-within-inspected-scope",
+      "reviewer": "root",
+      "sourceVideo": "artifacts/series-full-play/motion/page@d4198f32630b6b0480d304b2169fca2a.webm",
+      "durationSeconds": 360.72,
+      "overviewFrames": 9,
+      "motionTriplets": 4,
+      "tripletOffsetsSeconds": [
+        0,
+        0.2,
+        0.4
+      ],
+      "transitionWindowSeconds": [
+        69,
+        74.6
+      ],
+      "exhaustiveVideoReview": false
+    }
+  },
+  "assets": [
+    {
+      "assetKey": "ep-02/route-sign",
+      "id": "route-sign",
+      "displayName": "옛 푸른 이동 표지",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "옛 푸른 이동 표지",
+      "storyReferences": [
+        "N20",
+        "N21-B",
+        "N25-D"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "forward-facing",
+        "reversed"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "panel": "direction-panel",
+        "front": "label-강변-직행-→",
+        "rear": "label-←-돌아오는-길"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.91,
+          0.0256941094994545,
+          -0.39735427498817444
+        ],
+        "max": [
+          0.91,
+          1.52,
+          0.39735427498817444
+        ],
+        "sizeXYZ": [
+          1.82,
+          1.4943058905005455,
+          0.7947085499763489
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.82,
+        0.8
+      ],
+      "declaredHeight": 1.52,
+      "geometry": {
+        "triangles": 372,
+        "meshes": 5,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.91,
+            "maxX": 0.91,
+            "minY": 0,
+            "maxY": 1.52,
+            "minZ": -0.4,
+            "maxZ": 0.4
+          }
+        ]
+      },
+      "galleryId": "route-sign",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/double-sign",
+      "id": "double-sign",
+      "displayName": "새 이중 표지",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "새 이중 표지",
+      "storyReferences": [
+        "N25-B"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "outbound-visible",
+        "return-visible"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "panel": "direction-panel",
+        "front": "label-출발-→-위쪽-쉼터",
+        "rear": "label-귀환-←-역-뒤뜰"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.91,
+          0.0256941094994545,
+          -0.39735427498817444
+        ],
+        "max": [
+          0.91,
+          1.52,
+          0.39735427498817444
+        ],
+        "sizeXYZ": [
+          1.82,
+          1.4943058905005455,
+          0.7947085499763489
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.82,
+        0.8
+      ],
+      "declaredHeight": 1.52,
+      "geometry": {
+        "triangles": 372,
+        "meshes": 5,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.91,
+            "maxX": 0.91,
+            "minY": 0,
+            "maxY": 1.52,
+            "minZ": -0.4,
+            "maxZ": 0.4
+          }
+        ]
+      },
+      "galleryId": "double-sign",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/sign-stand",
+      "id": "sign-stand",
+      "displayName": "행사 표지 받침",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "행사 표지 받침",
+      "storyReferences": [
+        "N20",
+        "N25-B"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.6000000238418579,
+          0.0256941094994545,
+          -0.39735427498817444
+        ],
+        "max": [
+          0.6000000238418579,
+          1.024999976158142,
+          0.39735427498817444
+        ],
+        "sizeXYZ": [
+          1.2000000476837158,
+          0.9993058666586876,
+          0.7947085499763489
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.2,
+        0.8
+      ],
+      "declaredHeight": 1.03,
+      "geometry": {
+        "triangles": 316,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.6,
+            "maxX": 0.6,
+            "minY": 0,
+            "maxY": 1.03,
+            "minZ": -0.4,
+            "maxZ": 0.4
+          }
+        ]
+      },
+      "galleryId": "sign-stand",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/return-crate",
+      "id": "return-crate",
+      "displayName": "반송 화물 상자",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "반송 화물 상자",
+      "storyReferences": [
+        "N20",
+        "N21-C"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "closed",
+        "open"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "lid": "crate-lid"
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1,
+          -0.03,
+          -0.42399999499320984
+        ],
+        "max": [
+          1,
+          0.7300000000000001,
+          0.44799999964237214
+        ],
+        "sizeXYZ": [
+          2,
+          0.7600000000000001,
+          0.871999994635582
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        2,
+        0.86
+      ],
+      "declaredHeight": 0.78,
+      "geometry": {
+        "triangles": 392,
+        "meshes": 7,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -1,
+            "maxX": 1,
+            "minY": 0,
+            "maxY": 0.78,
+            "minZ": -0.43,
+            "maxZ": 0.43
+          }
+        ]
+      },
+      "galleryId": "return-crate",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/folded-map",
+      "id": "folded-map",
+      "displayName": "출발·귀환 접이 약도",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "출발·귀환 접이 약도",
+      "storyReferences": [
+        "N22",
+        "N23",
+        "N25-C"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "open",
+        "folded"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "left": "map-outbound",
+        "right": "map-return"
+      },
+      "hotspotIds": [],
+      "pivot": "support-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.6,
+          0.00799999999999994,
+          -0.275
+        ],
+        "max": [
+          0.6,
+          0.023999999523162903,
+          0.275
+        ],
+        "sizeXYZ": [
+          1.2,
+          0.015999999523162965,
+          0.55
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.2,
+        0.55
+      ],
+      "declaredHeight": 0.04,
+      "geometry": {
+        "triangles": 56,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "folded-map",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/station-clock",
+      "id": "station-clock",
+      "displayName": "11:17 종착역 시계",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "11:17 종착역 시계",
+      "storyReferences": [
+        "N20"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "hands": "fixed-hands"
+      },
+      "hotspotIds": [],
+      "pivot": "wall-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.5,
+          -0.5,
+          -0.04500000000000011
+        ],
+        "max": [
+          0.5,
+          0.5,
+          0.1120000034570694
+        ],
+        "sizeXYZ": [
+          1,
+          1,
+          0.1570000034570695
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1,
+        0.12
+      ],
+      "declaredHeight": 1,
+      "geometry": {
+        "triangles": 528,
+        "meshes": 4,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "none",
+        "localBoxes": []
+      },
+      "galleryId": "station-clock",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/folding-support",
+      "id": "folding-support",
+      "displayName": "접이식 표지 받침",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "접이식 표지 받침",
+      "storyReferences": [
+        "N25-B"
+      ],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [
+        "folded",
+        "deployed"
+      ],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "legs": [
+          "folding-leg--0.42",
+          "folding-leg-0.42"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -1.120374587014043,
+          0,
+          -0.36
+        ],
+        "max": [
+          0.55,
+          0.44473881403222437,
+          0.35999997854232785
+        ],
+        "sizeXYZ": [
+          1.670374587014043,
+          0.44473881403222437,
+          0.7199999785423279
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.1,
+        0.72
+      ],
+      "declaredHeight": 0.9,
+      "geometry": {
+        "triangles": 220,
+        "meshes": 3,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.55,
+            "maxX": 0.55,
+            "minY": 0,
+            "maxY": 0.9,
+            "minZ": -0.36,
+            "maxZ": 0.36
+          }
+        ]
+      },
+      "galleryId": "folding-support",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/platform-bench",
+      "id": "platform-bench",
+      "displayName": "역 승강장 벤치",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "역 승강장 벤치",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.8999999761581421,
+          0,
+          -0.2800000011920929
+        ],
+        "max": [
+          0.8999999761581421,
+          1.2350000143051147,
+          0.2749999761581421
+        ],
+        "sizeXYZ": [
+          1.7999999523162842,
+          1.2350000143051147,
+          0.554999977350235
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        1.8,
+        0.55
+      ],
+      "declaredHeight": 0.92,
+      "geometry": {
+        "triangles": 168,
+        "meshes": 2,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.9,
+            "maxX": 0.9,
+            "minY": 0,
+            "maxY": 0.92,
+            "minZ": -0.275,
+            "maxZ": 0.275
+          }
+        ]
+      },
+      "galleryId": "platform-bench",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/stroller",
+      "id": "stroller",
+      "displayName": "이웃의 유모차",
+      "episodeId": "ep-02",
+      "family": "prop",
+      "role": "이웃의 유모차",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/props.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createEpisode02Props(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {},
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.38499999046325684,
+          0.009999999776482582,
+          -0.5950000000000001
+        ],
+        "max": [
+          0.38499999046325684,
+          1.1350000000000002,
+          0.550000011920929
+        ],
+        "sizeXYZ": [
+          0.7699999809265137,
+          1.1250000002235176,
+          1.1450000119209292
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.8,
+        1.12
+      ],
+      "declaredHeight": 1.14,
+      "geometry": {
+        "triangles": 612,
+        "meshes": 5,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.4,
+            "maxX": 0.4,
+            "minY": 0,
+            "maxY": 1.14,
+            "minZ": -0.56,
+            "maxZ": 0.56
+          }
+        ]
+      },
+      "galleryId": "stroller",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "3ba9f56ac6c1fc7fd4e180d3852958792ee0e50a4d2029f2fd603c31f06d3f91"
+    },
+    {
+      "assetKey": "ep-02/munjeong",
+      "id": "munjeong",
+      "displayName": "문정",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "문정",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "munjeong-torso",
+        "head": "munjeong-head",
+        "arms": [
+          "munjeong-arm--1",
+          "munjeong-arm-1"
+        ],
+        "legs": [
+          "munjeong-leg--1",
+          "munjeong-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4250000029802322,
+          0.009999999999999995,
+          -0.24180000185966494
+        ],
+        "max": [
+          0.4250000029802322,
+          1.6308000041723252,
+          0.24180000185966494
+        ],
+        "sizeXYZ": [
+          0.8500000059604644,
+          1.6208000041723252,
+          0.4836000037193299
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.68,
+      "geometry": {
+        "triangles": 1900,
+        "meshes": 15,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.68,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "munjeong",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/neighbor",
+      "id": "neighbor",
+      "displayName": "이웃 연우",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "이웃 연우",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "neighbor-torso",
+        "head": "neighbor-head",
+        "arms": [
+          "neighbor-arm--1",
+          "neighbor-arm-1"
+        ],
+        "legs": [
+          "neighbor-leg--1",
+          "neighbor-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.38500000298023224,
+          0.009999999999999995,
+          -0.21060000836849213
+        ],
+        "max": [
+          0.38500000298023224,
+          1.5748000041723254,
+          0.21060000836849213
+        ],
+        "sizeXYZ": [
+          0.7700000059604645,
+          1.5648000041723253,
+          0.42120001673698426
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.58,
+      "geometry": {
+        "triangles": 1900,
+        "meshes": 15,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.58,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "neighbor",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/sohui",
+      "id": "sohui",
+      "displayName": "소희",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "소희",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "sohui-torso",
+        "head": "sohui-head",
+        "arms": [
+          "sohui-arm--1",
+          "sohui-arm-1"
+        ],
+        "legs": [
+          "sohui-leg--1",
+          "sohui-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4050000029802322,
+          0.009999999999999995,
+          -0.22619999349117278
+        ],
+        "max": [
+          0.4050000029802322,
+          1.6196000041723253,
+          0.22619999349117278
+        ],
+        "sizeXYZ": [
+          0.8100000059604644,
+          1.6096000041723253,
+          0.45239998698234557
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.66,
+      "geometry": {
+        "triangles": 1872,
+        "meshes": 14,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.66,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "sohui",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/jeongyeon",
+      "id": "jeongyeon",
+      "displayName": "정연",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "정연",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "jeongyeon-torso",
+        "head": "jeongyeon-head",
+        "arms": [
+          "jeongyeon-arm--1",
+          "jeongyeon-arm-1"
+        ],
+        "legs": [
+          "jeongyeon-leg--1",
+          "jeongyeon-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.39500000298023225,
+          0.009999999999999995,
+          -0.21840000092983247
+        ],
+        "max": [
+          0.39500000298023225,
+          1.5972000041723253,
+          0.21840000092983247
+        ],
+        "sizeXYZ": [
+          0.7900000059604645,
+          1.5872000041723253,
+          0.43680000185966494
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.62,
+      "geometry": {
+        "triangles": 1872,
+        "meshes": 14,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.62,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "jeongyeon",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/taeo",
+      "id": "taeo",
+      "displayName": "태오",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "태오",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "taeo-torso",
+        "head": "taeo-head",
+        "arms": [
+          "taeo-arm--1",
+          "taeo-arm-1"
+        ],
+        "legs": [
+          "taeo-leg--1",
+          "taeo-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.45500000298023224,
+          0.009999999999999995,
+          -0.2652000027894974
+        ],
+        "max": [
+          0.45500000298023224,
+          1.6532000041723252,
+          0.2652000027894974
+        ],
+        "sizeXYZ": [
+          0.9100000059604645,
+          1.6432000041723251,
+          0.5304000055789948
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.72,
+      "geometry": {
+        "triangles": 1872,
+        "meshes": 14,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.72,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "taeo",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/ideun",
+      "id": "ideun",
+      "displayName": "이든",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "이든",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "ideun-torso",
+        "head": "ideun-head",
+        "arms": [
+          "ideun-arm--1",
+          "ideun-arm-1"
+        ],
+        "legs": [
+          "ideun-leg--1",
+          "ideun-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.4150000029802322,
+          0.009999999999999995,
+          -0.2340000092983246
+        ],
+        "max": [
+          0.4150000029802322,
+          1.6420000041723253,
+          0.2340000092983246
+        ],
+        "sizeXYZ": [
+          0.8300000059604644,
+          1.6320000041723253,
+          0.4680000185966492
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.7,
+      "geometry": {
+        "triangles": 1900,
+        "meshes": 15,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.7,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "ideun",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    },
+    {
+      "assetKey": "ep-02/narae",
+      "id": "narae",
+      "displayName": "나래",
+      "episodeId": "ep-02",
+      "family": "actor",
+      "role": "나래",
+      "storyReferences": [],
+      "approval": "modelled",
+      "source": "procedural-local",
+      "sourcePath": "public/assets/episodes/ep-02/actors.mjs",
+      "revision": "series-ep-02-2026-10-29",
+      "constructor": "createSeriesActors(core).create(id)",
+      "options": {},
+      "reuse": {
+        "action": "new",
+        "baseEpisodeId": null,
+        "baseAssetId": null,
+        "baseRevision": null,
+        "baseSourcePath": null,
+        "baseSourceSha256": null,
+        "changes": []
+      },
+      "states": [],
+      "stateBindings": [],
+      "ownershipAndLocation": [],
+      "parts": {
+        "torso": "narae-torso",
+        "head": "narae-head",
+        "arms": [
+          "narae-arm--1",
+          "narae-arm-1"
+        ],
+        "legs": [
+          "narae-leg--1",
+          "narae-leg-1"
+        ]
+      },
+      "hotspotIds": [],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.39500000298023225,
+          0.009999999999999995,
+          -0.21840000092983247
+        ],
+        "max": [
+          0.39500000298023225,
+          1.5916000041723253,
+          0.21840000092983247
+        ],
+        "sizeXYZ": [
+          0.7900000059604645,
+          1.5816000041723253,
+          0.43680000185966494
+        ],
+        "units": "world-unit"
+      },
+      "declaredFootprintXZ": [
+        0.84,
+        0.58
+      ],
+      "declaredHeight": 1.61,
+      "geometry": {
+        "triangles": 1900,
+        "meshes": 15,
+        "sprites": 0
+      },
+      "collision": {
+        "mode": "static-proxy",
+        "localBoxes": [
+          {
+            "minX": -0.42,
+            "maxX": 0.42,
+            "minY": 0,
+            "maxY": 1.61,
+            "minZ": -0.29,
+            "maxZ": 0.29
+          }
+        ]
+      },
+      "galleryId": "narae",
+      "integratedIn": null,
+      "references": [],
+      "license": "original procedural geometry",
+      "generation": {
+        "tool": "local Three.js procedural core",
+        "modelVersion": "series-ep-02-2026-10-29",
+        "promptRecord": null,
+        "date": "2026-10-29"
+      },
+      "review": {
+        "targetRevision": "series-ep-02-2026-10-29",
+        "result": "modelled-runtime-wired-not-camera-approved",
+        "evidence": [],
+        "failures": []
+      },
+      "sourceSha256": "9bb74a46460a6ec8987b74820cba2b0a585ff62f1b50c585e351d246da5454de"
+    }
+  ]
+}

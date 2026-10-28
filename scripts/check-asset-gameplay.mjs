@@ -62,7 +62,9 @@ try {
   await walk(-.5,17); await inspect(); await sample('curator-greeted');
   assert.ok(samples.at(-1).observations.some((o)=>o.id==='curator'));
   await page.evaluate(()=>window.investigationQA.field());
-  await page.evaluate(()=>window.investigationQA.click('field-primary',true));
+  // Departure now belongs to Yunseo's in-world prompt, reached by the prior walk.
+  await page.locator('#museum-stage canvas').focus();
+  await page.keyboard.press('e');
   await page.waitForFunction(()=>window.qaView.phase==='travelling');
   await sample('travel-start');
   await walk(0,9);
@@ -70,12 +72,13 @@ try {
   await page.waitForFunction(()=>window.qaView.currentRoomId==='gallery' && window.qaView.phase!=='travelling',null,{timeout:15000});
   await sample('gallery-arrival');
   await page.evaluate(()=>window.investigationQA.field());
+  const initialCamera=await page.evaluate(()=>window.museumDiagnostics().cameraSettings);
   await page.locator('#camera-toggle').click();
   for(let i=0;i<6;i++) await page.locator('#camera-right').click();
   await page.locator('#camera-up').click();
   await page.waitForTimeout(250);
   const camera=await page.evaluate(()=>window.museumDiagnostics().cameraSettings);
-  assert.equal(camera.yaw,125); assert.equal(camera.pitch,51);
+  assert.equal(camera.yaw,initialCamera.yaw+90); assert.equal(camera.pitch,initialCamera.pitch+8);
   await sample('camera-rotated');
   await page.screenshot({path:resolve(output,'gameplay-rotated.png')});
   await page.locator('#camera-reset').click();

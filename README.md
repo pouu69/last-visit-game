@@ -146,10 +146,23 @@ npm run rehearse
 ## 이야기와 제작 자료
 
 - [5편 에셋 제작 절차](assets/SERIES_ASSET_WORKFLOW.md) · [편별 에셋 계획](assets/episodes/README.md) · [3D 구현 가이드](assets/OBJECT_ASSET_GUIDE.md)
-- [5편 연작 《돌아가는 길》 스토리 원고](docs/series/README.md) — 기존 1편과 새 4편, 분기·모의 진행·수정 기록. 현재 게임에는 미연결.
+- [5편 연작 《돌아가는 길》 스토리 원고](docs/series/README.md) — 기존 박물관 1편과 후속 4편의 원고. 런타임 연결과 최종 검수 상태는 아래 연작 항목 참조.
 - [전체 원고](docs/manuscript/README.md) · [스토리 설계](docs/narrative/story-design.md)
 - [루트맵](docs/narrative/route-map.md) · [84개 선택 명세](docs/narrative/scene-routes.md)
 - [상태머신 계약](docs/narrative/runtime-contract.md) · [지도·이동·퍼즐](docs/narrative/map-gameplay.md)
 - [오디오 설계와 음량 설정](docs/audio-design.md)
+- [NPC 배회와 혼잣말](docs/npc-ambient.md)
 - [프롤로그와 진행 안내](docs/narrative/onboarding-revision.md) · [장면 연출](docs/narrative/visual-direction.md)
 - [게임 레퍼런스](docs/narrative/game-references.md) · [진행자 안내](docs/facilitator.md)
+
+## 5편 연작 《돌아가는 길》
+
+박물관 전체 3장이 1편이다. 엔딩에서 연작을 열면 모로 동행 여부를 정하고 역·극장·수리소를 방문한 뒤 강변 모임을 준비한다. 중간 세 편의 다음 방문지를 선택하며, 마지막 편의 가능한 규모는 앞서 확인한 경로·신호·장비 준비에 따라 제한된다. 준비 시간은 작업 기회 수이며 실시간 제한이 아니다.
+
+후속편에서는 WASD·방향키 또는 바닥 클릭으로 이동하고 가까운 대상에 `E`로 조사·대화·실행한다. 내레이션과 선택 중에는 보행을 잠근다. 현장 행동을 마친 뒤 퇴장 대상에 접근해 다음 편으로 이동한다. 마우스 휠 확대와 드래그 회전은 월드에서 제공한다. 연작 화면의 기록 내려받기·불러오기로 JSON을 옮길 수 있다. 연작 저장 키는 박물관 세션별 `return-path-series-v2:<sessionId>`다.
+
+`public/series-game.mjs`가 화면·저장·전환, `src/series-state.mjs`가 선택·준비 상태, `src/series-content.mjs`가 원고, `public/series-world.mjs`와 `public/series-action-plan.mjs`가 현장·행동·소품 투영을 맡는다. 모델 카탈로그는 `/asset-gallery.html?episode=1`부터 `?episode=5`까지 선택할 수 있다. 갤러리는 게임 진입이나 저장 경로를 대신하지 않는다.
+
+실제 초대장부터 시작한 동일 기록으로 1편 E1·11선택을 마치고 5편의 귀환·종료까지 완료했다. 공식 저장 복원으로 박물관296이벤트와 연작39이벤트의 계보·최종 상태·모든 필수 행동을 대조했으며 브라우저 오류는 없었다. 최신 전체 검사는 136/136, 빌드는67파일이다. 전편 실행 이후의 텍스트 수정은 별도 최신 UI·집중 검사로 검증했다.
+
+저장·새로고침·숨김 취소·캡션 재시도·준비 상태별 UI와 공간 음향 QA도 통과했다. 2~5편 갤러리43항목·24방향1,032뷰·대표 배율36장을 렌더하고 전 항목4방향 contact sheet를 검토했다. 1편 대표 영상과 양쪽 엔딩 화면을 실제 검토했으며 후속편 네 공간의 대표 영상·동작과 출발/가림/도착 전환도 최종 검토를 통과했다. 원래 요청의 구현·검증을 완료했다. 전체 모델의 개별 게임 승인을 뜻하지 않으며 manifest는 `modelled`로 유지한다. 이 결과는 로컬 검증이고 외부 배포 완료 주장은 아니다. [최종 증거](artifacts/final-evidence.md)와 [요구사항 검증](artifacts/series-requirements-audit.md)에 실행·최신 수정·한계를 구분했다.

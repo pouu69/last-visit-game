@@ -1,0 +1,12 @@
+{
+  "result": {
+    "warningVisible": true,
+    "restored": {
+      "episode": 4,
+      "stage": "perform",
+      "revision": 5,
+      "record": "unreadable"
+    }
+  },
+  "errors": []
+}

@@ -1,0 +1,450 @@
+{
+  "explicitFixtures": true,
+  "checks": [
+    {
+      "check": "action-wood",
+      "status": "passed",
+      "events": [
+        {
+          "kind": "wood",
+          "distance": 1.4655207003830575,
+          "pan": 0.09925335059676942
+        }
+      ],
+      "wantedCount": 1,
+      "world": {
+        "kind": "wood",
+        "distance": 1.4655207003830575,
+        "pan": 0.09925335059676942,
+        "source": {
+          "x": 3,
+          "z": -5
+        },
+        "episodeId": 2
+      },
+      "audio": {
+        "state": "running",
+        "sceneId": 2,
+        "scene": "station",
+        "dialogue": false,
+        "transitionCover": 0,
+        "activeScene": 2,
+        "retiringScene": null,
+        "oneShots": 0,
+        "lastWorldSound": {
+          "kind": "wood",
+          "distance": 1.4655207003830575,
+          "pan": 0.09925335059676942
+        },
+        "cachedScenes": [
+          2
+        ],
+        "schedulerTimers": 0,
+        "settings": {
+          "master": 80,
+          "music": 44,
+          "ambience": 40,
+          "sfx": 62,
+          "ui": 48
+        }
+      }
+    }
+  ],
+  "errors": [],
+  "final": {
+    "view": {
+      "version": "return-path-v2",
+      "museum": {
+        "sceneId": "E1",
+        "flags": {}
+      },
+      "moroAccompanies": false,
+      "episodeId": 2,
+      "stage": "perform",
+      "revision": 6,
+      "visited": [
+        1
+      ],
+      "episodes": {
+        "2": {
+          "choices": {
+            "inspection": "A",
+            "deduction": "D",
+            "time": "B",
+            "execution": "D"
+          },
+          "explored": [
+            "A"
+          ],
+          "requiredActions": [
+            "lock-sign-stand",
+            "turn-sign",
+            "rehearse-escort"
+          ],
+          "completedActions": [
+            "lock-sign-stand"
+          ],
+          "ending": "함께 걷는 길",
+          "outcome": "D"
+        },
+        "3": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "4": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        },
+        "5": {
+          "choices": {},
+          "explored": [],
+          "requiredActions": [],
+          "completedActions": [],
+          "ending": null
+        }
+      },
+      "facts": {
+        "routeSurvey": false,
+        "escort": true,
+        "signal": false,
+        "jungyeonAttends": false,
+        "fixedLight": false,
+        "mobileLight": false,
+        "handover": false
+      },
+      "followup": null,
+      "lastResult": {
+        "episodeId": 2,
+        "stage": "execution",
+        "sceneId": "N25",
+        "choice": "D"
+      },
+      "ending": null,
+      "events": [
+        {
+          "type": "explore",
+          "target": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "A"
+        },
+        {
+          "type": "choose",
+          "choice": "D"
+        },
+        {
+          "type": "choose",
+          "choice": "B"
+        },
+        {
+          "type": "choose",
+          "choice": "D"
+        },
+        {
+          "type": "perform",
+          "action": "lock-sign-stand"
+        }
+      ],
+      "title": "종착역의 반대편",
+      "sceneId": "N25",
+      "introSceneId": "N20",
+      "resultBranch": "D",
+      "options": [],
+      "choices": {
+        "inspection": "A",
+        "deduction": "D",
+        "time": "B",
+        "execution": "D"
+      },
+      "explored": [
+        "A"
+      ],
+      "requiredActions": [
+        "lock-sign-stand",
+        "turn-sign",
+        "rehearse-escort"
+      ],
+      "completedActions": [
+        "lock-sign-stand"
+      ],
+      "nextAction": "turn-sign",
+      "episodeEnding": "함께 걷는 길",
+      "readiness": {
+        "route": true,
+        "signal": false,
+        "equipment": false,
+        "handover": false,
+        "publicReady": false,
+        "mobileReady": false,
+        "equipmentKind": null,
+        "routeKind": "D",
+        "signalKind": null,
+        "jungyeonAttends": false
+      },
+      "objective": "선택한 방법을 현장에서 실행하세요."
+    },
+    "world": {
+      "episodeId": 2,
+      "lastSound": {
+        "kind": "wood",
+        "distance": 1.4655207003830575,
+        "pan": 0.09925335059676942,
+        "source": {
+          "x": 3,
+          "z": -5
+        },
+        "episodeId": 2
+      },
+      "soundCount": 1,
+      "activeIds": [
+        "turn-sign"
+      ],
+      "nextAction": {
+        "id": "turn-sign",
+        "target": "turn-sign",
+        "label": "표지를 돌려 귀환 방향 읽기",
+        "x": 3,
+        "z": -5,
+        "effects": {
+          "old-sign": {
+            "rotation": 3.141592653589793
+          }
+        },
+        "motion": "turn",
+        "path": null
+      },
+      "action": null,
+      "actionProgress": null,
+      "projection": {
+        "old-sign": {
+          "x": 3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true
+        },
+        "out-sign": {
+          "x": 6,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        },
+        "back-sign": {
+          "x": 7,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        },
+        "map": {
+          "x": -3,
+          "y": 0.95,
+          "z": -6,
+          "rotation": 0,
+          "visible": false
+        },
+        "support": {
+          "x": 3,
+          "y": 0,
+          "z": -6,
+          "rotation": 0,
+          "visible": true,
+          "deployed": true
+        }
+      },
+      "participants": {
+        "escort": true,
+        "signal": false,
+        "jungyeon": false,
+        "handover": false
+      },
+      "objects": [
+        {
+          "id": "old-sign",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "out-sign",
+          "visible": false,
+          "x": 6,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "back-sign",
+          "visible": false,
+          "x": 7,
+          "y": 0,
+          "z": -6
+        },
+        {
+          "id": "map",
+          "visible": false,
+          "x": -3,
+          "y": 0.95,
+          "z": -6
+        },
+        {
+          "id": "support",
+          "visible": true,
+          "x": 3,
+          "y": 0,
+          "z": -6
+        }
+      ],
+      "actors": [
+        {
+          "id": "munjeong",
+          "x": 4.5449744460600545,
+          "z": 3
+        },
+        {
+          "id": "munjeong",
+          "x": -0.4202445585514176,
+          "z": -3
+        }
+      ],
+      "player": {
+        "x": 3.4961838181378653,
+        "z": -3.6210320736618358
+      },
+      "locked": false,
+      "nearest": "turn-sign",
+      "hotspots": [
+        {
+          "id": "A",
+          "x": -5,
+          "z": -3
+        },
+        {
+          "id": "B",
+          "x": 5,
+          "z": -3
+        },
+        {
+          "id": "C",
+          "x": -5,
+          "z": 3
+        },
+        {
+          "id": "D",
+          "x": 4.5449744460600545,
+          "z": 3
+        },
+        {
+          "id": "consult",
+          "x": -0.4202445585514176,
+          "z": -3
+        },
+        {
+          "id": "__exit",
+          "x": 0,
+          "z": 9
+        },
+        {
+          "id": "lock-sign-stand",
+          "x": 3,
+          "z": -5
+        },
+        {
+          "id": "turn-sign",
+          "x": 3,
+          "z": -5
+        },
+        {
+          "id": "rehearse-escort",
+          "x": -3,
+          "z": 1
+        }
+      ],
+      "boxes": [
+        {
+          "minX": -12,
+          "maxX": -8.75,
+          "minZ": -10,
+          "maxZ": 10
+        },
+        {
+          "minX": 6.8,
+          "maxX": 9.2,
+          "minZ": -8.7,
+          "maxZ": -7.3
+        },
+        {
+          "id": "54f5ede3-51af-4776-9b1e-3ffaabbff2d9:proxy:0",
+          "minX": -5.4,
+          "maxX": -4.6,
+          "minZ": -3.56,
+          "maxZ": -2.44
+        },
+        {
+          "id": "325169ea-403c-48aa-963b-1f762818ae6a:proxy:0",
+          "minX": 4.09,
+          "maxX": 5.91,
+          "minZ": -3.4,
+          "maxZ": -2.6
+        },
+        {
+          "id": "fab47fa5-6130-42a4-8dd5-b7787c2e02a2:proxy:0",
+          "minX": -6,
+          "maxX": -4,
+          "minZ": 2.57,
+          "maxZ": 3.43
+        },
+        {
+          "minX": -3.75,
+          "maxX": -2.25,
+          "minZ": -6.45,
+          "maxZ": -5.55
+        },
+        {
+          "id": "1fa4406c-77a1-4ecf-9ce1-08799dc615de:proxy:0",
+          "minX": 2.09,
+          "maxX": 3.91,
+          "minZ": -6.4,
+          "maxZ": -5.6
+        },
+        {
+          "id": "bbfa2355-1c4a-4ed1-8c09-231a028b56f6:proxy:0",
+          "minX": 2.45,
+          "maxX": 3.55,
+          "minZ": -6.36,
+          "maxZ": -5.64
+        }
+      ],
+      "camera": {
+        "yaw": 0.55,
+        "pitch": 0.85,
+        "distance": 20
+      },
+      "renderer": {
+        "calls": 159,
+        "triangles": 28628
+      },
+      "title": "종착역의 반대편"
+    },
+    "transition": "idle",
+    "performing": false,
+    "importing": false,
+    "presentation": {
+      "seen": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "cursor": 0
+    }
+  }
+}

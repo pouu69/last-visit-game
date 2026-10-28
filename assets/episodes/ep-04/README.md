@@ -1,10 +1,10 @@
 # 4편 — 수리하지 않는 것
 
-**상태: `planned-not-built` · 원고 기반 제작 후보**
+**상태: `modelled` · 런타임 연결, 카메라·게임 최종 승인 대기**
 
-근거 원고: [episode-04-workshop.md](../../../docs/series/episode-04-workshop.md). 아래 목록은 2026-10-28 원고에서 직접 등장한 대표 물품과 상태를 추출한 것이며, 아직 3D 모델·게임 장면·편별 manifest·카메라 검수 결과를 생성하지 않았다. 새 편을 제작할 때 [연작 제작 절차](../../SERIES_ASSET_WORKFLOW.md)와 [공통 스타일](../../shared/art-direction.md)을 먼저 확인한다.
+근거 원고: [episode-04-workshop.md](../../../docs/series/episode-04-workshop.md). 아래 표는 원고 기반 요구사항이다. 현재 절차형 소품·인물 모델과 편별 manifest가 있으며 `public/series-world.mjs`에 연결했다. 표의 모든 상태·배치가 실제 화면에서 검증됐다는 뜻은 아니다. 제작·검수 시 [연작 제작 절차](../../SERIES_ASSET_WORKFLOW.md)와 [공통 스타일](../../shared/art-direction.md)을 먼저 확인한다.
 
-**인물:** 태오·이든의 새 전신 모델이 필요하다. 전기 연결·내부 분해는 태오가 수행하고, 플레이어는 관찰·대조·차광 배치·전원을 끈 운반 시험을 표현한다.
+**인물:** 태오·이든은 `ep-02/actors.mjs`의 연작 인물 생성기를 사용한다. 전기 연결·내부 분해는 태오가 수행하고, 플레이어는 관찰·대조·차광 배치·전원을 끈 운반 시험을 표현한다.
 
 **공간:** 작업대, 등과 도면을 비교하는 자리, 사람 눈높이와 운반 높이를 시험하는 자리, 보관 위치를 구분한다.
 
@@ -19,9 +19,15 @@
 
 **인계 규칙:** 고정 조명 한 대 / 이동 조명 한 대 / 손표지와 받침 / 주간 운영 중 하나다. 손표지·주간 운영에서는 전기등을 수리소에 남긴다. 안내등은 계속 길을 비추는 장비이며, 극장 신호와 연동한 점멸·색 변화·음향 전원 기능을 임의로 추가하지 않는다.
 
-## 제작 기록을 추가할 때
+## 현재 구현과 검수
 
-- 이 폴더는 원고 기반 요구사항과 제작 기록을 보관한다. 실제 런타임 모델의 예정 위치는 같은 편 번호의 `public/assets/episodes/ep-04/`다. 이 문서만으로 해당 코드 폴더나 실행 기능이 생기지 않는다.
-- [공통 에셋 목록](../README.md)의 재사용 후보를 확인하고, 사용한 기존 모델의 원본 경로와 리비전을 편별 manifest에 기록한다. 현재 캐릭터·소품의 원본은 1편에 있으며, 실제로 여러 편에 필요한 것이 확인되면 공통 에셋으로 승격한다.
-- `assets/templates/`의 브리프·manifest·검수 기록을 복사해 각 항목을 채운다. 미제작·미적용·미검수 상태를 승인 완료로 기록하지 않는다.
-- 완료할 때는 [연작 제작 절차](../../SERIES_ASSET_WORKFLOW.md)의 기술·카메라·상태·실제 플레이 확인 결과를 이 폴더의 기록으로 연결한다.
+- 소품: `public/assets/episodes/ep-04/props.mjs`. 인물: `public/assets/episodes/ep-02/actors.mjs` 공용 연작 생성기. 플레이어·모로는 1편 생성기다.
+- 진입: 박물관 엔딩 → `public/series-game.mjs`. 월드: `public/series-world.mjs`. 행동·투영: `public/series-action-plan.mjs`.
+- 갤러리: `/asset-gallery.html?episode=4`. 저장: `return-path-series-v2:<museum sessionId>`.
+- 원고·생성기 SHA-256은 [manifest](manifest.json)에 기록했다. 해시는 기록 당시 소스를 식별하며 후속 수정의 승인이나 테스트 통과를 뜻하지 않는다.
+- 전체 카탈로그와 실제 장면의 사용 자산은 다르다. `modelled`를 유지하며 24방향 렌더·대표 배율 캡처와 부분 이미지 검토를 마쳤으며 장면 모션·실제 플레이 승인은 보류한다.
+- 검증 범위와 남은 항목: [요구사항 감사](../../../artifacts/series-requirements-audit.md), [진행 기록](../../../artifacts/game-progress.md).
+
+## 갤러리 렌더 검증 갱신
+
+9항목·24방향 216뷰와 대표 모델 배율 9장을 생성했다. root가 전 항목 4방향 contact sheet 36뷰를 실제 검토했다. 전체 이미지 개별 검토·장면 모션·게임 승인은 별도이며 `modelled`를 유지한다. [검수 기록](review/review.md)에 렌더와 육안 검토 범위를 구분했다.

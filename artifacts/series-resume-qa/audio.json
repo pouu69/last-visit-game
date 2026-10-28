@@ -1,0 +1,49 @@
+{
+  "fixture": "isolated actual audio module; native gesture QA unlock button; API volume controls",
+  "running": {
+    "state": "running",
+    "sceneId": 5,
+    "scene": "river",
+    "dialogue": false,
+    "transitionCover": 0,
+    "activeScene": 5,
+    "retiringScene": null,
+    "oneShots": 0,
+    "cachedScenes": [
+      5
+    ],
+    "schedulerTimers": 0,
+    "settings": {
+      "master": 80,
+      "music": 44,
+      "ambience": 40,
+      "sfx": 62,
+      "ui": 48
+    }
+  },
+  "muted": {
+    "gain": 0,
+    "diagnostics": {
+      "state": "running",
+      "sceneId": 5,
+      "scene": "river",
+      "dialogue": false,
+      "transitionCover": 0,
+      "activeScene": 5,
+      "retiringScene": null,
+      "oneShots": 1,
+      "cachedScenes": [
+        5
+      ],
+      "schedulerTimers": 0,
+      "settings": {
+        "master": 0,
+        "music": 44,
+        "ambience": 40,
+        "sfx": 62,
+        "ui": 48
+      }
+    }
+  },
+  "restored": 0.6399999856948853
+}

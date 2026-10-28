@@ -1,0 +1,1906 @@
+{
+  "version": 1,
+  "storyVersion": "museum-map-4",
+  "teamId": 1,
+  "events": [
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 0,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 1,
+      "hotspotId": "invitation",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 2
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 3
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 4
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 5,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 6,
+      "hotspotId": "curator",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 7
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 8
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 9
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 10
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 11
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 12,
+      "preserveReading": true
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "O00",
+      "revision": 13
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 14,
+      "roomId": "gallery"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 15
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 16,
+      "preserveReading": true
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 17,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 18,
+      "hotspotId": "case",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 19
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 20
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 21
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 22
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 23
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 24
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 25,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 26,
+      "hotspotId": "trail",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 27
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 28
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 29
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 30,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 31,
+      "hotspotId": "schedule",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 32
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 33
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 34,
+      "preserveReading": true
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 35,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 36,
+      "fromObservations": true
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 37,
+      "choiceId": "A"
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "S01",
+      "revision": 38
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 39,
+      "roomId": "maintenance"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 40
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 41
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 42
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 43
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 44,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 45,
+      "hotspotId": "receipt",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 46
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 47
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 48
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 49
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 50
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 51
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 52
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 53
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 54
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 55,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 56
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 57,
+      "choiceId": "B"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 58
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 59
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "I01",
+      "revision": 60
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 61,
+      "roomId": "foyer"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 62
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 63,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 64,
+      "hotspotId": "map",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 65
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 66
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 67
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 68
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 69
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 70
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 71,
+      "preserveReading": true
+    },
+    {
+      "type": "SOLVE",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 72,
+      "answer": [
+        "entrance",
+        "pump",
+        "return"
+      ]
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 73
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "P12",
+      "revision": 74
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 75,
+      "roomId": "return"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 76
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 77,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 78,
+      "hotspotId": "admission",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 79
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 80
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 81
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 82
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 83
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 84
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 85,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 86
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 87,
+      "choiceId": "A"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 88
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 89
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "S12",
+      "revision": 90
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 91
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 92,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 93,
+      "hotspotId": "order",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 94
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 95
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 96
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 97
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 98
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 99
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 100
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 101
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 102
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 103
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 104
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 105
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 106,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 107,
+      "hotspotId": "fault",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 108
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 109
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 110
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 111
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 112
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 113
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 114
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 115,
+      "preserveReading": true
+    },
+    {
+      "type": "DEDUCE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 116,
+      "answerId": "after"
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 117
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 118,
+      "choiceId": "D"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 119
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 120
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "T21",
+      "revision": 121
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 122,
+      "roomId": "garden"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 123
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 124,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 125,
+      "hotspotId": "valve",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 126
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 127
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 128
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 129
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 130
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 131,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 132,
+      "hotspotId": "rail",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 133
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 134
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 135
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 136,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 137
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 138,
+      "choiceId": "A"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 139
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 140
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "D22",
+      "revision": 141
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 142,
+      "roomId": "return"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 143
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 144,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 145,
+      "hotspotId": "story",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 146
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 147
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 148
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 149
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 150
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 151
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 152
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 153,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 154,
+      "hotspotId": "request",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 155
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 156
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 157
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 158
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 159
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 160
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 161,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 162,
+      "hotspotId": "rescue",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 163
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 164
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 165
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 166
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 167
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 168
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 169
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 170
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 171
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 172
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 173
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 174
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 175,
+      "preserveReading": true
+    },
+    {
+      "type": "DEDUCE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 176,
+      "answerId": "tomorrow"
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 177
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 178,
+      "choiceId": "B"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 179
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 180
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "S22",
+      "revision": 181
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 182,
+      "roomId": "control"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 183
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 184,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 185,
+      "hotspotId": "sequence",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 186
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 187
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 188
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 189
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 190
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 191
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 192
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 193
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 194,
+      "preserveReading": true
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 195,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 196,
+      "hotspotId": "interlock",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 197
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 198
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 199
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 200,
+      "preserveReading": true
+    },
+    {
+      "type": "SOLVE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 201,
+      "answer": [
+        "shut",
+        "brace",
+        "lift",
+        "power"
+      ]
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 202
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "P21",
+      "revision": 203
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 204,
+      "roomId": "return"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 205
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 206,
+      "preserveReading": true
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 207,
+      "preserveReading": true
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 208,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 209,
+      "hotspotId": "power",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 210
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 211
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 212
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 213
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 214
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 215
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 216,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 217,
+      "hotspotId": "crates",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 218
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 219
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 220
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 221
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 222
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 223
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 224,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 225
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 226,
+      "choiceId": "D"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 227
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 228
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "R31",
+      "revision": 229
+    },
+    {
+      "type": "ARRIVE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 230,
+      "roomId": "reception"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 231
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 232,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 233,
+      "hotspotId": "report",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 234
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 235
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 236
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 237
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 238
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 239
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 240
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 241,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 242,
+      "hotspotId": "promise",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 243
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 244
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 245
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 246
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 247
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 248
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 249
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 250
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 251
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 252,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 253,
+      "hotspotId": "consent",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 254
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 255
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 256
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 257
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 258
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 259
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 260
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 261,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 262
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 263,
+      "choiceId": "A"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 264
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 265
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "S31",
+      "revision": 266
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 267
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 268,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 269,
+      "hotspotId": "handoff",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 270
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 271
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 272
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 273,
+      "preserveReading": true
+    },
+    {
+      "type": "INSPECT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 274,
+      "hotspotId": "condition",
+      "resume": true
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 275
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 276
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 277
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 278
+    },
+    {
+      "type": "EXPLORE",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 279,
+      "preserveReading": true
+    },
+    {
+      "type": "OPEN_CHOICES",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 280
+    },
+    {
+      "type": "CHOOSE",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 281,
+      "choiceId": "A"
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 282
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 283
+    },
+    {
+      "type": "CONTINUE",
+      "teamId": 1,
+      "sceneId": "F31",
+      "revision": 284
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 285
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 286
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 287
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 288
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 289
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 290
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 291
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 292
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 293
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 294
+    },
+    {
+      "type": "NEXT",
+      "teamId": 1,
+      "sceneId": "E1",
+      "revision": 295
+    }
+  ],
+  "playerName": "여울",
+  "checksum": "9aa7f28725b1bcf1df68ee1d0264780f93c8b28e9af305a4b7313f61855fc932"
+}

@@ -13,6 +13,7 @@ import { collectStaticColliders } from './museum-colliders.mjs';
 import { museumKeyboardKey } from './museum-keyboard.mjs';
 import { gameAudio } from './audio.mjs';
 import { scoreWanderPoint, seededWanderPoints } from './npc-utility.mjs';
+import { ambientActivity, ambientLine } from './npc-ambient.mjs';
 import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
@@ -240,6 +241,12 @@ export function mountMuseum(
     whiteSpace: 'nowrap',
   });
   root.append(speakerMarker);
+  const ambientBubble = document.createElement('div');
+  ambientBubble.className = 'npc-ambient-bubble';
+  ambientBubble.setAttribute('role', 'status');
+  ambientBubble.setAttribute('aria-live', 'polite');
+  ambientBubble.hidden = true;
+  root.append(ambientBubble);
   const accessFeedback = document.createElement('div');
   accessFeedback.className = 'museum-access-feedback';
   accessFeedback.setAttribute('role', 'status');
@@ -783,6 +790,9 @@ export function mountMuseum(
       ambientWait: 0,
     },
   ];
+  let ambientSpeech = null;
+  let ambientSpeechCooldown = 0;
+  const ambientProjection = new THREE.Vector3();
 
   const hemisphere = new THREE.HemisphereLight('#8ba8bd', '#253d37', 0.9);
   const key = new THREE.DirectionalLight('#ffce8a', 1.45);
@@ -814,6 +824,7 @@ export function mountMuseum(
   let frame = null,
     startTime = null,
     disposed = false,
+    suspended = false,
     contextLost = false,
     moving = false;
   let width = 1,
@@ -1500,7 +1511,11 @@ export function mountMuseum(
       const point = anchorShape(hotspot.anchor)?.point;
       if (!point) continue;
       const gap = Math.hypot(player.position.x - point.x, player.position.z - point.z);
-      if (gap < distance) {
+      // Nearby unread evidence must remain reachable even when a previously read
+      // object is closer. Within the same status keep the nearest target and the
+      // original order for ties (ready actions are inserted first).
+      if (gap < 2 && (!nearest || (nearest.visited && !hotspot.visited) ||
+          (Boolean(nearest.visited) === Boolean(hotspot.visited) && gap < distance - 1e-6))) {
         distance = gap;
         nearest = hotspot;
       }
@@ -1607,7 +1622,8 @@ export function mountMuseum(
     return points.reverse();
   }
   function routeTo(x, z) {
-    let path = findPath(player.position, x, z);
+    const occupants = activeBodies().filter(body => !towingMoro || body.id !== 'moro');
+    let path = findPath(player.position, x, z, navigationBody(), occupants);
     if (!path && towingMoro) {
       // A floor tap can fit the carrier but leave no room for its load near a wall.
       for (const radius of [0.25, 0.5, 0.75, 1]) {
@@ -1616,7 +1632,9 @@ export function mountMuseum(
           path = findPath(
             player.position,
             x + Math.cos(angle) * radius,
-            z + Math.sin(angle) * radius
+            z + Math.sin(angle) * radius,
+            navigationBody(),
+            occupants
           );
         }
         if (path) break;
@@ -1652,7 +1670,6 @@ export function mountMuseum(
   }
   function actorApproachPoint(actor) {
     if (
-      actor.path.length === 0 &&
       roomAt(actor.object.position.x, actor.object.position.z) === current.currentRoomId
     )
       return actor.object.position.clone();
@@ -1662,6 +1679,17 @@ export function mountMuseum(
     return current.flags.moro === 'asleep' || current.flags.method === 'carry';
   }
   function stageActor(actor, room, needed, reset) {
+    if (reset || actor.ambientSceneId !== current.sceneId) {
+      actor.ambientSceneId = current.sceneId;
+      actor.ambientDecision = 0;
+      actor.ambientWait = actor.id === 'moro' ? 2 : 4;
+      actor.barkWait = actor.id === 'moro' ? 6 : 12;
+      actor.wasNear = false;
+      actor.activity = 'rest';
+      if (actor.ambientPath) actor.path = [];
+      actor.ambientPath = false;
+      ambientSpeech = null;
+    }
     if (reset) {
       actor.initialized = false;
       actor.destination = null;
@@ -1718,19 +1746,42 @@ export function mountMuseum(
     if (actor.destination === destination) return;
     actor.blockedFor = 0;
     actor.destination = destination;
+    actor.ambientPath = false;
     actor.path = findPath(actor.object.position, x, z, bodyFor(actor.object)) ?? [];
   }
+  function sayAmbient(actor, activity) {
+    if (ambientSpeechCooldown > 0 || actor.barkWait > 0) return;
+    const line = ambientLine(actor.id, activity, current.sceneId, actor.ambientDecision, actor.lastBarkId);
+    if (!line) return;
+    actor.lastBarkId = line.id;
+    actor.barkWait = 18 + (actor.ambientDecision % 4) * 3;
+    ambientSpeechCooldown = 8;
+    ambientSpeech = { actorId: actor.id, ...line, remaining: 5 };
+    ambientBubble.textContent = `${actor.id === 'moro' ? '모로' : '윤서'} · ${line.text}`;
+  }
   function advanceActors(delta) {
+    const ambientEnabled = current.mode === 'map' && current.interactive &&
+      ['exploring', 'input'].includes(current.phase) && !activeAnchor && !controlsBlocked();
+    ambientSpeechCooldown = Math.max(0, ambientSpeechCooldown - delta);
+    if (!ambientEnabled) ambientSpeech = null;
+    if (ambientSpeech) {
+      ambientSpeech.remaining -= delta;
+      if (ambientSpeech.remaining <= 0) ambientSpeech = null;
+    }
     for (const actor of actors) {
       actor.moving = false;
       if (actor.id === 'moro' && moroUsesTrolley()) {
         actor.path = [];
+        if (ambientSpeech?.actorId === actor.id) ambientSpeech = null;
         continue;
       }
       const last = actor.path.at(-1),
         position = actor.object.position;
       if (!actor.object.visible) continue;
       const roomId = roomAt(position.x, position.z);
+      const conversationTarget = current.hotspots.find(
+        (hotspot) => hotspot.id === (pendingInspect ?? current.activeHotspot)
+      );
       const invitingPlayer = current.mode === 'map' && current.interactive &&
         ['exploring', 'input'].includes(current.phase) && !activeAnchor && !controlsBlocked() && current.hotspots.some(
         hotspot => hotspot.kind === 'action' && hotspot.anchor === actor.id
@@ -1742,47 +1793,78 @@ export function mountMuseum(
         actor.activity = 'attention';
         continue;
       }
-
+      if (roomId === current.currentRoomId && conversationTarget?.anchor === actor.id) {
+        actor.object.rotation.y = Math.atan2(player.position.x - position.x, player.position.z - position.z);
+        actor.activity = 'attention';
+        continue;
+      }
+      if (actor.ambientPath && !ambientEnabled) continue;
+      if (ambientEnabled && roomId === current.currentRoomId && !actor.waitForPlayer) {
+        actor.barkWait = Math.max(0, actor.barkWait - delta);
+        const near = Math.hypot(position.x - player.position.x, position.z - player.position.z) < 2.2;
+        if (near && !actor.wasNear) {
+          if (actor.ambientPath) actor.path = [];
+          actor.ambientPath = false;
+          actor.ambientWait = 4;
+          actor.activity = 'attention';
+          actor.object.rotation.y = Math.atan2(player.position.x - position.x, player.position.z - position.z);
+          sayAmbient(actor, 'greet');
+          actor.wasNear = true;
+          continue;
+        }
+        if (!near && Math.hypot(position.x - player.position.x, position.z - player.position.z) > 3) actor.wasNear = false;
+        if (!last) sayAmbient(actor, actor.activity === 'attention' ? 'rest' : actor.activity);
+      }
       if (!last) {
         const ambientAllowed =
-          current.mode === 'map' &&
-          current.phase !== 'travelling' &&
+          ambientEnabled &&
           roomId === current.currentRoomId &&
           !actor.waitForPlayer &&
           !activeAnchor;
         if (!ambientAllowed) continue;
+        if (actor.lookAt && actor.ambientPath) {
+          actor.object.rotation.y = Math.atan2(actor.lookAt.x - position.x, actor.lookAt.z - position.z);
+        }
         actor.ambientWait = Math.max(0, actor.ambientWait - delta);
         if (actor.ambientWait > 0) continue;
         const decision = actor.ambientDecision++;
+        const interests = current.hotspots
+          .filter((hotspot) => !['moro', 'yunseo', 'nara'].includes(hotspot.anchor))
+          .map((hotspot) => anchorShape(hotspot.anchor)?.point)
+          .filter((point) => point && roomAt(point.x, point.z) === roomId);
+        actor.activity = ambientActivity(actor.id, decision, interests.length > 0);
+        actor.ambientWait = 3 + ((decision * 37 + actor.id.length * 13) % 35) / 10;
+        if (actor.activity === 'rest') continue;
+        const room = ROOMS.find((item) => item.id === roomId);
+        const interest = actor.activity === 'inspect' ? interests[decision % interests.length] : room;
         const candidates = seededWanderPoints(
           `${current.sceneId}:${actor.id}:${decision}`,
-          position,
-          2.8
+          interest,
+          actor.activity === 'inspect' ? 2.2 : Math.min(room.width, room.depth) * 0.38,
+          12
         );
-        const playerPoint = player.position;
         const ranked = candidates
           .filter(([x, z]) =>
             roomAt(x, z) === roomId &&
-            Math.hypot(x - playerPoint.x, z - playerPoint.z) < 1.65 &&
-            canWalk(x, z, bodyFor(actor.object))
+            Math.hypot(x - position.x, z - position.z) > 1 &&
+            canWalk(x, z, bodyFor(actor.object), activeBodies())
           )
           .map((point) => ({
             point,
-            score: scoreWanderPoint(point, position, playerPoint),
+            score: scoreWanderPoint(point, position, interest),
           }))
           .sort((a, b) => b.score - a.score);
         for (const { point } of ranked) {
           const path = findPath(position, point[0], point[1], bodyFor(actor.object));
-          if (!path || path.length < 2) continue;
+          if (!path || path.length < 2 || path.some(([x, z]) => roomAt(x, z) !== roomId)) continue;
           actor.path = path;
+          actor.ambientPath = true;
+          actor.lookAt = interest;
           break;
         }
-        actor.ambientWait = 2.4 + ((decision * 37 + actor.id.length * 13) % 29) / 10;
+        if (!actor.path.length && actor.lookAt) actor.object.rotation.y = Math.atan2(actor.lookAt.x - position.x, actor.lookAt.z - position.z);
         continue;
       }
-      const conversationTarget = current.hotspots.find(
-        (hotspot) => hotspot.id === (pendingInspect ?? current.activeHotspot)
-      );
       if (
         current.phase !== 'travelling' &&
         conversationTarget?.anchor === actor.id &&
@@ -1798,7 +1880,7 @@ export function mountMuseum(
         Math.hypot(position.x - last[0], position.z - last[1]) <
         Math.hypot(player.position.x - last[0], player.position.z - last[1]);
       if (actor.waitForPlayer && ahead && position.distanceTo(player.position) > 5.5) continue;
-      let remaining = (actor.waitForPlayer ? 3.2 : 3.8) * delta;
+      let remaining = (actor.ambientPath ? actor.id === 'moro' ? 1.1 : 0.9 : actor.waitForPlayer ? 3.2 : 3.8) * delta;
       while (remaining > 0 && actor.path.length) {
         const next = actor.path[0],
           dx = next[0] - position.x,
@@ -1823,6 +1905,11 @@ export function mountMuseum(
           actor.blockedFor = (actor.blockedFor ?? 0) + delta;
           if (actor.blockedFor >= 0.35) {
             actor.blockedFor = 0;
+            if (actor.ambientPath) {
+              actor.path = [];
+              actor.ambientWait = 2;
+              break;
+            }
             const roomId = roomAt(last[0], last[1]);
             const goal = clearPlacement(
               actor.object,
@@ -1990,6 +2077,7 @@ export function mountMuseum(
         ? canInspectActor(actor)
         : Math.hypot(player.position.x - point.x, player.position.z - point.z) < 2
     ) {
+      if (actor) { actor.path = []; actor.ambientPath = false; actor.ambientWait = 4; }
       onInspect(hotspotId);
       return true;
     }
@@ -2009,6 +2097,11 @@ export function mountMuseum(
     );
     for (const candidate of candidates)
       if (routeTo(...candidate)) {
+        if (actor && roomAt(actor.object.position.x, actor.object.position.z) === current.currentRoomId) {
+          actor.path = [];
+          actor.ambientPath = false;
+          actor.ambientWait = 4;
+        }
         pendingInspect = hotspotId;
         renderer.domElement.focus({ preventScroll: true });
         ensureAnimation();
@@ -2017,7 +2110,7 @@ export function mountMuseum(
     return false;
   }
   function ensureAnimation() {
-    if (frame === null && !disposed && !contextLost && !document.hidden)
+    if (frame === null && !disposed && !suspended && !contextLost && !document.hidden)
       frame = requestAnimationFrame(animate);
   }
   function keydown(event) {
@@ -2258,7 +2351,10 @@ export function mountMuseum(
                 goal[1],
                 navigationBody(),
                 activeBodies().filter((body) => !towingMoro || body.id !== 'moro')
-              ) ?? walkPath;
+              ) ?? [];
+            // A person may now occupy the destination. Stop instead of retrying the
+            // same blocked path forever; the player can choose another floor point.
+            if (!walkPath.length) pendingInspect = null;
           }
         } else playerBlockedFor = 0;
         player.rotation.y = Math.atan2(dx, dz);
@@ -2366,16 +2462,31 @@ export function mountMuseum(
   }
 
   function render() {
-    if (disposed || contextLost || document.hidden || width < 2 || height < 2) return;
+    if (disposed || suspended || contextLost || document.hidden || width < 2 || height < 2) return;
     showSelection();
     renderer.render(scene, camera);
     placeSpeakerMarker();
+    placeAmbientBubble();
     placeHotspots();
     renderedFrames++;
   }
+  function placeAmbientBubble() {
+    const actor = actors.find((item) => item.id === ambientSpeech?.actorId);
+    ambientBubble.hidden = true;
+    if (!actor || !actor.object.visible || !current.interactive || activeAnchor ||
+      roomAt(actor.object.position.x, actor.object.position.z) !== current.currentRoomId) return;
+    actor.object.getWorldPosition(ambientProjection);
+    ambientProjection.y += actor.id === 'moro' ? 1.5 : 2.5;
+    ambientProjection.project(camera);
+    if (Math.abs(ambientProjection.x) > 0.85 || Math.abs(ambientProjection.y) > 0.85 || Math.abs(ambientProjection.z) > 1) return;
+    ambientBubble.hidden = false;
+    const left = Math.max(130, Math.min(width - 130, ((ambientProjection.x + 1) * width) / 2));
+    const top = Math.max(95, ((1 - ambientProjection.y) * height) / 2);
+    ambientBubble.style.transform = `translate3d(${left}px,${top}px,0) translate(-50%,-100%)`;
+  }
   function animate(now) {
     frame = null;
-    if (disposed || document.hidden || contextLost) return;
+    if (disposed || suspended || document.hidden || contextLost) return;
     if (now - lastRenderedAt < 1000 / 30) {
       frame = requestAnimationFrame(animate);
       return;
@@ -2753,6 +2864,11 @@ export function mountMuseum(
   update(current);
   return {
     update,
+    setSuspended(value) {
+      suspended = Boolean(value);
+      if (suspended && frame !== null) { cancelAnimationFrame(frame); frame = null; }
+      if (!suspended) { render(); ensureAnimation(); }
+    },
     focus,
     approach,
     adjustCamera,
@@ -2822,8 +2938,11 @@ export function mountMuseum(
           visible: actor.object.visible,
           moving: actor.moving,
           waypoints: actor.path.length,
+          activity: actor.activity,
+          ambientPath: Boolean(actor.ambientPath),
           waiting: actor.waitForPlayer && !actor.moving && actor.path.length > 0,
         })),
+        ambientSpeech: ambientBubble.hidden ? null : ambientSpeech?.text,
         objectiveTarget: current.objectiveTarget,
         objectiveMarker: beacon.visible ? beacon.position.toArray() : null,
         remoteNaraVisible: Boolean(
@@ -2834,6 +2953,10 @@ export function mountMuseum(
         interactive: current.interactive,
         activeAnchor,
         hotspots: hotspotLayout,
+        interactionTargets: current.hotspots.map(h => {
+          const point = anchorShape(h.anchor)?.point;
+          return { ...h, x:point?.x, z:point?.z };
+        }),
         poses: {
           curatorHead: curatorHead.rotation.x,
           curatorArm: curatorArms[1].rotation.x,
