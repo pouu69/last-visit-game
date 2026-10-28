@@ -1,0 +1,166 @@
+/* Field tools stay at the edge of the scene; investigation happens in the world. */
+body[data-mode] #investigation .investigation-dock.field-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  inset: auto max(24px, env(safe-area-inset-right, 0px))
+    max(24px, env(safe-area-inset-bottom, 0px)) auto;
+  width: max-content;
+  max-width: calc(100vw - 48px);
+  max-height: none;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+#investigation .investigation-dock.field-tools .field-tools-actions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#investigation .investigation-dock.field-tools .field-tool {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 62px;
+  min-height: 66px;
+  padding: 10px 7px 7px;
+  border: 1px solid #ac98706b;
+  border-radius: 3px 8px 8px 3px;
+  color: #eadbb8;
+  background: linear-gradient(100deg, #9c825830 0 5px, #16352eee 5px 100%);
+  box-shadow: 0 3px 0 #071b17b3, 0 7px 16px #06191338;
+  transition: transform 120ms ease-out, border-color 120ms ease-out,
+    background-color 120ms ease-out;
+}
+
+#investigation .field-tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+}
+
+#investigation .field-tool-icon svg {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+#investigation .field-tool-label {
+  font-size: 11px;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#investigation .field-tool-count {
+  position: absolute;
+  top: -6px;
+  right: -5px;
+  min-width: 19px;
+  padding: 3px 5px;
+  border-radius: 2px;
+  color: #20372f;
+  background: #dfc48d;
+  font-size: 10px;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
+}
+
+#investigation .investigation-dock.field-tools .field-tool-help {
+  width: 44px;
+  min-height: 44px;
+  margin: 0 0 3px;
+  padding: 8px;
+  border: 1px solid #8caa9170;
+  border-radius: 3px;
+  color: #c3cfb9;
+  background: #122e27df;
+}
+
+#investigation .field-tool-help .field-tool-icon,
+#investigation .field-tool-help svg {
+  width: 22px;
+  height: 22px;
+}
+
+#investigation .investigation-dock.field-tools .field-tool.selected-tool {
+  color: #fff0ce;
+  border-color: #dfc48d;
+  background-color: #5c664b;
+}
+
+#investigation .investigation-dock.field-tools .field-tool:active:not(:disabled) {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 #071b17b3;
+}
+
+body[data-mode] #investigation .field-tools .field-next-action {
+  flex: 0 1 auto;
+  width: auto;
+  min-width: 0;
+  max-width: min(320px, calc(100vw - 48px));
+  min-height: 46px;
+  margin: 0;
+  padding: 11px 18px;
+  border: 1px solid #e2c995a6;
+  border-radius: 3px;
+  color: #f5e5c0;
+  background: #24483ef2;
+  box-shadow: 0 3px 0 #0c211c, 0 7px 16px #06191338;
+  text-align: left;
+  white-space: normal;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+body[data-mode] #investigation .investigation-panel {
+  bottom: max(110px, calc(env(safe-area-inset-bottom, 0px) + 100px));
+}
+
+@media (hover: hover) {
+  #investigation .investigation-dock.field-tools .field-tool:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: #dfc48d;
+  }
+}
+
+@media (max-width: 760px) {
+  body[data-mode] #investigation .investigation-dock.field-tools {
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: max(16px, env(safe-area-inset-bottom, 0px));
+    max-width: calc(100vw - 32px);
+    gap: 10px;
+  }
+  #investigation .investigation-dock.field-tools .field-tools-actions {
+    gap: 9px;
+  }
+  #investigation .investigation-dock.field-tools .field-tool {
+    width: 56px;
+    min-height: 60px;
+    padding: 8px 6px 6px;
+  }
+  #investigation .investigation-dock.field-tools .field-tool-help {
+    width: 44px;
+    min-height: 44px;
+    padding: 8px;
+  }
+  body[data-mode] #investigation .investigation-panel {
+    bottom: max(100px, calc(env(safe-area-inset-bottom, 0px) + 90px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #investigation .investigation-dock.field-tools .field-tool {
+    transition: none;
+  }
+}

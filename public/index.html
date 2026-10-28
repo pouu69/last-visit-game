@@ -18,6 +18,9 @@
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23152e27'/%3E%3Cpath d='m4 18 11 9 13-9H4Zm5-3 6-11v11H9Zm9 0V8l9 7h-9Z' fill='%23e4d7b9'/%3E%3C/svg%3E"
     />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/field-tools.css" />
+    <link rel="stylesheet" href="/game-hud.css" />
+    <link rel="stylesheet" href="/dialogue-ui.css" />
     <script type="module" src="/app.mjs"></script>
   </head>
   <body data-screen="welcome">
@@ -29,49 +32,35 @@
         <button
           id="map-toggle"
           type="button"
+          class="hud-tool"
+          aria-label="박물관 지도"
+          title="박물관 지도"
           aria-controls="navigation-hud"
           aria-expanded="false"
           hidden
         >
-          지도 <kbd>M</kbd>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="m3 6 5-2 8 2 5-2v14l-5 2-8-2-5 2z" />
+            <path d="M8 4v14m8-12v14" />
+          </svg>
+          <span class="hud-tool-label">지도</span><kbd>M</kbd>
         </button>
-        <button id="history-toggle" type="button" hidden>대화 기록</button
-        ><button id="notebook-toggle" type="button" hidden>
-          기록장 <span id="evidence-count"></span></button
-        ><button id="menu-toggle" type="button" aria-label="게임 메뉴">메뉴</button>
-      </div>
-    </header>
-    <div id="notice" role="status" aria-live="polite"></div>
-    <main>
-      <section id="welcome" aria-labelledby="welcome-title">
-        <p class="eyebrow">직접 걷고, 조사하고, 함께 결정하는 미스터리</p>
-        <h1 id="welcome-title">폐관 후의<br />박물관</h1>
-        <p class="intro">
-          박물관의 마지막 초대 관람객이 되어 보세요.<br />현장을 살피고 증언을 대조하며, 우리
-          팀의 선택으로 이야기를 이어갑니다.
-        </p>
-        <div id="team-buttons" class="teams"></div>
-        <div id="team-recovery"></div>
-        <p class="quiet">
-          한 팀은 하나의 진행 기록입니다. 각 팀의 선택과 결말을 나중에 비교할 수 있어요.
-        </p>
-        <details id="saved-records" hidden>
-          <summary>저장한 이야기 이어보기</summary>
-          <div id="saved-record-list"></div>
-        </details>
-        <button id="welcome-restore" type="button" class="text-button">
-          기록 파일에서 이어하기
-        </button>
-      </section>
-      <section id="game" hidden>
         <aside id="camera-tools" aria-label="카메라 시점 조절" hidden>
           <button
             id="camera-toggle"
             type="button"
+            class="hud-tool"
+            aria-label="시점 조절"
+            title="시점 조절"
             aria-controls="camera-panel"
             aria-expanded="false"
           >
-            시점 조절 <span aria-hidden="true">＋</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3 12s3.3-6 9-6 9 6 9 6-3.3 6-9 6-9-6-9-6Z" />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+            <span class="hud-tool-label">시점</span>
+            <span class="hud-toggle-state" aria-hidden="true">＋</span>
           </button>
           <section id="camera-panel" aria-label="시점 조절 도구" hidden>
             <output id="camera-readout" aria-live="off"></output>
@@ -102,6 +91,37 @@
             </p>
           </section>
         </aside>
+        <button id="menu-toggle" type="button" class="hud-tool" aria-label="게임 메뉴" title="게임 메뉴">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+            <path d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <span class="hud-tool-label">메뉴</span>
+        </button>
+      </div>
+    </header>
+    <div id="notice" role="status" aria-live="polite"></div>
+    <main>
+      <section id="welcome" aria-labelledby="welcome-title">
+        <p class="eyebrow">직접 걷고, 조사하고, 함께 결정하는 미스터리</p>
+        <h1 id="welcome-title">폐관 후의<br />박물관</h1>
+        <p class="intro">
+          박물관의 마지막 초대 관람객이 되어 보세요.<br />현장을 살피고 증언을 대조하며, 우리
+          팀의 선택으로 이야기를 이어갑니다.
+        </p>
+        <div id="team-buttons" class="teams"></div>
+        <div id="team-recovery"></div>
+        <p class="quiet">
+          한 팀은 하나의 진행 기록입니다. 각 팀의 선택과 결말을 나중에 비교할 수 있어요.
+        </p>
+        <details id="saved-records" hidden>
+          <summary>저장한 이야기 이어보기</summary>
+          <div id="saved-record-list"></div>
+        </details>
+        <button id="welcome-restore" type="button" class="text-button">
+          기록 파일에서 이어하기
+        </button>
+      </section>
+      <section id="game" hidden>
         <p id="movement-guide" hidden>
           <span class="keyboard-controls"
             ><kbd>WASD</kbd> / 방향키 또는 바닥 클릭으로 이동 · <kbd>M</kbd> 지도</span
@@ -109,7 +129,7 @@
             >바닥을 탭해 걸어가세요. 목적지에 도착하면 이야기가 이어집니다.</span
           >
         </p>
-        <aside id="navigation-hud" aria-label="박물관 지도와 이동 안내" hidden>
+        <dialog id="navigation-hud" aria-label="박물관 지도와 이동 안내" hidden>
           <div class="navigation-heading">
             <span id="navigation-room"></span><span id="navigation-destination"></span
             ><button id="map-close" type="button">지도 접기</button>
@@ -131,22 +151,29 @@
               ><kbd>WASD</kbd> / 방향키 이동 · <kbd>E</kbd> 조사</span
             ><span class="touch-controls">바닥 탭으로 이동 · 가까운 사물 탭으로 조사</span>
           </p>
-        </aside>
+        </dialog>
         <div class="scene-heading">
           <p id="arrival-note" role="status" hidden></p>
           <p id="chapter-label" class="eyebrow"></p>
           <h1 id="scene-title" tabindex="-1"></h1>
-          <p id="chapter-question"></p>
-          <p id="progress-label"></p>
-          <p id="objective-reason"></p>
+          <details id="objective-details" class="objective-details">
+            <summary>
+              <span id="chapter-question"></span>
+              <span aria-hidden="true" class="objective-chevron">⌄</span>
+            </summary>
+            <div class="objective-body">
+              <p id="progress-label"></p>
+              <p id="objective-reason"></p>
+            </div>
+          </details>
         </div>
         <section id="investigation" aria-label="현장 조사와 퍼즐" hidden></section>
-        <div class="dialogue-shell">
+        <div class="dialogue-shell" role="region" aria-label="장면 대화">
           <div class="dialogue-topline">
             <p id="current-speaker"></p>
             <span id="scene-status"></span>
           </div>
-          <div id="current-message" aria-live="polite" aria-atomic="true"></div>
+          <div id="current-message" tabindex="0" aria-live="polite" aria-atomic="true"></div>
           <div id="reading-controls" class="controls"></div>
           <div id="ending-actions" hidden>
             <button id="compare-button" type="button" class="primary">팀별 결말 보기</button
@@ -181,8 +208,8 @@
         <li>
           <strong>조사와 대화</strong>
           <p>
-            사물에 가까이 가서 누르거나 E 키로 살펴보세요. ‘지금 할 일’ 버튼을 누르면 목표까지
-            걸어갑니다. 대사를 끝까지 읽으면 관찰이 기록됩니다.
+            주변을 살펴보다 조사할 수 있는 대상 가까이 가세요. 키보드에서는 E 키를, 터치 화면에서는
+            가까이 나타나는 ‘탭 조사’를 사용합니다. 대사를 끝까지 읽으면 관찰이 기록됩니다.
           </p>
         </li>
         <li>
@@ -209,6 +236,9 @@
       <div class="menu-actions">
         <button id="save-button" type="button">기록 내려받기</button
         ><button id="restore-button" type="button">기록 불러오기</button
+        ><button id="history-toggle" type="button" hidden>대화 기록</button
+        ><button id="notebook-toggle" type="button" hidden>
+          기록장 <span id="evidence-count"></span></button
         ><button id="teams-toggle" type="button">팀 선택으로</button
         ><button id="help-toggle" type="button">게임 목표와 조작 방법</button
         ><button id="skip-intro" type="button" hidden>재플레이 · 로비 안내 건너뛰기</button>
@@ -250,8 +280,19 @@
         <div id="topics"></div>
       </section>
     </dialog>
-    <dialog id="decision-panel" aria-label="팀의 행동 선택">
-      <button id="decision-back" type="button" class="panel-back">← 장면으로 돌아가기</button>
+    <dialog
+      id="decision-panel"
+      aria-labelledby="decision-title"
+      aria-describedby="decision-intro"
+    >
+      <button
+        id="decision-back"
+        type="button"
+        class="panel-back"
+        aria-label="선택을 닫고 현장으로 돌아가기"
+      >
+        ← 현장으로
+      </button>
       <section id="choices" aria-label="팀의 결정"></section>
     </dialog>
     <dialog id="hint-panel" aria-labelledby="hint-title">

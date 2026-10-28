@@ -9,21 +9,9 @@ import {
 } from './museum-map.mjs';
 import { canOccupy, moveBody } from './museum-collision.mjs';
 import { collectStaticColliders } from './museum-colliders.mjs';
-
-const PALETTE = {
-  plaster: '#e4dfc8',
-  edge: '#c3b99c',
-  paper: '#fff2c7',
-  fold: '#c6aa78',
-  wood: '#704f40',
-  brass: '#b18a54',
-  green: '#486252',
-  dark: '#243b37',
-  tile: '#ddd6bd',
-  ink: '#46594e',
-  water: '#548a88',
-  rust: '#9f5844',
-};
+import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './museum-asset-core.mjs';
+import { createMuseumProps } from './museum-props.mjs';
+import { createMuseumActors } from './museum-actors.mjs';
 
 function moroIsRevealed({ sceneId, storyVersion, hotspots = [] }) {
   if (sceneId === 'O00') return false;
@@ -264,13 +252,14 @@ export function mountMuseum(
   const paint = Object.fromEntries(
     Object.entries(PALETTE).map(([name, color]) => [name, material(color)])
   );
+  paint.brass.metalness = 0.28;
+  paint.brass.roughness = 0.6;
   const glass = material('#85aaa0', {
     transparent: true,
     opacity: 0.12,
     depthWrite: false,
     roughness: 0.35,
   });
-  const windowGlass = material('#243c50', { emissive: '#25465a', emissiveIntensity: 0.3 });
   const signal = material('#c9dbb0', { emissive: '#9dc177', emissiveIntensity: 0.7 });
   const waterPaint = material(PALETTE.water, {
     transparent: true,
@@ -279,8 +268,6 @@ export function mountMuseum(
   });
   const contact = material('#384b3d', { transparent: true, opacity: 0.17, depthWrite: false });
   const unitBox = geometry(new THREE.BoxGeometry(1, 1, 1));
-  const unitCylinder = geometry(new THREE.CylinderGeometry(1, 1, 1, 12));
-  const unitSphere = geometry(new THREE.SphereGeometry(1, 12, 8));
   const staticRoot = new THREE.Group();
   const returnRoom = new THREE.Group();
   const caseRoot = new THREE.Group(),
@@ -298,395 +285,47 @@ export function mountMuseum(
   }
   const box = (parent, finish, position, scale, rotation) =>
     solid(parent, unitBox, finish, position, scale, rotation);
-  const cylinder = (parent, finish, position, scale, rotation) =>
-    solid(parent, unitCylinder, finish, position, scale, rotation);
-  const sphere = (parent, finish, position, scale) =>
-    solid(parent, unitSphere, finish, position, scale);
-  function beam(parent, finish, start, end, radius) {
-    const from = new THREE.Vector3(...start),
-      to = new THREE.Vector3(...end);
-    const mesh = cylinder(parent, finish, from.clone().add(to).multiplyScalar(0.5).toArray(), [
-      radius,
-      from.distanceTo(to),
-      radius,
-    ]);
-    mesh.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), to.sub(from).normalize());
-    return mesh;
+  // Asset constructors own local geometry, live pivots and explicit collision proxies.
+  const assetCore = createAssetCore(THREE, {
+    geometry, material, paint, glass, signal, waterPaint, contact,
+  });
+  const propKit = createMuseumProps(assetCore);
+  const actorKit = createMuseumActors(assetCore);
+  const screenPaint = actorKit.screenMaterial;
+  const propIds = new Set(propKit.ids);
+  function makeAsset(id, position, parent = scene, options = {}) {
+    const asset = (propIds.has(id) ? propKit : actorKit).create(id, options);
+    if (position) asset.group.position.set(...position);
+    parent.add(asset.group);
+    return asset;
   }
-  function arch(width, height) {
-    const path = new THREE.Shape();
-    path.moveTo(-width / 2, 0);
-    path.lineTo(width / 2, 0);
-    path.lineTo(width / 2, height - width / 2);
-    path.absarc(0, height - width / 2, width / 2, 0, Math.PI, false);
-    path.lineTo(-width / 2, 0);
-    return geometry(new THREE.ShapeGeometry(path, 20));
-  }
-
-  // The first exhibit is visibly empty; the missing boat is never restored to this case.
-  box(caseRoot, paint.edge, [-0.8, 0.12, 0.1], [1.76, 0.2, 1.4]);
-  box(caseRoot, paint.plaster, [-0.8, 0.63, 0.1], [1.55, 0.92, 1.18]);
-  box(caseRoot, paint.paper, [-0.8, 1.12, 0.1], [1.72, 0.08, 1.35]);
-  box(caseRoot, paint.wood, [-0.8, 1.17, 0.1], [0.92, 0.025, 0.5]);
-  for (const x of [-1.55, -0.05])
-    for (const z of [-0.48, 0.68]) box(caseRoot, paint.brass, [x, 1.64, z], [0.025, 1, 0.025]);
-  box(caseRoot, glass, [-0.8, 1.64, -0.48], [1.52, 1, 0.012]);
-  box(caseRoot, glass, [-1.55, 1.64, 0.1], [0.012, 1, 1.16]);
-  box(caseRoot, glass, [-0.8, 2.15, 0.1], [1.52, 0.015, 1.18]);
-  box(caseRoot, paint.brass, [-0.8, 0.81, 0.704], [0.38, 0.14, 0.014]);
-  box(caseRoot, paint.paper, [-0.8, 0.81, 0.717], [0.024, 0.08, 0.006]);
-  for (const x of [-1.9, 0.3]) {
-    cylinder(caseRoot, paint.brass, [x, 0.34, 1.18], [0.035, 0.64, 0.035]);
-    cylinder(caseRoot, paint.wood, [x, 0.04, 1.18], [0.16, 0.06, 0.16]);
-  }
-  beam(caseRoot, paint.rust, [-1.9, 0.63, 1.18], [-0.8, 0.48, 1.18], 0.025);
-  beam(caseRoot, paint.rust, [-0.8, 0.48, 1.18], [0.3, 0.63, 1.18], 0.025);
-
-  // Archive desk: legs, drawer, offset paper stack, open ledger and reading lamp.
-  box(archiveDesk, paint.wood, [-2.9, 0.87, -1.35], [1.65, 0.12, 0.85]);
-  for (const x of [-3.58, -2.22])
-    for (const z of [-1.65, -1.05]) box(archiveDesk, paint.wood, [x, 0.43, z], [0.1, 0.8, 0.1]);
-  box(archiveDesk, paint.edge, [-2.9, 0.71, -0.95], [1.2, 0.19, 0.1]);
-  box(archiveDesk, paint.brass, [-2.9, 0.71, -0.88], [0.22, 0.025, 0.04]);
-  for (let page = 0; page < 4; page++)
-    box(
-      archiveDesk,
-      paint.paper,
-      [-3.23 + page * 0.015, 0.96 + page * 0.018, -1.37],
-      [0.58, 0.012, 0.43],
-      [0, -0.12, 0]
-    );
-  box(archiveDesk, paint.green, [-2.58, 0.96, -1.2], [0.48, 0.06, 0.34], [0, 0.1, 0]);
-  box(archiveDesk, paint.paper, [-2.58, 1, -1.2], [0.43, 0.012, 0.29], [0, 0.1, 0]);
-  cylinder(archiveDesk, paint.brass, [-3.4, 0.98, -1.58], [0.15, 0.05, 0.15]);
-  beam(archiveDesk, paint.brass, [-3.4, 1, -1.58], [-3.4, 1.45, -1.58], 0.025);
-  const shade = geometry(new THREE.ConeGeometry(0.23, 0.2, 16, 1, true));
-  solid(archiveDesk, shade, paint.green, [-3.4, 1.5, -1.58], [1, 1, 1]);
-
-  // The courtyard reads through cut-paper leaves and an exposed drainage line.
-  box(gardenRoot, paint.green, [-2.5, 0.1, 2.32], [3.05, 0.15, 1.45]);
-  for (const z of [1.56, 3.07])
-    box(gardenRoot, paint.edge, [-2.5, 0.24, z], [3.25, 0.28, 0.16]);
-  for (const x of [-4.06, -0.94])
-    box(gardenRoot, paint.edge, [x, 0.24, 2.32], [0.16, 0.28, 1.6]);
-  for (let i = 0; i < 7; i++)
-    box(
-      gardenRoot,
-      paint.plaster,
-      [-3.65 + i * 0.36, 0.19, 2.75],
-      [0.27, 0.055, 0.45],
-      [0, i % 2 ? 0.05 : -0.04, 0]
-    );
-  beam(gardenRoot, paint.wood, [-3.2, 0.2, 2.05], [-3.1, 1.25, 2.05], 0.06);
-  beam(gardenRoot, paint.wood, [-3.15, 0.9, 2.05], [-3.55, 1.4, 2.05], 0.035);
-  beam(gardenRoot, paint.wood, [-3.1, 1.1, 2.05], [-2.7, 1.55, 2.05], 0.035);
-  const leafPath = new THREE.Shape();
-  leafPath.moveTo(0, 0);
-  leafPath.quadraticCurveTo(-0.42, 0.38, 0, 0.78);
-  leafPath.quadraticCurveTo(0.4, 0.38, 0, 0);
-  const leaf = geometry(new THREE.ShapeGeometry(leafPath, 6));
-  const leafPaint = material('#809178', { side: THREE.DoubleSide });
-  for (let i = 0; i < 11; i++) {
-    const angle = i * 2.4;
-    solid(
-      gardenRoot,
-      leaf,
-      leafPaint,
-      [-3.1 + Math.sin(angle) * 0.46, 0.97 + (i % 3) * 0.23, 2.03 + Math.cos(angle) * 0.27],
-      [0.68, 0.74, 0.7],
-      [0, angle, Math.sin(angle) * 0.8]
-    );
-  }
-  box(gardenRoot, paint.dark, [0.2, 0.049, 2.5], [0.44, 0.025, 1.25]);
-  for (let i = 0; i < 8; i++)
-    box(gardenRoot, paint.brass, [0.2, 0.065, 1.96 + i * 0.15], [0.4, 0.035, 0.035]);
-
-  // Two fixed storage bays behind a low safety barrier; props never suggest player entry.
-  box(returnRoom, paint.dark, [2.55, 0.1, 0.1], [2.8, 0.15, 3.7]);
-  box(returnRoom, paint.edge, [2.55, 0.25, -1.75], [2.9, 0.45, 0.16]);
-  for (const x of [1.16, 3.94]) box(returnRoom, paint.edge, [x, 0.25, 0.1], [0.14, 0.45, 3.7]);
-  box(returnRoom, paint.brass, [2.55, 0.32, 1.94], [2.9, 0.62, 0.11]);
-  box(returnRoom, glass, [2.55, 0.98, 1.94], [2.78, 0.75, 0.025]);
-  box(returnRoom, paint.brass, [2.55, 1.37, 1.94], [2.9, 0.045, 0.07]);
-  const water = box(returnRoom, waterPaint, [2.55, 0.26, 0.08], [2.64, 0.04, 3.43]);
-  for (let i = 0; i < 5; i++)
-    box(
-      returnRoom,
-      paint.edge,
-      [1.6 + i * 0.35, 0.29, 1.35 - (i % 2) * 0.1],
-      [0.25, 0.006, 0.014]
-    );
-  for (const z of [-1.02, 0.75]) {
-    box(returnRoom, paint.wood, [2.53, 0.48, z], [1.7, 0.18, 1.02]);
-    box(returnRoom, paint.edge, [2.53, 0.6, z], [1.61, 0.08, 0.94]);
-  }
-  for (const z of [-1.65, 1.5]) {
-    box(returnRoom, paint.wood, [3.55, 1.18, z], [0.09, 2.1, 0.09]);
-    box(returnRoom, paint.brass, [2.55, 2.24, z], [2.1, 0.08, 0.1]);
-  }
-  box(returnRoom, paint.wood, [2.55, 2.3, -0.06], [0.12, 0.12, 3.38]);
-  cylinder(
-    returnRoom,
-    paint.brass,
-    [2.55, 2.15, -0.15],
-    [0.19, 0.12, 0.19],
-    [Math.PI / 2, 0, 0]
+  makeAsset('exhibit-case', [-0.8, 0, 0.1], caseRoot);
+  makeAsset('archive-desk', [-2.9, 0, -1.35], archiveDesk);
+  makeAsset('courtyard', [-2.5, 0, 2.32], gardenRoot);
+  const storageAsset = makeAsset('storage-bays', [2.55, 0, 0.1], returnRoom);
+  const water = storageAsset.parts.water;
+  const boat = makeAsset('paper-boat', [2.53, 0.67, 0.75], returnRoom).group;
+  const damagedBoat = makeAsset('paper-boat', [2.53, 0.67, 0.75], returnRoom, { damaged: true }).group;
+  for (const prop of [boat, damagedBoat]) prop.rotation.y = -0.12;
+  const ledger = makeAsset('ledger', [2.53, 0.68, -1.02], returnRoom).group;
+  const blurredLedger = makeAsset('ledger', [2.53, 0.68, -1.02], returnRoom, { blurred: true }).group;
+  const sealedBoxes = [0.75, -1.02].map((z) =>
+    makeAsset('sealed-cover', [2.53, 0.63, z], returnRoom).group
   );
-  beam(returnRoom, paint.dark, [2.55, 2.08, -0.15], [2.55, 1.46, -0.15], 0.016);
-  const hookCurve = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(2.55, 1.46, -0.15),
-    new THREE.Vector3(2.55, 1.23, -0.15),
-    new THREE.Vector3(2.71, 1.22, -0.15),
-    new THREE.Vector3(2.75, 1.35, -0.15),
-  ]);
-  solid(
-    returnRoom,
-    geometry(new THREE.TubeGeometry(hookCurve, 12, 0.026, 6, false)),
-    paint.brass,
-    [0, 0, 0],
-    [1, 1, 1]
-  );
-
-  function paperBoat(damaged) {
-    const boat = new THREE.Group();
-    const tip = damaged ? [0.59, 0.13, 0.04] : [0.83, 0.23, 0];
-    const points = [
-      [-0.83, 0.23, 0],
-      tip,
-      [-0.47, 0.08, 0.32],
-      [0.47, 0.08, 0.32],
-      [-0.47, 0.08, -0.32],
-      [0.47, 0.08, -0.32],
-      [0, 0, 0],
-      [0, 0.52, 0],
-    ];
-    const faces = [
-      [0, 2, 6],
-      [2, 3, 6],
-      [3, 1, 6],
-      [0, 6, 4],
-      [4, 6, 5],
-      [5, 6, 1],
-      [0, 7, 2],
-      [2, 7, 3],
-      [3, 7, 1],
-      [0, 4, 7],
-      [4, 5, 7],
-      [5, 1, 7],
-    ];
-    const shape = geometry(new THREE.BufferGeometry());
-    shape.setAttribute(
-      'position',
-      new THREE.Float32BufferAttribute(
-        faces.flatMap((face) => face.flatMap((index) => points[index])),
-        3
-      )
-    );
-    shape.computeVertexNormals();
-    for (let i = 0; i < faces.length; i++) shape.addGroup(i * 3, 3, i % 3 === 0 ? 1 : 0);
-    const mesh = new THREE.Mesh(shape, [paint.paper, paint.fold]);
-    boat.add(mesh);
-    beam(boat, paint.fold, [-0.82, 0.235, 0], [0, 0.525, 0], 0.009);
-    beam(boat, paint.fold, [0, 0.525, 0], tip, 0.009);
-    if (damaged)
-      box(boat, paint.rust, [0.45, 0.17, 0.15], [0.12, 0.012, 0.08], [0.2, 0, -0.35]);
-    return boat;
-  }
-  const boat = paperBoat(false),
-    damagedBoat = paperBoat(true);
-  for (const prop of [boat, damagedBoat]) {
-    prop.position.set(2.53, 0.67, 0.75);
-    prop.rotation.y = -0.12;
-    returnRoom.add(prop);
-  }
-  const ledger = new THREE.Group();
-  ledger.position.set(2.53, 0.68, -1.02);
-  returnRoom.add(ledger);
-  box(ledger, paint.green, [0, 0, 0], [0.94, 0.09, 0.65]);
-  box(ledger, paint.paper, [0, 0.07, 0], [0.86, 0.06, 0.59]);
-  for (let i = 0; i < 4; i++)
-    box(ledger, paint.ink, [0.1, 0.104, -0.16 + i * 0.105], [0.44, 0.003, 0.012]);
-  box(ledger, paint.rust, [-0.19, 0.11, 0], [0.03, 0.012, 0.55]);
-  const blurredLedger = new THREE.Group();
-  blurredLedger.position.copy(ledger.position);
-  returnRoom.add(blurredLedger);
-  box(blurredLedger, paint.green, [0, 0, 0], [0.94, 0.09, 0.65]);
-  box(blurredLedger, paint.edge, [0, 0.07, 0], [0.86, 0.06, 0.59]);
-  for (let i = 0; i < 3; i++)
-    sphere(
-      blurredLedger,
-      paint.ink,
-      [-0.15 + i * 0.15, 0.105, -0.1 + (i % 2) * 0.2],
-      [0.15, 0.004, 0.1]
-    );
-  const sealedBoxes = [];
-  for (const z of [0.75, -1.02]) {
-    const lid = new THREE.Group();
-    lid.position.set(2.53, 0.85, z);
-    returnRoom.add(lid);
-    box(lid, paint.green, [0, 0, 0], [1.65, 0.44, 0.95]);
-    box(lid, paint.edge, [0, 0.25, 0], [1.7, 0.06, 1]);
-    box(lid, paint.paper, [0, 0.285, 0], [0.18, 0.012, 1]);
-    box(lid, paint.rust, [0, 0.3, 0.1], [0.13, 0.02, 0.18]);
-    sealedBoxes.push(lid);
-  }
-
-  // D21 observes the original through its locked cover; the preservation kit contains tools only.
-  const originalGuard = new THREE.Group();
-  originalGuard.position.set(2.53, 0, -1.02);
-  returnRoom.add(originalGuard);
-  box(originalGuard, glass, [0, 0.92, 0], [1.58, 0.52, 0.9]);
-  for (const x of [-0.79, 0.79])
-    for (const z of [-0.45, 0.45])
-      box(originalGuard, paint.brass, [x, 0.92, z], [0.025, 0.55, 0.025]);
-  for (const z of [-0.46, 0.46])
-    box(originalGuard, paint.brass, [0, 1.2, z], [1.62, 0.025, 0.025]);
-  for (const x of [-0.8, 0.8])
-    box(originalGuard, paint.brass, [x, 1.2, 0], [0.025, 0.025, 0.94]);
-  box(originalGuard, paint.wood, [0, 0.91, 0.47], [0.13, 0.18, 0.035]);
-  box(originalGuard, paint.brass, [0, 0.91, 0.495], [0.06, 0.08, 0.02]);
-
-  // Moro: chamfered shell, recessed display, wheels, hinged gripper and receipt slip.
-  const moro = new THREE.Group();
-  moro.position.set(0.55, 0.05, 0.8);
+  const originalGuard = makeAsset('original-guard', [2.53, 0.65, -1.02], returnRoom).group;
+  const moroAsset = makeAsset('moro', [0.55, 0.05, 0.8]);
+  const moro = moroAsset.group;
   moro.rotation.y = -0.25;
-  scene.add(moro);
-  const torsoProfile = [
-    new THREE.Vector2(0.24, 0),
-    new THREE.Vector2(0.34, 0.05),
-    new THREE.Vector2(0.35, 0.53),
-    new THREE.Vector2(0.31, 0.68),
-    new THREE.Vector2(0.22, 0.75),
-    new THREE.Vector2(0, 0.75),
-  ];
-  solid(
-    moro,
-    geometry(new THREE.LatheGeometry(torsoProfile, 16)),
-    paint.plaster,
-    [0, 0.18, 0],
-    [1, 1, 0.83]
-  );
-  for (const x of [-0.34, 0.34]) {
-    cylinder(moro, paint.dark, [x, 0.19, 0], [0.19, 0.12, 0.19], [0, 0, Math.PI / 2]);
-    cylinder(moro, paint.brass, [x * 1.19, 0.19, 0], [0.07, 0.015, 0.07], [0, 0, Math.PI / 2]);
-  }
-  box(moro, paint.dark, [0, 0.7, 0.262], [0.46, 0.23, 0.06]);
-  const eyes = new THREE.Group();
-  moro.add(eyes);
-  for (const x of [-0.11, 0.11]) box(eyes, signal, [x, 0.72, 0.299], [0.055, 0.05, 0.012]);
-  box(eyes, signal, [0, 0.64, 0.3], [0.09, 0.015, 0.01]);
-  box(moro, paint.brass, [0, 0.43, 0.29], [0.2, 0.11, 0.02]);
-  for (let i = 0; i < 3; i++)
-    box(moro, paint.wood, [-0.06 + i * 0.06, 0.43, 0.31], [0.02, 0.06, 0.01]);
-  beam(moro, paint.brass, [0.26, 0.52, 0.1], [0.51, 0.36, 0.28], 0.035);
-  beam(moro, paint.wood, [0.51, 0.36, 0.28], [0.57, 0.51, 0.36], 0.023);
-  beam(moro, paint.wood, [0.51, 0.36, 0.28], [0.68, 0.44, 0.36], 0.023);
-  box(moro, paint.paper, [0.63, 0.39, 0.37], [0.13, 0.23, 0.015], [0.15, 0, -0.28]);
-  const antenna = new THREE.Group();
-  antenna.position.set(-0.16, 0.9, -0.05);
-  moro.add(antenna);
-  beam(antenna, paint.brass, [0, 0, 0], [0, 0.18, 0], 0.012);
-  const antennaLight = sphere(antenna, signal, [0, 0.2, 0], [0.035, 0.035, 0.035]);
-  cylinder(moro, contact, [0, -0.001, 0.04], [0.48, 0.008, 0.4]);
-  const trolley = new THREE.Group();
-  scene.add(trolley);
-  box(trolley, paint.wood, [0, 0.08, 0], [1.04, 0.09, 0.75]);
-  for (const x of [-0.42, 0.42])
-    for (const z of [-0.27, 0.27])
-      cylinder(trolley, paint.dark, [x, 0.03, z], [0.07, 0.06, 0.07], [0, 0, Math.PI / 2]);
-  beam(trolley, paint.brass, [-0.5, 0.13, -0.32], [-0.5, 0.72, -0.5], 0.025);
-  beam(trolley, paint.brass, [0.5, 0.13, -0.32], [0.5, 0.72, -0.5], 0.025);
-  beam(trolley, paint.brass, [-0.5, 0.72, -0.5], [0.5, 0.72, -0.5], 0.025);
-
-  // Yunseo's coat, spectacles and name badge distinguish the curator from the guide robot.
-  const skin = material('#d9ad89');
-  const hair = material('#392f30');
-  const coat = material('#2e5555');
-  const curator = new THREE.Group();
-  curator.position.set(-2.1, 0.05, 0.85);
+  const { eyes, antenna, antennaLight } = moroAsset.parts;
+  const trolley = makeAsset('trolley', [0, 0, 0]).group;
+  const curatorAsset = makeAsset('curator', [-2.1, 0.05, 0.85]);
+  const curator = curatorAsset.group;
   curator.rotation.y = 0.55;
-  scene.add(curator);
-  const curatorBody = new THREE.Group();
-  curatorBody.position.y = 1.03;
-  curator.add(curatorBody);
-  const coatProfile = [
-    new THREE.Vector2(0.3, -0.4),
-    new THREE.Vector2(0.34, -0.32),
-    new THREE.Vector2(0.28, 0.44),
-    new THREE.Vector2(0.21, 0.52),
-    new THREE.Vector2(0, 0.52),
-  ];
-  solid(
-    curatorBody,
-    geometry(new THREE.LatheGeometry(coatProfile, 16)),
-    coat,
-    [0, 0, 0],
-    [1, 1, 0.76]
-  );
-  box(curatorBody, paint.paper, [0, 0.33, 0.188], [0.16, 0.28, 0.03]);
-  box(curatorBody, paint.brass, [0.14, 0.15, 0.228], [0.12, 0.075, 0.014]);
-  box(curatorBody, paint.paper, [0.14, 0.15, 0.24], [0.075, 0.015, 0.006]);
-  for (const y of [-0.2, 0, 0.2])
-    sphere(curatorBody, paint.brass, [-0.025, y, 0.251], [0.018, 0.018, 0.009]);
-  const curatorHead = new THREE.Group();
-  curatorHead.position.y = 0.82;
-  curatorBody.add(curatorHead);
-  sphere(curatorHead, skin, [0, 0, 0], [0.22, 0.28, 0.19]);
-  sphere(curatorHead, hair, [0, 0.2, -0.035], [0.24, 0.14, 0.21]);
-  sphere(curatorHead, hair, [-0.19, 0.02, -0.07], [0.065, 0.24, 0.16]);
-  sphere(curatorHead, hair, [0.19, 0.02, -0.07], [0.065, 0.24, 0.16]);
-  sphere(curatorHead, skin, [0, -0.025, 0.19], [0.035, 0.06, 0.045]);
-  const spectacle = geometry(new THREE.TorusGeometry(0.079, 0.012, 6, 16));
-  for (const x of [-0.092, 0.092]) {
-    solid(curatorHead, spectacle, paint.brass, [x, 0.035, 0.19], [1, 0.94, 1]);
-    sphere(curatorHead, paint.dark, [x, 0.03, 0.18], [0.022, 0.026, 0.012]);
-  }
-  beam(curatorHead, paint.brass, [-0.025, 0.04, 0.22], [0.025, 0.04, 0.22], 0.009);
-  beam(curatorHead, paint.rust, [-0.045, -0.12, 0.166], [0.045, -0.12, 0.166], 0.009);
-  const curatorArms = [],
-    curatorLegs = [];
-  for (const side of [-1, 1]) {
-    const arm = new THREE.Group();
-    arm.position.set(side * 0.3, 0.35, 0);
-    curatorBody.add(arm);
-    cylinder(arm, coat, [side * 0.03, -0.19, 0], [0.085, 0.38, 0.085]);
-    cylinder(arm, paint.paper, [side * 0.03, -0.4, 0], [0.072, 0.07, 0.072]);
-    sphere(arm, skin, [side * 0.03, -0.49, 0.025], [0.075, 0.105, 0.065]);
-    arm.rotation.z = side * 0.13;
-    curatorArms.push(arm);
-    const leg = new THREE.Group();
-    leg.position.set(side * 0.14, 0.68, 0);
-    curator.add(leg);
-    cylinder(leg, paint.dark, [0, -0.3, 0], [0.085, 0.6, 0.085]);
-    sphere(leg, paint.wood, [0, -0.6, 0.075], [0.11, 0.07, 0.19]);
-    curatorLegs.push(leg);
-  }
-  cylinder(curator, contact, [0, -0.003, 0.04], [0.45, 0.008, 0.35]);
-
-  // Nara stays inside the message terminal: this is a remote portrait, never a room occupant.
-  const terminal = new THREE.Group();
-  terminal.position.set(0.35, 0.06, 1.25);
+  const { body: curatorBody, head: curatorHead, arms: curatorArms, legs: curatorLegs } = curatorAsset.parts;
+  const terminalAsset = makeAsset('terminal', [0.35, 0.06, 1.25]);
+  const terminal = terminalAsset.group;
   terminal.rotation.y = 0.55;
-  scene.add(terminal);
-  const screenPaint = material('#698a7b', { emissive: '#587c6e', emissiveIntensity: 0.7 });
-  box(terminal, paint.wood, [0, 0.4, 0], [0.78, 0.75, 0.55]);
-  const screenPivot = new THREE.Group();
-  screenPivot.position.set(0, 1.35, 0);
-  terminal.add(screenPivot);
-  box(screenPivot, paint.dark, [0, 0, 0], [0.83, 1.18, 0.1]);
-  box(screenPivot, screenPaint, [0, 0, 0.06], [0.7, 1.03, 0.014]);
-  const remotePortrait = new THREE.Group();
-  screenPivot.add(remotePortrait);
-  sphere(remotePortrait, paint.wood, [0, 0.2, 0.09], [0.17, 0.22, 0.025]);
-  sphere(remotePortrait, skin, [0, 0.18, 0.12], [0.125, 0.16, 0.015]);
-  sphere(remotePortrait, paint.wood, [-0.02, 0.31, 0.14], [0.15, 0.065, 0.014]);
-  box(remotePortrait, paint.rust, [0, -0.05, 0.09], [0.34, 0.18, 0.02]);
-  const messageDots = new THREE.Group();
-  screenPivot.add(messageDots);
-  for (let i = 0; i < 3; i++)
-    sphere(messageDots, paint.paper, [-0.1 + i * 0.1, -0.29, 0.09], [0.025, 0.025, 0.008]);
-  box(screenPivot, paint.paper, [0, -0.41, 0.09], [0.45, 0.015, 0.008]);
-  cylinder(terminal, paint.brass, [0, 0.87, -0.04], [0.06, 0.35, 0.06]);
+  const { screen: screenPivot, portrait: remotePortrait, dots: messageDots } = terminalAsset.parts;
 
   const dustPositions = [];
   for (let i = 0; i < 22; i++)
@@ -728,195 +367,43 @@ export function mountMuseum(
     textures.add(texture);
     return material('#ffffff', { map: texture, roughness: 1 });
   }
-  box(caseRoot, paint.brass, [-0.13, 1.55, 0.7], [0.09, 0.15, 0.04]);
-  sphere(caseRoot, paint.dark, [-0.13, 1.55, 0.725], [0.012, 0.02, 0.007]);
   const exhibitLabel = inscription(['제1호', '아직 오지 않은 날'], '#b18a54', '#263b31', 30);
-  solid(
-    caseRoot,
-    geometry(new THREE.PlaneGeometry(0.64, 0.22)),
-    exhibitLabel,
-    [-0.8, 0.81, 0.73],
-    [1, 1, 1]
-  );
-
-  const noticeBoard = new THREE.Group();
-  noticeBoard.position.set(1.15, 0.05, -2.2);
-  noticeBoard.rotation.y = 0.2;
-  scene.add(noticeBoard);
-  for (const x of [-0.48, 0.48]) box(noticeBoard, paint.wood, [x, 0.65, 0], [0.08, 1.3, 0.08]);
-  box(noticeBoard, paint.wood, [0, 1.5, 0], [1.35, 1.18, 0.09]);
+  const exhibitFace = solid(caseRoot, geometry(new THREE.PlaneGeometry(0.64, 0.22)),
+    exhibitLabel, [-0.8, 0.82, 0.736], [1, 1, 1]);
+  exhibitFace.userData.collision = 'none';
   const schedule = inscription(
     ['내일 아침 9시', '이웃들과 배 띄우는 날', '밀봉 물품 개봉: 사흘 뒤', '전문 담당자 입회'],
-    '#efe5c8',
-    '#314b3f',
-    26
+    '#efe5c8', '#314b3f', 26
   );
-  const noticeFace = solid(
-    noticeBoard,
-    geometry(new THREE.PlaneGeometry(1.2, 1.03)),
-    schedule,
-    [0, 1.5, 0.052],
-    [1, 1, 1]
-  );
-  const boardDiagram = new THREE.Group();
-  noticeBoard.add(boardDiagram);
-  for (const x of [-0.4, 0, 0.4])
-    box(boardDiagram, paint.ink, [x, 1.55, 0.07], [0.18, 0.24, 0.015]);
-  box(boardDiagram, paint.brass, [0, 1.2, 0.07], [0.9, 0.025, 0.015]);
-  box(boardDiagram, paint.brass, [0, 1.82, 0.07], [0.9, 0.025, 0.015]);
-
-  const valveStation = new THREE.Group();
-  valveStation.position.set(-1.3, 0.05, 2.05);
-  scene.add(valveStation);
-  cylinder(valveStation, paint.wood, [0, 0.37, 0], [0.1, 0.74, 0.1]);
-  beam(valveStation, paint.brass, [-0.35, 0.12, 0], [0.35, 0.12, 0], 0.09);
-  const valveWheel = new THREE.Group();
-  valveWheel.position.set(0, 0.8, 0.15);
-  valveStation.add(valveWheel);
-  solid(
-    valveWheel,
-    geometry(new THREE.TorusGeometry(0.26, 0.035, 6, 16)),
-    paint.rust,
-    [0, 0, 0],
-    [1, 1, 1]
-  );
-  for (let i = 0; i < 3; i++) {
-    const angle = (i * Math.PI * 2) / 3;
-    beam(
-      valveWheel,
-      paint.rust,
-      [0, 0, 0],
-      [Math.cos(angle) * 0.24, Math.sin(angle) * 0.24, 0],
-      0.022
-    );
-  }
-  cylinder(valveWheel, paint.brass, [0, 0, 0], [0.055, 0.09, 0.055], [Math.PI / 2, 0, 0]);
-
-  const supplies = new THREE.Group();
-  supplies.position.set(-3.68, 0.06, 0.25);
-  scene.add(supplies);
-  box(supplies, paint.green, [0, 0.4, 0], [0.85, 0.8, 0.7]);
-  box(supplies, paint.edge, [0, 0.85, 0], [0.91, 0.1, 0.75]);
-  for (const y of [0.25, 0.52]) {
-    box(supplies, paint.wood, [0, y, 0.36], [0.72, 0.21, 0.03]);
-    box(supplies, paint.brass, [0, y, 0.39], [0.18, 0.025, 0.04]);
-  }
-  const batteryProp = new THREE.Group();
-  batteryProp.position.set(0, 0.98, 0);
-  supplies.add(batteryProp);
-  box(batteryProp, paint.dark, [0, 0, 0], [0.5, 0.2, 0.3]);
-  box(batteryProp, paint.brass, [0.18, 0.13, 0], [0.09, 0.06, 0.12]);
-  box(batteryProp, paint.rust, [-0.18, 0.13, 0], [0.09, 0.06, 0.12]);
-  box(batteryProp, paint.paper, [0, 0.01, 0.16], [0.18, 0.1, 0.014]);
-
-  const archiveShelf = new THREE.Group();
-  archiveShelf.position.set(-3.8, 0.08, -2.55);
-  scene.add(archiveShelf);
-  for (const x of [-0.4, 0.4]) box(archiveShelf, paint.wood, [x, 0.88, 0], [0.07, 1.76, 0.4]);
-  for (const y of [0.1, 0.85, 1.6])
-    box(archiveShelf, paint.wood, [0, y, 0], [0.86, 0.07, 0.44]);
-  for (let i = 0; i < 7; i++)
-    for (const y of [0.48, 1.23]) {
-      box(
-        archiveShelf,
-        i % 2 ? paint.edge : paint.green,
-        [-0.3 + i * 0.1, y, 0],
-        [0.075, 0.58, 0.29]
-      );
-      box(archiveShelf, paint.paper, [-0.3 + i * 0.1, y + 0.12, 0.151], [0.045, 0.1, 0.01]);
-    }
-
-  const puzzleBoard = new THREE.Group();
-  puzzleBoard.position.set(-2.9, 1.04, -1.3);
-  scene.add(puzzleBoard);
-  box(puzzleBoard, paint.edge, [0, 0, 0], [1.15, 0.06, 0.65]);
-  for (let i = 0; i < 4; i++) {
-    const x = (i % 2) * 0.48 - 0.24,
-      z = Math.floor(i / 2) * 0.28 - 0.14;
-    cylinder(puzzleBoard, paint.rust, [x, 0.09, z], [0.105, 0.12, 0.105]);
-    cylinder(puzzleBoard, paint.wood, [x, 0.21, z], [0.055, 0.18, 0.055]);
-  }
-  const keyBundle = new THREE.Group();
-  keyBundle.position.set(-2.58, 1.05, -1.2);
+  const noticeAsset = makeAsset('notice-board', [1.15, 0.05, -2.2], scene, { faceMaterial: schedule });
+  const noticeBoard = noticeAsset.group;
+  noticeBoard.rotation.y = 0.2;
+  const { face: noticeFace, diagram: boardDiagram } = noticeAsset.parts;
+  const valveAsset = makeAsset('valve', [-1.3, 0.05, 2.05]);
+  const valveStation = valveAsset.group;
+  const valveWheel = valveAsset.parts.wheel;
+  const suppliesAsset = makeAsset('supplies', [-3.68, 0.06, 0.25]);
+  const supplies = suppliesAsset.group;
+  const batteryProp = suppliesAsset.parts.battery;
+  const archiveShelf = makeAsset('archive-shelf', [-3.8, 0.08, -2.55]).group;
+  const puzzleBoard = makeAsset('stamp-set', [-2.9, 1.04, -1.3]).group;
+  const keyBundle = makeAsset('key-bundle', [-2.58, 1.05, -1.2]).group;
   keyBundle.rotation.y = 0.4;
-  scene.add(keyBundle);
-  solid(
-    keyBundle,
-    geometry(new THREE.TorusGeometry(0.08, 0.014, 6, 12)),
-    paint.brass,
-    [-0.12, 0.025, 0],
-    [1, 1, 1],
-    [Math.PI / 2, 0, 0]
-  );
-  for (const z of [-0.06, 0.06]) {
-    box(keyBundle, paint.brass, [0.04, 0.025, z], [0.25, 0.025, 0.035]);
-    box(keyBundle, paint.brass, [0.14, 0.025, z + 0.035], [0.045, 0.025, 0.1]);
-  }
-  const layeredLabel = new THREE.Group();
-  layeredLabel.position.set(-2.9, 1.02, -1.3);
-  scene.add(layeredLabel);
-  box(layeredLabel, paint.paper, [0, 0, 0], [0.85, 0.025, 0.55]);
-  const labelFlap = new THREE.Group();
-  labelFlap.position.set(-0.4, 0.025, 0);
-  layeredLabel.add(labelFlap);
-  box(labelFlap, paint.green, [0.4, 0, 0], [0.8, 0.012, 0.5]);
-  const controlPanel = new THREE.Group();
-  controlPanel.position.set(0.9, 0.05, 1.65);
+  const labelAsset = makeAsset('layered-label', [-2.9, 1.02, -1.3]);
+  const layeredLabel = labelAsset.group;
+  const labelFlap = labelAsset.parts.flap;
+  const controlAsset = makeAsset('control-panel', [0.9, 0.05, 1.65]);
+  const controlPanel = controlAsset.group;
   controlPanel.rotation.y = 0.2;
-  scene.add(controlPanel);
-  box(controlPanel, paint.wood, [0, 0.48, 0], [0.8, 0.95, 0.56]);
-  box(controlPanel, paint.green, [0, 1.04, 0], [0.94, 0.28, 0.7], [-0.16, 0, 0]);
-  for (const x of [-0.22, 0.22])
-    box(controlPanel, paint.dark, [x, 1.2, -0.08], [0.3, 0.035, 0.24]);
-  for (let i = 0; i < 4; i++)
-    cylinder(controlPanel, paint.brass, [-0.3 + i * 0.2, 1.2, 0.18], [0.045, 0.045, 0.045]);
-  const craneIndicator = sphere(controlPanel, signal, [0.36, 1.23, -0.2], [0.04, 0.025, 0.04]);
-
+  const craneIndicator = controlAsset.parts.indicator;
+  craneIndicator.name = 'crane-indicator';
   const returnControlPanel = controlPanel.clone(true);
   returnControlPanel.position.set(-0.2, 0.05, -13.7);
   scene.add(returnControlPanel);
-
-  const packingTable = new THREE.Group();
-  const packingTableFootprint = { width: 2.05, depth: 0.88 };
-  packingTable.position.set(2.5, 0.06, 2.65);
-  scene.add(packingTable);
-  box(
-    packingTable,
-    paint.wood,
-    [0, 0.73, 0],
-    [packingTableFootprint.width, 0.1, packingTableFootprint.depth]
-  );
-  for (const x of [-0.85, 0.85])
-    for (const z of [-0.32, 0.32])
-      box(packingTable, paint.wood, [x, 0.35, z], [0.09, 0.7, 0.09]);
-  box(packingTable, paint.paper, [0, 0.8, 0], [1.85, 0.025, 0.7]);
-
-  const preservationKit = new THREE.Group();
-  preservationKit.position.set(0, 0.82, 0);
-  packingTable.add(preservationKit);
-  box(preservationKit, paint.green, [-0.28, 0.15, 0], [0.9, 0.3, 0.58]);
-  box(preservationKit, paint.edge, [-0.28, 0.32, 0], [0.94, 0.04, 0.62]);
-  for (const x of [-0.55, 0])
-    box(preservationKit, paint.brass, [x, 0.22, 0.3], [0.07, 0.12, 0.035]);
-  cylinder(
-    preservationKit,
-    paint.paper,
-    [0.55, 0.09, 0],
-    [0.09, 0.45, 0.09],
-    [Math.PI / 2, 0, 0]
-  );
-  box(preservationKit, paint.wood, [0.36, 0.04, 0.19], [0.045, 0.05, 0.3]);
-  box(preservationKit, paint.brass, [0.36, 0.04, -0.03], [0.07, 0.025, 0.14]);
-
-  const exitDoor = new THREE.Group();
-  exitDoor.position.set(4.2, 0.05, 2.6);
+  const packingTable = makeAsset('packing-table', [2.5, 0.06, 2.65]).group;
+  const preservationKit = makeAsset('preservation-kit', [0, 0.82, 0], packingTable).group;
+  const exitDoor = makeAsset('exit-door', [4.2, 0.05, 2.6]).group;
   exitDoor.rotation.y = -0.5;
-  scene.add(exitDoor);
-  for (const x of [-0.55, 0.55]) box(exitDoor, paint.wood, [x, 1.15, 0], [0.1, 2.3, 0.16]);
-  box(exitDoor, paint.wood, [0, 2.3, 0], [1.2, 0.14, 0.16]);
-  box(exitDoor, paint.green, [-0.59, 1.1, -0.5], [0.08, 2.15, 1]);
-  box(exitDoor, paint.brass, [-0.53, 1.05, -0.8], [0.08, 0.035, 0.14]);
-
   const maintenanceExit = exitDoor.clone(true);
   maintenanceExit.position.set(-12.2, 0.05, -13.4);
   scene.add(maintenanceExit);
@@ -1082,10 +569,8 @@ export function mountMuseum(
   }
   // The permanent sets remain visible when the story moves to another room.
   staticRoot.position.set(0, 0, 0);
-  for (const x of [-4, -2, 2, 4]) {
-    solid(rooms.gallery, arch(1.1, 1.8), windowGlass, [x, 0.18, -4.88], [1, 1, 1]);
-    box(rooms.gallery, paint.brass, [x, 0.24, -4.8], [1.2, 0.08, 0.2]);
-  }
+  for (const x of [-4, -2, 2, 4])
+    makeAsset('arch-window', [x, 0.18, -4.88], rooms.gallery);
   archiveDesk.position.set(-16, 0, 0);
   gardenRoot.position.set(-16, 0, 16);
   returnRoom.position.set(0, 0, -16);
@@ -1097,124 +582,43 @@ export function mountMuseum(
   controlPanel.position.set(16.9, 0.05, -14.35);
   exitDoor.position.set(4.2, 0.05, 18.6);
   for (const x of [-4, -2, 2, 4]) {
-    box(rooms.archive, paint.wood, [x, 1.1, -3.9], [1.35, 2.2, 0.6]);
-    for (const y of [0.35, 1, 1.65])
-      for (let i = 0; i < 7; i++)
-        box(
-          rooms.archive,
-          i % 2 ? paint.green : paint.fold,
-          [x - 0.5 + i * 0.16, y, -3.55],
-          [0.12, 0.5, 0.18]
-        );
+    const shelf = makeAsset('archive-shelf', [x, 0, -3.9], rooms.archive).group;
+    shelf.scale.set(1.5, 1.2, 1.1);
   }
   for (const z of [-3, -1, 1, 3])
-    for (const x of [-4, 4]) {
-      cylinder(rooms.maintenance, paint.brass, [x, 1.3, z], [0.08, 2.6, 0.08]);
-      box(rooms.maintenance, signal, [x, 2.5, z], [0.3, 0.06, 0.2]);
-    }
-  box(rooms.maintenance, paint.green, [0, 0.6, -3.5], [3.5, 1.2, 0.8]);
+    for (const x of [-4, 4]) makeAsset('pipe-fixture', [x, 0, z], rooms.maintenance);
+  const maintenanceCabinet = makeAsset('cupboard', [0, 0, -3.5], rooms.maintenance).group;
+  maintenanceCabinet.scale.set(1.4, 0.6, 1.5);
   for (let x = -5; x <= 5; x++)
     for (let z = -4; z <= 4; z++)
       if ((x + z) % 2 === 0) box(rooms.garden, paint.edge, [x, 0.005, z], [0.9, 0.02, 0.9]);
   box(rooms.garden, waterPaint, [1, 0.025, 0], [0.35, 0.02, 7.3]);
   box(rooms.office, paint.rust, [0, 0.015, 1], [4, 0.025, 2.4]);
-  box(rooms.office, paint.wood, [-2.9, 0.87, -1.35], [1.8, 0.14, 1]);
-  for (const x of [-3.6, -2.2])
-    for (const z of [-1.7, -1]) box(rooms.office, paint.wood, [x, 0.43, z], [0.12, 0.8, 0.12]);
-  box(rooms.office, paint.green, [2, 1, -3.7], [2.5, 2, 0.5]);
+  makeAsset('office-desk', [-2.9, 0, -1.35], rooms.office);
+  makeAsset('cupboard', [2, 0, -3.7], rooms.office);
   box(rooms.control, paint.edge, [0, 0.02, 2.5], [8, 0.03, 0.8]);
   for (const x of [-4, 4]) {
-    cylinder(rooms.control, paint.green, [x, 1.4, -3.4], [0.3, 2.8, 0.3]);
-    box(rooms.control, signal, [x, 2.85, -3.4], [0.4, 0.05, 0.4]);
+    const pipe = makeAsset('pipe-fixture', [x, 0, -3.4], rooms.control).group;
+    pipe.scale.set(2.5, 1.05, 2.5);
   }
-  box(rooms.reception, paint.green, [-1.7, 0.65, -2.6], [4.5, 1.3, 0.85]);
-  box(rooms.reception, paint.paper, [-1.7, 1.34, -2.6], [4.65, 0.09, 0.95]);
-  for (const x of [-4, 4]) box(rooms.foyer, paint.wood, [x, 0.45, 0], [1.4, 0.15, 2.5]);
+  makeAsset('reception-counter', [-1.7, 0, -2.6], rooms.reception);
+  for (const x of [-4, 4]) makeAsset('bench', [x, 0, 0], rooms.foyer);
   box(rooms.foyer, paint.green, [0, 0.02, 0], [4, 0.03, 4]);
-  const mapDesk = new THREE.Group();
-  mapDesk.position.set(0, 0.05, 14.2);
-  scene.add(mapDesk);
-  box(mapDesk, paint.wood, [0, 0.65, 0], [1.8, 1.3, 0.7]);
-  solid(
-    mapDesk,
-    geometry(new THREE.PlaneGeometry(1.6, 0.85)),
-    inscription(
-      ['박물관 안내', '정비 · 반환 · 인양', '기록 · 전시 · 관장', '안뜰 · 로비 · 접수'],
-      '#e4dfc8',
-      '#29443f',
-      28
-    ),
-    [0, 1.4, 0.36],
-    [1, 1, 1]
+  const mapFace = inscription(
+    ['박물관 안내', '정비 · 반환 · 인양', '기록 · 전시 · 관장', '안뜰 · 로비 · 접수'],
+    '#e4dfc8', '#29443f', 28
   );
-  cylinder(
-    rooms.office,
-    paint.brass,
-    [3.6, 1.2, -3.4],
-    [0.38, 0.08, 0.38],
-    [Math.PI / 2, 0, 0]
-  );
-  cylinder(
-    rooms.office,
-    paint.paper,
-    [3.6, 1.2, -3.34],
-    [0.32, 0.025, 0.32],
-    [Math.PI / 2, 0, 0]
-  );
-  box(rooms.office, paint.wood, [3.6, 1.3, -3.31], [0.025, 0.21, 0.02]);
-  box(rooms.office, paint.wood, [3.71, 1.2, -3.31], [0.23, 0.025, 0.02]);
-  for (const x of [-0.55, 0, 0.55]) {
-    box(rooms.maintenance, paint.edge, [x, 1.35, -3.95], [0.1, 0.65, 0.07]);
-    cylinder(
-      rooms.maintenance,
-      paint.brass,
-      [x, 1.73, -3.9],
-      [0.14, 0.035, 0.14],
-      [Math.PI / 2, 0, 0]
-    );
-  }
-  for (const x of [-2.7, -1.4, -0.1]) {
-    box(rooms.reception, paint.wood, [x, 1.45, -2.6], [0.8, 0.12, 0.55]);
-    box(rooms.reception, paint.paper, [x, 1.52, -2.6], [0.68, 0.025, 0.43]);
-  }
-
-  const invitation = new THREE.Group();
-  invitation.position.set(0, 1.42, 0.41);
-  mapDesk.add(invitation);
-  box(invitation, paint.paper, [0, 0, 0], [1.46, 0.72, 0.035]);
-  solid(
-    invitation,
-    geometry(new THREE.PlaneGeometry(1.4, 0.66)),
-    inscription(['야간 관람 초대장', '관장 윤서가 기다립니다'], '#f5ecd4', '#29443f', 32),
-    [0, 0, 0.021],
-    [1, 1, 1]
-  );
-  cylinder(
-    invitation,
-    paint.rust,
-    [0.57, -0.22, 0.045],
-    [0.07, 0.018, 0.07],
-    [Math.PI / 2, 0, 0]
-  );
-
-  const player = new THREE.Group();
-  scene.add(player);
-  const playerCoat = material('#cf774d');
-  sphere(player, contact, [0, 0.025, 0], [0.36, 0.025, 0.3]);
-  sphere(player, playerCoat, [0, 0.68, 0], [0.28, 0.4, 0.23]);
-  sphere(player, paint.paper, [0, 1.12, 0.01], [0.22, 0.23, 0.21]);
-  sphere(player, paint.wood, [0, 1.23, -0.04], [0.23, 0.15, 0.2]);
-  box(player, paint.brass, [0, 0.82, 0.225], [0.12, 0.1, 0.025]);
-  box(player, paint.dark, [0, 0.7, -0.24], [0.3, 0.38, 0.15]);
-  const playerLegs = [];
-  for (const x of [-0.13, 0.13]) {
-    const leg = new THREE.Group();
-    leg.position.set(x, 0.4, 0);
-    player.add(leg);
-    playerLegs.push(leg);
-    box(leg, paint.dark, [0, -0.17, 0], [0.16, 0.34, 0.18]);
-    box(leg, paint.wood, [0, -0.35, 0.05], [0.18, 0.12, 0.27]);
-  }
+  const mapDesk = makeAsset('map-lectern', [0, 0.05, 14.2], scene, { faceMaterial: mapFace }).group;
+  makeAsset('clock', [3.6, 1.2, -3.4], rooms.office);
+  makeAsset('tools-rack', [0, 1.35, -3.95], rooms.maintenance);
+  for (const x of [-2.7, -1.4, -0.1])
+    makeAsset('document-tray', [x, 1.45, -2.6], rooms.reception);
+  const invitation = makeAsset('invitation', [0, 1.42, 0.41], mapDesk, {
+    faceMaterial: inscription(['야간 관람 초대장', '관장 윤서가 기다립니다'], '#f5ecd4', '#29443f', 32),
+  }).group;
+  const playerAsset = makeAsset('player', [0, 0, 0]);
+  const player = playerAsset.group;
+  const playerLegs = playerAsset.parts.legs;
   const beacon = new THREE.Group();
   scene.add(beacon);
   const beaconRing = solid(
@@ -1298,28 +702,14 @@ export function mountMuseum(
     shape.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
     group.add(new THREE.LineSegments(shape, inkEdges));
   }
-  for (const group of [
-    ...Object.values(rooms),
-    caseRoot,
-    archiveDesk,
-    returnRoom,
-    packingTable,
-    controlPanel,
-    returnControlPanel,
-    supplies,
-    terminal,
-    screenPivot,
-    noticeBoard,
-    preservationKit,
-  ])
-    outlineMajorSurfaces(group);
+  for (const group of Object.values(rooms)) outlineMajorSurfaces(group);
 
   // Repeated model pieces share instances; animated/stateful groups keep local ownership.
   function batch(group) {
     group.updateMatrixWorld(true);
     const buckets = new Map();
     group.traverse((object) => {
-      if (!object.isMesh || object.parent !== group || Array.isArray(object.material)) return;
+      if (!object.isMesh || object.parent !== group || Array.isArray(object.material) || object.userData.keepMesh) return;
       const key = `${object.geometry.uuid}:${object.material.uuid}`;
       if (!buckets.has(key)) buckets.set(key, []);
       buckets.get(key).push(object);
@@ -1599,7 +989,7 @@ export function mountMuseum(
       );
     }
     if (anchor === 'ledger') {
-      if (current.sceneId === 'D21') return from(originalGuard, [0, 0.92, 0], [1.65, 0.6, 1]);
+      if (current.sceneId === 'D21') return from(originalGuard, [0, 0.27, 0], [1.65, 0.6, 1]);
       if (current.currentRoomId === 'archive')
         return from(archiveDesk, [-2.58, 1.03, -1.2], [0.6, 0.18, 0.45]);
       if (current.currentRoomId !== 'return' && current.flags.record !== 'intact')
@@ -1672,24 +1062,22 @@ export function mountMuseum(
           top: '0',
           pointerEvents: 'auto',
           minHeight: '44px',
-          maxWidth: '224px',
-          padding: '9px 13px',
+          width: '96px',
+          padding: '9px 10px',
           borderRadius: '3px',
-          border: '1px solid #e4c88e',
-          background: '#173a32f0',
+          border: '1px solid #b9c99b',
+          background: '#173a32e8',
           color: '#fff1d1',
-          fontSize: '13px',
+          fontSize: '12px',
           lineHeight: '1.4',
           whiteSpace: 'nowrap',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
           cursor: 'pointer',
-          boxShadow: '0 4px 16px #071d1855',
+          boxShadow: '0 3px 12px #071d1855',
           touchAction: 'manipulation',
         });
         button.addEventListener('click', () => {
           const live = current.hotspots.find((item) => item.id === hotspot.id);
-          if (!current.interactive || !live || width < 700) return;
+          if (!current.interactive || !live || nearbyHotspot()?.id !== live.id) return;
           approach(live.id);
         });
         const highlight = () => {
@@ -1713,35 +1101,40 @@ export function mountMuseum(
           clear();
         });
         hotspotLayer.append(button);
-        entry = { button, width: 170, height: 44 };
+        entry = { button, width: 96, height: 44 };
         hotspotButtons.set(hotspot.id, entry);
       }
-      const title = `${hotspot.visited ? '✓ ' : '◇ '}${hotspot.label}`;
-      if (entry.button.textContent !== title) entry.button.textContent = title;
+      const touch = window.matchMedia('(pointer: coarse)').matches;
+      const prompt = touch ? '탭 조사' : 'E 조사';
+      if (entry.button.textContent !== prompt) entry.button.textContent = prompt;
       entry.button.setAttribute(
         'aria-label',
-        `${hotspot.label}${hotspot.visited ? ', 확인함' : ', 조사하기'}`
+        touch ? '가까운 대상 조사하기' : '가까운 대상 조사하기, E'
       );
-      entry.button.dataset.anchor = hotspot.anchor;
-      entry.button.dataset.kind = hotspot.kind ?? 'inspect';
       entry.button.disabled = !current.interactive;
-      entry.button.style.borderColor = hotspot.visited ? '#92ac91' : '#e4c88e';
-      entry.width = Math.min(224, Math.max(94, hotspot.label.length * 13 + 48));
-      entry.button.style.width = `${entry.width}px`;
+      entry.width = 96;
     }
     refreshExclusions();
   }
 
   function placeHotspots() {
     hotspotLayout = [];
-    const show = current.interactive && width >= 700 && !contextLost;
+    const show = current.interactive && !contextLost;
     hotspotLayer.hidden = !show;
     if (!show) return;
+    // Keep the scene discoverable: show one generic interaction affordance only when the
+    // player is close enough to use it. Never list or label the undiscovered targets.
+    const nearby = nearbyHotspot();
     const occupied = [...excludedRects];
     for (const hotspot of current.hotspots) {
       const entry = hotspotButtons.get(hotspot.id),
         shape = anchorShape(hotspot.anchor);
       if (!entry || !shape) continue;
+      if (hotspot.id !== nearby?.id) {
+        entry.button.hidden = true;
+        hotspotLayout.push({ id: hotspot.id, anchor: hotspot.anchor, visible: false });
+        continue;
+      }
       shape.point.y += Math.min(0.5, shape.size[1] * 0.4);
       const point = shape.point.project(camera);
       const projectedX = ((point.x + 1) * width) / 2,
@@ -1776,6 +1169,60 @@ export function mountMuseum(
           continue;
         chosen = rect;
         break;
+      }
+      // On touch screens, the nearby affordance is also the only tap-to-inspect path.
+      // If scene-aware placement is blocked by HUD panels, move that generic control to
+      // the clearest safe slot instead of silently removing the interaction.
+      if (!chosen && window.matchMedia('(pointer: coarse)').matches) {
+        const xCandidates = [
+          (width - entry.width) / 2,
+          16,
+          width - entry.width - 16,
+          width * 0.25 - entry.width / 2,
+          width * 0.75 - entry.width / 2,
+        ];
+        const yCandidates = [
+          88,
+          height * 0.22,
+          height * 0.38,
+          height * 0.54,
+          height * 0.7,
+          height - entry.height - 18,
+        ];
+        for (const y of yCandidates) {
+          for (const x of xCandidates) {
+            const left = Math.max(16, Math.min(width - entry.width - 16, x));
+            const top = Math.max(16, Math.min(height - entry.height - 16, y));
+            const rect = {
+              left,
+              right: left + entry.width,
+              top,
+              bottom: top + entry.height,
+            };
+            if (
+              occupied.some(
+                (other) =>
+                  rect.left < other.right &&
+                  rect.right > other.left &&
+                  rect.top < other.bottom &&
+                  rect.bottom > other.top
+              )
+            )
+              continue;
+            chosen = rect;
+            break;
+          }
+          if (chosen) break;
+        }
+        // Extremely constrained layouts may cover every safe slot. Keep the action
+        // available above the scene as a last-resort generic tap target.
+        chosen ??= {
+          left: Math.max(16, (width - entry.width) / 2),
+          right: Math.max(16, (width - entry.width) / 2) + entry.width,
+          top: Math.max(16, (height - entry.height) / 2),
+          bottom: Math.max(16, (height - entry.height) / 2) + entry.height,
+        };
+        entry.button.style.zIndex = '6';
       }
       entry.button.hidden = !chosen;
       if (!chosen) {
@@ -2349,13 +1796,9 @@ export function mountMuseum(
     const objective =
       current.objectiveTarget ?? (current.travel ? { roomId: current.travel.toRoomId } : null);
     if (!objective) return null;
-    if (objective.hotspotId) {
-      const hotspot = current.hotspots.find((item) => item.id === objective.hotspotId);
-      const actor = actors.find((item) => item.id === hotspot?.anchor);
-      if (actor) return actorApproachPoint(actor);
-      const point = hotspot && anchorShape(hotspot.anchor)?.point;
-      return point ? new THREE.Vector3(point.x, 0.04, point.z) : null;
-    }
+    // Room destinations support travel guidance; hotspot objectives stay undisclosed so
+    // exploration does not turn into following a beacon to the next clue.
+    if (objective.hotspotId) return null;
     const destination = ROOMS.find((room) => room.id === objective.roomId);
     if (!destination) return null;
     let currentRoom = roomAt(player.position.x, player.position.z);
@@ -2728,7 +2171,7 @@ export function mountMuseum(
         roomId: roomAt(player.position.x, player.position.z),
         targetRoomId: destination ?? null,
         moving: avatarMoving,
-        nearbyLabel: nearbyHotspot()?.label ?? null,
+        nearbyLabel: nearbyHotspot() ? '조사 가능' : null,
       };
       const signature = JSON.stringify(value);
       if (signature !== lastNavigation) {
@@ -3050,8 +2493,9 @@ export function mountMuseum(
       batteryProp.position.set(0, 0.98, 0);
       batteryProp.scale.setScalar(1);
     }
-    craneIndicator.material =
-      flags.crane === 'stable' ? signal : flags.crane === 'stalled' ? paint.rust : paint.brass;
+    const indicatorMaterial = flags.crane === 'stable' ? signal : flags.crane === 'stalled' ? paint.rust : paint.brass;
+    craneIndicator.material = indicatorMaterial;
+    returnControlPanel.getObjectByName('crane-indicator').material = indicatorMaterial;
     const recoveredBoat = ['intact', 'damaged'].includes(flags.boat);
     const recoveryRoom = lateScene ? sceneRoom : ROOMS.find((room) => room.id === 'return');
     packingTable.visible = true;
@@ -3142,6 +2586,23 @@ export function mountMuseum(
     diagnostics() {
       return {
         mode: contextLost ? 'illustration' : 'webgl',
+        assetRevision: MUSEUM_ASSET_REVISION,
+        assetCatalog: [...propKit.ids, ...actorKit.ids],
+        assetInstances: (() => { let count = 0; scene.traverse((o) => { if (o.userData.assetId) count++; }); return count; })(),
+        assetState: {
+          boat: boat.visible,
+          damagedBoat: damagedBoat.visible,
+          ledger: ledger.visible,
+          blurredLedger: blurredLedger.visible,
+          sealed: sealedBoxes.map((object) => object.visible),
+          originalGuard: originalGuard.visible,
+          preservationKit: preservationKit.visible,
+          moroEyes: eyes.visible,
+          antennaLight: antennaLight.visible,
+          trolley: trolley.visible,
+          waterHeight: water.position.y,
+          indicators: [craneIndicator, returnControlPanel.getObjectByName('crane-indicator')].map((object) => object.material.color.getHexString()),
+        },
         sceneId: current.sceneId,
         phase: current.phase,
         calls: renderer.info.render.calls,
@@ -3202,7 +2663,7 @@ export function mountMuseum(
         },
         currentRoomId: current.currentRoomId,
         targetRoomId: current.travel?.toRoomId ?? null,
-        nearbyLabel: nearbyHotspot()?.label ?? null,
+        nearbyLabel: nearbyHotspot() ? '조사 가능' : null,
         roomCount: ROOMS.length,
         cameraZoom: camera.zoom,
         cameraSettings: { zoom: userZoom, pitch: cameraPitch, yaw: cameraYaw },

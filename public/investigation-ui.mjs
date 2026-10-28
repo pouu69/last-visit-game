@@ -45,6 +45,33 @@ function button(label, action, className = '', id = '') {
   return item;
 }
 
+function fieldToolIcon(kind) {
+  const namespace = 'http://www.w3.org/2000/svg';
+  const wrapper = element('span', undefined, 'field-tool-icon');
+  wrapper.setAttribute('aria-hidden', 'true');
+  const svg = document.createElementNS(namespace, 'svg');
+  svg.setAttribute('viewBox', '0 0 24 24');
+  svg.setAttribute('width', '20');
+  svg.setAttribute('height', '20');
+  svg.setAttribute('fill', 'none');
+  svg.setAttribute('stroke', 'currentColor');
+  svg.setAttribute('stroke-width', '1.6');
+  svg.setAttribute('stroke-linecap', 'round');
+  svg.setAttribute('stroke-linejoin', 'round');
+  const paths = {
+    notebook: ['M5 4.5h10a4 4 0 0 1 4 4v11H9a4 4 0 0 1-4-4z', 'M5 15.5a4 4 0 0 1 4-4h10', 'M8 7.5h7'],
+    conversation: ['M4 5.5h16v11H11l-5 3v-3H4z', 'M8 10h.01', 'M12 10h.01', 'M16 10h.01'],
+    help: ['M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z', 'M9.5 9a2.5 2.5 0 1 1 4.2 1.8c-1.2 1-1.7 1.3-1.7 2.7', 'M12 17h.01'],
+  }[kind];
+  for (const pathData of paths ?? []) {
+    const path = document.createElementNS(namespace, 'path');
+    path.setAttribute('d', pathData);
+    svg.append(path);
+  }
+  wrapper.append(svg);
+  return wrapper;
+}
+
 function unavailable(control, value) {
   control.disabled = value;
   control.dataset.unavailable = String(value);
@@ -65,7 +92,6 @@ export function mountInvestigation(
   let busy = false;
   let visible = false;
   let reportedPanel = false;
-  let objectsExpanded = false;
 
   function redraw(focusId = null) {
     const scrollTop =
@@ -490,66 +516,52 @@ export function mountInvestigation(
     const interactive = visible && !!exploration && ['exploring', 'input'].includes(view.phase);
     root.hidden = !interactive;
     if (!interactive) return;
-    const dock = element('div', undefined, 'investigation-dock');
+    const dock = element('div', undefined, 'investigation-dock field-tools');
     const primary = exploration.primaryAction;
-    const label = element('div', undefined, 'investigation-label');
-    label.append(
-      element('span', '지금 할 일', 'eyebrow'),
-      element('span', `관찰 기록 ${exploration.observations.length}개`, 'inspection-count')
+    const actions = element('div', undefined, 'investigation-actions field-tools-actions');
+    if (primary && primary.kind !== 'inspect' && !panel) {
+      dock.append(
+        button(
+          primary.label,
+          performPrimaryAction,
+          'primary field-primary field-next-action',
+          'field-primary'
+        )
+      );
+    }
+    const notesButton = button(
+      '',
+      () => showPanel('notes'),
+      `field-tool${panel === 'notes' ? ' selected-tool' : ''}`,
+      'open-notes'
     );
-    const objects = element('div', undefined, 'hotspot-list');
-    objects.setAttribute('aria-label', '조사할 사물');
-    for (const hotspot of exploration.hotspots) {
-      if (primary?.kind === 'inspect' && hotspot.id === primary.hotspotId) continue;
-      const control = button(
+    notesButton.setAttribute(
+      'aria-label',
+      `관찰 기록 열기, 관찰 기록 ${exploration.observations.length}개`
+    );
+    notesButton.setAttribute('aria-expanded', String(panel === 'notes'));
+    notesButton.append(fieldToolIcon('notebook'), element('span', '수첩', 'field-tool-label'));
+    if (exploration.observations.length > 0)
+      notesButton.append(
+        element('span', String(exploration.observations.length), 'field-tool-count')
+      );
+    actions.append(notesButton);
+    if (view.npc) {
+      const name = npcName(view.npc);
+      const talkButton = button(
         '',
         () => {
           panel = null;
           redraw();
-          act('INSPECT', { hotspotId: hotspot.id });
+          onTalk();
         },
-        `hotspot-tab${hotspot.visited ? ' visited' : ''}`,
-        `inspect-${hotspot.id}`
+        'field-tool',
+        'field-talk'
       );
-      control.append(
-        element('span', hotspot.visited ? '✓' : '＋', 'hotspot-mark'),
-        element('span', hotspot.label)
-      );
-      control.setAttribute(
-        'aria-label',
-        `${hotspot.label} ${hotspot.visited ? '다시 살펴보기' : '조사하기'}`
-      );
-      control.setAttribute('aria-current', String(exploration.activeHotspot === hotspot.id));
-      objects.append(control);
+      talkButton.setAttribute('aria-label', `${name}에게 묻기`);
+      talkButton.append(fieldToolIcon('conversation'), element('span', name, 'field-tool-label'));
+      actions.append(talkButton);
     }
-    const actions = element('div', undefined, 'investigation-actions');
-    dock.append(label);
-    if (primary && !panel) {
-      dock.append(
-        button(primary.label, performPrimaryAction, 'primary field-primary', 'field-primary')
-      );
-    }
-    const notesButton = button(
-      '관찰 기록',
-      () => showPanel('notes'),
-      panel === 'notes' ? 'selected-tool' : '',
-      'open-notes'
-    );
-    notesButton.setAttribute('aria-expanded', String(panel === 'notes'));
-    actions.append(notesButton);
-    if (view.npc)
-      actions.append(
-        button(
-          `${npcName(view.npc)}에게 묻기`,
-          () => {
-            panel = null;
-            redraw();
-            onTalk();
-          },
-          '',
-          'field-talk'
-        )
-      );
     if (!primary && exploration.puzzle) {
       const control = button(
         exploration.puzzle.kind === 'path'
@@ -558,7 +570,7 @@ export function mountInvestigation(
           ? '도장 놓기'
           : '장치 순서 조작',
         () => showPanel('puzzle'),
-        'primary',
+        'primary field-next-action',
         'open-puzzle'
       );
       control.setAttribute('aria-expanded', String(panel === 'puzzle'));
@@ -569,53 +581,21 @@ export function mountInvestigation(
           button(
             exploration.canChoose ? '다음 행동 정하기 →' : '조사를 마쳐 주세요',
             onChoices,
-            'primary',
+            'primary field-next-action',
             'field-choices'
           ),
           !exploration.canChoose
         )
       );
     }
-    if (onHelp) actions.append(button('조작 방법', onHelp, 'text-button', 'field-help'));
-    dock.append(actions);
-    if (objects.childElementCount) {
-      const otherObjects = element('details', undefined, 'other-observations');
-      otherObjects.open = objectsExpanded;
-      otherObjects.addEventListener('toggle', () => {
-        objectsExpanded = otherObjects.open;
-      });
-      otherObjects.append(
-        element('summary', `다른 대상 살펴보기 · ${objects.childElementCount}`),
-        objects
-      );
-      dock.append(otherObjects);
+    if (onHelp) {
+      const helpButton = button('', onHelp, 'field-tool field-tool-help', 'field-help');
+      helpButton.setAttribute('aria-label', '조작 방법');
+      helpButton.title = '조작 방법';
+      helpButton.append(fieldToolIcon('help'));
+      actions.append(helpButton);
     }
-    const help = element('p', undefined, 'field-help');
-    help.append(
-      element(
-        'span',
-        '바닥 클릭 / WASD 이동 · 가까이에서 E 조사 · M 지도',
-        'keyboard-controls'
-      ),
-      element('span', '바닥 탭으로 이동 · 가까운 사물을 탭해서 조사', 'touch-controls')
-    );
-    dock.append(help);
-    if (!primary && !exploration.canChoose)
-      dock.append(
-        element(
-          'p',
-          exploration.blockedReason ?? '주변 사물을 살펴보세요.',
-          'investigation-status'
-        )
-      );
-    else if (!primary && !exploration.puzzle)
-      dock.append(
-        element(
-          'p',
-          '확인한 흔적을 바탕으로 이제 행동을 정할 수 있습니다.',
-          'investigation-status'
-        )
-      );
+    dock.append(actions);
     root.append(dock);
     if (!panel) return;
     const sheet = element('section', undefined, 'investigation-panel');
@@ -644,7 +624,6 @@ export function mountInvestigation(
         panel = null;
         confirming = false;
         deduction = null;
-        objectsExpanded = false;
         answer = next.exploration?.puzzle?.kind === 'path' ? ['entrance'] : [];
       }
       view = next;

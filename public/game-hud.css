@@ -1,0 +1,275 @@
+/* The field stays visible. Large navigation and reading surfaces open on request. */
+body .masthead {
+  align-items: flex-start;
+  padding: max(16px, env(safe-area-inset-top, 0px))
+    max(24px, env(safe-area-inset-right, 0px)) 0
+    max(24px, env(safe-area-inset-left, 0px));
+  pointer-events: none;
+}
+
+body[data-screen='game'] .masthead {
+  justify-content: flex-end;
+}
+
+body[data-screen='game'] .masthead .brand {
+  display: none;
+}
+
+.masthead .brand,
+.masthead .header-actions {
+  pointer-events: auto;
+}
+
+.masthead .header-actions {
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.masthead .hud-tool,
+.masthead #camera-toggle.hud-tool {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 4px;
+  width: 44px;
+  min-width: 44px;
+  min-height: 50px;
+  padding: 5px 3px;
+  border: 1px solid #ac98704d;
+  border-radius: 3px;
+  color: #e7d9b5;
+  background: #123028d9;
+  box-shadow: 0 2px 0 #061d1780;
+}
+
+.masthead .hud-tool svg {
+  display: block;
+  width: 21px;
+  height: 21px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.masthead .hud-tool-label {
+  font-size: 10px;
+  line-height: 1.1;
+}
+
+.masthead .hud-toggle-state,
+.masthead .hud-tool kbd {
+  display: none;
+}
+
+.masthead .hud-tool[aria-expanded='true'] {
+  color: #fff0ca;
+  border-color: #dfc48d;
+  background: #365548;
+}
+
+body .masthead #camera-tools {
+  position: relative;
+  inset: auto;
+  width: 44px;
+  max-width: none;
+}
+
+.masthead #camera-panel {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  width: min(270px, calc(100vw - 32px));
+  margin: 0;
+}
+
+body[data-mode] #game .scene-heading {
+  top: max(18px, env(safe-area-inset-top, 0px));
+  left: max(24px, env(safe-area-inset-left, 0px));
+  width: min(440px, calc(100vw - 220px));
+  max-width: none;
+  padding: 0;
+  display: block;
+  visibility: visible;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  pointer-events: none;
+  text-shadow: 0 1px 3px #061b14, 0 2px 12px #061b14;
+}
+
+#game .scene-heading #chapter-label {
+  display: none;
+}
+
+#game .scene-heading #scene-title {
+  max-width: 100%;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#objective-details {
+  position: relative;
+  margin-top: 2px;
+  pointer-events: auto;
+}
+
+#objective-details > summary {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 9px;
+  width: fit-content;
+  max-width: 100%;
+  min-height: 32px;
+  list-style: none;
+  cursor: pointer;
+  color: #deceaa;
+}
+
+#objective-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+#game .scene-heading #chapter-question {
+  display: block;
+  margin: 0;
+  font-family: inherit;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.objective-chevron {
+  flex: none;
+  color: #d1b880;
+  font-size: 15px;
+  line-height: 1;
+}
+
+#objective-details[open] .objective-chevron {
+  transform: rotate(180deg);
+}
+
+.objective-body {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  width: min(340px, calc(100vw - 48px));
+  padding: 13px 16px;
+  border: 1px solid #aa96726b;
+  border-left: 2px solid #c1a66e;
+  border-radius: 3px;
+  background: #14332cf5;
+  box-shadow: 0 7px 22px #061b1440;
+  text-shadow: none;
+}
+
+#game .scene-heading .objective-body #progress-label,
+#game .scene-heading .objective-body #objective-reason {
+  display: block;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+  white-space: normal;
+}
+
+#game .scene-heading .objective-body #objective-reason:not([hidden]) {
+  margin-top: 8px;
+}
+
+#game .scene-heading #arrival-note {
+  position: absolute;
+  top: calc(100% + 12px);
+  width: min(340px, calc(100vw - 48px));
+  margin: 0;
+  padding: 8px 12px;
+  border: 0;
+  border-left: 2px solid #c1a66e;
+  background: #14332cf0;
+  pointer-events: none;
+  font-size: 11px;
+}
+
+body #navigation-hud.expanded {
+  position: fixed;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  width: min(560px, calc(100vw - 32px));
+  max-height: calc(100dvh - 48px);
+  margin: 0;
+  padding: 20px;
+  border: 1px solid #b7a3768c;
+  border-radius: 4px;
+  color: var(--paper);
+  background: #112e26fc;
+  box-shadow: 0 18px 60px #03130dcc;
+  overflow-y: auto;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#navigation-hud::backdrop {
+  background: #04130ed4;
+}
+
+#navigation-hud.expanded .navigation-heading {
+  position: sticky;
+  top: -1px;
+  z-index: 1;
+  padding-bottom: 8px;
+  background: #112e26;
+}
+
+#navigation-hud.expanded #museum-map {
+  max-height: min(52dvh, 420px);
+}
+
+#navigation-hud.expanded .navigation-controls {
+  color: #a9baa7;
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  body .masthead {
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+  }
+  .masthead .header-actions {
+    gap: 6px;
+  }
+  body[data-mode] #game .scene-heading {
+    top: max(18px, env(safe-area-inset-top, 0px));
+    left: max(16px, env(safe-area-inset-left, 0px));
+    width: calc(100vw - 188px);
+  }
+  #game .scene-heading #scene-title {
+    font-size: 16px;
+  }
+  #game .scene-heading #chapter-question {
+    font-size: 11px;
+  }
+  .objective-body {
+    width: min(340px, calc(100vw - 32px));
+  }
+}
+
+@media (pointer: coarse) {
+  #objective-details > summary {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 340px) {
+  #game .scene-heading #scene-title {
+    font-size: 14px;
+  }
+  #game .scene-heading #chapter-question {
+    font-size: 10px;
+  }
+}
