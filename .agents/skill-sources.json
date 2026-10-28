@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "scope": "project",
+  "skillsDirectory": ".agents/skills",
+  "sources": [
+    {
+      "repository": "https://github.com/scottstts/Threejs-Awesome-Graphics-Agent-Skills",
+      "commit": "53eb5a24097425d82532ec33697ad472750132a4",
+      "declaredLicense": "MIT AND GPL-3.0-only",
+      "licenseDirectory": ".agents/skill-sources/Threejs-Awesome-Graphics-Agent-Skills",
+      "skills": [
+        "threejs-atmosphere-aerial-perspective",
+        "threejs-bloom",
+        "threejs-camera-direction",
+        "threejs-exposure-color-grading",
+        "threejs-image-pipeline",
+        "threejs-parallax-occlusion-mapping",
+        "threejs-precipitation-surfaces",
+        "threejs-procedural-animation",
+        "threejs-procedural-architecture",
+        "threejs-procedural-fields",
+        "threejs-procedural-geometry",
+        "threejs-procedural-materials",
+        "threejs-procedural-planets",
+        "threejs-procedural-vegetation",
+        "threejs-procedural-vfx",
+        "threejs-raymarched-space-effects",
+        "threejs-screen-space-ambient-occlusion",
+        "threejs-shadow-systems",
+        "threejs-skill-router",
+        "threejs-spectral-ocean",
+        "threejs-temporal-surfaces",
+        "threejs-visual-validation",
+        "threejs-volumetric-clouds",
+        "threejs-water-optics"
+      ]
+    },
+    {
+      "repository": "https://github.com/majidmanzarpour/threejs-game-skills",
+      "commit": "8286774b22a2566bf894dbc825825c16921866af",
+      "declaredLicense": "MIT",
+      "licenseDirectory": ".agents/skill-sources/threejs-game-skills",
+      "skills": [
+        "threejs-3d-generator",
+        "threejs-aaa-graphics-builder",
+        "threejs-audio-generator",
+        "threejs-debug-profiler",
+        "threejs-game-director",
+        "threejs-game-ui-designer",
+        "threejs-gameplay-systems",
+        "threejs-image-generator",
+        "threejs-qa-release"
+      ]
+    }
+  ],
+  "localAdaptations": [
+    {
+      "skill": "threejs-procedural-materials",
+      "file": ".agents/skills/threejs-procedural-materials/SKILL.md",
+      "field": "description",
+      "reason": "Shortened the upstream 1217-character description to meet the Codex skill validator maximum of 1024 characters. Skill body and resources are unchanged.",
+      "upstreamSha256": "577c2001083b160cec39e95124d60e7c1f4373b765386f038a1c6f2a20f95696",
+      "installedSha256": "e93960da806d9fc507eb0bff7d9015dfbc31328503fd0f85194b7e9d39783f89"
+    }
+  ]
+}
