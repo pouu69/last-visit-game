@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { startMuseumGame } from './browser-game-entry.mjs';
 
 // Uses rendered controls, floor clicks, E and the real game session. No state is injected.
 const base = process.argv[2] ?? 'http://127.0.0.1:5197';
@@ -15,7 +16,7 @@ page.on('pageerror', (error) => errors.push(error.message));
 await mkdir(output, { recursive: true });
 try {
   await page.goto(base);
-  await page.locator('#team-buttons button').first().click();
+  await startMuseumGame(page);
   await page.evaluate(async () => {
     const { createLocalSessions } = await import('./src/local-sessions.mjs');
     const reader = createLocalSessions({ storage: localStorage });
@@ -54,6 +55,7 @@ try {
     await page.evaluate(()=>window.investigationQA.read());
   }
   await page.waitForTimeout(650);
+  await page.evaluate(() => window.investigationQA.field());
   await walk(0,16); await inspect(); await sample('invitation-inspected');
   assert.ok(samples.at(-1).observations.some((o)=>o.id==='invitation'));
   await page.evaluate(()=>window.investigationQA.field());

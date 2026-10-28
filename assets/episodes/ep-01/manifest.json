@@ -10,7 +10,9 @@
     "propModels": 32,
     "actorAndTerminalModels": 4,
     "evidenceVariants": 2,
-    "totalCatalogueEntries": 38
+    "totalCatalogueEntries": 45,
+    "environmentModels": 7,
+    "totalBaseModels": 43
   },
   "approval": "approved-in-game",
   "review": {
@@ -52,7 +54,34 @@
       "assets/episodes/ep-01/review/gameplay-rotated.png"
     ],
     "reviewer": "Codex with independent model and JavaScript review agents",
-    "method": "Automatic WebGL render sweep plus sampled visual contact sheets, model close-ups, native game interactions and geometry/collision regression tests."
+    "method": "Automatic WebGL render sweep plus sampled visual contact sheets, model close-ups, native game interactions and geometry/collision regression tests.",
+    "environment": {
+      "targetRevision": "museum-environment-2026-10-28",
+      "status": "approved-in-game",
+      "result": "passed",
+      "evidence": [
+        "assets/episodes/ep-01/review/environment-upgrade/review.md",
+        "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+        "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+        "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+        "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+      ],
+      "scope": "Seven environment generators and the complete 45-entry catalogue reviewed in actual WebGL and game placement; earlier 38-entry baseline review retained."
+    },
+    "placementAudit": {
+      "result": "passed",
+      "evidence": [
+        "assets/episodes/ep-01/review/environment-upgrade/review.md",
+        "assets/episodes/ep-01/review/environment-upgrade/placement-audit.json"
+      ],
+      "sourceSha256": "4329db5fe47a79650860d75756cd273fdd9a19cd046714b5bd7da9d936599393"
+    }
   },
   "referenceBoard": {
     "id": "museum-object-style-target",
@@ -110,7 +139,12 @@
     "pivotPolicy": "Per-entry pivot classification and measured local bounds are authoritative.",
     "collisionPolicy": "Explicit local assetColliders transformed to world; mobile actors use separate circles.",
     "resourcePolicy": "Geometry and material factories register shared resources; dispose on owning scene/gallery teardown, never on removing a shared instance.",
-    "mergePolicy": "Static direct-child meshes merged by material inside each group; keepMesh preserves mutable leaf handles and child pivots remain separate."
+    "mergePolicy": "Static direct-child meshes merged by material inside each group; keepMesh preserves mutable leaf handles and child pivots remain separate.",
+    "doorClearance": {
+      "width": 3.6,
+      "height": 2.3,
+      "units": "world-unit"
+    }
   },
   "assets": [
     {
@@ -487,7 +521,16 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/paper-boat"
+      "assetKey": "ep-01/paper-boat",
+      "runtimePlacement": {
+        "storageRootY": 0.6294913,
+        "recoveredRootY": 0.8619913,
+        "recoveredRoomOffsetXZ": [
+          1.85,
+          2.65
+        ],
+        "transportPoseChanged": false
+      }
     },
     {
       "id": "ledger",
@@ -555,7 +598,16 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/ledger"
+      "assetKey": "ep-01/ledger",
+      "runtimePlacement": {
+        "storageRootY": 0.6405,
+        "recoveredRootY": 0.873,
+        "recoveredRoomOffsetXZ": [
+          3.2,
+          2.65
+        ],
+        "transportPoseChanged": false
+      }
     },
     {
       "id": "sealed-cover",
@@ -900,7 +952,15 @@
           }
         ]
       },
-      "assetKey": "ep-01/valve"
+      "assetKey": "ep-01/valve",
+      "runtimePlacement": {
+        "worldPosition": [
+          -16.45,
+          0.05,
+          17.5
+        ],
+        "wheelAndHotspotReferencesPreserved": true
+      }
     },
     {
       "id": "supplies",
@@ -1182,7 +1242,15 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/stamp-set"
+      "assetKey": "ep-01/stamp-set",
+      "runtimePlacement": {
+        "hiddenIn": [
+          "I02"
+        ],
+        "visibleAgainIn": [
+          "P11"
+        ]
+      }
     },
     {
       "id": "key-bundle",
@@ -1308,7 +1376,18 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/layered-label"
+      "assetKey": "ep-01/layered-label",
+      "runtimePlacement": {
+        "worldPosition": [
+          -18.9,
+          1.023,
+          -1.3
+        ],
+        "visibleIn": [
+          "I02"
+        ],
+        "sharesDeskWith": "stamp-set; mutually exclusive in I02"
+      }
     },
     {
       "id": "control-panel",
@@ -1461,7 +1540,26 @@
           }
         ]
       },
-      "assetKey": "ep-01/packing-table"
+      "assetKey": "ep-01/packing-table",
+      "runtimePlacement": {
+        "sceneScaleXYZ": [
+          1.55,
+          1,
+          1
+        ],
+        "rooms": [
+          "return",
+          "reception",
+          "archive",
+          "maintenance",
+          "foyer"
+        ],
+        "localCenterXZ": [
+          2.5,
+          2.65
+        ],
+        "paperTopWorldY": 0.8725
+      }
     },
     {
       "id": "preservation-kit",
@@ -1527,7 +1625,20 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/preservation-kit"
+      "assetKey": "ep-01/preservation-kit",
+      "runtimePlacement": {
+        "parent": "packing-table",
+        "localScaleXYZ": [
+          0.6451612903225806,
+          1,
+          1
+        ],
+        "resultingWorldScaleXYZ": [
+          1,
+          1,
+          1
+        ]
+      }
     },
     {
       "id": "exit-door",
@@ -1616,7 +1727,22 @@
           }
         ]
       },
-      "assetKey": "ep-01/exit-door"
+      "assetKey": "ep-01/exit-door",
+      "runtimePlacement": {
+        "worldPositions": [
+          [
+            4.2,
+            0.05,
+            19.8
+          ],
+          [
+            -12.2,
+            0.05,
+            -12.2
+          ]
+        ],
+        "rotationY": -0.5
+      }
     },
     {
       "id": "office-desk",
@@ -2168,7 +2294,27 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/document-tray"
+      "assetKey": "ep-01/document-tray",
+      "runtimePlacement": {
+        "roomId": "reception",
+        "localPositions": [
+          [
+            -2.7,
+            1.385,
+            -2.6
+          ],
+          [
+            -1.4,
+            1.385,
+            -2.6
+          ],
+          [
+            -0.1,
+            1.385,
+            -2.6
+          ]
+        ]
+      }
     },
     {
       "id": "invitation",
@@ -2369,7 +2515,22 @@
           }
         ]
       },
-      "assetKey": "ep-01/pipe-fixture"
+      "assetKey": "ep-01/pipe-fixture",
+      "runtimePlacement": {
+        "maintenanceWallSideOverrides": [
+          [
+            5.65,
+            0,
+            1
+          ],
+          [
+            5.65,
+            0,
+            3
+          ]
+        ],
+        "coordinates": "room-local"
+      }
     },
     {
       "id": "moro",
@@ -2757,7 +2918,16 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/paper-boat-damaged"
+      "assetKey": "ep-01/paper-boat-damaged",
+      "runtimePlacement": {
+        "storageRootY": 0.6294913,
+        "recoveredRootY": 0.8619913,
+        "recoveredRoomOffsetXZ": [
+          1.85,
+          2.65
+        ],
+        "transportPoseChanged": false
+      }
     },
     {
       "id": "ledger-blurred",
@@ -2824,10 +2994,1155 @@
         "mode": "none",
         "localBoxes": []
       },
-      "assetKey": "ep-01/ledger-blurred"
+      "assetKey": "ep-01/ledger-blurred",
+      "runtimePlacement": {
+        "storageRootY": 0.6405,
+        "recoveredRootY": 0.873,
+        "recoveredRoomOffsetXZ": [
+          3.2,
+          2.65
+        ],
+        "transportPoseChanged": false
+      }
+    },
+    {
+      "id": "room-shell",
+      "baseId": "room-shell",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('room-shell')",
+      "options": {
+        "width": 12,
+        "depth": 10,
+        "roomType": "gallery",
+        "doors": [
+          "north",
+          "south"
+        ]
+      },
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "room-shell",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -6.115,
+          -0.26,
+          -5.16
+        ],
+        "max": [
+          6.115,
+          2.47,
+          5.16
+        ],
+        "sizeXYZ": [
+          12.23,
+          2.73,
+          10.32
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        12.32,
+        10.32
+      ],
+      "declaredHeight": 2.48,
+      "geometry": {
+        "triangles": 1844,
+        "meshes": 8,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#486252",
+          "#704f40",
+          "#b18a54",
+          "#c3b99c",
+          "#ddd6bd",
+          "#e4dfc8"
+        ]
+      },
+      "parts": {
+        "label": "room-floor-label"
+      },
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -6,
+            "maxX": -1.7999999999999998,
+            "minY": 0,
+            "maxY": 1.5,
+            "minZ": -5.115,
+            "maxZ": -4.885
+          },
+          {
+            "minX": 1.7999999999999998,
+            "maxX": 6,
+            "minY": 0,
+            "maxY": 1.5,
+            "minZ": -5.115,
+            "maxZ": -4.885
+          },
+          {
+            "minX": -2.05,
+            "maxX": -1.8299999999999998,
+            "minY": 0,
+            "maxY": 2.36,
+            "minZ": -5.15,
+            "maxZ": -4.85
+          },
+          {
+            "minX": -2.08,
+            "maxX": -1.7999999999999998,
+            "minY": 0,
+            "maxY": 0.44,
+            "minZ": -5.16,
+            "maxZ": -4.84
+          },
+          {
+            "minX": 1.8299999999999998,
+            "maxX": 2.05,
+            "minY": 0,
+            "maxY": 2.36,
+            "minZ": -5.15,
+            "maxZ": -4.85
+          },
+          {
+            "minX": 1.7999999999999998,
+            "maxX": 2.08,
+            "minY": 0,
+            "maxY": 0.44,
+            "minZ": -5.16,
+            "maxZ": -4.84
+          },
+          {
+            "minX": -6,
+            "maxX": -1.7999999999999998,
+            "minY": 0,
+            "maxY": 0.65,
+            "minZ": 4.885,
+            "maxZ": 5.115
+          },
+          {
+            "minX": 1.7999999999999998,
+            "maxX": 6,
+            "minY": 0,
+            "maxY": 0.65,
+            "minZ": 4.885,
+            "maxZ": 5.115
+          },
+          {
+            "minX": -2.05,
+            "maxX": -1.8299999999999998,
+            "minY": 0,
+            "maxY": 2.36,
+            "minZ": 4.85,
+            "maxZ": 5.15
+          },
+          {
+            "minX": -2.08,
+            "maxX": -1.7999999999999998,
+            "minY": 0,
+            "maxY": 0.44,
+            "minZ": 4.84,
+            "maxZ": 5.16
+          },
+          {
+            "minX": 1.8299999999999998,
+            "maxX": 2.05,
+            "minY": 0,
+            "maxY": 2.36,
+            "minZ": 4.85,
+            "maxZ": 5.15
+          },
+          {
+            "minX": 1.7999999999999998,
+            "maxX": 2.08,
+            "minY": 0,
+            "maxY": 0.44,
+            "minZ": 4.84,
+            "maxZ": 5.16
+          },
+          {
+            "minX": -6.115,
+            "maxX": -5.885,
+            "minY": 0,
+            "maxY": 0.65,
+            "minZ": -5,
+            "maxZ": 5
+          },
+          {
+            "minX": 5.885,
+            "maxX": 6.115,
+            "minY": 0,
+            "maxY": 0.65,
+            "minZ": -5,
+            "maxZ": 5
+          }
+        ]
+      },
+      "assetKey": "ep-01/room-shell",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "maintenance",
+          "label": "정비 통로",
+          "position": [
+            -16,
+            0,
+            -16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "maintenance",
+          "doors": [
+            "south",
+            "east"
+          ],
+          "sceneIds": [
+            "I01",
+            "F33"
+          ]
+        },
+        {
+          "roomId": "return",
+          "label": "반환실",
+          "position": [
+            0,
+            0,
+            -16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "return",
+          "doors": [
+            "south",
+            "west",
+            "east"
+          ],
+          "sceneIds": [
+            "S12",
+            "T21",
+            "T22",
+            "D21",
+            "S22",
+            "R31",
+            "R32"
+          ]
+        },
+        {
+          "roomId": "control",
+          "label": "인양 제어실",
+          "position": [
+            16,
+            0,
+            -16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "control",
+          "doors": [
+            "south",
+            "west"
+          ],
+          "sceneIds": [
+            "P21"
+          ]
+        },
+        {
+          "roomId": "archive",
+          "label": "기록실",
+          "position": [
+            -16,
+            0,
+            0
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "archive",
+          "doors": [
+            "north",
+            "south",
+            "east"
+          ],
+          "sceneIds": [
+            "I02",
+            "P11",
+            "F32"
+          ]
+        },
+        {
+          "roomId": "gallery",
+          "label": "제1 전시실",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "gallery",
+          "doors": [
+            "north",
+            "south",
+            "west",
+            "east"
+          ],
+          "sceneIds": [
+            "S01"
+          ]
+        },
+        {
+          "roomId": "office",
+          "label": "관장실",
+          "position": [
+            16,
+            0,
+            0
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "office",
+          "doors": [
+            "north",
+            "south",
+            "west"
+          ],
+          "sceneIds": [
+            "I04"
+          ]
+        },
+        {
+          "roomId": "garden",
+          "label": "안뜰",
+          "position": [
+            -16,
+            0,
+            16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "garden",
+          "doors": [
+            "north",
+            "east"
+          ],
+          "sceneIds": [
+            "I03",
+            "D22"
+          ]
+        },
+        {
+          "roomId": "foyer",
+          "label": "중앙 로비",
+          "position": [
+            0,
+            0,
+            16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "foyer",
+          "doors": [
+            "north",
+            "west",
+            "east"
+          ],
+          "sceneIds": [
+            "O00",
+            "P12",
+            "F34"
+          ]
+        },
+        {
+          "roomId": "reception",
+          "label": "반환 접수실",
+          "position": [
+            16,
+            0,
+            16
+          ],
+          "width": 12,
+          "depth": 10,
+          "roomType": "reception",
+          "doors": [
+            "north",
+            "west"
+          ],
+          "sceneIds": [
+            "S31",
+            "F31"
+          ]
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "corridor-segment",
+      "baseId": "corridor-segment",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('corridor-segment')",
+      "options": {
+        "width": 16,
+        "depth": 3.6
+      },
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "corridor-segment",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -2,
+          -0.26,
+          -1.885
+        ],
+        "max": [
+          2,
+          0.54,
+          1.885
+        ],
+        "sizeXYZ": [
+          4,
+          0.8,
+          3.77
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        4,
+        3.6
+      ],
+      "declaredHeight": 0.56,
+      "geometry": {
+        "triangles": 280,
+        "meshes": 6,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#46594e",
+          "#486252",
+          "#b18a54",
+          "#c3b99c",
+          "#c9dbb0"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "explicit-static-boxes",
+        "localBoxes": [
+          {
+            "minX": -2,
+            "maxX": 2,
+            "minY": 0,
+            "maxY": 0.5,
+            "minZ": -1.875,
+            "maxZ": -1.725
+          },
+          {
+            "minX": -2,
+            "maxX": 2,
+            "minY": 0,
+            "maxY": 0.5,
+            "minZ": 1.725,
+            "maxZ": 1.875
+          }
+        ]
+      },
+      "assetKey": "ep-01/corridor-segment",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "from": "maintenance",
+          "to": "return",
+          "position": [
+            -8,
+            0,
+            -16
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "return",
+          "to": "control",
+          "position": [
+            8,
+            0,
+            -16
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "archive",
+          "to": "gallery",
+          "position": [
+            -8,
+            0,
+            0
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "gallery",
+          "to": "office",
+          "position": [
+            8,
+            0,
+            0
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "garden",
+          "to": "foyer",
+          "position": [
+            -8,
+            0,
+            16
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "foyer",
+          "to": "reception",
+          "position": [
+            8,
+            0,
+            16
+          ],
+          "width": 16,
+          "depth": 3.6
+        },
+        {
+          "from": "maintenance",
+          "to": "archive",
+          "position": [
+            -16,
+            0,
+            -8
+          ],
+          "width": 3.6,
+          "depth": 16
+        },
+        {
+          "from": "archive",
+          "to": "garden",
+          "position": [
+            -16,
+            0,
+            8
+          ],
+          "width": 3.6,
+          "depth": 16
+        },
+        {
+          "from": "return",
+          "to": "gallery",
+          "position": [
+            0,
+            0,
+            -8
+          ],
+          "width": 3.6,
+          "depth": 16
+        },
+        {
+          "from": "gallery",
+          "to": "foyer",
+          "position": [
+            0,
+            0,
+            8
+          ],
+          "width": 3.6,
+          "depth": 16
+        },
+        {
+          "from": "control",
+          "to": "office",
+          "position": [
+            16,
+            0,
+            -8
+          ],
+          "width": 3.6,
+          "depth": 16
+        },
+        {
+          "from": "office",
+          "to": "reception",
+          "position": [
+            16,
+            0,
+            8
+          ],
+          "width": 3.6,
+          "depth": 16
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "courtyard-path",
+      "baseId": "courtyard-path",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('courtyard-path')",
+      "options": {},
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "courtyard-path",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -5.45,
+          -0.005,
+          -4.45
+        ],
+        "max": [
+          5.45,
+          0.015,
+          4.45
+        ],
+        "sizeXYZ": [
+          10.9,
+          0.02,
+          8.9
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        10.9,
+        8.9
+      ],
+      "declaredHeight": 0.02,
+      "geometry": {
+        "triangles": 1372,
+        "meshes": 1,
+        "sprites": 0,
+        "materialColors": [
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "visual-only",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/courtyard-path",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "garden",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "coordinates": "room-local"
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "water-channel",
+      "baseId": "water-channel",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('water-channel')",
+      "options": {
+        "width": 0.35,
+        "depth": 7.3
+      },
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "water-channel",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -0.2175,
+          -0.0055,
+          -3.65
+        ],
+        "max": [
+          0.2175,
+          0.035,
+          3.65
+        ],
+        "sizeXYZ": [
+          0.435,
+          0.0405,
+          7.3
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        0.435,
+        7.3
+      ],
+      "declaredHeight": 0.04,
+      "geometry": {
+        "triangles": 112,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#548a88",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "visual-only",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/water-channel",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "garden",
+          "position": [
+            1,
+            0,
+            0
+          ],
+          "coordinates": "room-local"
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "floor-rug",
+      "baseId": "floor-rug",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('floor-rug')",
+      "options": {
+        "width": 4,
+        "depth": 2.4,
+        "tone": "rust"
+      },
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "floor-rug",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -2,
+          0.002,
+          -1.2
+        ],
+        "max": [
+          2,
+          0.0375,
+          1.2
+        ],
+        "sizeXYZ": [
+          4,
+          0.0355,
+          2.4
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        4,
+        2.4
+      ],
+      "declaredHeight": 0.04,
+      "geometry": {
+        "triangles": 112,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#243b37",
+          "#9f5844",
+          "#c6aa78"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "visual-only",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/floor-rug",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "office",
+          "position": [
+            0,
+            0,
+            1
+          ],
+          "options": {
+            "width": 4,
+            "depth": 2.4,
+            "tone": "rust"
+          }
+        },
+        {
+          "roomId": "foyer",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "options": {
+            "width": 4,
+            "depth": 4,
+            "tone": "green"
+          }
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "service-strip",
+      "baseId": "service-strip",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('service-strip')",
+      "options": {
+        "width": 8,
+        "depth": 0.8
+      },
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "service-strip",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          -4,
+          0.005,
+          -0.4
+        ],
+        "max": [
+          4,
+          0.042,
+          0.4
+        ],
+        "sizeXYZ": [
+          8,
+          0.037,
+          0.8
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        8,
+        0.8
+      ],
+      "declaredHeight": 0.045,
+      "geometry": {
+        "triangles": 532,
+        "meshes": 3,
+        "sprites": 0,
+        "materialColors": [
+          "#46594e",
+          "#b18a54",
+          "#c3b99c"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "visual-only",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/service-strip",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "control",
+          "position": [
+            0,
+            0,
+            2.5
+          ],
+          "coordinates": "room-local"
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
+    },
+    {
+      "id": "wheel-trail",
+      "baseId": "wheel-trail",
+      "family": "environment",
+      "sourcePath": "public/assets/episodes/ep-01/environment.mjs",
+      "constructor": "createMuseumEnvironment(core).create('wheel-trail')",
+      "options": {},
+      "revision": "museum-environment-2026-10-28",
+      "source": "project-authored procedural geometry",
+      "createdAt": "2026-10-28",
+      "license": "project-license-not-set",
+      "approval": "approved-in-game",
+      "integratedIn": "public/museum-scene.mjs",
+      "galleryId": "wheel-trail",
+      "states": [
+        "static"
+      ],
+      "pivot": "floor-center",
+      "axes": {
+        "up": "+Y",
+        "forward": "+Z"
+      },
+      "bounds": {
+        "min": [
+          0.267127,
+          0.052,
+          -0.382226
+        ],
+        "max": [
+          0.752873,
+          0.058,
+          0.462226
+        ],
+        "sizeXYZ": [
+          0.485747,
+          0.006,
+          0.844452
+        ],
+        "units": "world-unit",
+        "measurement": "Constructor default options; before scene transforms. Room-specific geometry and doorway combinations are recorded in contexts."
+      },
+      "declaredFootprintXZ": [
+        0.8,
+        0.9
+      ],
+      "declaredHeight": 0.06,
+      "geometry": {
+        "triangles": 224,
+        "meshes": 1,
+        "sprites": 0,
+        "materialColors": [
+          "#5b8984"
+        ]
+      },
+      "parts": {},
+      "collision": {
+        "mode": "visual-only",
+        "localBoxes": []
+      },
+      "assetKey": "ep-01/wheel-trail",
+      "storyReferences": [
+        "docs/narrative/visual-direction.md"
+      ],
+      "contexts": [
+        {
+          "roomId": "gallery",
+          "position": [
+            0,
+            0,
+            0
+          ],
+          "coordinates": "room-local"
+        }
+      ],
+      "review": {
+        "targetRevision": "museum-environment-2026-10-28",
+        "result": "passed",
+        "evidence": [
+          "assets/episodes/ep-01/review/environment-upgrade/review.md",
+          "assets/episodes/ep-01/review/environment-upgrade/verification.json",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-front.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-rear.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-side.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/catalogue-top.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-shell-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/corridor-segment-turntable.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/room-views.jpg",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-gallery.png",
+          "assets/episodes/ep-01/review/environment-upgrade/gameplay-rotated.png"
+        ]
+      }
     }
   ],
   "episodeBrief": "assets/episodes/ep-01/brief.md",
   "episodeId": "ep-01",
-  "styleRevision": "series-art-v1"
+  "styleRevision": "series-art-v1",
+  "environmentRevision": "museum-environment-2026-10-28"
 }

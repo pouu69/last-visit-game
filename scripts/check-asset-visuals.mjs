@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { startMuseumGame } from './browser-game-entry.mjs';
 
 // Usage: node scripts/check-asset-visuals.mjs URL OUTPUT_DIR [PLAYWRIGHT_NODE_MODULES]
 const base = process.argv[2] ?? 'http://127.0.0.1:5197';
@@ -109,7 +110,7 @@ try {
   if(report.reducedMotion.poses.moroTilt!==0 || report.reducedMotion.poses.antenna!==0)throw new Error('Reduced motion did not reset decorative poses');
   await page.evaluate(()=>window.assetScene.dispose());
   await page.goto(base);
-  await page.locator('#team-buttons button').first().click();
+  await startMuseumGame(page);
   await page.waitForFunction(()=>!document.getElementById('game').hidden);
   await page.screenshot({path:resolve(output,'game-introduction.png')});
   report.app = {text:(await page.locator('body').innerText()).slice(0,1800),diagnostics:await page.evaluate(()=>window.museumDiagnostics())};

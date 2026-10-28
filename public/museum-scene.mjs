@@ -13,6 +13,7 @@ import { museumKeyboardKey } from './museum-keyboard.mjs';
 import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
+import { createMuseumEnvironment } from './assets/episodes/ep-01/environment.mjs';
 
 function moroIsRevealed({ sceneId, storyVersion, hotspots = [] }) {
   if (sceneId === 'O00') return false;
@@ -284,18 +285,19 @@ export function mountMuseum(
     parent.add(mesh);
     return mesh;
   }
-  const box = (parent, finish, position, scale, rotation) =>
-    solid(parent, unitBox, finish, position, scale, rotation);
   // Asset constructors own local geometry, live pivots and explicit collision proxies.
   const assetCore = createAssetCore(THREE, {
     geometry, material, paint, glass, signal, waterPaint, contact,
   });
   const propKit = createMuseumProps(assetCore);
   const actorKit = createMuseumActors(assetCore);
+  const environmentKit = createMuseumEnvironment(assetCore);
+  const environmentIds = new Set(environmentKit.ids);
   const screenPaint = actorKit.screenMaterial;
   const propIds = new Set(propKit.ids);
   function makeAsset(id, position, parent = scene, options = {}) {
-    const asset = (propIds.has(id) ? propKit : actorKit).create(id, options);
+    const kit = environmentIds.has(id) ? environmentKit : propIds.has(id) ? propKit : actorKit;
+    const asset = kit.create(id, options);
     if (position) asset.group.position.set(...position);
     parent.add(asset.group);
     return asset;
@@ -305,11 +307,16 @@ export function mountMuseum(
   makeAsset('courtyard', [-2.5, 0, 2.32], gardenRoot);
   const storageAsset = makeAsset('storage-bays', [2.55, 0, 0.1], returnRoom);
   const water = storageAsset.parts.water;
-  const boat = makeAsset('paper-boat', [2.53, 0.67, 0.75], returnRoom).group;
-  const damagedBoat = makeAsset('paper-boat', [2.53, 0.67, 0.75], returnRoom, { damaged: true }).group;
+  // Measured top faces of the storage pad and packing paper, including the table's root offset.
+  const storageSurfaceY = 0.64, packingSurfaceY = 0.06 + 0.8125;
+  const boatKeelY = 0.0110087, supportSeparationY = 0.0005;
+  const boatStorageY = storageSurfaceY - boatKeelY + supportSeparationY;
+  const ledgerStorageY = storageSurfaceY + supportSeparationY;
+  const boat = makeAsset('paper-boat', [2.53, boatStorageY, 0.75], returnRoom).group;
+  const damagedBoat = makeAsset('paper-boat', [2.53, boatStorageY, 0.75], returnRoom, { damaged: true }).group;
   for (const prop of [boat, damagedBoat]) prop.rotation.y = -0.12;
-  const ledger = makeAsset('ledger', [2.53, 0.68, -1.02], returnRoom).group;
-  const blurredLedger = makeAsset('ledger', [2.53, 0.68, -1.02], returnRoom, { blurred: true }).group;
+  const ledger = makeAsset('ledger', [2.53, ledgerStorageY, -1.02], returnRoom).group;
+  const blurredLedger = makeAsset('ledger', [2.53, ledgerStorageY, -1.02], returnRoom, { blurred: true }).group;
   const sealedBoxes = [0.75, -1.02].map((z) =>
     makeAsset('sealed-cover', [2.53, 0.63, z], returnRoom).group
   );
@@ -390,7 +397,7 @@ export function mountMuseum(
   const puzzleBoard = makeAsset('stamp-set', [-2.9, 1.04, -1.3]).group;
   const keyBundle = makeAsset('key-bundle', [-2.58, 1.05, -1.2]).group;
   keyBundle.rotation.y = 0.4;
-  const labelAsset = makeAsset('layered-label', [-2.9, 1.02, -1.3]);
+  const labelAsset = makeAsset('layered-label', [-2.9, 1.023, -1.3]);
   const layeredLabel = labelAsset.group;
   const labelFlap = labelAsset.parts.flap;
   const controlAsset = makeAsset('control-panel', [0.9, 0.05, 1.65]);
@@ -402,27 +409,16 @@ export function mountMuseum(
   returnControlPanel.position.set(-0.2, 0.05, -13.7);
   scene.add(returnControlPanel);
   const packingTable = makeAsset('packing-table', [2.5, 0.06, 2.65]).group;
+  packingTable.scale.x = 1.55;
   const preservationKit = makeAsset('preservation-kit', [0, 0.82, 0], packingTable).group;
-  const exitDoor = makeAsset('exit-door', [4.2, 0.05, 2.6]).group;
+  preservationKit.scale.x = 1 / packingTable.scale.x;
+  const exitDoor = makeAsset('exit-door', [4.2, 0.05, 3.8]).group;
   exitDoor.rotation.y = -0.5;
   const maintenanceExit = exitDoor.clone(true);
-  maintenanceExit.position.set(-12.2, 0.05, -13.4);
+  maintenanceExit.position.set(-12.2, 0.05, -12.2);
   scene.add(maintenanceExit);
 
-  const trailPaint = material('#5b8984', {
-    transparent: true,
-    opacity: 0.4,
-    depthWrite: false,
-  });
-  for (let i = 0; i < 4; i++)
-    for (const x of [0.3, 0.72])
-      box(
-        staticRoot,
-        trailPaint,
-        [x, 0.055, 0.4 - i * 0.24],
-        [0.055, 0.006, 0.12],
-        [0, -0.1, 0]
-      );
+  makeAsset('wheel-trail', [0, 0, 0], staticRoot);
   const selectionPaint = new THREE.LineBasicMaterial({
     color: '#f1cf86',
     transparent: true,
@@ -438,136 +434,35 @@ export function mountMuseum(
   selectionOutline.renderOrder = 5;
   scene.add(selectionOutline);
 
-  // Geometry and collision share the same room and corridor rectangles.
+  // Architecture uses the same authored floor/map dimensions as movement and arrival.
   const rooms = {};
-  const roomColors = {
-    gallery: paint.tile,
-    maintenance: paint.dark,
-    archive: paint.edge,
-    garden: paint.green,
-    office: paint.wood,
-    return: paint.ink,
-    control: paint.dark,
-    foyer: paint.plaster,
-    reception: paint.edge,
-  };
   for (const room of ROOMS) {
-    const group = new THREE.Group();
-    group.position.set(room.x, 0, room.z);
-    rooms[room.id] = group;
-    scene.add(group);
-    box(group, roomColors[room.id], [0, -0.14, 0], [room.width, 0.24, room.depth]);
+    const wrapper = new THREE.Group();
+    wrapper.position.set(room.x, 0, room.z);
+    rooms[room.id] = wrapper;
+    scene.add(wrapper);
     const linked = CONNECTIONS.filter((pair) => pair.includes(room.id)).map((pair) =>
       ROOMS.find((other) => other.id === pair.find((id) => id !== room.id))
     );
-    for (const side of ['north', 'south', 'west', 'east']) {
+    const doors = ['north', 'south', 'west', 'east'].filter((side) => {
       const horizontal = side === 'north' || side === 'south';
       const sign = side === 'north' || side === 'west' ? -1 : 1;
-      const length = horizontal ? room.width : room.depth;
-      const doorway = linked.some((other) =>
-        horizontal
-          ? other.x === room.x && Math.sign(other.z - room.z) === sign
-          : other.z === room.z && Math.sign(other.x - room.x) === sign
-      );
-      const wallHeight = side === 'north' ? 1.5 : 0.65;
-      const pieces = doorway
-        ? [
-            [-(length + 3.6) / 4, (length - 3.6) / 2],
-            [(length + 3.6) / 4, (length - 3.6) / 2],
-          ]
-        : [[0, length]];
-      for (const [center, span] of pieces) {
-        const pos = horizontal
-          ? [center, wallHeight / 2, (sign * room.depth) / 2]
-          : [(sign * room.width) / 2, wallHeight / 2, center];
-        const size = horizontal ? [span, wallHeight, 0.18] : [0.18, wallHeight, span];
-        box(group, room.id === 'garden' ? paint.wood : paint.plaster, pos, size);
-        box(
-          group,
-          paint.brass,
-          [pos[0], wallHeight + 0.025, pos[2]],
-          [size[0] + 0.04, 0.05, size[2] + 0.04]
-        );
-      }
-      if (doorway) {
-        const boundary = (sign * (horizontal ? room.depth : room.width)) / 2;
-        box(
-          group,
-          paint.brass,
-          horizontal ? [0, 0.015, boundary] : [boundary, 0.015, 0],
-          horizontal ? [3.5, 0.025, 0.18] : [0.18, 0.025, 3.5]
-        );
-        // Posts sit outside the shared 3.6-unit passage; the walking footprint stays unchanged.
-        for (const edge of [-1.94, 1.94]) {
-          box(
-            group,
-            paint.dark,
-            horizontal ? [edge, 1.05, boundary] : [boundary, 1.05, edge],
-            horizontal ? [0.22, 2.1, 0.3] : [0.3, 2.1, 0.22]
-          );
-          box(
-            group,
-            paint.brass,
-            horizontal ? [edge, 0.22, boundary] : [boundary, 0.22, edge],
-            [0.32, 0.44, 0.32]
-          );
-        }
-        box(
-          group,
-          paint.dark,
-          horizontal ? [0, 2.14, boundary] : [boundary, 2.14, 0],
-          horizontal ? [4.1, 0.12, 0.28] : [0.28, 0.12, 4.1]
-        );
-        box(
-          group,
-          roomColors[room.id],
-          horizontal ? [0, 2.17, boundary] : [boundary, 2.17, 0],
-          horizontal ? [0.6, 0.16, 0.31] : [0.31, 0.16, 0.6]
-        );
-      }
-    }
-    const roomLabel = inscription([room.label], '#29443f', '#f0e4bd', 42);
-    solid(
-      group,
-      geometry(new THREE.PlaneGeometry(3.2, 1.6)),
-      roomLabel,
-      [0, 0.025, 3.8],
-      [1, 1, 1],
-      [-Math.PI / 2, 0, 0]
-    );
-    if (room.id !== 'garden')
-      for (let x = -5; x <= 5; x++) box(group, paint.fold, [x, 0.001, 0], [0.012, 0.008, 9.8]);
+      return linked.some((other) => horizontal
+        ? other.x === room.x && Math.sign(other.z - room.z) === sign
+        : other.z === room.z && Math.sign(other.x - room.x) === sign);
+    });
+    // The wrapper stays collider-free so its furniture children retain their own proxies.
+    makeAsset('room-shell', [0, 0, 0], wrapper, {
+      width: room.width, depth: room.depth, roomType: room.id, doors,
+      labelMaterial: inscription([room.label], '#29443f', '#f0e4bd', 42),
+    });
   }
   const corridors = new THREE.Group();
   scene.add(corridors);
-  for (const corridor of CORRIDORS) {
-    box(
-      corridors,
-      paint.ink,
-      [corridor.x, -0.17, corridor.z],
-      [corridor.width, 0.18, corridor.depth]
-    );
-    const horizontal = corridor.width > corridor.depth;
-    const span = horizontal ? 4 : 6;
-    for (const side of [-1, 1])
-      box(
-        corridors,
-        paint.edge,
-        horizontal
-          ? [corridor.x, 0.25, corridor.z + side * 1.8]
-          : [corridor.x + side * 1.8, 0.25, corridor.z],
-        horizontal ? [span, 0.5, 0.15] : [0.15, 0.5, span]
-      );
-    for (const side of [-1, 1])
-      box(
-        corridors,
-        signal,
-        horizontal
-          ? [corridor.x, 0.01, corridor.z + side * 1.5]
-          : [corridor.x + side * 1.5, 0.01, corridor.z],
-        horizontal ? [span, 0.02, 0.025] : [0.025, 0.02, span]
-      );
-  }
+  for (const corridor of CORRIDORS)
+    makeAsset('corridor-segment', [corridor.x, 0, corridor.z], corridors, {
+      width: corridor.width, depth: corridor.depth,
+    });
   // The permanent sets remain visible when the story moves to another room.
   staticRoot.position.set(0, 0, 0);
   for (const x of [-4, -2, 2, 4])
@@ -577,34 +472,33 @@ export function mountMuseum(
   returnRoom.position.set(0, 0, -16);
   archiveShelf.position.set(-20.5, 0.08, -3.3);
   puzzleBoard.position.set(-18.9, 1.04, -1.3);
-  layeredLabel.position.set(-18.9, 1.02, -1.3);
+  layeredLabel.position.set(-18.9, 1.023, -1.3);
   keyBundle.position.set(13.42, 1.05, -1.2);
-  valveStation.position.set(-17.3, 0.05, 18.05);
+  valveStation.position.set(-16.45, 0.05, 17.5);
   controlPanel.position.set(16.9, 0.05, -14.35);
-  exitDoor.position.set(4.2, 0.05, 18.6);
+  exitDoor.position.set(4.2, 0.05, 19.8);
   for (const x of [-4, -2, 2, 4]) {
     const shelf = makeAsset('archive-shelf', [x, 0, -3.9], rooms.archive).group;
     shelf.scale.set(1.5, 1.2, 1.1);
   }
   for (const z of [-3, -1, 1, 3])
-    for (const x of [-4, 4]) makeAsset('pipe-fixture', [x, 0, z], rooms.maintenance);
+    for (const x of [-4, 4])
+      makeAsset('pipe-fixture', [x === 4 && (z === 1 || z === 3) ? 5.65 : x, 0, z], rooms.maintenance);
   const maintenanceCabinet = makeAsset('cupboard', [0, 0, -3.5], rooms.maintenance).group;
   maintenanceCabinet.scale.set(1.4, 0.6, 1.5);
-  for (let x = -5; x <= 5; x++)
-    for (let z = -4; z <= 4; z++)
-      if ((x + z) % 2 === 0) box(rooms.garden, paint.edge, [x, 0.005, z], [0.9, 0.02, 0.9]);
-  box(rooms.garden, waterPaint, [1, 0.025, 0], [0.35, 0.02, 7.3]);
-  box(rooms.office, paint.rust, [0, 0.015, 1], [4, 0.025, 2.4]);
+  makeAsset('courtyard-path', [0, 0, 0], rooms.garden);
+  makeAsset('water-channel', [1, 0, 0], rooms.garden);
+  makeAsset('floor-rug', [0, 0, 1], rooms.office, { width: 4, depth: 2.4, tone: 'rust' });
   makeAsset('office-desk', [-2.9, 0, -1.35], rooms.office);
   makeAsset('cupboard', [2, 0, -3.7], rooms.office);
-  box(rooms.control, paint.edge, [0, 0.02, 2.5], [8, 0.03, 0.8]);
+  makeAsset('service-strip', [0, 0, 2.5], rooms.control);
   for (const x of [-4, 4]) {
     const pipe = makeAsset('pipe-fixture', [x, 0, -3.4], rooms.control).group;
     pipe.scale.set(2.5, 1.05, 2.5);
   }
   makeAsset('reception-counter', [-1.7, 0, -2.6], rooms.reception);
   for (const x of [-4, 4]) makeAsset('bench', [x, 0, 0], rooms.foyer);
-  box(rooms.foyer, paint.green, [0, 0.02, 0], [4, 0.03, 4]);
+  makeAsset('floor-rug', [0, 0, 0], rooms.foyer, { width: 4, depth: 4, tone: 'green' });
   const mapFace = inscription(
     ['박물관 안내', '정비 · 반환 · 인양', '기록 · 전시 · 관장', '안뜰 · 로비 · 접수'],
     '#e4dfc8', '#29443f', 28
@@ -613,7 +507,7 @@ export function mountMuseum(
   makeAsset('clock', [3.6, 1.2, -4.82], rooms.office);
   makeAsset('tools-rack', [0, 1.35, -4.82], rooms.maintenance);
   for (const x of [-2.7, -1.4, -0.1])
-    makeAsset('document-tray', [x, 1.45, -2.6], rooms.reception);
+    makeAsset('document-tray', [x, 1.385, -2.6], rooms.reception);
   const invitation = makeAsset('invitation', [0, 1.42, 0.41], mapDesk, {
     faceMaterial: inscription(['야간 관람 초대장', '관장 윤서가 기다립니다'], '#f5ecd4', '#29443f', 32),
   }).group;
@@ -665,45 +559,6 @@ export function mountMuseum(
     [supplies, 1.05, 0.9],
   ])
     solid(group, shadowDisc, contact, [0, -0.045, 0], [w / 2, d / 2, 1], [-Math.PI / 2, 0, 0]);
-
-  // Major surfaces share one thin edge draw per group; tiny parts and transparent glass stay unoutlined.
-  const inkEdges = new THREE.LineBasicMaterial({
-    color: '#233c35',
-    transparent: true,
-    opacity: 0.55,
-    depthWrite: false,
-  });
-  materials.add(inkEdges);
-  const edgeCache = new Map();
-  function outlineMajorSurfaces(group) {
-    const positions = [];
-    const vertex = new THREE.Vector3();
-    for (const object of group.children) {
-      if (!object.isMesh || Array.isArray(object.material) || object.material.transparent)
-        continue;
-      if (!object.geometry.boundingBox) object.geometry.computeBoundingBox();
-      const dimensions = object.geometry.boundingBox
-        .getSize(new THREE.Vector3())
-        .multiply(object.scale)
-        .toArray()
-        .map(Math.abs)
-        .sort((a, b) => b - a);
-      if (dimensions[0] < 0.6 || dimensions[1] < 0.3) continue;
-      if (!edgeCache.has(object.geometry))
-        edgeCache.set(object.geometry, geometry(new THREE.EdgesGeometry(object.geometry, 35)));
-      const edges = edgeCache.get(object.geometry).attributes.position;
-      object.updateMatrix();
-      for (let i = 0; i < edges.count; i++) {
-        vertex.fromBufferAttribute(edges, i).applyMatrix4(object.matrix);
-        positions.push(vertex.x, vertex.y, vertex.z);
-      }
-    }
-    if (!positions.length) return;
-    const shape = geometry(new THREE.BufferGeometry());
-    shape.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
-    group.add(new THREE.LineSegments(shape, inkEdges));
-  }
-  for (const group of Object.values(rooms)) outlineMajorSurfaces(group);
 
   // Repeated model pieces share instances; animated/stateful groups keep local ownership.
   function batch(group) {
@@ -2481,7 +2336,8 @@ export function mountMuseum(
     for (const [roomId, display] of Object.entries(roomRemoteDisplays))
       display.portrait.visible = lateScene && !travel && roomId === currentRoomId;
     invitation.visible = sceneId === 'O00' || travel?.companion === 'yunseo';
-    puzzleBoard.visible = true;
+    // I02 examines the layered title here; P11 replaces it with the stamp board.
+    puzzleBoard.visible = sceneId !== 'I02';
     layeredLabel.visible = sceneId === 'I02';
     keyBundle.visible = true;
     valveWheel.rotation.z = flags.maintenance ? Math.PI / 2 : 0;
@@ -2514,14 +2370,14 @@ export function mountMuseum(
     sealedBoxes[0].visible = flags.boat === 'sealed';
     sealedBoxes[1].visible = flags.record === 'sealed';
     boat.position.set(
-      recoveredBoat ? recoveryRoom.x + 2.1 : 2.53,
-      recoveredBoat ? 0.91 : 0.67,
+      recoveredBoat ? recoveryRoom.x + 1.85 : 2.53,
+      recoveredBoat ? packingSurfaceY - boatKeelY + supportSeparationY : boatStorageY,
       recoveredBoat ? recoveryRoom.z + 2.65 : -15.25
     );
     damagedBoat.position.copy(boat.position);
     ledger.position.set(
-      flags.record === 'intact' ? recoveryRoom.x + 2.95 : 2.53,
-      flags.record === 'intact' ? 0.92 : 0.68,
+      flags.record === 'intact' ? recoveryRoom.x + 3.2 : 2.53,
+      flags.record === 'intact' ? packingSurfaceY + supportSeparationY : ledgerStorageY,
       flags.record === 'intact' ? recoveryRoom.z + 2.65 : -17.02
     );
     if (travel && recoveredBoat) {
@@ -2589,7 +2445,9 @@ export function mountMuseum(
       return {
         mode: contextLost ? 'illustration' : 'webgl',
         assetRevision: MUSEUM_ASSET_REVISION,
-        assetCatalog: [...propKit.ids, ...actorKit.ids],
+        assetCatalog: [...propKit.ids, ...actorKit.ids, ...environmentKit.ids],
+        environmentRevision: environmentKit.revision,
+        environmentCatalog: environmentKit.ids,
         assetInstances: (() => { let count = 0; scene.traverse((o) => { if (o.userData.assetId) count++; }); return count; })(),
         assetState: {
           boat: boat.visible,

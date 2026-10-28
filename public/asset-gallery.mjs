@@ -2,8 +2,13 @@ import * as THREE from './vendor/three.module.js';
 import { createAssetCore, MUSEUM_PALETTE } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
+import { createMuseumEnvironment } from './assets/episodes/ep-01/environment.mjs';
 
 const labels = {
+  'room-shell': ['박물관 방 구조', '공간'], 'corridor-segment': ['연결 복도', '공간'],
+  'courtyard-path': ['안뜰 포장석', '공간'], 'water-channel': ['배수 물길', '공간'],
+  'floor-rug': ['실내 깔개', '공간'], 'service-strip': ['안전 작업 띠', '공간'],
+  'wheel-trail': ['젖은 바퀴 자국', '공간'],
   'exhibit-case': ['빈 유리 진열장', '전시'], 'archive-desk': ['기록 책상과 독서등', '기록'],
   courtyard: ['안뜰 화단과 배수로', '정비'], 'storage-bays': ['반환 보관함과 인양기', '보관'],
   'paper-boat': ['종이배', '증거물'], ledger: ['원본 장부', '증거물'],
@@ -40,8 +45,8 @@ const core = createAssetCore(THREE, {
   waterPaint: material(MUSEUM_PALETTE.water, { transparent: true, opacity: 0.78, roughness: 0.3 }),
   contact: material('#384b3d', { transparent: true, opacity: 0.17, depthWrite: false }),
 });
-const props = createMuseumProps(core), actors = createMuseumActors(core);
-const catalog = [...props.ids, ...actors.ids].map((id) => ({ id, label: labels[id]?.[0] ?? id, family: labels[id]?.[1] ?? '기타' }));
+const props = createMuseumProps(core), actors = createMuseumActors(core), environment = createMuseumEnvironment(core);
+const catalog = [...props.ids, ...actors.ids, ...environment.ids].map((id) => ({ id, label: labels[id]?.[0] ?? id, family: labels[id]?.[1] ?? '기타' }));
 catalog.push({ id: 'paper-boat-damaged', label: '종이배 · 손상', family: '증거물', source: 'paper-boat', options: { damaged: true } });
 catalog.push({ id: 'ledger-blurred', label: '원본 장부 · 번짐', family: '증거물', source: 'ledger', options: { blurred: true } });
 const lookup = new Map(catalog.map((entry) => [entry.id, entry]));
@@ -104,7 +109,8 @@ function select(id) {
   const entry = lookup.get(id);
   if (!entry) throw new RangeError(`Unknown asset: ${id}`);
   if (!cache.has(id)) {
-    const library = actors.ids.includes(entry.source ?? id) ? actors : props;
+    const sourceId = entry.source ?? id;
+    const library = environment.ids.includes(sourceId) ? environment : actors.ids.includes(sourceId) ? actors : props;
     cache.set(id, library.create(entry.source ?? id, entry.options ?? {}));
   }
   if (active) active.group.removeFromParent();
