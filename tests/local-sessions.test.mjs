@@ -40,6 +40,28 @@ function inspect(game, session) {
   });
 }
 
+test('new games assign nicknames that survive progress, reload and file import', options, () => {
+  const data = fixture();
+  const game = createLocalSessions(data);
+  const first = game.create(1);
+  const second = game.create(1);
+  const name = first.view.playerName;
+  assert.match(name, /^[가-힣]{2,12}$/);
+  // The fixture supplies different random-ID seeds without a probabilistic assertion.
+  assert.notEqual(second.view.playerName, name);
+  assert.equal(inspect(game, first).view.playerName, name);
+  const reloaded = createLocalSessions(data);
+  assert.equal(reloaded.get(first.sessionId).view.playerName, name);
+  const exported = reloaded.save(first.sessionId).record;
+  assert.equal(exported.playerName, name);
+  const imported = reloaded.restore(null, exported);
+  assert.notEqual(imported.sessionId, first.sessionId);
+  assert.equal(imported.view.playerName, name);
+  assert.throws(() => reloaded.restore(null, { ...exported, playerName: '바다' }), {
+    code: 'CHECKSUM_MISMATCH',
+  });
+});
+
 test(
   'browser records replay real progress, isolate teams and reject stale tab events',
   options,

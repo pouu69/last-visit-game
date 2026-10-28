@@ -301,7 +301,7 @@ export function createGame(teamId, options = {}) {
   if (![1, 2, 3].includes(teamId))
     return failure('INVALID_TEAM', 'teamId는 1, 2, 3 중 하나로 지정해 주세요.');
   if (
-    !hasOnly(options, ['mode', 'storyVersion']) ||
+    !hasOnly(options, ['mode', 'storyVersion', 'playerName']) ||
     !['legacy', 'investigation', 'map', undefined].includes(options.mode)
   ) {
     return failure(
@@ -309,6 +309,11 @@ export function createGame(teamId, options = {}) {
       'mode는 map, investigation 또는 legacy로 지정해 주세요. 새 게임은 map을 사용합니다.'
     );
   }
+  if (
+    options.playerName !== undefined &&
+    (typeof options.playerName !== 'string' || !/^[가-힣]{2,12}$/.test(options.playerName))
+  )
+    return failure('INVALID_PLAYER_NAME', '닉네임은 한글 2~12자로 지정해 주세요.');
   const mode = options.mode ?? 'map';
   const storyVersion = options.storyVersion ?? STORY_VERSIONS[mode];
   if (
@@ -326,6 +331,7 @@ export function createGame(teamId, options = {}) {
       mode,
       currentRoomId: sceneRoomId(firstSceneId),
       teamId,
+      ...(options.playerName !== undefined ? { playerName: options.playerName } : {}),
       revision: 0,
       flags: { ...INITIAL_FLAGS },
       history: [],
@@ -1235,6 +1241,7 @@ export function publicView(state) {
     : null;
   return freezeOwned({
     teamId: state.teamId,
+    ...(state.playerName !== undefined ? { playerName: state.playerName } : {}),
     mode: state.mode,
     storyVersion: state.storyVersion,
     currentRoomId: state.currentRoomId,
@@ -1308,6 +1315,7 @@ export function saveGame(state) {
     storyVersion: state.storyVersion,
     teamId: state.teamId,
     events: state.events,
+    ...(state.playerName !== undefined ? { playerName: state.playerName } : {}),
   };
   if (new TextEncoder().encode(JSON.stringify(payload)).length > LIMITS.saveBytes)
     return failure(
@@ -1320,7 +1328,7 @@ export function saveGame(state) {
 /** Bounded replay performs no I/O. An unfinished legacy AI request is recorded as cancelled. */
 export function restoreGame(record) {
   if (
-    !hasOnly(record, ['version', 'storyVersion', 'teamId', 'events', 'checksum']) ||
+    !hasOnly(record, ['version', 'storyVersion', 'teamId', 'events', 'checksum', 'playerName']) ||
     record.version !== SAVE_VERSION ||
     ![...Object.values(STORY_VERSIONS), PREVIOUS_MAP_VERSION].includes(record.storyVersion)
   ) {
@@ -1345,6 +1353,7 @@ export function restoreGame(record) {
     storyVersion: record.storyVersion,
     teamId: record.teamId,
     events: record.events,
+    ...(record.playerName !== undefined ? { playerName: record.playerName } : {}),
   };
   let serialized;
   try {
@@ -1366,6 +1375,7 @@ export function restoreGame(record) {
       '저장 기록의 무결성 값이 다릅니다. 수정하지 않은 원래 기록을 사용해 주세요.'
     );
   const created = createGame(record.teamId, {
+    ...(record.playerName !== undefined ? { playerName: record.playerName } : {}),
     mode:
       record.storyVersion === PREVIOUS_MAP_VERSION
         ? 'map'

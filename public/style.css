@@ -459,7 +459,8 @@ dialog::backdrop {
 }
 .message .speaker {
   display: block;
-  font-size: 10px;
+  font-size: 14px;
+  font-weight: 650;
   letter-spacing: 0.06em;
   color: var(--copper);
   margin-bottom: 6px;
@@ -472,8 +473,9 @@ dialog::backdrop {
 .message.narrator {
   font-family: var(--serif);
   color: #bac6ae;
-  padding-left: 15px;
-  border-left: 1px solid #829770;
+  padding: 13px 18px;
+  border-left: 3px solid #a7b98b;
+  background: #0a1b1538;
 }
 .message.team {
   margin-left: 25px;

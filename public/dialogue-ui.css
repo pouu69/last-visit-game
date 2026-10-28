@@ -89,12 +89,14 @@ body:not([data-screen='game']) #observation-feedback {
 
 #game .dialogue-shell #current-speaker {
   margin: 0;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  color: #e0c48e;
-  font-size: 12px;
-  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border: 1px solid #c4ad795c;
+  border-left: 3px solid #d5bc86;
+  background: #7b795d3d;
+  color: #f0dfb3;
+  font-size: 14px;
+  font-weight: 650;
+  letter-spacing: 0.06em;
   line-height: 1.5;
 }
 
@@ -123,7 +125,21 @@ body:not([data-screen='game']) #observation-feedback {
 #game .dialogue-shell #current-message.narrator,
 #game .dialogue-shell #current-message.document {
   font-family: var(--serif);
-  font-size: 17px;
+  font-size: 18px;
+}
+
+#game .dialogue-shell[data-kind='narration'] #current-speaker {
+  color: #d8e0c8;
+  border-color: #a7b98b70;
+  border-left-color: #a7b98b;
+  background: #a7b98b12;
+}
+
+#game .dialogue-shell[data-kind='narration'] #current-message {
+  padding: 10px 14px;
+  border-left: 3px solid #a7b98b;
+  background: #0a1b1538;
+  color: #d4d9c2;
 }
 
 #game .dialogue-shell #current-message.document {

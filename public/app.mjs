@@ -2,6 +2,7 @@ import { mountMuseum } from './museum-scene.mjs';
 import { mountInvestigation } from './investigation-ui.mjs';
 import { ROOMS, CORRIDORS, CONNECTIONS } from './museum-map.mjs';
 import { createLocalSessions } from '../src/local-sessions.mjs';
+import { playerNameForSession } from '../src/player-name.mjs';
 import { openingContent } from '../src/content/opening.mjs';
 import { mountInvitationIntro } from './invitation-intro.mjs';
 import { gameAudio } from './audio.mjs';
@@ -765,6 +766,8 @@ function messageKind(speaker) {
   if (speaker === '서술') return { kind: 'narration', label: '내레이션' };
   if (speaker === '게임' || speaker === '안내') return { kind: 'system', label: '진행 안내' };
   if (DOCUMENT_SPEAKERS.has(speaker)) return { kind: 'document', label: `단서 · ${speaker}` };
+  if (speaker === '팀')
+    return { kind: 'dialogue', label: view.playerName ?? playerNameForSession(sessionId) };
   return { kind: 'dialogue', label: speaker ?? '' };
 }
 function renderMessages(sceneChanged, followLatest) {

@@ -6,6 +6,7 @@ import {
   restoreGame,
   LIMITS,
 } from './playbook.mjs';
+import { playerNameForSession } from './player-name.mjs';
 
 const RECORD_PREFIX = 'museum-local-record-v1:';
 const STORAGE_WARNING =
@@ -143,8 +144,10 @@ export function createLocalSessions({ storage = null, createId = randomId } = {}
 
   return Object.freeze({
     create(teamId) {
-      const { state } = checked(createGame(teamId));
       const sessionId = unusedId();
+      const { state } = checked(createGame(teamId, {
+        playerName: playerNameForSession(sessionId),
+      }));
       return { sessionId, ...response(persist(sessionId, state)) };
     },
     get(id) {
