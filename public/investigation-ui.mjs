@@ -92,8 +92,13 @@ export function mountInvestigation(
   let busy = false;
   let visible = false;
   let reportedPanel = false;
+  let evidenceExpanded = !window.matchMedia('(max-width: 760px)').matches;
 
   function redraw(focusId = null) {
+    if (panel === 'deduction') {
+      const evidence = root.querySelector('.deduction-evidence');
+      if (evidence) evidenceExpanded = evidence.open;
+    }
     const scrollTop =
       root.dataset.panel === panel
         ? root.querySelector('.investigation-panel')?.scrollTop ?? 0
@@ -115,7 +120,17 @@ export function mountInvestigation(
   function showPanel(next) {
     panel = panel === next ? null : next;
     confirming = false;
-    redraw(panel ? 'close-panel' : `open-${next}`);
+    redraw(panel ? 'close-panel' : next === 'deduction' ? 'field-primary' : `open-${next}`);
+    if (panel === 'deduction') {
+      const question = root.querySelector('.deduction-question');
+      question?.focus({ preventScroll: true });
+    }
+  }
+
+  function closePanel() {
+    if (!panel || !visible || busy) return false;
+    showPanel(panel);
+    return true;
   }
 
   function edit(next, focusId) {
@@ -128,14 +143,7 @@ export function mountInvestigation(
     const primary = view.exploration?.primaryAction;
     if (!primary || busy) return;
     if (primary.kind === 'deduce') {
-      showPanel('notes');
-      const deductionArea = root.querySelector('.deduction-area');
-      const prompt = deductionArea?.querySelector('h3');
-      if (prompt) {
-        prompt.tabIndex = -1;
-        prompt.focus({ preventScroll: true });
-      }
-      deductionArea?.scrollIntoView({ block: 'start', behavior: 'instant' });
+      showPanel('deduction');
       return;
     }
     if (primary.kind === 'puzzle') {
@@ -164,7 +172,7 @@ export function mountInvestigation(
     container.append(
       element(
         'p',
-        '직접 본 흔적을 나란히 놓아 보세요. 보존한 자료와 장비는 기록장에서 따로 확인할 수 있습니다.',
+        '이 장소에서 직접 확인한 관찰입니다. 언제든 다시 읽을 수 있습니다.',
         'quiet'
       )
     );
@@ -183,23 +191,68 @@ export function mountInvestigation(
         )
       );
     container.append(observations);
+    return container;
+  }
+
+  function reasoning(exploration) {
+    const container = element('div', undefined, 'deduction-area');
     const puzzle = exploration.deduction;
-    if (!puzzle) return container;
+    if (!puzzle) {
+      container.append(element('p', '현장을 더 살펴본 뒤 생각을 모아 보세요.', 'quiet'));
+      return container;
+    }
     const ready = puzzle.requires.every((id) =>
       exploration.hotspots.some((hotspot) => hotspot.id === id && hotspot.visited)
     );
-    const deductionArea = element('section', undefined, 'deduction-area');
-    deductionArea.append(element('p', '단서 대조', 'eyebrow'));
+    const question = element('h3', puzzle.prompt, 'deduction-question');
+    question.tabIndex = -1;
+    container.append(question);
+    if (puzzle.context) container.append(element('p', puzzle.context, 'deduction-context'));
+    container.append(
+      element(
+        'p',
+        puzzle.purpose ?? '확인한 근거로 해석을 정하고, 다음에 할 행동을 함께 결정합니다.',
+        'deduction-purpose'
+      )
+    );
+    const layout = element('div', undefined, 'deduction-layout');
+    const evidence = element('details', undefined, 'deduction-evidence');
+    evidence.setAttribute('aria-label', '이미 확인한 근거');
+    evidence.open = evidenceExpanded;
+    evidence.addEventListener('toggle', () => {
+      if (root.contains(evidence)) evidenceExpanded = evidence.open;
+    });
+    const cards = element('div', undefined, 'deduction-evidence-cards');
+    const related = (puzzle.evidence ?? exploration.observations).filter(
+      (observation) => {
+        const source = observation.sourceHotspotId ?? observation.id;
+        return puzzle.requires.includes(source) && exploration.hotspots.some(
+          (hotspot) => hotspot.id === source && hotspot.visited
+        );
+      }
+    );
+    evidence.append(element('summary', `확인한 근거 ${related.length}개`));
+    for (const observation of related) {
+      const card = element('article', undefined, 'observation-card');
+      card.append(element('h4', observation.label), element('p', observation.text));
+      cards.append(card);
+    }
+    evidence.append(cards);
+    const interpretation = element('section', undefined, 'deduction-interpretation');
+    interpretation.setAttribute('aria-label', '팀의 해석');
+    layout.append(evidence, interpretation);
+    container.append(layout);
     if (!ready) {
-      deductionArea.append(
-        element('p', '아직 대조할 관찰이 부족합니다. 표시된 사물을 끝까지 살펴보세요.', 'quiet')
+      interpretation.append(
+        element('p', '현장을 더 살펴본 뒤 생각을 모아 보세요.', 'quiet')
       );
     } else if (exploration.deductionSolved) {
-      deductionArea.append(
-        element('p', '흔적 사이의 관계를 확인했습니다.', 'deduction-complete')
+      interpretation.append(
+        element('p', '근거를 확인했습니다. 이제 다음 행동을 정할 수 있습니다.', 'deduction-complete')
       );
     } else {
-      deductionArea.append(element('h3', puzzle.prompt));
+      interpretation.append(element('h4', '팀의 해석'));
+      const options = element('div', undefined, 'deduction-options');
       for (const option of puzzle.options) {
         const control = button(
           option.label,
@@ -211,13 +264,21 @@ export function mountInvestigation(
           `deduce-${option.id}`
         );
         control.setAttribute('aria-pressed', String(deduction === option.id));
-        deductionArea.append(control);
+        options.append(control);
       }
-      deductionArea.append(
+      interpretation.append(options);
+      interpretation.append(
         unavailable(
           button(
-            '이 해석으로 대조하기',
-            () => act('DEDUCE', { answerId: deduction }),
+            '이 해석 확인',
+            async () => {
+              if (busy || !deduction) return;
+              if (await act('DEDUCE', { answerId: deduction })) {
+                const feedback = root.querySelector('.deduction-feedback');
+                feedback?.focus({ preventScroll: true });
+                feedback?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
+              }
+            },
             'primary',
             'deduce-submit'
           ),
@@ -228,9 +289,22 @@ export function mountInvestigation(
     if (exploration.feedback) {
       const feedback = element('p', exploration.feedback, 'deduction-feedback');
       feedback.setAttribute('role', 'status');
-      deductionArea.append(feedback);
+      feedback.tabIndex = -1;
+      interpretation.append(feedback);
     }
-    container.append(deductionArea);
+    if (exploration.deductionSolved)
+      interpretation.append(
+        button(
+          '다음 행동 정하기',
+          () => {
+            panel = null;
+            redraw();
+            onChoices();
+          },
+          'primary',
+          'deduce-next'
+        )
+      );
     return container;
   }
 
@@ -520,7 +594,10 @@ export function mountInvestigation(
     const primary = exploration.primaryAction;
     const actions = element('div', undefined, 'investigation-actions field-tools-actions');
     if (primary && primary.kind !== 'inspect' && !panel) {
-      dock.append(
+      const entry = element('div', undefined, 'field-action-entry');
+      if (primary.kind === 'deduce' && exploration.deduction?.context)
+        entry.append(element('p', exploration.deduction.context, 'field-action-context'));
+      entry.append(
         button(
           primary.label,
           performPrimaryAction,
@@ -528,6 +605,7 @@ export function mountInvestigation(
           'field-primary'
         )
       );
+      dock.append(entry);
     }
     const notesButton = button(
       '',
@@ -599,18 +677,29 @@ export function mountInvestigation(
     root.append(dock);
     if (!panel) return;
     const sheet = element('section', undefined, 'investigation-panel');
-    sheet.setAttribute('aria-label', panel === 'notes' ? '관찰과 추리' : '퍼즐 조작');
+    const titles = {
+      notes: '관찰 수첩',
+      deduction: exploration.deduction?.title ?? '근거로 추리하기',
+      puzzle: '직접 조작하기',
+    };
+    sheet.setAttribute('aria-labelledby', 'investigation-panel-title');
     const heading = element('div', undefined, 'panel-heading');
+    const title = element('h2', titles[panel]);
+    title.id = 'investigation-panel-title';
     heading.append(
-      element('h2', panel === 'notes' ? '흔적을 맞춰 보기' : '직접 조작하기'),
+      title,
       button('현장으로', () => showPanel(panel), 'text-button', 'close-panel')
     );
-    sheet.append(heading, panel === 'notes' ? notes(exploration) : workbench(exploration));
+    sheet.append(
+      heading,
+      panel === 'notes' ? notes(exploration) : panel === 'deduction' ? reasoning(exploration) : workbench(exploration)
+    );
     root.append(sheet);
   }
 
   return {
     performPrimaryAction,
+    closePanel,
     setBusy(pending) {
       busy = pending;
     },
@@ -624,6 +713,7 @@ export function mountInvestigation(
         panel = null;
         confirming = false;
         deduction = null;
+        evidenceExpanded = !window.matchMedia('(max-width: 760px)').matches;
         answer = next.exploration?.puzzle?.kind === 'path' ? ['entrance'] : [];
       }
       view = next;

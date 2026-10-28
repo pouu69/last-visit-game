@@ -105,6 +105,12 @@
       </div>
     </header>
     <div id="notice" role="status" aria-live="polite"></div>
+    <div id="observation-feedback" role="status" aria-live="polite" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M5 4h10a4 4 0 0 1 4 4v12H9a4 4 0 0 1-4-4V4Zm0 12a4 4 0 0 1 4-4h10M9 7h5" />
+      </svg>
+      <span>관찰 기록 추가됨</span>
+    </div>
     <main>
       <section id="welcome" aria-labelledby="welcome-title">
         <p class="title-kicker">UNBIRTHDAY</p>
@@ -196,6 +202,11 @@
           <div class="dialogue-topline">
             <p id="current-speaker"></p>
             <span id="scene-status"></span>
+            <button id="dialogue-close" type="button" aria-label="대화를 닫고 현장으로 돌아가기" title="현장으로 돌아가기 · Esc" hidden>
+              <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path d="m6 6 12 12M6 18 18 6" />
+              </svg>
+            </button>
           </div>
           <div id="current-message" tabindex="0" aria-live="polite" aria-atomic="true"></div>
           <div id="reading-controls" class="controls"></div>
@@ -239,8 +250,9 @@
         <li>
           <strong>추리와 선택</strong>
           <p>
-            관찰한 사실을 대조하고 퍼즐을 직접 조작합니다. 다음 행동을 정할 때는 얻는 것과
-            감수할 것을 함께 읽고 결정하세요.
+            수첩에서 확인한 관찰을 다시 볼 수 있습니다. 현장에 나타나는 추리·기록 확인 행동은
+            관련 근거와 질문을 함께 보여줍니다. 다음 행동을 정할 때는 얻는 것과 감수할 것을
+            함께 읽고 결정하세요.
           </p>
         </li>
       </ol>

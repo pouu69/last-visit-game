@@ -11,7 +11,9 @@ import {
 import { createT22, transition as transitionT22 } from './game-state.mjs';
 import { topicFor, responseFor } from './t22-dialogue.mjs';
 import { INITIAL_FLAGS, EVIDENCE_IDS, RESOURCE_IDS, applyRoute } from './route-rules.mjs';
-import { investigationFor, evaluatePuzzle, evaluateDeduction } from './investigation.mjs';
+import {
+  investigationFor, evaluatePuzzle, evaluateDeduction, deductionPresentation,
+} from './investigation.mjs';
 import { openingContent } from './content/opening.mjs';
 import { ROOMS, sceneRoomId } from '../public/museum-map.mjs';
 
@@ -33,7 +35,7 @@ export const LIMITS = Object.freeze({
 const ENVELOPE = ['type', 'teamId', 'sceneId', 'revision'];
 const FIELDS = {
   NEXT: [],
-  OPEN_CHOICES: [],
+  OPEN_CHOICES: ['fromObservations'],
   BACK: [],
   CHOOSE: ['choiceId'],
   CONTINUE: [],
@@ -43,8 +45,8 @@ const FIELDS = {
   AI_RESOLVE: ['requestId', 'interpretation', 'replies'],
   AI_FAIL: ['requestId', 'reason'],
   CANCEL: ['requestId'],
-  INSPECT: ['hotspotId'],
-  EXPLORE: [],
+  INSPECT: ['hotspotId', 'resume'],
+  EXPLORE: ['preserveReading'],
   DEDUCE: ['answerId'],
   SOLVE: ['answer'],
   ARRIVE: ['roomId'],
@@ -137,7 +139,10 @@ function reveal(state, template) {
     speaker: template.speaker,
     text: template.text,
   };
-  return { ...state, knownFacts, activeClaimId, messages: [...state.messages, message] };
+  return {
+    ...state, knownFacts, activeClaimId, messages: [...state.messages, message],
+    ...(Object.hasOwn(state, 'currentMessageId') ? { currentMessageId: null } : {}),
+  };
 }
 
 function idlePhase(state) {
@@ -190,6 +195,10 @@ function startSegment(state, segment, phase = 'reading', activeHotspot = null) {
 }
 
 function enterScene(state, sceneId) {
+  if (Object.hasOwn(state, 'currentMessageId')) {
+    const { currentMessageId, ...rest } = state;
+    state = rest;
+  }
   let content = contentFor(sceneId, state.flags, state.history);
   const ending = /^E[1-6]$/.test(sceneId);
   if (ending && state.storyVersion === STORY_VERSION)
@@ -458,6 +467,17 @@ function choiceReadiness(state) {
   return { canChoose: true, blockedReason: null };
 }
 
+function isFirstInvestigation(state) {
+  return state.mode === 'map' && state.storyVersion === STORY_VERSION && state.sceneId === 'S01';
+}
+
+function canPlanInvestigation(state) {
+  return isFirstInvestigation(state) && ['exploring', 'input'].includes(state.phase) &&
+    state.committedChoice === null && state.investigationDefinition.required.every(
+      (id) => state.investigation.visited.includes(id)
+    );
+}
+
 function commitChoice(state, choiceId, event, puzzleResult = null) {
   const before = state.flags;
   const { flags, nextSceneId } = applyRoute(state.sceneId, choiceId, before);
@@ -655,6 +675,8 @@ function transition(state, event) {
   }
 
   if (event.type === 'INSPECT') {
+    if (Object.hasOwn(event, 'resume') && typeof event.resume !== 'boolean')
+      return failure('INVALID_EVENT', 'resume은 true 또는 false여야 합니다.');
     if (!isId(event.hotspotId))
       return failure(
         'INVALID_HOTSPOT',
@@ -687,6 +709,26 @@ function transition(state, event) {
           : [message]
       );
     }
+    const paused = state.investigation.pausedReadings?.[hotspot.id];
+    if (paused) {
+      const pausedReadings = { ...state.investigation.pausedReadings };
+      delete pausedReadings[hotspot.id];
+      state = {
+        ...state,
+        investigation: { ...state.investigation, pausedReadings },
+      };
+      // Changed testimony must use the newly authored branch rather than stale prose.
+      if (event.resume && !state.investigation.visited.includes(hotspot.id) &&
+          JSON.stringify(paused.segment) === JSON.stringify(messages))
+        return commit(state, {
+          ...state,
+          segment: paused.segment,
+          position: paused.position,
+          currentMessageId: paused.messageId,
+          phase: 'reading',
+          investigation: { ...state.investigation, activeHotspot: hotspot.id, feedback: null },
+        }, event);
+    }
     return commit(
       state,
       startSegment(
@@ -703,12 +745,30 @@ function transition(state, event) {
   }
 
   if (event.type === 'EXPLORE') {
+    if (Object.hasOwn(event, 'preserveReading') && typeof event.preserveReading !== 'boolean')
+      return failure('INVALID_EVENT', 'preserveReading은 true 또는 false여야 합니다.');
+    const active = state.investigation.activeHotspot;
+    const pausedReadings =
+      event.preserveReading && state.phase === 'reading' && active &&
+      !state.investigation.visited.includes(active)
+        ? {
+            ...state.investigation.pausedReadings,
+            [active]: {
+              segment: state.segment,
+              position: state.position,
+              messageId: state.currentMessageId ?? state.messages.at(-1).id,
+            },
+          }
+        : null;
     return commit(
       state,
       {
         ...state,
         phase: 'exploring',
-        investigation: { ...state.investigation, activeHotspot: null },
+        investigation: {
+          ...state.investigation, activeHotspot: null,
+          ...(pausedReadings ? { pausedReadings } : {}),
+        },
       },
       event
     );
@@ -779,12 +839,27 @@ function transition(state, event) {
   }
 
   if (event.type === 'OPEN_CHOICES') {
+    if (Object.hasOwn(event, 'fromObservations') && typeof event.fromObservations !== 'boolean')
+      return failure('INVALID_EVENT', 'fromObservations는 true 또는 false여야 합니다.');
     if (state.sceneId === 'O00')
       return failure(
         'VISIT_NOT_A_DECISION',
         '로비에서는 초대장과 윤서의 안내를 확인해 주세요. 첫 팀의 결정은 제1 전시실 조사 뒤에 합니다.'
       );
-    const readiness = choiceReadiness(state);
+    let choiceState = state;
+    if (event.fromObservations) {
+      if (!canPlanInvestigation(state))
+        return failure(
+          'OBSERVATION_PLAN_UNAVAILABLE',
+          '제1 전시실의 관찰을 마친 뒤 조사 방향을 정할 수 있습니다.'
+        );
+      // New UI events use the actual route decision; old replayed events keep their quiz gate.
+      choiceState = {
+        ...state,
+        investigation: { ...state.investigation, deductionSolved: true, feedback: null },
+      };
+    }
+    const readiness = choiceReadiness(choiceState);
     if (!readiness.canChoose)
       return failure('INVESTIGATION_INCOMPLETE', readiness.blockedReason);
     const effects = state.pendingRequest
@@ -796,7 +871,7 @@ function transition(state, event) {
           },
         ]
       : [];
-    let next = state.pendingRequest ? finishRequest(state, 'cancelled') : state;
+    let next = state.pendingRequest ? finishRequest(choiceState, 'cancelled') : choiceState;
     if (state.pendingRequest && state.dialogue) {
       const cancelled = t22Transition(state, {
         ...event,
@@ -1079,14 +1154,19 @@ export function publicView(state) {
       hotspotAvailable(state, hotspot)
   );
   const guidance = definition?.guidance?.[recommended?.id ?? 'ready'];
+  const deductionDisplay = definition?.deduction
+    ? deductionPresentation(state.sceneId, state.messages)
+    : null;
   let primaryAction = null;
   if (definition && state.committedChoice === null) {
     if (recommended)
       primaryAction = { kind: 'inspect', label: recommended.label, hotspotId: recommended.id };
     else if (state.sceneId === 'O00')
       primaryAction = { kind: 'continue', label: '윤서와 제1 전시실로' };
+    else if (isFirstInvestigation(state))
+      primaryAction = { kind: 'choices', label: '조사 방향 정하기' };
     else if (definition.deduction && !state.investigation.deductionSolved)
-      primaryAction = { kind: 'deduce', label: '흔적을 대조하기' };
+      primaryAction = { kind: 'deduce', label: deductionDisplay?.actionLabel ?? '추리하기' };
     else if (definition.puzzle)
       primaryAction = { kind: 'puzzle', label: definition.puzzle.title };
     else primaryAction = { kind: 'choices', label: '다음 행동 정하기' };
@@ -1122,17 +1202,19 @@ export function publicView(state) {
         observations: state.investigation.observations,
         canChoose:
           state.sceneId !== 'O00' && readiness.canChoose && state.committedChoice === null,
+        canPlanInvestigation: canPlanInvestigation(state),
         blockedReason:
           state.committedChoice === null
-            ? readiness.blockedReason
+            ? canPlanInvestigation(state) ? null : readiness.blockedReason
             : '이 장면의 행동을 이미 결정했습니다. 결과를 확인한 뒤 다음으로 이동해 주세요.',
         deduction:
-          definition.deduction &&
+          definition.deduction && !isFirstInvestigation(state) &&
           definition.deduction.requires.every((id) => state.investigation.visited.includes(id))
             ? {
                 prompt: definition.deduction.prompt,
                 options: definition.deduction.options.map(({ id, label }) => ({ id, label })),
                 requires: definition.deduction.requires,
+                ...deductionDisplay,
               }
             : null,
         deductionSolved: state.investigation.deductionSolved,
@@ -1182,6 +1264,9 @@ export function publicView(state) {
       : null,
     chapter: state.content.chapter,
     messages: state.messages,
+    ...(state.currentMessageId
+      ? { currentMessage: state.messages.find((message) => message.id === state.currentMessageId) }
+      : {}),
     choices: state.phase === 'choosing' && !definition?.puzzle ? state.content.choices : [],
     hints: state.content.hints.slice(0, state.hintPosition),
     hintCount: state.content.hints.length,

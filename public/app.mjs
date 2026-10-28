@@ -84,6 +84,8 @@ let sessionEpoch = 0;
 let renderedSession = null;
 let renderedScene = null;
 let renderedMessages = [];
+let renderedCurrentMessage = null;
+let observationFeedbackTimer = null;
 let sessions = {};
 let archivedSessions = [];
 let lastEnteredSession = null;
@@ -438,7 +440,7 @@ function updateMuseum() {
     });
     return;
   }
-  const current = view.messages.at(-1);
+  const current = view.currentMessage ?? view.messages.at(-1);
   museum?.update({
     playthroughId: sessionEpoch,
     sceneId: view.sceneId,
@@ -500,6 +502,16 @@ function notice(message) {
     item.setAttribute('role', 'alert');
     panel.prepend(item);
   }
+}
+function clearObservationFeedback() {
+  window.clearTimeout(observationFeedbackTimer);
+  observationFeedbackTimer = null;
+  $('observation-feedback').hidden = true;
+}
+function showObservationFeedback() {
+  clearObservationFeedback();
+  $('observation-feedback').hidden = false;
+  observationFeedbackTimer = window.setTimeout(clearObservationFeedback, 2600);
 }
 function element(tag, text, className) {
   const item = document.createElement(tag);
@@ -613,6 +625,7 @@ function showGame() {
   cameraExpanded = false;
 }
 function showTeams() {
+  clearObservationFeedback();
   closePanels();
   $('museum-stage').inert = true;
   document.body.dataset.screen = 'welcome';
@@ -632,6 +645,7 @@ function showTeams() {
 }
 async function start(teamId, fresh = false, savedToken = null) {
   if (busy) return false;
+  clearObservationFeedback();
   pendingTalk = null;
   const fromTitle = document.body.dataset.screen === 'welcome' && $('game').hidden;
   const epoch = ++sessionEpoch;
@@ -708,9 +722,14 @@ async function start(teamId, fresh = false, savedToken = null) {
 }
 async function act(type, extra = {}) {
   if (busy || !view) return false;
+  if (type === 'INSPECT') extra = { ...extra, resume: true };
+  if (type === 'EXPLORE') extra = { ...extra, preserveReading: true };
+  if (type === 'OPEN_CHOICES' && view.exploration?.canPlanInvestigation)
+    extra = { ...extra, fromObservations: true };
   pendingTalk = null;
   setBusy(true);
   const previousScene = view.sceneId;
+  const previousObservationCount = view.observations?.length ?? 0;
   const focusAction =
     document.activeElement?.dataset.action ??
     (['INSPECT', 'ARRIVE'].includes(type) ? 'next' : null);
@@ -726,8 +745,11 @@ async function act(type, extra = {}) {
     if (type !== 'HINT') selected = null;
     choicesDismissed = type === 'BACK';
     if (type === 'EXPLORE' || type === 'BACK') dialogueDismissed = true;
+    if (type === 'INSPECT') dialogueDismissed = false;
     sessionNotice(result);
     render(previousScene !== view.sceneId, focusAction, type === 'NEXT' || type === 'TOPIC');
+    if ((view.observations?.length ?? 0) > previousObservationCount)
+      showObservationFeedback();
     if (type === 'EXPLORE' && isMapMode()) focusFloor();
     return true;
   } catch (error) {
@@ -777,7 +799,7 @@ function renderMessages(sceneChanged, followLatest) {
   if (sceneChanged) log.scrollTop = 0;
   else if (followLatest || wasAtBottom) log.scrollTop = log.scrollHeight;
   $('message-count').textContent = `${view.messages.length}개의 메시지`;
-  const current = view.messages.at(-1);
+  const current = view.currentMessage ?? view.messages.at(-1);
   const { kind, label } = messageKind(current?.speaker);
   const changed = $('current-message').textContent !== current?.text;
   $('current-message').textContent = current?.text ?? '';
@@ -786,6 +808,7 @@ function renderMessages(sceneChanged, followLatest) {
   $('current-speaker').textContent = label;
   document.querySelector('.dialogue-shell').dataset.kind = kind;
   if (changed) $('current-message').scrollTop = 0;
+  renderedCurrentMessage = current;
 }
 function renderNotebook() {
   const observations = $('notebook-observations');
@@ -885,50 +908,8 @@ function renderControls() {
         'hint'
       )
     );
-  if (
-    view.exploration &&
-    ((view.phase === 'reading' && view.exploration.activeHotspot) ||
-      ['exploring', 'input'].includes(view.phase))
-  ) {
-    const active = view.exploration.hotspots.find(
-      (item) => item.id === view.exploration.activeHotspot
-    );
-    const primaryAction = view.exploration.primaryAction;
-    if (
-      view.phase !== 'reading' &&
-      primaryAction &&
-      primaryAction.kind !== 'inspect'
-    ) {
-      controls.append(
-        button(
-          primaryAction.label,
-          () => {
-            dialogueDismissed = true;
-            render();
-            investigation.performPrimaryAction();
-          },
-          'primary',
-          'field-primary'
-        )
-      );
-      controls.append(
-        button(
-          active?.visited ? '관찰 기록됨 · 주변 살펴보기' : '주변 먼저 살펴보기',
-          () => act('EXPLORE'),
-          'quiet-button',
-          'explore'
-        )
-      );
-    } else
-      controls.append(
-        button(
-          active && !active.visited ? '조사 잠시 멈추기 · 아직 기록되지 않음' : '주변 살펴보기',
-          () => act('EXPLORE'),
-          view.phase === 'reading' ? 'quiet-button' : 'primary',
-          'explore'
-        )
-      );
-  }
+  if (view.exploration && ['exploring', 'input'].includes(view.phase))
+    controls.append(button('현장으로', returnToField, 'primary', 'explore'));
   if (
     ['reading', 'input'].includes(view.phase) &&
     !/^E[1-6]$/.test(view.sceneId) &&
@@ -955,14 +936,28 @@ function renderControls() {
         'choices'
       )
     );
-  if (view.phase === 'input')
+  if (view.phase === 'input' && !view.exploration)
     controls.append(button(`${NPC_NAMES[view.npc]}에게 묻기`, talkToNpc, undefined, 'talk'));
   if (view.canNext)
-    controls.append(button('계속  →', () => act('NEXT'), 'primary', 'next'));
+    controls.append(button('계속 ▷', () => act('NEXT'), 'primary', 'next'));
   if (view.canContinue && (view.phase === 'result' || !view.exploration?.primaryAction))
     controls.append(
       button(`${continuationGuidance().label} →`, () => act('CONTINUE'), 'primary', 'continue')
     );
+}
+function canReturnToField() {
+  return (
+    !busy &&
+    !$('game').hidden &&
+    !document.querySelector('.dialogue-shell').hidden &&
+    !!view?.exploration &&
+    ((view.phase === 'reading' && !!view.exploration.activeHotspot) ||
+      ['exploring', 'input'].includes(view.phase))
+  );
+}
+function returnToField() {
+  if (canReturnToField()) return act('EXPLORE');
+  return Promise.resolve(false);
 }
 function renderDialogue() {
   const available =
@@ -998,9 +993,12 @@ function renderChoices() {
     return;
   }
   const heading = element('div', undefined, 'decision-heading');
-  const title = element('h2', '어떤 행동을 할까요?');
+  const planning = view.sceneId === 'S01' && view.storyVersion === 'museum-map-4';
+  const title = element('h2', planning ? '어디서부터 배를 찾을까요?' : '어떤 행동을 할까요?');
   title.id = 'decision-title';
-  const intro = element('p', '행동을 고른 뒤 확정하세요. 확정 전에는 바꿀 수 있습니다.', 'choice-intro');
+  const intro = element('p', planning
+    ? '발견한 흔적을 바탕으로 먼저 조사할 곳을 함께 정하세요. 확정 전에는 바꿀 수 있습니다.'
+    : '행동을 고른 뒤 확정하세요. 확정 전에는 바꿀 수 있습니다.', 'choice-intro');
   intro.id = 'decision-intro';
   heading.append(element('p', '팀의 결정', 'eyebrow'), title, intro);
   const options = element('div', undefined, 'choice-options');
@@ -1106,7 +1104,7 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
   if (
     renderedSession !== sessionId ||
     renderedScene !== view.sceneId ||
-    renderedMessages.at(-1)?.id !== view.messages.at(-1)?.id
+    renderedCurrentMessage?.id !== (view.currentMessage ?? view.messages.at(-1))?.id
   )
     dialogueDismissed = false;
   const openingField =
@@ -1173,30 +1171,11 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
   $('skip-intro').hidden = !view.canSkipIntro;
   if (view.phase === 'travelling')
     $('chapter-label').textContent = `${view.teamId}팀 · 박물관 이동`;
-  const progress = view.readingProgress;
-  const currentHotspot = view.exploration?.hotspots.find(
-    (item) => item.id === view.exploration.activeHotspot
-  );
-  $('scene-status').textContent =
-    view.phase === 'reading' && progress
-      ? `${progress.read}/${progress.total} · ${
-          currentHotspot
-            ? currentHotspot.visited
-              ? '관찰 기록 완료'
-              : '관찰 기록 전'
-            : '읽음'
-        }`
-      : {
-          reading: '읽는 중',
-          travelling: '이동 중',
-          exploring: '탐색 중',
-          input: '질문 선택',
-          choosing: '행동 선택',
-          result: '결과 확인',
-          terminal: '결말',
-        }[view.phase];
-  if (currentHotspot?.visited && ['exploring', 'input'].includes(view.phase))
-    $('scene-status').textContent = '관찰 기록 완료';
+  $('scene-status').textContent = '';
+  $('scene-status').hidden = true;
+  // Closing while reading interrupts an investigation, never a committed result or ending.
+  $('dialogue-close').hidden =
+    !(view.phase === 'reading' && view.exploration?.activeHotspot);
   renderMessages(sceneChanged, followLatest);
   renderNotebook();
   $('hints').replaceChildren(
@@ -1289,6 +1268,7 @@ $('navigation-hud').addEventListener('cancel', (event) => {
   toggleMap(false);
 });
 $('menu-toggle').addEventListener('click', () => openPanel('menu-panel'));
+$('dialogue-close').addEventListener('click', returnToField);
 $('help-toggle').addEventListener('click', () => openPanel('help-panel'));
 $('title-help')?.addEventListener('click', () => openPanel('help-panel'));
 $('start-game')?.addEventListener('click', async () => {
@@ -1463,6 +1443,7 @@ document.addEventListener('visibilitychange', () => {
 document.addEventListener('keydown', (event) => {
   if (
     event.defaultPrevented ||
+    event.isComposing ||
     event.repeat ||
     event.altKey ||
     event.ctrlKey ||
@@ -1478,6 +1459,11 @@ document.addEventListener('keydown', (event) => {
   }
   if (document.querySelector('dialog[open]')) return;
   if (event.target.closest('input, textarea, select, [contenteditable]')) return;
+  if (event.key === 'Escape' && investigationPanelOpen) {
+    event.preventDefault();
+    investigation.closePanel();
+    return;
+  }
   if (event.key === 'Escape' && cameraExpanded) {
     event.preventDefault();
     toggleCamera(false);
@@ -1488,6 +1474,11 @@ document.addEventListener('keydown', (event) => {
     event.preventDefault();
     objectiveDetails.open = false;
     objectiveDetails.querySelector('summary')?.focus({ preventScroll: true });
+    return;
+  }
+  if (event.key === 'Escape' && canReturnToField()) {
+    event.preventDefault();
+    returnToField();
     return;
   }
   if (isMapMode() && event.key.toLowerCase() === 'm') {

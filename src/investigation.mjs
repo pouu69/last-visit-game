@@ -805,6 +805,66 @@ export function investigationFor(sceneId, content, flags, guidedVisit = false) {
   };
 }
 
+const deductionDisplays = {
+  T21: {
+    title: '이송 순서 추리하기',
+    actionLabel: '이송 순서 추리하기',
+    context: '배를 옮긴 시각과 장치가 멈춘 시각을 함께 살펴봅니다.',
+    purpose: '팀의 해석을 정리한 뒤, 다음 조사에 남길 기록이나 장비를 정합니다.',
+    evidence: [
+      { id: 'transfer-time', sourceHotspotId: 'order', label: '배를 옮긴 시각',
+        matches: /^어제, 강나래/, excerpt: /오늘 20시 35분[^.]*\./ },
+      { id: 'fault-time', sourceHotspotId: 'fault', label: '레일이 멈춘 시각',
+        matches: /^옮길 때 통로/, excerpt: /20시 38분/ },
+      { id: 'passage-condition', sourceHotspotId: 'fault', label: '이송 당시 통로',
+        matches: /^옮길 때 통로/, excerpt: /^[^.]*\./ },
+      { id: 'paper-fragment', sourceHotspotId: 'fault', label: '집게에 붙은 종이',
+        matches: /^고장 신고용 접수표/, excerpt: /^[^.]*\./ },
+    ],
+  },
+  D21: {
+    title: '기록의 차이 확인',
+    actionLabel: '기록의 차이 확인',
+    context: '옛 규약과 현재 안내에서 확인한 내용을 다시 봅니다.',
+    purpose: '확인한 범위를 정리한 뒤, 다음 행동에 보존할 자료나 도구를 고릅니다.',
+    evidence: [
+      { id: 'displayed-documents', sourceHotspotId: 'compare', label: '두 안내문의 문구',
+        matches: /^옛 규약 옆으로/ },
+      { id: 'execution-record', sourceHotspotId: 'compare', label: '실행 로그가 담은 내용',
+        matches: /^실행 로그는/, excerpt: /^[^.]*\./ },
+      { id: 'return-request', sourceHotspotId: 'compare', label: '반환 요청서가 담은 내용',
+        matches: /^실행 로그는/, excerpt: /요청서는[^.]*\./ },
+    ],
+  },
+  S22: {
+    title: '나래의 부탁 확인',
+    actionLabel: '나래의 부탁 확인',
+    context: '나래가 처음 남긴 기록과 어제 보낸 반환 요청을 함께 읽습니다.',
+    purpose: '부탁의 뜻을 정리한 뒤, 그 일을 위해 어떤 자료와 구조 준비를 남길지 정합니다.',
+    evidence: [
+      { id: 'original-promise', sourceHotspotId: 'story', label: '나래의 원래 기록',
+        matches: /^아버지와 이웃 아이들을/ },
+      { id: 'temporary-deposit', sourceHotspotId: 'story', label: '배를 맡기며 남긴 말',
+        matches: /^아버지가 돌아가신 뒤에는/ },
+      { id: 'current-request', sourceHotspotId: 'request', label: '어제 보낸 반환 요청',
+        matches: /^내일 아침 아홉 시에 이웃들과/ },
+    ],
+  },
+};
+
+/** Presentation cites displayed lines; authored answers and unseen prose stay in the runner. */
+export function deductionPresentation(sceneId, messages) {
+  const display = deductionDisplays[sceneId];
+  if (!display) return null;
+  const { evidence: sources, ...presentation } = display;
+  const evidence = sources.flatMap(({ matches, excerpt, ...source }) => {
+    const message = messages.find((item) => matches.test(item.text));
+    const text = message && (excerpt ? message.text.match(excerpt)?.[0] : message.text);
+    return text ? [{ ...source, text, sourceMessageId: message.id }] : [];
+  });
+  return { ...presentation, evidence };
+}
+
 const failure = (code, message) => ({ ok: false, error: { code, message } });
 
 /** Incorrect interpretations are recoverable feedback, not committed route choices. */

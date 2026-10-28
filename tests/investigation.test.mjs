@@ -693,3 +693,33 @@ test(
     assert.deepEqual(restoreGame(saveGame(state).record).state, state);
   }
 );
+
+test('resuming interrupted testimony discards a stale branch after the receipt admission', () => {
+  let state = read(follow('S01.C I03.C P11.B S12.C'));
+  state = send(state, 'INSPECT', { hotspotId: 'account', resume: true });
+  while (state.activeClaimId !== 'no_request' && publicView(state).canNext)
+    state = send(state, 'NEXT');
+  assert.equal(state.activeClaimId, 'no_request');
+  assert.equal(state.phase, 'reading');
+  state = send(state, 'EXPLORE', { preserveReading: true });
+  state = read(send(state, 'TOPIC', { topicId: 'receipt' }));
+  assert.ok(state.knownFacts.includes('request_received'));
+  const messageCount = state.messages.length;
+  state = send(state, 'INSPECT', { hotspotId: 'account', resume: true });
+  assert.equal(state.position, 1);
+  assert.equal(state.messages.length, messageCount + 1);
+  assert.equal(state.investigation.pausedReadings.account, undefined);
+  assert.equal(state.segment.some((message) => /받은 적 없|받은 연락은 없/.test(message.text)), false);
+  assert.deepEqual(restoreGame(saveGame(state).record).state, state);
+});
+
+test('interrupted inspection checkpoints do not survive scene changes', () => {
+  let state = createGame(1).state;
+  state = send(state, 'INSPECT', { hotspotId: 'invitation', resume: true });
+  state = send(state, 'EXPLORE', { preserveReading: true });
+  assert.ok(state.investigation.pausedReadings.invitation);
+  state = send(state, 'SKIP_INTRO');
+  assert.equal(state.sceneId, 'S01');
+  assert.equal(state.investigation.pausedReadings, undefined);
+  assert.equal(state.currentMessageId, undefined);
+});

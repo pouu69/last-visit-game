@@ -12,8 +12,79 @@ body[data-screen='game'] #game .dialogue-shell {
 }
 
 #game .dialogue-shell .dialogue-topline {
-  min-height: 20px;
+  position: relative;
+  min-height: 32px;
+  padding-right: 44px;
   gap: 12px;
+}
+
+#game .dialogue-shell #dialogue-close {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  min-width: 44px;
+  height: 44px;
+  min-height: 44px;
+  padding: 12px;
+  border: 0;
+  border-radius: 2px;
+  color: #becbb7;
+  background: transparent;
+  cursor: pointer;
+}
+
+#game .dialogue-shell #dialogue-close svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+}
+
+#game .dialogue-shell #dialogue-close:hover,
+#game .dialogue-shell #dialogue-close:focus-visible {
+  color: #f2dfb3;
+  background: #395346;
+  outline: 1px solid #c5ae75;
+  outline-offset: -5px;
+}
+
+#observation-feedback {
+  position: fixed;
+  z-index: 60;
+  top: max(82px, calc(env(safe-area-inset-top, 0px) + 74px));
+  right: max(24px, env(safe-area-inset-right, 0px));
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  max-width: calc(100vw - 48px);
+  margin: 0;
+  padding: 9px 12px;
+  border-left: 2px solid #cfb67d;
+  color: #eee1c1;
+  background: #18382ff5;
+  font-size: 12px;
+  line-height: 1.5;
+  pointer-events: none;
+}
+
+#observation-feedback svg {
+  width: 19px;
+  height: 19px;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+body:not([data-screen='game']) #observation-feedback {
+  display: none;
 }
 
 #game .dialogue-shell #current-speaker {
@@ -88,6 +159,11 @@ body[data-screen='game'] #game .dialogue-shell {
   border-color: transparent;
   background: transparent;
   color: #e6c98e;
+}
+
+#game #reading-controls [data-action='explore'] {
+  margin-left: auto;
+  min-width: 86px;
 }
 
 #game #reading-controls .quiet-button {
