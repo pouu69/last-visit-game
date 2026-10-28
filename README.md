@@ -150,5 +150,6 @@ npm run rehearse
 - [전체 원고](docs/manuscript/README.md) · [스토리 설계](docs/narrative/story-design.md)
 - [루트맵](docs/narrative/route-map.md) · [84개 선택 명세](docs/narrative/scene-routes.md)
 - [상태머신 계약](docs/narrative/runtime-contract.md) · [지도·이동·퍼즐](docs/narrative/map-gameplay.md)
+- [오디오 설계와 음량 설정](docs/audio-design.md)
 - [프롤로그와 진행 안내](docs/narrative/onboarding-revision.md) · [장면 연출](docs/narrative/visual-direction.md)
 - [게임 레퍼런스](docs/narrative/game-references.md) · [진행자 안내](docs/facilitator.md)

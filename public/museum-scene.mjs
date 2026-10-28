@@ -10,6 +10,8 @@ import {
 import { canOccupy, moveBody } from './museum-collision.mjs';
 import { collectStaticColliders } from './museum-colliders.mjs';
 import { museumKeyboardKey } from './museum-keyboard.mjs';
+import { gameAudio } from './audio.mjs';
+import { scoreWanderPoint, seededWanderPoints } from './npc-utility.mjs';
 import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
@@ -463,6 +465,35 @@ export function mountMuseum(
     makeAsset('corridor-segment', [corridor.x, 0, corridor.z], corridors, {
       width: corridor.width, depth: corridor.depth,
     });
+  const gateMaterial = material('#dfbd79', {
+    transparent: true,
+    opacity: 0.34,
+    roughness: 0.32,
+    metalness: 0.12,
+    depthWrite: false,
+  });
+  const accessGates = [];
+  for (const [fromId, toId] of CONNECTIONS) {
+    const from = ROOMS.find((room) => room.id === fromId);
+    const to = ROOMS.find((room) => room.id === toId);
+    const horizontal = from.z === to.z;
+    const direction = Math.sign(horizontal ? to.x - from.x : to.z - from.z);
+    for (const [room, sign] of [[from, direction], [to, -direction]]) {
+      const gate = new THREE.Mesh(
+        geometry(new THREE.BoxGeometry(horizontal ? 0.12 : 3.5, 1.85, horizontal ? 3.5 : 0.12)),
+        gateMaterial
+      );
+      gate.position.set(
+        horizontal ? room.x + sign * room.width / 2 : room.x,
+        0.94,
+        horizontal ? room.z : room.z + sign * room.depth / 2
+      );
+      gate.userData.collision = 'none';
+      gate.userData.accessEdge = [fromId, toId].sort().join(':');
+      scene.add(gate);
+      accessGates.push(gate);
+    }
+  }
   // The permanent sets remain visible when the story moves to another room.
   staticRoot.position.set(0, 0, 0);
   for (const x of [-4, -2, 2, 4])
@@ -702,6 +733,8 @@ export function mountMuseum(
       path: [],
       moving: false,
       waitForPlayer: false,
+      ambientDecision: 0,
+      ambientWait: 0,
     },
     {
       id: 'moro',
@@ -711,6 +744,8 @@ export function mountMuseum(
       path: [],
       moving: false,
       waitForPlayer: false,
+      ambientDecision: 0,
+      ambientWait: 0,
     },
   ];
 
@@ -759,7 +794,7 @@ export function mountMuseum(
     zoomTo = 1;
   let userZoom = 1,
     cameraYaw = 35,
-    cameraPitch = 43,
+    cameraPitch = 38,
     lastCameraSettings = '',
     manualCamera = false;
   const cameraOffset = new THREE.Vector3();
@@ -1170,7 +1205,9 @@ export function mountMuseum(
   }
   function aimAtScene() {
     cameraTarget.copy(player.position);
-    cameraTarget.y = 0.3;
+    cameraTarget.x += Math.sin(player.rotation.y) * 0.65;
+    cameraTarget.z += Math.cos(player.rotation.y) * 0.65;
+    cameraTarget.y = 0.35;
     composeCamera(1, 23.5);
   }
   /** Factors multiply the user's zoom; angle deltas use degrees. Invalid values leave the camera unchanged. */
@@ -1244,7 +1281,54 @@ export function mountMuseum(
     ];
   }
   function canWalk(x, z, body = bodyFor(player), occupants = []) {
+    if (body.id === 'player' && !playerAreaAllowed(x, z)) return false;
     return canOccupy(body, x, z, obstacles, occupants);
+  }
+  function roomRoute(start, goal) {
+    const queue = [[start]], visited = new Set([start]);
+    while (queue.length) {
+      const path = queue.shift();
+      if (path.at(-1) === goal) return path;
+      for (const [a, b] of CONNECTIONS) {
+        const next = a === path.at(-1) ? b : b === path.at(-1) ? a : null;
+        if (next && !visited.has(next)) {
+          visited.add(next);
+          queue.push([...path, next]);
+        }
+      }
+    }
+    return [];
+  }
+  function updateAccessGates() {
+    const travel = current.mode === 'map' && current.phase === 'travelling' ? current.travel : null;
+    const route = travel
+      ? roomRoute(travel.fromRoomId ?? current.currentRoomId, travel.toRoomId)
+      : [];
+    const openEdges = new Set(
+      route.slice(1).map((room, index) => [route[index], room].sort().join(':'))
+    );
+    for (const gate of accessGates) gate.visible = !openEdges.has(gate.userData.accessEdge);
+  }
+  function playerAreaAllowed(x, z) {
+    const travel = current.travel;
+    if (current.phase !== 'travelling' || !travel) return roomAt(x, z) === current.currentRoomId;
+
+    const start = travel.fromRoomId ?? current.currentRoomId;
+    const goal = travel.toRoomId;
+    const route = roomRoute(start, goal);
+    const roomId = roomAt(x, z);
+    if (roomId === start || roomId === goal) return true;
+    return CORRIDORS.some(
+      (corridor) =>
+        route.some(
+          (room, index) =>
+            index < route.length - 1 &&
+            ((corridor.from === room && corridor.to === route[index + 1]) ||
+              (corridor.to === room && corridor.from === route[index + 1]))
+        ) &&
+        Math.abs(x - corridor.x) <= corridor.width / 2 &&
+        Math.abs(z - corridor.z) <= corridor.depth / 2
+    );
   }
   function clearPlacement(object, point, roomId, occupants = activeBodies()) {
     const body = bodyFor(object);
@@ -1515,7 +1599,45 @@ export function mountMuseum(
       }
       const last = actor.path.at(-1),
         position = actor.object.position;
-      if (!actor.object.visible || !last) continue;
+      if (!actor.object.visible) continue;
+      if (!last) {
+        const roomId = roomAt(position.x, position.z);
+        const ambientAllowed =
+          current.mode === 'map' &&
+          current.phase !== 'travelling' &&
+          roomId === current.currentRoomId &&
+          !actor.waitForPlayer &&
+          !activeAnchor;
+        if (!ambientAllowed) continue;
+        actor.ambientWait = Math.max(0, actor.ambientWait - delta);
+        if (actor.ambientWait > 0) continue;
+        const decision = actor.ambientDecision++;
+        const candidates = seededWanderPoints(
+          `${current.sceneId}:${actor.id}:${decision}`,
+          position,
+          2.8
+        );
+        const playerPoint = player.position;
+        const ranked = candidates
+          .filter(([x, z]) =>
+            roomAt(x, z) === roomId &&
+            Math.hypot(x - playerPoint.x, z - playerPoint.z) < 1.65 &&
+            canWalk(x, z, bodyFor(actor.object))
+          )
+          .map((point) => ({
+            point,
+            score: scoreWanderPoint(point, position, playerPoint),
+          }))
+          .sort((a, b) => b.score - a.score);
+        for (const { point } of ranked) {
+          const path = findPath(position, point[0], point[1], bodyFor(actor.object));
+          if (!path || path.length < 2) continue;
+          actor.path = path;
+          break;
+        }
+        actor.ambientWait = 2.4 + ((decision * 37 + actor.id.length * 13) % 29) / 10;
+        continue;
+      }
       const conversationTarget = current.hotspots.find(
         (hotspot) => hotspot.id === (pendingInspect ?? current.activeHotspot)
       );
@@ -1757,6 +1879,7 @@ export function mountMuseum(
       const hotspot = nearbyHotspot();
       if (hotspot) {
         event.preventDefault();
+        gameAudio.play('click');
         approach(hotspot.id);
       }
       return;
@@ -1973,6 +2096,7 @@ export function mountMuseum(
         } else playerBlockedFor = 0;
         player.rotation.y = Math.atan2(dx, dz);
       }
+      if (avatarMoving) gameAudio.play('step');
       if (pendingInspect) {
         const hotspot = current.hotspots.find((item) => item.id === pendingInspect);
         const actor = actors.find((item) => item.id === hotspot?.anchor);
@@ -2179,7 +2303,7 @@ export function mountMuseum(
     if (width < 2 || height < 2) return;
     const aspect = width / height;
     const mapMode = current.mode === 'map';
-    const halfHeight = mapMode ? (width < 700 ? 7 : 7.8) : width < 700 ? 4.1 : 3.8;
+    const halfHeight = mapMode ? (width < 700 ? 4.5 : 4.8) : width < 700 ? 4.1 : 3.8;
     camera.left = -halfHeight * aspect;
     camera.right = halfHeight * aspect;
     // Walking needs equal sightlines toward the north and south exits.
@@ -2285,6 +2409,7 @@ export function mountMuseum(
       travel,
       objectiveTarget,
     };
+    updateAccessGates();
     if (
       !spawned ||
       playthroughChanged ||

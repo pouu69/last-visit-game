@@ -1,4 +1,41 @@
 /* The field stays visible. Large navigation and reading surfaces open on request. */
+#audio-settings {
+  display: grid;
+  gap: 8px;
+  margin: 20px 0 8px;
+  padding: 14px 16px 16px;
+  border: 1px solid #aa967266;
+  border-radius: 3px;
+}
+
+#audio-settings legend {
+  padding: 0 7px;
+  color: #e7d9b5;
+  font-family: var(--serif);
+  font-size: 16px;
+}
+
+#audio-settings label {
+  display: grid;
+  grid-template-columns: minmax(105px, 1fr) minmax(100px, 2fr) 38px;
+  align-items: center;
+  gap: 12px;
+  color: #e5ddc8;
+  font-size: 12px;
+}
+
+#audio-settings input[type='range'] {
+  width: 100%;
+  accent-color: #c7ad72;
+}
+
+#audio-settings output {
+  color: #bcae8e;
+  font-size: 11px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
 body .masthead {
   align-items: flex-start;
   padding: max(16px, env(safe-area-inset-top, 0px))

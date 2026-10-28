@@ -4,6 +4,7 @@ import { ROOMS, CORRIDORS, CONNECTIONS } from './museum-map.mjs';
 import { createLocalSessions } from '../src/local-sessions.mjs';
 import { openingContent } from '../src/content/opening.mjs';
 import { mountInvitationIntro } from './invitation-intro.mjs';
+import { gameAudio } from './audio.mjs';
 
 const $ = (id) => document.getElementById(id);
 const LABELS = {
@@ -163,6 +164,7 @@ try {
         pendingTalk = null;
         return;
       }
+      gameAudio.play('inspect');
       const talk = pendingTalk;
       pendingTalk = null;
       if (
@@ -1268,6 +1270,7 @@ $('navigation-hud').addEventListener('cancel', (event) => {
   toggleMap(false);
 });
 $('menu-toggle').addEventListener('click', () => openPanel('menu-panel'));
+$('title-audio').addEventListener('click', () => openPanel('menu-panel'));
 $('dialogue-close').addEventListener('click', returnToField);
 $('help-toggle').addEventListener('click', () => openPanel('help-panel'));
 $('title-help')?.addEventListener('click', () => openPanel('help-panel'));
@@ -1437,6 +1440,32 @@ $('comparison-back').addEventListener('click', () => {
   render();
   $('scene-title').focus({ preventScroll: true });
 });
+for (const input of document.querySelectorAll('[data-audio-volume]')) {
+  const name = input.dataset.audioVolume;
+  const output = document.querySelector(`[data-audio-value="${name}"]`);
+  input.value = String(gameAudio.getSettings()[name]);
+  output.value = `${input.value}%`;
+  input.addEventListener('input', () => {
+    gameAudio.setVolume(name, input.value);
+    output.value = `${input.value}%`;
+  });
+}
+function playUiFeedback(event) {
+  const button = event.target.closest('button');
+  if (!button) return;
+  const action = button.dataset.sound ?? button.dataset.action;
+  gameAudio.play(['confirm', 'next', 'continue'].includes(action) ? 'confirm' : 'click');
+}
+document.addEventListener('pointerdown', (event) => {
+  gameAudio.unlock();
+  if (!event.target.closest('button')?.disabled) playUiFeedback(event);
+}, true);
+document.addEventListener('click', (event) => {
+  // Keyboard activation has no pointerdown; pointer clicks already sounded at pointerdown.
+  if (event.detail !== 0) return;
+  gameAudio.unlock();
+  playUiFeedback(event);
+});
 document.addEventListener('visibilitychange', () => {
   updateMuseum();
 });
@@ -1454,6 +1483,7 @@ document.addEventListener('keydown', (event) => {
     return;
   if (isMapMode() && $('navigation-hud').open && event.key.toLowerCase() === 'm') {
     event.preventDefault();
+    gameAudio.play('click');
     toggleMap(false);
     return;
   }
@@ -1483,6 +1513,7 @@ document.addEventListener('keydown', (event) => {
   }
   if (isMapMode() && event.key.toLowerCase() === 'm') {
     event.preventDefault();
+    gameAudio.play('click');
     toggleMap();
     return;
   }
@@ -1494,11 +1525,13 @@ document.addEventListener('keydown', (event) => {
     document.querySelector('.dialogue-shell').getClientRects().length > 0
   ) {
     event.preventDefault();
+    gameAudio.play('confirm');
     act('NEXT');
     return;
   }
   if (!isMapMode() && event.key === 'ArrowRight' && view?.canNext) {
     event.preventDefault();
+    gameAudio.play('confirm');
     act('NEXT');
   }
 });
