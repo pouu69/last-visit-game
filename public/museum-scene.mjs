@@ -9,6 +9,7 @@ import {
 } from './museum-map.mjs';
 import { canOccupy, moveBody } from './museum-collision.mjs';
 import { collectStaticColliders } from './museum-colliders.mjs';
+import { museumKeyboardKey } from './museum-keyboard.mjs';
 import { createAssetCore, MUSEUM_PALETTE as PALETTE, MUSEUM_ASSET_REVISION } from './assets/shared/core.mjs';
 import { createMuseumProps } from './assets/episodes/ep-01/props.mjs';
 import { createMuseumActors } from './assets/episodes/ep-01/actors.mjs';
@@ -1408,7 +1409,7 @@ export function mountMuseum(
   function controlsBlocked() {
     return Boolean(
       document.activeElement?.closest(
-        'input,textarea,select,button,summary,[contenteditable="true"]'
+        'input,textarea,select,[contenteditable]'
       ) || document.querySelector('dialog[open],[role="dialog"][aria-modal="true"]')
     );
   }
@@ -1896,7 +1897,7 @@ export function mountMuseum(
   function keydown(event) {
     if (controlsBlocked() || !canMove() || event.altKey || event.metaKey || event.ctrlKey)
       return;
-    const key = event.key.toLowerCase();
+    const key = museumKeyboardKey(event);
     if (key === 'e') {
       const hotspot = nearbyHotspot();
       if (hotspot) {
@@ -1908,13 +1909,14 @@ export function mountMuseum(
     if (!['w', 'a', 's', 'd', 'arrowup', 'arrowdown', 'arrowleft', 'arrowright'].includes(key))
       return;
     event.preventDefault();
+    renderer.domElement.focus({ preventScroll: true });
     pressed.add(key);
     walkPath = [];
     pendingInspect = null;
     ensureAnimation();
   }
   function keyup(event) {
-    pressed.delete(event.key.toLowerCase());
+    pressed.delete(museumKeyboardKey(event));
   }
   function clearKeys() {
     pressed.clear();
