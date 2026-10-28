@@ -18,9 +18,12 @@ node_modules/
 !/artifacts/narrative-check.json
 !/artifacts/full-play-complete-record.json
 /artifacts/*.zip
+/artifacts/asset-gameplay/
+/artifacts/asset-visuals/
 /playwright-report/
 /test-results/
 /coverage/
+/.playwright-mcp/
 
 # Per-episode raw QA captures; curated review files remain versioned
 /assets/episodes/*/review/captures/
@@ -28,6 +31,9 @@ node_modules/
 
 # Local caches and process files
 .cache/
+.wrangler/
+.dev.vars
+.dev.vars.*
 .serena/cache/
 __pycache__/
 *.py[cod]

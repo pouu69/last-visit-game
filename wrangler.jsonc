@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "last-visit",
+  "account_id": "a7245c9aa2271542ae807e0e3bcd1e60",
+  "compatibility_date": "2026-10-28",
+  "workers_dev": true,
+  "preview_urls": false,
+  "build": {
+    "command": "npm run build"
+  },
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "none"
+  }
+}

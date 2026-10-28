@@ -78,6 +78,28 @@ npm run build
 
 배포된 게임에는 Node.js가 필요하지 않다. `npm start`의 서버는 로컬에서 정적 파일을 GET/HEAD로 제공하는 미리보기 도구다. HTML을 `file://`로 직접 여는 대신 HTTP 정적 호스팅이나 이 미리보기를 사용한다.
 
+### Cloudflare Workers 배포
+
+`wrangler.jsonc`는 `pouu69@gmail.com` 계정의 `last-visit`에 `dist/`만 배포하도록 설정한다. 배포 후 예상 주소는 `https://last-visit.pouu69.workers.dev`다. 별도의 Worker 코드, DB, API 키는 필요하지 않다.
+
+```sh
+npm ci
+npm test
+npm run deploy:check
+```
+
+`deploy:check`는 최신 소스로 빌드하고 Wrangler의 배포 설정을 검증한다. `--dry-run`이므로 파일을 업로드하거나 사이트를 공개하지 않는다. Cloudflare 환경의 로컬 미리보기는 `npm run preview:cloudflare`로 실행하고 `http://127.0.0.1:8787`을 연다.
+
+실제 배포 시에는 로컬 CLI에서 해당 계정으로 로그인한 뒤 실행한다. Codex의 Cloudflare 연결과 Wrangler 로그인은 별개다.
+
+```sh
+npx wrangler login
+npx wrangler whoami
+npm run deploy
+```
+
+`deploy`도 빌드를 먼저 실행하므로 오래된 산출물을 그대로 업로드하지 않는다. 설정에 지정된 계정 ID로 배포하며, 배포 후에는 위 주소에서 시작 화면, 초대장·팀 선택, 첫 전시실 진입과 저장 복원을 확인한다. 로컬에서 저장한 기록은 배포 주소로 자동 이동하지 않으므로 필요하면 기록 파일로 내보내고 불러온다.
+
 ## 개발 구조
 
 | 경로                                                         | 역할                                      |
