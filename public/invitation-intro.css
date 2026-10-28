@@ -1,0 +1,409 @@
+#invitation-intro {
+  position: fixed;
+  inset: 0;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: max(14px, env(safe-area-inset-top, 0px))
+    max(16px, env(safe-area-inset-right, 0px))
+    max(16px, env(safe-area-inset-bottom, 0px))
+    max(16px, env(safe-area-inset-left, 0px));
+  overflow: auto;
+  border: 0;
+  color: #24362b;
+  background: transparent;
+  font-family: inherit;
+}
+
+#invitation-intro::backdrop {
+  background: linear-gradient(145deg, #07170fe8, #10271ddf 55%, #101c16e8);
+  backdrop-filter: blur(2px);
+}
+
+body:has(#invitation-intro[open]) #welcome {
+  visibility: hidden;
+}
+
+#invitation-intro [hidden] {
+  display: none !important;
+}
+
+.invitation-close {
+  position: fixed;
+  z-index: 10;
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid #d3c29477;
+  color: #f0e5ca;
+  background: #14291fdc;
+  cursor: pointer;
+}
+
+.invitation-close svg {
+  width: 17px;
+  height: 17px;
+}
+
+.invitation-close:hover,
+.invitation-close:focus-visible {
+  border-color: #e3c873;
+  background: #24392c;
+}
+
+.invitation-stage {
+  position: relative;
+  display: grid;
+  width: min(760px, 100%);
+  min-height: min(82dvh, 760px);
+  margin: 0 auto;
+  place-items: center;
+  perspective: 1000px;
+}
+
+.invitation-envelope {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  width: min(410px, 82vw);
+  height: clamp(176px, 30vh, 245px);
+  opacity: 0;
+  transform: translate(-50%, -50%) translate3d(42vw, -40vh, 0) rotate(14deg) scale(0.95);
+  transition:
+    transform 800ms cubic-bezier(0.23, 1, 0.32, 1),
+    opacity 800ms cubic-bezier(0.23, 1, 0.32, 1);
+  transform-style: preserve-3d;
+}
+
+.invitation-envelope.has-arrived {
+  opacity: 1;
+  transform: translate(-50%, -50%) translate3d(0, 0, 0) rotate(0) scale(1);
+}
+
+.envelope-back,
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  border: 1px solid #c8b57e;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #425d45, #243b2c 72%);
+  box-shadow: 0 22px 65px #020d08a8;
+}
+
+.envelope-pocket {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.envelope-front {
+  z-index: 3;
+  background: linear-gradient(155deg, #526c4f, #314a35 72%);
+  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+  box-shadow: none;
+}
+
+.envelope-flap {
+  position: absolute;
+  z-index: 4;
+  inset: 0 0 auto;
+  height: 68%;
+  border: 1px solid #c6b275;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(165deg, #607751, #3d5840 80%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform: rotateX(0);
+  transform-origin: 50% 0;
+  transition: transform 210ms cubic-bezier(0.77, 0, 0.175, 1);
+  backface-visibility: hidden;
+}
+
+.invitation-envelope.flap-open .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-seal {
+  position: absolute;
+  z-index: 6;
+  top: 45%;
+  left: 50%;
+  display: grid;
+  width: 42px;
+  height: 42px;
+  border: 2px solid #f0d790;
+  border-radius: 50%;
+  color: #f4e6bd;
+  background: radial-gradient(circle at 36% 28%, #a18548, #655127 74%);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 20px;
+  place-items: center;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 9px #102016b3;
+  transition: opacity 110ms ease, transform 110ms ease;
+}
+
+.invitation-envelope.seal-hidden .envelope-seal {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+}
+
+.invitation-open {
+  position: absolute;
+  z-index: 7;
+  top: calc(55% + 45px);
+  left: 50%;
+  display: grid;
+  min-width: 176px;
+  min-height: 54px;
+  padding: 8px 16px;
+  border: 1px solid #ead8a9;
+  color: #f6edda;
+  background: #1c3528ed;
+  cursor: pointer;
+  text-align: center;
+  transform: translateX(-50%);
+  box-shadow: 0 6px 20px #12221970;
+}
+
+.invitation-open:hover,
+.invitation-open:focus-visible {
+  border-color: #f4d178;
+  background: #2d4832;
+  outline: 2px solid #f4d178;
+  outline-offset: 3px;
+}
+
+.invitation-open-label {
+  font-size: 14px;
+  letter-spacing: 0.03em;
+}
+
+.invitation-open-recipient {
+  margin-top: 2px;
+  color: #e2d2ac;
+  font-size: 11px;
+}
+
+.invitation-paper {
+  position: absolute;
+  z-index: 8;
+  top: 50%;
+  left: 50%;
+  box-sizing: border-box;
+  width: min(530px, calc(100vw - 32px));
+  max-height: min(68dvh, 620px);
+  padding: clamp(22px, 4vw, 42px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  border: 1px solid #d5c18d;
+  color: #24362b;
+  background:
+    linear-gradient(90deg, #d3c29820, transparent 8%, transparent 92%, #b8a6751a),
+    linear-gradient(160deg, #fbf4df, #eee1c1);
+  box-shadow: 0 24px 70px #020b07b3, inset 0 0 0 5px #fff8e66b;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0) scale(0.9);
+  transition:
+    transform 360ms cubic-bezier(0.77, 0, 0.175, 1),
+    opacity 260ms ease;
+}
+
+.invitation-stage.paper-rising .invitation-paper {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.invitation-letter-label {
+  margin: 0 0 18px;
+  color: #725c31;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-align: center;
+}
+
+.invitation-recipient {
+  padding-bottom: 14px;
+  border-bottom: 1px solid #9c875655;
+  color: #526448;
+  font-size: 13px;
+}
+
+.invitation-message {
+  margin: 18px 0 22px;
+  color: #2b382f;
+  font-size: clamp(15px, 2.2vw, 18px);
+  line-height: 1.9;
+  white-space: pre-wrap;
+}
+
+.invitation-signature {
+  margin: 22px 0 26px;
+  color: #526448;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  text-align: right;
+}
+
+.invitation-enter,
+.invitation-team-choice {
+  min-height: 48px;
+  padding: 11px 18px;
+  border: 1px solid #53674b;
+  color: #f7efda;
+  background: #304932;
+  cursor: pointer;
+  font: inherit;
+}
+
+.invitation-enter {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.invitation-enter:hover,
+.invitation-team-choice:hover,
+.invitation-enter:focus-visible,
+.invitation-team-choice:focus-visible {
+  border-color: #9c8147;
+  background: #435a3e;
+  outline: 2px solid #9c8147;
+  outline-offset: 2px;
+}
+
+.invitation-team-stage h2 {
+  margin: 0 0 10px;
+  color: #324634;
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.4;
+}
+
+.invitation-team-stage p {
+  margin: 0 0 22px;
+  color: #596752;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.invitation-team-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.invitation-team-choice {
+  min-height: 58px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.invitation-back {
+  display: block;
+  min-height: 44px;
+  margin: 18px auto 0;
+  padding: 8px 12px;
+  border: 0;
+  color: #526448;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.invitation-back:hover,
+.invitation-back:focus-visible {
+  color: #2d402e;
+  outline: 2px solid #9c8147;
+  outline-offset: 2px;
+}
+
+#invitation-intro.is-entering-game .invitation-paper {
+  border-color: #b19a60;
+}
+
+#invitation-intro button:disabled {
+  cursor: wait;
+  opacity: 0.72;
+}
+
+@media (max-width: 420px) {
+  .invitation-stage {
+    min-height: calc(100dvh - 100px);
+    margin-top: 60px;
+  }
+
+  .invitation-envelope {
+    width: min(360px, 88vw);
+    height: 182px;
+  }
+
+  .invitation-open {
+    top: calc(55% + 37px);
+  }
+
+  .invitation-paper {
+    width: calc(100vw - 30px);
+    max-height: 72dvh;
+    padding: 22px 20px;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  #invitation-intro {
+    padding-top: max(8px, env(safe-area-inset-top, 0px));
+    padding-bottom: max(8px, env(safe-area-inset-bottom, 0px));
+  }
+
+  .invitation-stage {
+    min-height: 84dvh;
+  }
+
+  .invitation-envelope {
+    top: 57%;
+    width: min(350px, 42vw);
+    height: 154px;
+  }
+
+  .invitation-open {
+    top: calc(57% + 34px);
+  }
+
+  .invitation-paper {
+    max-height: 70dvh;
+    padding: 18px 24px;
+  }
+
+  .invitation-message {
+    margin: 10px 0 12px;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .invitation-signature {
+    margin: 12px 0 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .invitation-envelope,
+  .envelope-flap,
+  .envelope-seal,
+  .invitation-paper {
+    transition-duration: 0.01ms;
+    transition-delay: 0ms;
+  }
+}

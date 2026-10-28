@@ -21,10 +21,15 @@
     <link rel="stylesheet" href="/field-tools.css" />
     <link rel="stylesheet" href="/game-hud.css" />
     <link rel="stylesheet" href="/dialogue-ui.css" />
+    <link rel="stylesheet" href="/title-screen.css" />
+    <link rel="stylesheet" href="/invitation-intro.css" />
     <script type="module" src="/app.mjs"></script>
   </head>
   <body data-screen="welcome">
-    <div id="museum-stage" aria-label="폐관 후 박물관 장면"></div>
+    <div id="title-art" aria-hidden="true">
+      <img src="/images/title/museum-night.png" alt="" fetchpriority="high" decoding="async" />
+    </div>
+    <div id="museum-stage" aria-label="폐관 후 박물관 장면" inert></div>
     <div class="scene-vignette" aria-hidden="true"></div>
     <header class="masthead">
       <a href="/" class="brand">UNBIRTHDAY</a>
@@ -102,24 +107,43 @@
     <div id="notice" role="status" aria-live="polite"></div>
     <main>
       <section id="welcome" aria-labelledby="welcome-title">
-        <p class="eyebrow">직접 걷고, 조사하고, 함께 결정하는 미스터리</p>
+        <p class="title-kicker">UNBIRTHDAY</p>
         <h1 id="welcome-title">폐관 후의<br />박물관</h1>
-        <p class="intro">
-          박물관의 마지막 초대 관람객이 되어 보세요.<br />현장을 살피고 증언을 대조하며, 우리
-          팀의 선택으로 이야기를 이어갑니다.
-        </p>
-        <div id="team-buttons" class="teams"></div>
+        <p class="title-tagline">마지막 관람이 시작됩니다.</p>
+        <nav class="title-menu" aria-label="게임 시작">
+          <button
+            id="start-game"
+            type="button"
+            aria-label="처음부터 게임 시작"
+          >
+            Start Game
+          </button>
+          <button
+            id="continue-game"
+            type="button"
+            aria-label="저장한 이야기 이어하기"
+            hidden
+          >
+            Continue
+          </button>
+          <button
+            id="title-help"
+            type="button"
+            aria-label="게임 조작 방법"
+          >
+            How to Play
+          </button>
+        </nav>
         <div id="team-recovery"></div>
-        <p class="quiet">
-          한 팀은 하나의 진행 기록입니다. 각 팀의 선택과 결말을 나중에 비교할 수 있어요.
-        </p>
-        <details id="saved-records" hidden>
-          <summary>저장한 이야기 이어보기</summary>
-          <div id="saved-record-list"></div>
-        </details>
-        <button id="welcome-restore" type="button" class="text-button">
-          기록 파일에서 이어하기
-        </button>
+        <div class="title-secondary">
+          <details id="saved-records" hidden>
+            <summary>다른 기록</summary>
+            <div id="saved-record-list"></div>
+          </details>
+          <button id="welcome-restore" type="button" class="text-button">
+            기록 파일 불러오기
+          </button>
+        </div>
       </section>
       <section id="game" hidden>
         <p id="movement-guide" hidden>
@@ -239,7 +263,7 @@
         ><button id="history-toggle" type="button" hidden>대화 기록</button
         ><button id="notebook-toggle" type="button" hidden>
           기록장 <span id="evidence-count"></span></button
-        ><button id="teams-toggle" type="button">팀 선택으로</button
+        ><button id="teams-toggle" type="button">타이틀 화면으로</button
         ><button id="help-toggle" type="button">게임 목표와 조작 방법</button
         ><button id="skip-intro" type="button" hidden>재플레이 · 로비 안내 건너뛰기</button>
       </div>
@@ -302,6 +326,8 @@
       </div>
       <div id="hints"></div>
     </dialog>
+    <dialog id="invitation-intro" aria-label="마지막 관람 초대장"></dialog>
     <input id="restore-file" type="file" accept="application/json,.json" hidden />
+    <div id="screen-transition" hidden aria-hidden="true"></div>
   </body>
 </html>

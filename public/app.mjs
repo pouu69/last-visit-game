@@ -2,6 +2,8 @@ import { mountMuseum } from './museum-scene.mjs';
 import { mountInvestigation } from './investigation-ui.mjs';
 import { ROOMS, CORRIDORS, CONNECTIONS } from './museum-map.mjs';
 import { createLocalSessions } from '../src/local-sessions.mjs';
+import { openingContent } from '../src/content/opening.mjs';
+import { mountInvitationIntro } from './invitation-intro.mjs';
 
 const $ = (id) => document.getElementById(id);
 const LABELS = {
@@ -47,6 +49,7 @@ const FACTS = {
   return_delayed: '윤서가 반환 처리를 미뤘음을 인정함',
   return_clause_removed: '반환 조항이 전시 안내에서 빠진 사실을 확인함',
 };
+const LAST_SESSION_KEY = 'museum-last-session-v1';
 const OBJECTIVES = {
   S01: '사라진 종이배의 흔적을 찾을 곳을 정하세요.',
   I01: '모로의 이동 흔적과 정비함을 살펴보세요.',
@@ -73,6 +76,7 @@ const OBJECTIVES = {
 let sessionId = null;
 let view = null;
 let busy = false;
+let invitationPending = false;
 let selected = null;
 let choicesDismissed = false;
 let dialogueDismissed = false;
@@ -82,6 +86,7 @@ let renderedScene = null;
 let renderedMessages = [];
 let sessions = {};
 let archivedSessions = [];
+let lastEnteredSession = null;
 let museum;
 let investigation;
 let navigation = null;
@@ -105,6 +110,11 @@ try {
   notice(storageWarning);
 }
 const game = createLocalSessions({ storage: browserStorage });
+const invitationLetter = openingContent().messages.find((item) => item.speaker === '초대장');
+const invitationIntro = mountInvitationIntro($('invitation-intro'), {
+  message: invitationLetter?.text ?? '',
+  recipient: '마지막 관람객 여러분께',
+});
 
 try {
   const saved = JSON.parse(browserStorage?.getItem('museum-local-sessions-v1') ?? '{}');
@@ -132,6 +142,17 @@ try {
     );
 } catch {
   notice('이전 기록 목록을 읽지 못했습니다. 내려받은 기록 파일로 이어갈 수 있습니다.');
+}
+try {
+  const saved = JSON.parse(browserStorage?.getItem(LAST_SESSION_KEY) ?? 'null');
+  if (
+    [1, 2, 3].includes(saved?.teamId) &&
+    typeof saved.sessionId === 'string' &&
+    /^[a-f0-9]{48}$/.test(saved.sessionId)
+  )
+    lastEnteredSession = { teamId: saved.teamId, sessionId: saved.sessionId };
+} catch {
+  // Older or malformed markers fall back to the current saved team records.
 }
 try {
   museum = mountMuseum($('museum-stage'), {
@@ -527,6 +548,8 @@ function storeSessions() {
   try {
     browserStorage.setItem('museum-local-sessions-v1', JSON.stringify(sessions));
     browserStorage.setItem('museum-local-session-archive-v1', JSON.stringify(archivedSessions));
+    if (lastEnteredSession)
+      browserStorage.setItem(LAST_SESSION_KEY, JSON.stringify(lastEnteredSession));
     registryWarning = '';
   } catch {
     registryWarning =
@@ -543,25 +566,25 @@ function rememberSession(teamId, token) {
     archivedSessions.push({ teamId, sessionId: previous });
   archivedSessions = archivedSessions.filter((item) => item.sessionId !== token);
   sessions[teamId] = token;
+  lastEnteredSession = { teamId, sessionId: token };
   storeSessions();
 }
+function latestSessionRecord() {
+  if (lastEnteredSession) {
+    const { teamId, sessionId: token } = lastEnteredSession;
+    if (sessions[teamId] === token || archivedSessions.some((item) => item.sessionId === token))
+      return { teamId, sessionId: token };
+  }
+  const current = [1, 2, 3].find((id) => sessions[id]);
+  if (current) return { teamId: current, sessionId: sessions[current] };
+  return archivedSessions.at(-1) ?? null;
+}
 function teamButtons() {
-  $('team-buttons').replaceChildren(
-    ...[1, 2, 3].map((id) => {
-      const item = button('', () => start(id, true));
-      const label = `${id}팀 관람 시작`;
-      item.setAttribute('aria-label', label);
-      const action = element('span', undefined, 'team-action');
-      action.append(element('span', '관람 시작'), element('span', '↗'));
-      item.append(element('span', `${id}팀`, 'team-number'), action);
-      return item;
-    })
-  );
   const records = Object.entries(sessions)
     .map(([teamId, token]) => ({ teamId: Number(teamId), sessionId: token, current: true }))
     .concat([...archivedSessions].reverse());
   $('saved-records').hidden = !records.length;
-  $('saved-record-list').replaceChildren(
+  $('saved-record-list')?.replaceChildren(
     ...records.map((record, index) =>
       button(
         `${record.teamId}팀 · ${
@@ -572,9 +595,12 @@ function teamButtons() {
       )
     )
   );
+  const continueButton = $('continue-game');
+  if (continueButton) continueButton.hidden = !latestSessionRecord();
 }
 function showGame() {
   closePanels();
+  $('museum-stage').inert = false;
   document.body.dataset.screen = 'game';
   $('welcome').hidden = true;
   $('comparison').hidden = true;
@@ -588,6 +614,7 @@ function showGame() {
 }
 function showTeams() {
   closePanels();
+  $('museum-stage').inert = true;
   document.body.dataset.screen = 'welcome';
   sessionEpoch += 1;
   $('welcome').hidden = false;
@@ -606,10 +633,23 @@ function showTeams() {
 async function start(teamId, fresh = false, savedToken = null) {
   if (busy) return false;
   pendingTalk = null;
+  const fromTitle = document.body.dataset.screen === 'welcome' && $('game').hidden;
+  const epoch = ++sessionEpoch;
+  let transitioning = false;
   setBusy(true);
-  sessionEpoch += 1;
   const token = !fresh ? savedToken ?? sessions[teamId] : null;
   try {
+    const overlay = $('screen-transition');
+    const reducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
+    if (fromTitle && overlay && !reducedMotion) {
+      transitioning = true;
+      document.body.dataset.titleTransition = 'leaving';
+      overlay.hidden = false;
+      overlay.setAttribute('aria-hidden', 'true');
+      requestAnimationFrame(() => overlay.classList.add('is-covered'));
+      await new Promise((resolve) => setTimeout(resolve, 220));
+      if (epoch !== sessionEpoch) return false;
+    }
     const result = token ? game.get(token) : game.create(teamId);
     sessionId = token ?? result.sessionId;
     rememberSession(teamId, sessionId);
@@ -622,6 +662,27 @@ async function start(teamId, fresh = false, savedToken = null) {
     showGame();
     sessionNotice(result);
     render(true);
+    if (transitioning) {
+      overlay.classList.remove('is-covered');
+      await new Promise((resolve) => setTimeout(resolve, 450));
+      if (epoch !== sessionEpoch) return false;
+    }
+    if (!document.querySelector('dialog[open]')) {
+      const firstIntro =
+        view.sceneId === 'O00' &&
+        view.phase === 'exploring' &&
+        view.messages.length === 1 &&
+        !dialogueDismissed;
+      const target = firstIntro
+        ? document.querySelector('#reading-controls [data-action="explore"]')
+        : dialogueDismissed && view.exploration
+        ? $('museum-stage').querySelector('canvas')
+        : document.querySelector('#reading-controls [data-action="next"]') ??
+          document.querySelector('#reading-controls [data-action="explore"]') ??
+          document.querySelector('#reading-controls [data-action="continue"]') ??
+          $('scene-title');
+      target?.focus({ preventScroll: true });
+    }
     return true;
   } catch (error) {
     notice(error.message);
@@ -636,6 +697,12 @@ async function start(teamId, fresh = false, savedToken = null) {
     }
     return false;
   } finally {
+    if (transitioning) {
+      const overlay = $('screen-transition');
+      overlay?.classList.remove('is-covered');
+      if (overlay) overlay.hidden = true;
+      delete document.body.dataset.titleTransition;
+    }
     setBusy(false);
   }
 }
@@ -1047,7 +1114,6 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
     !view.exploration?.activeHotspot &&
     view.messages.length === 1 &&
     view.phase === 'exploring';
-  if (openingField) dialogueDismissed = true;
   document.body.dataset.mode = isMapMode()
     ? 'map'
     : view.exploration
@@ -1165,7 +1231,8 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
   setBusy(busy);
   renderedPhase = view.phase;
   if (view.phase === 'travelling' && !document.querySelector('dialog[open]')) focusFloor();
-  if (openingField && sceneChanged) focusFloor();
+  if (openingField && sceneChanged)
+    document.querySelector('#reading-controls [data-action="explore"]')?.focus({ preventScroll: true });
 }
 document.addEventListener(
   'click',
@@ -1223,6 +1290,24 @@ $('navigation-hud').addEventListener('cancel', (event) => {
 });
 $('menu-toggle').addEventListener('click', () => openPanel('menu-panel'));
 $('help-toggle').addEventListener('click', () => openPanel('help-panel'));
+$('title-help')?.addEventListener('click', () => openPanel('help-panel'));
+$('start-game')?.addEventListener('click', async () => {
+  if (invitationPending || busy) return;
+  invitationPending = true;
+  try {
+    const teamId = await invitationIntro.open();
+    if (teamId !== null && teamId !== undefined) await start(teamId, true);
+  } catch (error) {
+    notice(error.message ?? '초대장을 열지 못했습니다.');
+  } finally {
+    invitationIntro.close();
+    invitationPending = false;
+  }
+});
+$('continue-game')?.addEventListener('click', () => {
+  const record = latestSessionRecord();
+  if (record) start(record.teamId, false, record.sessionId);
+});
 $('skip-intro').addEventListener('click', async () => {
   if (await act('SKIP_INTRO')) closePanels();
 });
