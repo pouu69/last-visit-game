@@ -1,0 +1,19 @@
+{
+  "name": "unbirthday-museum",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "폐관 후의 박물관 — 세 팀이 함께 읽는 미스터리 게임북",
+  "engines": {
+    "node": ">=22.0.0"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "rehearse": "node scripts/rehearse.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  }
+}
