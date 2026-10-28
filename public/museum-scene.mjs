@@ -105,6 +105,7 @@ export function mountMuseum(
     interactive: false,
   };
   let fallbackTravelButton = null;
+  let fallbackActionButton = null;
   function syncFallbackControls() {
     const isLobby = current.sceneId === 'O00';
     const exhibit = root.querySelector('[data-fallback-case]'),
@@ -135,6 +136,19 @@ export function mountMuseum(
     fallbackTravelButton.hidden = !current.travel;
     fallbackTravelButton.disabled = !current.interactive;
     fallbackTravelButton.textContent = `${current.travel?.toLabel ?? '다음 방'}로 이동`;
+    const action = current.hotspots?.find(item => item.kind === 'action');
+    if (!fallbackActionButton) {
+      fallbackActionButton = document.createElement('button');
+      fallbackActionButton.type = 'button';
+      fallbackActionButton.className = 'museum-fallback-action';
+      fallbackActionButton.addEventListener('click', () => {
+        const live = current.hotspots?.find(item => item.kind === 'action');
+        if (current.interactive && live) onInspect(live.id);
+      });
+      root.append(fallbackActionButton);
+    }
+    fallbackActionButton.hidden = !current.interactive || !action;
+    fallbackActionButton.textContent = action ? `${action.target} · ${action.label}` : '';
     const [x, z] = spawnForRoom(current.currentRoomId ?? 'gallery');
     onNavigation({
       x,
@@ -241,6 +255,13 @@ export function mountMuseum(
     pointerEvents: 'none',
   });
   root.append(hotspotLayer);
+  const actionCue = document.createElement('div');
+  actionCue.className = 'museum-action-cue';
+  actionCue.hidden = true;
+  actionCue.setAttribute('role', 'status');
+  actionCue.setAttribute('aria-live', 'polite');
+  root.append(actionCue);
+  const actionCuePoint = new THREE.Vector3();
   const hotspotButtons = new Map();
   const scene = new THREE.Scene();
   const camera = new THREE.OrthographicCamera(-6, 6, 5, -5, 0.1, 100);
@@ -1010,14 +1031,19 @@ export function mountMuseum(
         hotspotButtons.set(hotspot.id, entry);
       }
       const touch = window.matchMedia('(pointer: coarse)').matches;
-      const prompt = touch ? '탭 조사' : 'E 조사';
+      const prompt = hotspot.kind === 'action'
+        ? `${touch ? '탭' : 'E'} · ${hotspot.label}`
+        : touch ? '탭 조사' : 'E 조사';
       if (entry.button.textContent !== prompt) entry.button.textContent = prompt;
       entry.button.setAttribute(
         'aria-label',
-        touch ? '가까운 대상 조사하기' : '가까운 대상 조사하기, E'
+        hotspot.kind === 'action' ? `${hotspot.target}, ${hotspot.label}${touch ? '' : ', E'}`
+          : touch ? '가까운 대상 조사하기' : '가까운 대상 조사하기, E'
       );
       entry.button.disabled = !current.interactive;
-      entry.width = 96;
+      entry.width = hotspot.kind === 'action' ? Math.min(240, 64 + hotspot.label.length * 12) : 96;
+      entry.button.style.width = `${entry.width}px`;
+      entry.button.dataset.fieldAction = String(hotspot.kind === 'action');
     }
     refreshExclusions();
   }
@@ -1026,6 +1052,7 @@ export function mountMuseum(
     hotspotLayout = [];
     const show = current.interactive && !contextLost;
     hotspotLayer.hidden = !show;
+    placeActionCue();
     if (!show) return;
     // Keep the scene discoverable: show one generic interaction affordance only when the
     // player is close enough to use it. Never list or label the undiscovered targets.
@@ -1151,6 +1178,28 @@ export function mountMuseum(
         height: entry.height,
       });
     }
+  }
+
+  function placeActionCue() {
+    const action = current.hotspots.find(item => item.kind === 'action');
+    const shape = action && anchorShape(action.anchor);
+    actionCue.hidden = !current.interactive || contextLost || !!activeAnchor || !shape;
+    if (actionCue.hidden) return;
+    const nearby = nearbyHotspot()?.id === action.id;
+    const text = `${action.target} · ${action.cue}`;
+    if (actionCue.textContent !== text) actionCue.textContent = text;
+    actionCuePoint.copy(shape.point);
+    actionCuePoint.y += shape.size[1] / 2 + 0.6;
+    actionCuePoint.project(camera);
+    const projectedX = (actionCuePoint.x + 1) * width / 2;
+    const projectedY = (1 - actionCuePoint.y) * height / 2;
+    const half = Math.min(125, (width - 32) / 2);
+    const x = Math.max(half + 16, Math.min(width - half - 16, projectedX));
+    const y = Math.max(160, Math.min(height - 190, projectedY));
+    actionCue.dataset.edge = String(Math.abs(actionCuePoint.x) > 0.85 || Math.abs(actionCuePoint.y) > 0.8);
+    actionCue.dataset.nearby = String(nearby);
+    actionCue.style.setProperty('--target-bearing', `${Math.atan2(projectedY - y, projectedX - x) * 180 / Math.PI}deg`);
+    actionCue.style.transform = `translate3d(${x}px,${y}px,0) translate(-50%,-100%)`;
   }
 
   function showSelection() {
@@ -1681,8 +1730,20 @@ export function mountMuseum(
       const last = actor.path.at(-1),
         position = actor.object.position;
       if (!actor.object.visible) continue;
+      const roomId = roomAt(position.x, position.z);
+      const invitingPlayer = current.mode === 'map' && current.interactive &&
+        ['exploring', 'input'].includes(current.phase) && !activeAnchor && !controlsBlocked() && current.hotspots.some(
+        hotspot => hotspot.kind === 'action' && hotspot.anchor === actor.id
+      );
+      if (roomId === current.currentRoomId && invitingPlayer) {
+        actor.path = [];
+        actor.ambientPath = false;
+        actor.object.rotation.y = Math.atan2(player.position.x - position.x, player.position.z - position.z);
+        actor.activity = 'attention';
+        continue;
+      }
+
       if (!last) {
-        const roomId = roomAt(position.x, position.z);
         const ambientAllowed =
           current.mode === 'map' &&
           current.phase !== 'travelling' &&
@@ -1859,9 +1920,12 @@ export function mountMuseum(
     const objective =
       current.objectiveTarget ?? (current.travel ? { roomId: current.travel.toRoomId } : null);
     if (!objective) return null;
-    // Room destinations support travel guidance; hotspot objectives stay undisclosed so
-    // exploration does not turn into following a beacon to the next clue.
-    if (objective.hotspotId) return null;
+    // Only a ready action gets a marker; undiscovered evidence remains unmarked.
+    if (objective.hotspotId) {
+      const action = current.hotspots.find(item => item.id === objective.hotspotId && item.kind === 'action');
+      const point = action && anchorShape(action.anchor)?.point;
+      return point ? new THREE.Vector3(point.x, 0.04, point.z) : null;
+    }
     const destination = ROOMS.find((room) => room.id === objective.roomId);
     if (!destination) return null;
     let currentRoom = roomAt(player.position.x, player.position.z);
@@ -2227,11 +2291,13 @@ export function mountMuseum(
     );
     const destination = current.travel?.toRoomId;
     const objective = objectivePosition();
-    beacon.visible = Boolean(objective) && !activeAnchor;
+    beacon.visible = Boolean(objective) && current.interactive && !activeAnchor;
     if (objective) {
       beacon.position.copy(objective);
+      const action = current.hotspots.find(item => item.id === current.objectiveTarget?.hotspotId);
+      const actionHeight = action ? anchorShape(action.anchor)?.point.y ?? 0 : 0;
       beaconArrow.position.y =
-        0.9 + (motionPreference.matches ? 0 : Math.sin(now * 0.004) * 0.12);
+        actionHeight + 0.9 + (motionPreference.matches ? 0 : Math.sin(now * 0.004) * 0.12);
       beaconRing.rotation.z = motionPreference.matches ? 0 : now * 0.0003;
     }
     if (destination) {
@@ -2258,7 +2324,8 @@ export function mountMuseum(
         roomId: roomAt(player.position.x, player.position.z),
         targetRoomId: destination ?? null,
         moving: avatarMoving,
-        nearbyLabel: nearbyHotspot() ? '조사 가능' : null,
+        nearbyLabel: nearbyHotspot()?.kind === 'action' ? nearbyHotspot().label
+          : nearbyHotspot() ? '조사 가능' : null,
       };
       const signature = JSON.stringify(value);
       if (signature !== lastNavigation) {
@@ -2269,6 +2336,8 @@ export function mountMuseum(
   }
 
   function placeSpeakerMarker() {
+    const readySpeaker = current.interactive && current.hotspots.some(item => item.kind === 'action' &&
+      (item.anchor === 'yunseo' && speaking === '윤서' || item.anchor === 'moro' && speaking === '모로'));
     const actor =
       speaking === '윤서' && curator.visible
         ? curatorHead
@@ -2277,7 +2346,7 @@ export function mountMuseum(
         : speaking === '나래' && roomRemoteDisplays[current.currentRoomId]?.portrait.visible
         ? roomRemoteDisplays[current.currentRoomId].screen
         : null;
-    if (!actor) {
+    if (!actor || readySpeaker) {
       speakerMarker.style.display = 'none';
       return;
     }
@@ -2356,7 +2425,9 @@ export function mountMuseum(
     curatorHead.rotation.x =
       !still && speaking === '윤서' ? Math.sin(gestureTime * Math.PI * 3) * gesture * 0.07 : 0;
     curatorHead.rotation.y = !still && speaking === '윤서' ? gesture * 0.12 : 0;
-    curatorArms[1].rotation.x = !still && speaking === '윤서' ? -gesture * 0.7 : 0;
+    const inviting = current.interactive && current.hotspots.some(item => item.kind === 'action' && item.anchor === 'yunseo');
+    curatorArms[1].rotation.x = !still && inviting ? -0.55 + Math.sin(seconds * 2.4) * 0.12
+      : !still && speaking === '윤서' ? -gesture * 0.7 : 0;
     curatorArms[1].rotation.z = 0.13 + (!still && speaking === '윤서' ? -gesture * 0.25 : 0);
     curatorLegs.forEach((leg, index) => {
       leg.rotation.x = walking && !still ? Math.sin(seconds * 8 + index * Math.PI) * 0.19 : 0;

@@ -1,3 +1,5 @@
+import { fieldActionFor } from './field-action.mjs';
+
 const SYMBOLS = {
   leaf: '❧',
   wave: '≋',
@@ -295,11 +297,10 @@ export function mountInvestigation(
     if (exploration.deductionSolved)
       interpretation.append(
         button(
-          '다음 행동 정하기',
+          '현장으로 돌아가기',
           () => {
             panel = null;
             redraw();
-            onChoices();
           },
           'primary',
           'deduce-next'
@@ -592,8 +593,9 @@ export function mountInvestigation(
     if (!interactive) return;
     const dock = element('div', undefined, 'investigation-dock field-tools');
     const primary = exploration.primaryAction;
+    const fieldAction = fieldActionFor(view);
     const actions = element('div', undefined, 'investigation-actions field-tools-actions');
-    if (primary && primary.kind !== 'inspect' && !panel) {
+    if (primary && primary.kind !== 'inspect' && !fieldAction && !panel) {
       const entry = element('div', undefined, 'field-action-entry');
       if (primary.kind === 'deduce' && exploration.deduction?.context)
         entry.append(element('p', exploration.deduction.context, 'field-action-context'));

@@ -6,6 +6,7 @@ import { playerNameForSession } from '../src/player-name.mjs';
 import { openingContent } from '../src/content/opening.mjs';
 import { mountInvitationIntro } from './invitation-intro.mjs';
 import { gameAudio } from './audio.mjs';
+import { FIELD_ACTION_ID, fieldActionFor, fieldHotspots } from './field-action.mjs';
 
 const $ = (id) => document.getElementById(id);
 const LABELS = {
@@ -166,6 +167,11 @@ try {
         return;
       }
       gameAudio.play('inspect');
+      if (hotspotId === FIELD_ACTION_ID) {
+        pendingTalk = null;
+        if (fieldActionFor(view)) investigation.performPrimaryAction();
+        return;
+      }
       const talk = pendingTalk;
       pendingTalk = null;
       if (
@@ -413,7 +419,9 @@ function renderNavigation() {
   const nearby = active && navigation?.nearbyLabel;
   const touchInput = window.matchMedia('(pointer: coarse)').matches;
   const label = nearby
-    ? touchInput
+    ? nearby !== '조사 가능'
+      ? `${nearby} · ${touchInput ? '가까운 대상 탭' : 'E 또는 클릭'}`
+      : touchInput
       ? '가까이 · 사물을 탭해 조사'
       : '가까이 · E 또는 클릭으로 조사'
     : view.phase === 'travelling'
@@ -444,6 +452,7 @@ function updateMuseum() {
     return;
   }
   const current = view.currentMessage ?? view.messages.at(-1);
+  const fieldAction = fieldActionFor(view);
   museum?.update({
     playthroughId: sessionEpoch,
     sceneId: view.sceneId,
@@ -456,10 +465,11 @@ function updateMuseum() {
     currentRoomId: view.currentRoomId,
     visitedRoomIds: view.visitedRoomIds,
     travel: view.travel,
-    hotspots: view.exploration?.hotspots ?? [],
+    hotspots: fieldHotspots(view.exploration, fieldAction),
     // A dismissed dialogue must release its close-up, which also locks walking.
     activeHotspot: dialogueDismissed ? null : view.exploration?.activeHotspot ?? null,
-    objectiveTarget: view.travel ? { roomId: view.travel.toRoomId } : null,
+    objectiveTarget: view.travel ? { roomId: view.travel.toRoomId }
+      : fieldAction ? { hotspotId: fieldAction.id } : null,
     interactive:
       (view.phase === 'travelling' ||
         (!!view.exploration &&
@@ -1147,6 +1157,7 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
       }[view.chapter] ?? '우리 팀은 무엇을 남겼을까?';
   const investigationSession =
     !!view.exploration && !['travelling', 'result', 'terminal'].includes(view.phase);
+  const fieldAction = fieldActionFor(view);
   $('progress-label').textContent =
     (view.phase === 'travelling'
       ? `목적지로 이동: ${view.travel.toLabel}. 방에 들어가면 다음 이야기가 시작됩니다.`
@@ -1155,7 +1166,7 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
         ? continuationGuidance().objective
         : '선택의 결과를 확인하세요.'
       : investigationSession
-      ? '현장을 자유롭게 둘러보세요.'
+      ? fieldAction?.objective ?? '현장을 자유롭게 둘러보세요.'
       : view.exploration?.objective) ??
     OBJECTIVES[view.sceneId] ??
     '우리 팀이 남긴 이 밤의 마지막 장면을 읽어 보세요.';
@@ -1163,7 +1174,7 @@ function render(sceneChanged = false, focusAction = null, followLatest = false) 
     view.phase === 'travelling' ? `${view.travel.toLabel}로 가는 길` : view.title;
   $('objective-reason').textContent =
     investigationSession
-      ? ''
+      ? fieldAction ? `${fieldAction.cue} 가까이에서 E 또는 탭으로 상호작용하세요.` : ''
       : view.phase === 'travelling'
       ? view.travel.reason ??
         view.nextScene?.reason ??

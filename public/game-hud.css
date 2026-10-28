@@ -1,4 +1,43 @@
 /* The field stays visible. Large navigation and reading surfaces open on request. */
+.museum-action-cue {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: min(250px, calc(100% - 32px));
+  width: max-content;
+  padding: 10px 14px;
+  border: 1px solid #dcc58b;
+  border-radius: 8px;
+  background: #153b32f2;
+  color: #fff0c9;
+  box-shadow: 0 4px 18px #061b1455;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+  pointer-events: none;
+}
+.museum-action-cue::after {
+  content: '▼';
+  display: block;
+  color: #dcc58b;
+  font-size: 12px;
+}
+.museum-action-cue[data-edge='true']::after {
+  content: '➤';
+  transform: rotate(var(--target-bearing));
+  font-size: 17px;
+}
+.museum-fallback-action {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 14px 20px;
+  background: #f1e5c4;
+  color: #173a32;
+  border: 1px solid #b18a54;
+  border-radius: 6px;
+}
 .museum-access-feedback {
   position: absolute;
   left: 50%;
